@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Aulão - Mario Jorge",
+			"path": "../../Aulão - Mario Jorge"
+		},
+		{
+			"name": "Images",
+			"path": "../../../mario-jogo-javascript/Images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Aulão - Mario Jorge",
+		"liveServer.settings.port": 5501
+	}
+}
