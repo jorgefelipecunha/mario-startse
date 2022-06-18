@@ -6,7 +6,7 @@ const jumpSound = document.querySelector("#jump");
 const deathSound = document.querySelector("#death");
 const restart = document.querySelector("#restart");
 
-myAudio = new Audio('../assets/theme-sound.mp3');
+const myAudio = new Audio('../assets/theme-sound.mp3');
 if (typeof myAudio.loop == 'boolean') {
   myAudio.loop = true;
 } else {
