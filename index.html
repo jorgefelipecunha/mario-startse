@@ -5,13 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
         <title>Super Mario StartSe</title>
     </head>
     <body>
         <div class="game">
             <img src="./Images/clouds-gamer.png" class="cloud-game" />
             <img src="./Images/super-mario.gif" class="super-mario" />
+            <input id="restart" type="button" value="Restart" onClick="document.location.reload(true)">
             <img src="./Images/pipe-game.png" class="pipe-game" />
+            <div id="score">Score <strong>00</strong></div>
+            <div id="gameOver">Game Over</div>
+            <audio id="jump" src="./assets/jump.mp3" preload="auto"></audio>
+            <audio id="death" src="./assets/death.mp3" preload="auto"></audio>
         </div>
         <script src="./js/script.js"></script>
     </body>
