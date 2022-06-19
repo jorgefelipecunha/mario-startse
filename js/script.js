@@ -26,6 +26,15 @@ const jump = () => {
   }, 500);
 };
 
+
+let intervalScore = null;
+let playerScore = 0;
+const scoreCounter = () => {
+  playerScore++;
+  score.innerHTML = `Score ${playerScore}`;
+}
+intervalScore = setInterval(scoreCounter, 400);
+
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
   const marioPosition = parseInt(window
@@ -41,6 +50,7 @@ const loopGame = setInterval(() => {
 
     mario.src = "./Images/mario-game-over.png";
     deathSound.play();
+    clearInterval(intervalScore);
     myAudio.pause();
     gameOver.style.display = "block";
     restart.style.display = "block";
@@ -51,13 +61,6 @@ const loopGame = setInterval(() => {
   }
 }, 10);
 
-let interval;
-let playerScore = 0;
-const scoreCounter = () => {
-  playerScore++;
-  score.innerHTML = `Score ${playerScore}`;
-}
 
 document.addEventListener("keydown", jump);
 
-interval = setInterval(scoreCounter, 400);
