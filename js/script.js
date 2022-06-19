@@ -3,6 +3,8 @@ const pipe = document.querySelector(".pipe-game");
 const marioJumpSound = new Audio('../sounds/smb_jump-small.mp3');
 const gameOver = new Audio('../sounds/smb_gameover.mp3');
 
+var score = 0;
+
 const jump = () => {
   mario.classList.add("jump-mario");
   marioJumpSound.play();
@@ -17,6 +19,9 @@ const loopGame = setInterval(() => {
   const marioPosition = +window
     .getComputedStyle(mario)
     .bottom.replace("px", "");
+
+    ++score;
+    document.getElementById('totalScore').innerHTML = ('00000'+(score/100).toFixed(0)).slice(-5);    
 
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
     gameOver.play();
@@ -34,4 +39,9 @@ const loopGame = setInterval(() => {
   }
 }, 10);
 
-document.addEventListener("keydown", jump);
+// Mario jump's on spacebar ou arrow up key press
+document.addEventListener('keydown', event => {
+  if (event.code === 'Space' || event.code === 'ArrowUp') {
+    jump();
+  }
+})

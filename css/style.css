@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#score {
+    position: absolute;
+    z-index:1;
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+    margin: 30px;
 }
 
 .game {
@@ -11,7 +21,7 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    background: #5c94fc;
 }
 
 .pipe-game {
