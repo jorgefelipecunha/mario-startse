@@ -1,12 +1,14 @@
 const mario = document.querySelector('.super-mario')
 const pipe = document.querySelector('.pipe-game')
+const score = document.querySelector('.score')
+const bestScore = document.querySelector('.best__score')
+
+var gameover = false
 
 const bg1 = document.querySelector('.background__img--1')
 const bg2 = document.querySelector('.background__img--2')
 const bg3 = document.querySelector('.background__img--3')
 const bgTerrain = document.querySelector('.background__terrain')
-
-var gameover = false
 
 const jump = () => {
   if (!gameover) {
@@ -32,8 +34,6 @@ const loopGame = setInterval(() => {
   const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
 
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 100) {
-    console.log(marioPosition)
-
     //fazendo Paralax parar ao morrer
     bg1.style.animation = 'none'
     bg1.style.left = `${bg1Position}px`
@@ -62,5 +62,31 @@ const loopGame = setInterval(() => {
     gameover = true
   }
 }, 10)
+
+let intervalScore = null
+var playerScore = 0
+let bestPoints = 0
+let velocityEnemy = 2
+
+const scoreCounter = () => {
+  if (!gameover) {
+    playerScore = parseInt(playerScore + 20 / Math.pow(velocityEnemy, -1))
+    score.innerHTML = `Score: ${playerScore}`
+    pipe.style.animation =
+      'pipe-animation ' + `${velocityEnemy}` + 's infinite linear'
+
+    if (velocityEnemy >= 1) {
+      velocityEnemy -= 0.0005
+    }
+
+    // Atualiza a melhor pontuação
+    if (playerScore > bestPoints) {
+      bestPoints = playerScore
+      bestScore.innerHTML = `Best Score: ${bestPoints}`
+    }
+  }
+}
+
+intervalScore = setInterval(scoreCounter, 100)
 
 document.addEventListener('keydown', jump)
