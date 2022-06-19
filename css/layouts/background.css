@@ -1,0 +1,63 @@
+.background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1750px;
+}
+
+.background__img {
+  position: absolute;
+  bottom: 94px;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.background__img--1 {
+  animation: bg-animation 3s infinite linear;
+}
+
+.background__img--2 {
+  animation: bg-animation 5s infinite linear;
+}
+
+.background__img--3 {
+  animation: bg-animation 7s infinite linear;
+}
+
+.background__terrain {
+  width: 3726px;
+  height: 348px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  animation: terrain-animation 4s infinite linear;
+}
+
+@keyframes bg-animation {
+  from {
+    left: 0;
+  }
+  to {
+    left: -583.33px;
+  }
+}
+
+@keyframes decoration-animation {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -2000px;
+  }
+}
+
+@keyframes terrain-animation {
+  from {
+    left: 0;
+  }
+  to {
+    left: -1863px;
+  }
+}
