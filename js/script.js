@@ -11,7 +11,7 @@ if (typeof myAudio.loop == 'boolean') {
   myAudio.loop = true;
 } else {
   myAudio.addEventListener('ended', () =>{
-  this.currentTime = 0
+  this.currentTime = 0;
   this.play;
   }, false);
 }
@@ -51,14 +51,13 @@ const loopGame = setInterval(() => {
   }
 }, 10);
 
-let interval = null;
+let interval;
 let playerScore = 0;
 const scoreCounter = () => {
   playerScore++;
-  score.innerHTML = `Score <b>${playerScore}</b>`;
-
+  score.innerHTML = `Score ${playerScore}`;
 }
-interval = setInterval(scoreCounter, 200);
-
 
 document.addEventListener("keydown", jump);
+
+interval = setInterval(scoreCounter, 400);
