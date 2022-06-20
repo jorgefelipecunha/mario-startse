@@ -8,13 +8,6 @@ const restart = document.querySelector("#restart");
 const myAudio = document.querySelector("#myAudio");
 const level = document.querySelector("#level");
 
-if (typeof myAudio.loop == 'boolean') {
-  myAudio.loop = true;
-} else {
-  myAudio.addEventListener('ended', () =>{
-  this.play;
-  }, false);
-}
 myAudio.play();
 
 const jump = () => {
@@ -25,6 +18,14 @@ const jump = () => {
     mario.classList.remove("jump-mario");
   }, 500);
 };
+
+const deathMario = () => {
+  mario.classList.remove("super-mario");
+
+  setTimeout(() => {
+    mario.classList.add("death-mario")
+  })
+}
 
 let intervalScore = null;
 let playerScore = 0;
@@ -47,11 +48,10 @@ const loopGame = setInterval(() => {
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
 
-    
-    mario.style.animation = "none";
     mario.style.bottom = `${marioPosition}px`;
     
     mario.src = "./assets/images/mario-game-over.png";
+    mario.classList.add("death-mario");
     deathSound.play();
     myAudio.pause();
 
@@ -66,7 +66,7 @@ const loopGame = setInterval(() => {
 }, 10);
 
 document.addEventListener('keypress', e => {
-  if(e.keyCode === 13) window.location.reload();
-})
+  if(e.key === 'Enter') window.location.reload();
+});
 
 document.addEventListener("keydown", jump);

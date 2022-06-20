@@ -94,6 +94,13 @@ body {
     animation: pipe-animation 1.5s infinite linear;
 }
 
+.pipe-difculty {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 4.5s infinite linear;
+}
+
 .super-mario{
     width:150px;
     position: absolute;
@@ -110,15 +117,10 @@ body {
     animation: clouds-animation 20s infinite linear;
 }
 
-.bullet-game{
+.death-mario{
     position: absolute;
-    width: 75px;
-    top: calc(30% + 70px);
-    display: none;
-}
-
-.bullet-animation {
-    animation: bullet-animation 6.5s infinite linear;
+    animation: mario-death 2s forwards 1 linear,
+    dissapear 0s ease;
 }
 
 @keyframes pipe-animation {
@@ -136,18 +138,6 @@ body {
     }
     to{
         right:  100%;
-    }
-}
-
-@keyframes bullet-animation {
-    0%{
-        right: -50px;
-    }
-    20%{
-        right: 100%;
-    }
-    100%{
-        right: 100%;
     }
 }
 
@@ -171,4 +161,41 @@ body {
         bottom: 0%
     }
 
+}
+
+@keyframes mario-death{
+    0% {
+        bottom: 0;
+    }
+    10%{
+        bottom: 90px;
+    }
+    20%{
+        bottom: 90px;
+    }
+    30%{
+        bottom: 90px;
+    }
+    40%{
+        bottom: 0;
+    }
+    50%{
+        bottom: -180px;
+    }
+    60%{
+        bottom: -180px;
+    }
+    70%{
+        bottom: -180px;
+    }
+    100%{
+        bottom: -180px;
+    }
+
+}
+
+@keyframes dissapear {
+    to{
+        opacity: 0;
+    }
 }
