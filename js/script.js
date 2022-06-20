@@ -51,7 +51,7 @@ const loopGame = setInterval(() => {
     mario.style.animation = "none";
     mario.style.bottom = `${marioPosition}px`;
     
-    mario.src = "./Images/mario-game-over.png";
+    mario.src = "./assets/images/mario-game-over.png";
     deathSound.play();
     myAudio.pause();
 

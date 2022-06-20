@@ -33,6 +33,15 @@ body {
     color: #282a36;
 }
 
+.best-score {
+    position: absolute;
+    left: 70% - 250px;
+    top: 2.5rem;
+    right: 8rem;
+    font-size: 1.5em;
+    color: #282a36;
+}
+
 #gameOver {
     display: none;
     font-size: 70px;
@@ -101,6 +110,17 @@ body {
     animation: clouds-animation 20s infinite linear;
 }
 
+.bullet-game{
+    position: absolute;
+    width: 75px;
+    top: calc(30% + 70px);
+    display: none;
+}
+
+.bullet-animation {
+    animation: bullet-animation 6.5s infinite linear;
+}
+
 @keyframes pipe-animation {
     from {
         right: -80px;
@@ -116,6 +136,18 @@ body {
     }
     to{
         right:  100%;
+    }
+}
+
+@keyframes bullet-animation {
+    0%{
+        right: -50px;
+    }
+    20%{
+        right: 100%;
+    }
+    100%{
+        right: 100%;
     }
 }
 
