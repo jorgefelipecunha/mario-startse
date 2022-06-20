@@ -1,9 +1,14 @@
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
-const marioJumpSound = new Audio('../sounds/smb_jump-small.mp3');
-const gameOver = new Audio('../sounds/smb_gameover.mp3');
+const marioGame = new Audio('../sounds/mario-game.mp3');
+const marioJumpSound = new Audio('../sounds/jump-small.mp3');
+const gameOver = new Audio('../sounds/gameover.mp3');
 
 var score = 0;
+var highScore = 0;
+document.getElementById('highScore').innerHTML = ('00000'+(score/10).toFixed(0)).slice(-5);
+
+marioGame.play(); // start mario game sound
 
 const jump = () => {
   mario.classList.add("jump-mario");
@@ -21,10 +26,13 @@ const loopGame = setInterval(() => {
     .bottom.replace("px", "");
 
     ++score;
-    document.getElementById('totalScore').innerHTML = ('00000'+(score/100).toFixed(0)).slice(-5);    
+    document.getElementById('totalScore').innerHTML = ('00000'+(score/10).toFixed(0)).slice(-5);    
 
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-    gameOver.play();
+
+    gameOver.play(); // play game over
+    marioGame.pause(); // stops mario game sound
+  
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
 
@@ -36,8 +44,17 @@ const loopGame = setInterval(() => {
     mario.style.marginLeft = "45px";
 
     clearInterval(loopGame);
+    
+    
+    highScore = score;
+    localStorage.setItem("highScoreSession", highScore);
+    document.getElementById('highScore').innerHTML = ('00000'+(score/10).toFixed(0)).slice(-5);
   }
 }, 10);
+
+function restart(){
+  document.location.reload();
+}
 
 // Mario jump's on spacebar ou arrow up key press
 document.addEventListener('keydown', event => {
@@ -45,3 +62,5 @@ document.addEventListener('keydown', event => {
     jump();
   }
 })
+
+document.addEventListener('click', jump)
