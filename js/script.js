@@ -1,13 +1,27 @@
+//player e inimigos
 const mario = document.querySelector('.super-mario')
 const pipe = document.querySelector('.pipe-game')
+
+// pontuação
 const score = document.querySelector('.score')
 const bestScore = document.querySelector('.best__score')
 
+// cenas
 const sceneGameOver = document.querySelector('.game-over')
+const sceneMenu = document.querySelector('.main-menu')
+const sceneGame = document.querySelector('.game')
+const sceneSelectPerson = document.querySelector('.select-person')
+
+// botões
 const restart = document.querySelector('.game-over__restart')
+const btnMenu = document.querySelector('.game-over__menu')
+const btnStart = document.querySelector('.main-menu__start')
+const btnSelectPerson = document.querySelector('.main-menu__select-person')
+const btnBackMenu = document.querySelector('.select-person__back-menu')
 
 var gameover = false
 
+// backgrounds
 const bg1 = document.querySelector('.background__img--1')
 const bg2 = document.querySelector('.background__img--2')
 const bg3 = document.querySelector('.background__img--3')
@@ -73,7 +87,6 @@ const loopGame = setInterval(loop, 10)
 let intervalScore = null
 var playerScore = 0
 
-//adicionando Record na localStorage
 let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
 bestScore.innerHTML = `Best Score: ${bestPoints}`
 let velocityEnemy = 2
@@ -93,7 +106,7 @@ const scoreCounter = () => {
     if (playerScore > bestPoints) {
       bestPoints = playerScore
       bestScore.innerHTML = `Best Score: ${bestPoints}`
-      //adicionar no localStorage
+      //adiciona recorde no localStorage
       localStorage.setItem('recorde', bestPoints)
     }
   }
@@ -124,10 +137,41 @@ const restartGame = () => {
   pipe.src = './Images/enemy_1.gif'
 
   console.log(gameover)
-  loopGame = setInterval(loop, 10)
+  setInterval(loop, 10)
 }
 
+//função para troca de cena
+let changeScene = (scene1, scene2) => {
+  // muda a cena
+  scene1.style.display === 'none'
+    ? (scene1.style.display = 'flex')
+    : (scene1.style.display = 'none')
+  scene2.style.display === 'none'
+    ? (scene2.style.display = 'flex')
+    : (scene2.style.display = 'none')
+
+  //restarta o game
+  restartGame()
+}
+
+// eventos de click dos botões
 restart.addEventListener('click', restartGame)
+
+btnMenu.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneGame)
+})
+
+btnStart.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneGame)
+})
+
+btnSelectPerson.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneSelectPerson)
+})
+
+btnBackMenu.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneSelectPerson)
+})
 
 intervalScore = setInterval(scoreCounter, 100)
 

@@ -1,5 +1,7 @@
 @import url(./layouts/background.css);
 @import url(./layouts/score.css);
+@import url(./layouts/main-menu.css);
+@import url(./layouts/select-person.css);
 
 * {
   margin: 0;
@@ -21,7 +23,7 @@ body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-
+  display: none;
   background-image: url('/Images/scene1/background/day/bg_4.png');
   background-repeat: no-repeat;
   background-position: center;
