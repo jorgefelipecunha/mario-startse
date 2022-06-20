@@ -1,0 +1,32 @@
+.select-person__person {
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.select-person__person-box {
+  width: 60%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+  gap: 1rem;
+}
+
+.person__info {
+  padding: 20px 0px;
+  background-color: gray;
+  border: 3px solid black;
+  border-radius: 30px;
+}
+.person__img {
+  width: 50%;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,18 @@
+.button {
+  font-size: 1rem;
+  font-weight: 500;
+
+  padding: 10px 18px;
+  background-color: gray;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button--small {
+  font-size: 0.75rem;
+  padding: 7.5px 13.5px;
+  border-radius: 15px;
+}

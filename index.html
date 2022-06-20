@@ -9,21 +9,85 @@
   </head>
   <body>
     <div class="main-menu">
-      <h1>MENU</h1>
-      <button class="main-menu__start">Start game</button>
-      <button class="main-menu__select-person">Select Personagem</button>
+      <h1 class="main-menu__title">Speed Run</h1>
+      <div class="main-menu__buttons">
+        <button class="button main-menu__start">Start game</button>
+        <button class="button main-menu__select-person">
+          Select Personagem
+        </button>
+      </div>
     </div>
 
     <div class="select-person" style="display: none">
-      <h1>Select Person</h1>
-      <button class="select-person__back-menu">voltar ao menu</button>
+      <h2 class="select-person__title">Seleção de Personagem</h1>
+      <div class="select-person__person-box">
+        <div class="select-person__person">
+          <figure class="person__info">
+            <img class="person__img" src="./Images/ninja_man_run.gif" alt="" />
+            <figcaption class="person__description">ninja man</figcaption>
+          </figure>
+          <button class="button button--small select-person__back-menu">
+            Selecionar
+          </button>
+        </div>
+
+        <div class="select-person__person">
+          <figure class="person__info">
+            <img class="person__img" src="./Images/ninja_man_run.gif" alt="" />
+            <figcaption class="person__description">ninja man</figcaption>
+          </figure>
+          <button class="button button--small select-person__back-menu">
+            Selecionar
+          </button>
+        </div>
+
+        <div class="select-person__person">
+          <figure class="person__info">
+            <img class="person__img" src="./Images/ninja_man_run.gif" alt="" />
+            <figcaption class="person__description">ninja man</figcaption>
+          </figure>
+          <button class="button button--small select-person__back-menu">
+            Selecionar
+          </button>
+        </div>
+
+        <div class="select-person__person">
+          <figure class="person__info">
+            <img class="person__img" src="./Images/ninja_man_run.gif" alt="" />
+            <figcaption class="person__description">ninja man</figcaption>
+          </figure>
+          <button class="button button--small select-person__back-menu">
+            Selecionar
+          </button>
+        </div>
+
+        <div class="select-person__person">
+          <figure class="person__info">
+            <img class="person__img" src="./Images/ninja_man_run.gif" alt="" />
+            <figcaption class="person__description">ninja man</figcaption>
+          </figure>
+          <button class="button button--small select-person__back-menu">
+            Selecionar
+          </button>
+        </div>
+
+        <div class="select-person__person">
+          <figure class="person__info">
+            <img class="person__img" src="./Images/ninja_man_run.gif" alt="" />
+            <figcaption class="person__description">ninja man</figcaption>
+          </figure>
+          <button class="button button--small select-person__back-menu">
+            Selecionar
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="game" style="display: none">
       <div class="game-over">
         <h2 class="game-over__title">Game Over</h2>
-        <button class="game-over__restart">Restart</button>
-        <button class="game-over__menu">Main Menu</button>
+        <button class="button game-over__restart">Restart</button>
+        <button class="button game-over__menu">Main Menu</button>
       </div>
       <div class="score-box">
         <div class="score">0</div>
@@ -52,7 +116,7 @@
       <img src="./Images/ninja_man_run.gif" class="super-mario" />
       <img src="./Images/enemy_1.gif" class="pipe-game" />
     </div>
-    
+
     <script src="./js/script.js"></script>
   </body>
 </html>
