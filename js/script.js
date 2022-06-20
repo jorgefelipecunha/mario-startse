@@ -6,12 +6,12 @@ const jumpSound = document.querySelector("#jump");
 const deathSound = document.querySelector("#death");
 const restart = document.querySelector("#restart");
 const myAudio = document.querySelector("#myAudio");
+const level = document.querySelector("#level");
 
 if (typeof myAudio.loop == 'boolean') {
   myAudio.loop = true;
 } else {
   myAudio.addEventListener('ended', () =>{
-  this.currentTime = 0;
   this.play;
   }, false);
 }
@@ -26,12 +26,14 @@ const jump = () => {
   }, 500);
 };
 
-
 let intervalScore = null;
 let playerScore = 0;
 const scoreCounter = () => {
   playerScore++;
   score.innerHTML = `Score ${playerScore}`;
+  pipe.style.animation = "pipe-animation "+`${2-(Math.floor(playerScore/50)/5)}`+"s infinite linear"
+  level.innerHTML = "Level "+`${Math.floor(playerScore/50)+1}`
+  return;
 }
 intervalScore = setInterval(scoreCounter, 400);
 
@@ -45,13 +47,15 @@ const loopGame = setInterval(() => {
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
 
+    
     mario.style.animation = "none";
     mario.style.bottom = `${marioPosition}px`;
-
+    
     mario.src = "./Images/mario-game-over.png";
     deathSound.play();
-    clearInterval(intervalScore);
     myAudio.pause();
+
+    clearInterval(intervalScore);
     gameOver.style.display = "block";
     restart.style.display = "block";
     mario.style.width = "75px";
@@ -61,6 +65,8 @@ const loopGame = setInterval(() => {
   }
 }, 10);
 
+document.addEventListener('keypress', e => {
+  if(e.keyCode === 13) window.location.reload();
+})
 
 document.addEventListener("keydown", jump);
-

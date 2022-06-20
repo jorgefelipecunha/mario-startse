@@ -11,16 +11,19 @@
         <title>Super Mario StartSe</title>
     </head>
     <body>
-        <div class="game">
+        <div class="game" data-world>
+            <div class="start-game">
             <img src="./Images/clouds-gamer.png" class="cloud-game" />
             <img src="./Images/super-mario.gif" class="super-mario" />
             <input id="restart" type="button" value="Restart" onClick="document.location.reload(true)">
+            <div id="level"></div>
             <img src="./Images/pipe-game.png" class="pipe-game" />
             <div id="score"></div>
             <div id="gameOver">Game Over</div>
             <audio id="jump" src="./assets/jump.mp3" preload="auto"></audio>
             <audio id="death" src="./assets/down.mp3" preload="auto"></audio>
             <audio id="myAudio" src="./assets/theme-sound.mp3" preload="auto"></audio>
+        </div>
         </div>
         <script src="./js/script.js"></script>
     </body>

@@ -7,6 +7,7 @@
 body {
     font-family: 'Press Start 2P', sans-serif;
     font-size: 22px;
+    min-height: 100vh;
 }
 
 .game {
@@ -19,9 +20,22 @@ body {
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
+.start-screen {
+    position: absolute;
+    font-size: 3vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hide {
+    display: none;
+}
+
 #score {
     position: absolute;
-    top: 8rem;
+    left: 70% - 250px;
+    top: 4.5rem;
     right: 8rem;
     font-size: 1.5em;
     color: #282a36;
@@ -31,8 +45,8 @@ body {
     display: none;
     font-size: 70px;
     position: absolute;
-    left: calc(50% - 181px);
-    top: calc(50% - 40px);
+    left: calc(55% - 150px);
+    top: calc(65% - 10px);
     width: 362px;
     height: 80px;
     color: #960000;
@@ -44,19 +58,29 @@ body {
     display: none;
     font-size: 50px;
     position: absolute;
-    left: calc(50% - 200px);
-    top: calc(50% - 200px);
+    left: calc(60% - 150px);
+    top: calc(50% - 150px);
     width: 200px;
     height: 80px;
     color: #000000;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 #restart:hover {
     background: #960000;
     color: #87CEEB;
     transition: 0.5s;
+}
+
+#level{
+    font-size: 30px;
+    position: absolute;
+    left: calc(60% - 150px);
+    top: calc(50% - 250px);
+    height: 80px;
+    color: #000000;
+    transition: 1s;
 }
 
 .blockActive {
