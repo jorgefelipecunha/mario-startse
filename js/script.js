@@ -38,7 +38,7 @@ const loop = () => {
 
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 100) {
     gameover = true
-    console.log('entrou')
+
     //fazendo Paralax parar ao morrer
     bg1.style.animation = 'none'
     bg1.style.left = `${bg1Position}px`
@@ -72,9 +72,12 @@ const loopGame = setInterval(loop, 10)
 
 let intervalScore = null
 var playerScore = 0
-let bestPoints = 0
-let velocityEnemy = 2
 
+//adicionando Record na localStorage
+let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
+bestScore.innerHTML = `Best Score: ${bestPoints}`
+let velocityEnemy = 2
+console.log(parseInt(localStorage.getItem('recorde')))
 const scoreCounter = () => {
   if (!gameover) {
     playerScore = parseInt(playerScore + 20 / Math.pow(velocityEnemy, -1))
@@ -90,6 +93,8 @@ const scoreCounter = () => {
     if (playerScore > bestPoints) {
       bestPoints = playerScore
       bestScore.innerHTML = `Best Score: ${bestPoints}`
+      //adicionar no localStorage
+      localStorage.setItem('recorde', bestPoints)
     }
   }
 }
