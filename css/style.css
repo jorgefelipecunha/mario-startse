@@ -20,14 +20,6 @@ body {
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.start-screen {
-    position: absolute;
-    font-size: 3vmin;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .hide {
     display: none;
 }
@@ -35,7 +27,7 @@ body {
 #score {
     position: absolute;
     left: 70% - 250px;
-    top: 4.5rem;
+    top: 5.5rem;
     right: 8rem;
     font-size: 1.5em;
     color: #282a36;
@@ -59,7 +51,7 @@ body {
     font-size: 50px;
     position: absolute;
     left: calc(60% - 150px);
-    top: calc(50% - 150px);
+    top: calc(60% - 150px);
     width: 200px;
     height: 80px;
     color: #000000;
@@ -79,8 +71,7 @@ body {
     left: calc(60% - 150px);
     top: calc(50% - 250px);
     height: 80px;
-    color: #000000;
-    transition: 1s;
+    color: #960000;
 }
 
 .blockActive {
