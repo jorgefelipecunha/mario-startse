@@ -27,7 +27,7 @@ body {
 #score {
     position: absolute;
     left: 70% - 250px;
-    top: 5.5rem;
+    top: 8.5rem;
     right: 8rem;
     font-size: 1.5em;
     color: #282a36;
@@ -51,7 +51,7 @@ body {
     font-size: 50px;
     position: absolute;
     left: calc(60% - 150px);
-    top: calc(60% - 150px);
+    top: calc(70% - 150px);
     width: 200px;
     height: 80px;
     color: #000000;
@@ -69,7 +69,7 @@ body {
     font-size: 30px;
     position: absolute;
     left: calc(60% - 150px);
-    top: calc(50% - 250px);
+    top: calc(60% - 250px);
     height: 80px;
     color: #960000;
 }
