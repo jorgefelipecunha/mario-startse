@@ -1,6 +1,7 @@
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
 const score = document.querySelector("#score");
+const HIGH_SCORE = document.querySelector("#high-score");
 const gameOver = document.querySelector("#gameOver");
 const jumpSound = document.querySelector("#jump");
 const deathSound = document.querySelector("#death");
@@ -29,15 +30,37 @@ const deathMario = () => {
 
 let intervalScore = null;
 let playerScore = 0;
+let hiScore = 0;
+localStorage.setItem("hiScore", 0);
+
+
 const scoreCounter = () => {
   playerScore++;
   score.innerHTML = `Score ${playerScore}`;
-  pipe.style.animation = "pipe-animation "+`${1.5-(Math.floor(playerScore/25)/150)}`+"s infinite linear"
+
+  // dificuldade baseada em velocidade
+  pipe.style.animation = "pipe-animation "+
+  `${1.5-(Math.floor(playerScore/25)/150)}`
+  +"s infinite linear"
+
+  //contagem de level baseada a cada 50 pontos
   level.innerHTML = "Level "+`${Math.floor(playerScore/50)+1}`
+
+  //Melhor score
+  if (hiScore !== null) {
+    if (playerScore > parseInt(localStorage.getItem("hiScore"))) {
+      hiScore = playerScore;
+      localStorage.setItem("hiScore", playerScore);
+      console.log(hiScore);
+      HIGH_SCORE.innerHTML = `High Score ${hiScore}`
+    } else {
+      localStorage.setItem("highscore", score);
+    }
+  }
   return;
 }
 intervalScore = setInterval(scoreCounter, 400);
-console.log(intervalScore);
+
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;

@@ -32,6 +32,16 @@ body {
     font-size: 1.5em;
     color: #282a36;
 }
+
+#high-score{
+    position: absolute;
+    right: 70% - 250px;
+    top: 4.5rem;
+    left: 8rem;
+    font-size: 0.5em;
+    color: #282a36;
+}
+
 #gameOver {
     display: none;
     font-size: 70px;
