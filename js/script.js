@@ -50,11 +50,10 @@ const scoreCounter = () => {
   if (hiScore !== null) {
     if (playerScore > parseInt(localStorage.getItem("hiScore"))) {
       hiScore = playerScore;
-      localStorage.setItem("hiScore", hiScore);
-      console.log(hiScore);
+      localStorage.setItem("HIGH_SCORE", hiScore);
       HIGH_SCORE.innerHTML = `High Score ${hiScore}`
     } else {
-      localStorage.setItem("hiScore", hiScore);
+      localStorage.setItem("HIGH_SCORE", hiScore);
     }
   }
   return;
