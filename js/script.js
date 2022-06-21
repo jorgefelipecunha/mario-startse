@@ -2,6 +2,10 @@
 const mario = document.querySelector('.super-mario')
 const pipe = document.querySelector('.pipe-game')
 
+var playerIdle = './Images/characters/ninja_man/ninja_man_idle_70.gif'
+var playerRun = './Images/characters/ninja_man/ninja_man_run.gif'
+var playerJump = './Images/characters/ninja_man/ninja_man_jump.gif'
+var playerDead = './Images/characters/ninja_man/ninja_man_dead.gif'
 // pontuação
 const score = document.querySelector('.score')
 const bestScore = document.querySelector('.best__score')
@@ -17,9 +21,10 @@ const restart = document.querySelector('.game-over__restart')
 const btnMenu = document.querySelector('.game-over__menu')
 const btnStart = document.querySelector('.main-menu__start')
 const btnSelectPerson = document.querySelector('.main-menu__select-person')
-const btnBackMenu = document.querySelector('.select-person__back-menu')
+const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
 
 var gameover = false
+let characters = document.querySelectorAll('.person__img')
 
 // backgrounds
 const bg1 = document.querySelector('.background__img--1')
@@ -30,13 +35,13 @@ const bgTerrain = document.querySelector('.background__terrain')
 const jump = () => {
   if (!gameover) {
     mario.classList.add('jump-mario')
-    mario.src = './Images/ninja_man_jump.gif'
+    mario.src = `${playerJump}`
   }
   setTimeout(() => {
     mario.classList.remove('jump-mario')
 
     if (!gameover) {
-      mario.src = './Images/ninja_man_run.gif'
+      mario.src = `${playerRun}`
     }
   }, 500)
 }
@@ -75,13 +80,14 @@ const loop = () => {
     //mudando a animação do personagem ao morrer
 
     sceneGameOver.style.display = 'flex'
-    mario.src = './Images/ninja_man_dead.gif'
+    mario.src = `${playerDead}`
     mario.style.width = '105px'
     mario.style.marginLeft = '20px'
 
     clearInterval(loopGame)
   }
 }
+
 const loopGame = setInterval(loop, 10)
 
 let intervalScore = null
@@ -91,6 +97,7 @@ let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
 bestScore.innerHTML = `Best Score: ${bestPoints}`
 let velocityEnemy = 2
 console.log(parseInt(localStorage.getItem('recorde')))
+
 const scoreCounter = () => {
   if (!gameover) {
     playerScore = parseInt(playerScore + 20 / Math.pow(velocityEnemy, -1))
@@ -119,7 +126,7 @@ const restartGame = () => {
   playerScore = 0
   velocityEnemy = 2
 
-  mario.src = './Images/ninja_man_run.gif'
+  mario.src = `${playerRun}`
   mario.style.width = '70px'
   mario.style.marginLeft = null
 
@@ -169,9 +176,70 @@ btnSelectPerson.addEventListener('click', () => {
   changeScene(sceneMenu, sceneSelectPerson)
 })
 
-btnBackMenu.addEventListener('click', () => {
-  changeScene(sceneMenu, sceneSelectPerson)
-})
+for (let i = 0; i < btnBackMenu.length; i++) {
+  btnBackMenu[i].addEventListener('click', () => {
+    changeScene(sceneMenu, sceneSelectPerson)
+    changeCharacters([i][0], characters[i])
+  })
+}
+
+function changeCharacters(i, character) {
+  console.log(i)
+  console.log(character)
+
+  switch (i) {
+    case 0:
+      playerIdle = './Images/characters/ninja_man/ninja_man_idle_70.gif'
+      playerRun = './Images/characters/ninja_man/ninja_man_run.gif'
+      playerJump = './Images/characters/ninja_man/ninja_man_jump.gif'
+      playerDead = './Images/characters/ninja_man/ninja_man_dead.gif'
+      break
+
+    case 1:
+      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle_70.gif'
+      playerRun = './Images/characters/ninja_girl/ninja_girl_run.gif'
+      playerJump = './Images/characters/ninja_girl/ninja_girl_jump.gif'
+      break
+
+    case 2:
+      playerIdle = './Images/characters/cowboy_man/cowboy_man_idle_70.gif'
+      playerRun = './Images/characters/cowboy_man/cowboy_man_run.gif'
+      playerJump = './Images/characters/cowboy_man/cowboy_man_jump.gif'
+      break
+
+    case 3:
+      playerIdle = './Images/characters/cowboy_girl/cowboy_girl_idle_70.gif'
+      playerRun = './Images/characters/cowboy_girl/cowboy_girl_run.gif'
+      playerJump = './Images/characters/cowboy_girl/cowboy_girl_jump.gif'
+      break
+
+    case 4:
+      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      break
+
+    case 5:
+      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      break
+
+    case 6:
+      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      break
+
+    case 7:
+      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      break
+  }
+
+  console.log(playerIdle, playerRun, playerJump)
+}
 
 intervalScore = setInterval(scoreCounter, 100)
 

@@ -10,22 +10,20 @@
   font-size: 0.8rem;
   font-weight: 700;
   margin: 0 auto;
-}
-
-.select-person__person-box {
-  width: 60%;
-  height: 80%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
-  gap: 1rem;
-}
-
-.person__info {
   padding: 20px 0px;
   background-color: gray;
   border: 3px solid black;
   border-radius: 30px;
 }
+
+.select-person__person-box {
+  width: 70%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(178px, 4fr));
+  gap: 1rem;
+}
+
 .person__img {
   width: 50%;
   margin-bottom: 10px;
