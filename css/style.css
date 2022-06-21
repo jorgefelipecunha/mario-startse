@@ -1,3 +1,4 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 *{
@@ -9,12 +10,15 @@
 
 }
 
+/* Main */
+
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Restart */
 
 .restart {
     position: absolute;
@@ -23,7 +27,9 @@
 }
 
 .btnRestart {
+    font-size: 1rem;
     padding: 20px;
+    margin-top: 20px;
     background-color: #00ff00;
     border-top: 2px solid #fff;
     border-right: 2px solid #fff;
@@ -37,6 +43,8 @@
     border-left: 2px solid #fff;
 }
 
+/* Score */
+
 #score {
     position: absolute;
     right: 0;
@@ -46,17 +54,21 @@
     color: #FFF;
 }
 
-#score .points {
+.points {
     text-shadow: -2px 2px #000000;
-    font-size: 2rem;
-
+    font-size: 1rem;
 }
+
+/* Game Over */
+
 .game-over {
     color: #FFF;
-    font-size: 8rem;
+    font-size: 4rem;
     text-shadow: -2px 2px #000000;
     max-width: min-content;
 }
+
+/* Game Elements */
 
 .game {
     width: 100%;
@@ -87,10 +99,12 @@
 
 .cloud-game{
     position: absolute;
-    top: 75px;
+    top: 30px;
     width: 350px;
     animation: clouds-animation 20s infinite linear;
 }
+
+/* Animations */
 
 @keyframes pipe-animation {
     from {
@@ -127,4 +141,24 @@
         bottom: 0%
     }
 
+}
+
+/* Media Query para Desktop*/
+
+@media only screen and (min-width: 400px) {
+    .points {
+        font-size: 2rem;
+    }
+    .game-over {
+        font-size: 8rem;
+    }
+    .btnRestart {
+        font-size: 2rem;
+    }
+    .cloud-game{
+        top: 75px;
+        width: 550px;
+    }
+    
+    
 }
