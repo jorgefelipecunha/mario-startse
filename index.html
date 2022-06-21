@@ -6,26 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" type="image.png" href="./images/mario-icon.png">
+    <link rel="icon" type="image.png" href="./images/favicon.ico">
     <title>Super Mario StartSe</title>
 </head>
 
 <body>
     <div class="main">
-        <div id="score">
-            <p class="points">SCORE: <span id="totalScore" class="points"></span></p>
-        </div>
-        <div class="restart" style="display: none;">
-            <p class="game-over">GAME OVER</p>
-            <button class="btnRestart" onclick="restart()">PLAY AGAIN!</button>
+        <div class="start">
+            <img src="./images/start.gif"/><br>
+            <p>Press SPACEBAR or ARROWUP to jump</p>
+            <img class="mario-start" src="./images/mario-start.gif"/>
+            <button class="btnRestart" onclick="window.location.href='./game.html'">START</button>
         </div>
         <div class="game">
-            <img src="./images/clouds-gamer.png" class="cloud-game" />
-            <img src="./images/super-mario.gif" class="super-mario" />
-            <img src="./images/pipe-game.png" class="pipe-game" />
         </div>
     </div>
-    <script src="./js/script.js"></script>
+    <audio controls autoplay style="display: none;">
+        <source src="./assets/mario-hello.mp3" type="audio/mpeg">
+    </audio>
 </body>
 
 </html>

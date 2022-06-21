@@ -58,6 +58,3 @@ document.addEventListener('keydown', event => {
     jump();
   }
 })
-
-// Mario jump's on mouseclick
-document.addEventListener('click', jump)
