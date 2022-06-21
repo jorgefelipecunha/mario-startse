@@ -1,3 +1,4 @@
+const gameEnd = document.querySelector(".restart");
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
 const marioGame = new Audio('../assets/mario-game.mp3');
@@ -30,7 +31,9 @@ const loopGame = setInterval(() => {
 
     gameOver.play(); // play game over
     marioGame.pause(); // stops mario game sound
-  
+
+    gameEnd.style.display = "";
+      
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
 
@@ -57,4 +60,4 @@ document.addEventListener('keydown', event => {
 })
 
 // Mario jump's on mouseclick
-document.addEventListener('MouseDown', jump)
+document.addEventListener('click', jump)

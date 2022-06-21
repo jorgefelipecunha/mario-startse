@@ -1,23 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Press Start 2P', monospace;
+
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.restart {
+    position: absolute;
+    z-index: 4;
+    text-align: center;
+}
+
+.btnRestart {
+    padding: 20px;
+    background-color: #00ff00;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+}
+.btnRestart:hover {
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
 }
 
 #score {
     position: absolute;
     right: 0;
+    top: 0;
     z-index:1;
-    font-family: 'VT323', monospace;
-    font-size: 40px;
     margin: 30px;
     color: #FFF;
 }
 
-#score p {
+#score .points {
     text-shadow: -2px 2px #000000;
+    font-size: 2rem;
+
+}
+.game-over {
+    color: #FFF;
+    font-size: 8rem;
+    text-shadow: -2px 2px #000000;
+    max-width: min-content;
 }
 
 .game {
