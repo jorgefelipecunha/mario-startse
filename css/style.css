@@ -94,13 +94,6 @@ body {
     animation: pipe-animation 1.5s infinite linear;
 }
 
-.pipe-difculty {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 4.5s infinite linear;
-}
-
 .super-mario{
     width:150px;
     position: absolute;
