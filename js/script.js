@@ -54,7 +54,7 @@ const scoreCounter = () => {
       console.log(hiScore);
       HIGH_SCORE.innerHTML = `High Score ${hiScore}`
     } else {
-      localStorage.setItem("highscore", score);
+      localStorage.setItem("highscore", playerScore);
     }
   }
   return;
