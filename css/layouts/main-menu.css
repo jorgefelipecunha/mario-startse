@@ -1,4 +1,5 @@
 .main-menu {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +16,12 @@
   overflow: hidden;
 }
 
+.main-menu__person {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 250px;
+}
 .main-menu__buttons {
   display: flex;
   flex-direction: column;

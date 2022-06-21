@@ -43,9 +43,9 @@ body {
 }
 
 .super-mario {
-  width: 70px;
+  width: 90px;
   position: absolute;
-  bottom: 90px;
+  bottom: 88px;
   z-index: 100;
 }
 

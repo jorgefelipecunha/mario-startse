@@ -6,6 +6,7 @@ var playerIdle = './Images/characters/ninja_man/ninja_man_idle_70.gif'
 var playerRun = './Images/characters/ninja_man/ninja_man_run.gif'
 var playerJump = './Images/characters/ninja_man/ninja_man_jump.gif'
 var playerDead = './Images/characters/ninja_man/ninja_man_dead.gif'
+
 // pontuação
 const score = document.querySelector('.score')
 const bestScore = document.querySelector('.best__score')
@@ -24,7 +25,9 @@ const btnSelectPerson = document.querySelector('.main-menu__select-person')
 const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
 
 var gameover = false
+
 let characters = document.querySelectorAll('.person__img')
+const personMenu = document.querySelector('.main-menu__person')
 
 // backgrounds
 const bg1 = document.querySelector('.background__img--1')
@@ -75,7 +78,7 @@ const loop = () => {
     pipe.src = './Images/enemy_idle.gif'
 
     //fazendo o personagem parar ao morrer
-    mario.style.bottom = `${marioPosition}px`
+    // mario.style.bottom = `${marioPosition}px`
 
     //mudando a animação do personagem ao morrer
 
@@ -199,46 +202,52 @@ function changeCharacters(i, character) {
       playerIdle = './Images/characters/ninja_girl/ninja_girl_idle_70.gif'
       playerRun = './Images/characters/ninja_girl/ninja_girl_run.gif'
       playerJump = './Images/characters/ninja_girl/ninja_girl_jump.gif'
+      playerDead = './Images/characters/ninja_girl/ninja_girl_dead.gif'
       break
 
     case 2:
       playerIdle = './Images/characters/cowboy_man/cowboy_man_idle_70.gif'
       playerRun = './Images/characters/cowboy_man/cowboy_man_run.gif'
       playerJump = './Images/characters/cowboy_man/cowboy_man_jump.gif'
+      playerDead = './Images/characters/cowboy_man/cowboy_man_dead.gif'
       break
 
     case 3:
       playerIdle = './Images/characters/cowboy_girl/cowboy_girl_idle_70.gif'
       playerRun = './Images/characters/cowboy_girl/cowboy_girl_run.gif'
       playerJump = './Images/characters/cowboy_girl/cowboy_girl_jump.gif'
+      playerDead = './Images/characters/cowboy_girl/cowboy_girl_dead.gif'
       break
 
     case 4:
-      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerIdle = './Images/characters/dino/dino_idle_70.gif'
+      playerRun = './Images/characters/dino/dino_run.gif'
+      playerJump = './Images/characters/dino/dino_jump.gif'
+      playerDead = './Images/characters/dino/dino_dead.gif'
       break
 
     case 5:
-      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerIdle = './Images/characters/robot/robot_idle_70.gif'
+      playerRun = './Images/characters/robot/robot_run.gif'
+      playerJump = './Images/characters/robot/robot_jump.gif'
+      playerDead = './Images/characters/robot/robot_dead.gif'
       break
 
     case 6:
-      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerIdle = './Images/characters/halloween/halloween_idle_70.gif'
+      playerRun = './Images/characters/halloween/halloween_run.gif'
+      playerJump = './Images/characters/halloween/halloween_jump.gif'
+      playerDead = './Images/characters/halloween/halloween_dead.gif'
       break
 
     case 7:
-      playerIdle = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerRun = './Images/characters/ninja_girl/ninja_girl_idle.gif'
-      playerJump = './Images/characters/ninja_girl/ninja_girl_idle.gif'
+      playerIdle = './Images/characters/christmas/christmas_idle_70.gif'
+      playerRun = './Images/characters/christmas/christmas_run.gif'
+      playerJump = './Images/characters/christmas/christmas_jump.gif'
+      playerDead = './Images/characters/christmas/christmas_dead.gif'
       break
   }
-
-  console.log(playerIdle, playerRun, playerJump)
+  personMenu.src = playerIdle
 }
 
 intervalScore = setInterval(scoreCounter, 100)
