@@ -1,12 +1,10 @@
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
-const marioGame = new Audio('../sounds/mario-game.mp3');
-const marioJumpSound = new Audio('../sounds/jump-small.mp3');
-const gameOver = new Audio('../sounds/gameover.mp3');
+const marioGame = new Audio('../assets/mario-game.mp3');
+const marioJumpSound = new Audio('../assets/jump-small.mp3');
+const gameOver = new Audio('../assets/gameover.mp3');
 
 var score = 0;
-var highScore = 0;
-document.getElementById('highScore').innerHTML = ('00000'+(score/10).toFixed(0)).slice(-5);
 
 marioGame.play(); // start mario game sound
 
@@ -44,11 +42,6 @@ const loopGame = setInterval(() => {
     mario.style.marginLeft = "45px";
 
     clearInterval(loopGame);
-    
-    
-    highScore = score;
-    localStorage.setItem("highScoreSession", highScore);
-    document.getElementById('highScore').innerHTML = ('00000'+(score/10).toFixed(0)).slice(-5);
   }
 }, 10);
 
@@ -63,4 +56,5 @@ document.addEventListener('keydown', event => {
   }
 })
 
-document.addEventListener('click', jump)
+// Mario jump's on mouseclick
+document.addEventListener('MouseDown', jump)
