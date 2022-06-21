@@ -32,16 +32,6 @@ body {
     font-size: 1.5em;
     color: #282a36;
 }
-
-.best-score {
-    position: absolute;
-    left: 70% - 250px;
-    top: 2.5rem;
-    right: 8rem;
-    font-size: 1.5em;
-    color: #282a36;
-}
-
 #gameOver {
     display: none;
     font-size: 70px;
@@ -53,7 +43,7 @@ body {
     color: #960000;
 }
 
-#restart{
+#restart {
     background: none;
     border: none;
     display: none;
@@ -74,7 +64,7 @@ body {
     transition: 0.5s;
 }
 
-#level{
+#level {
     font-size: 30px;
     position: absolute;
     left: calc(60% - 150px);
@@ -94,7 +84,7 @@ body {
     animation: pipe-animation 1.5s infinite linear;
 }
 
-.super-mario{
+.super-mario {
     width:150px;
     position: absolute;
     bottom: 0;
@@ -104,13 +94,13 @@ body {
     animation: mario-animation 500ms ease-out;
 }
 
-.cloud-game{
+.cloud-game {
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
 }
 
-.death-mario{
+.death-mario {
     position: absolute;
     animation: mario-death 2s forwards 1 linear,
     dissapear 0s ease;
@@ -134,7 +124,7 @@ body {
     }
 }
 
-@keyframes mario-animation{
+@keyframes mario-animation {
     0% {
         bottom:0;
     }
@@ -156,7 +146,7 @@ body {
 
 }
 
-@keyframes mario-death{
+@keyframes mario-death {
     0% {
         bottom: 0;
     }
