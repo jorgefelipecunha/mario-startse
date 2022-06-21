@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Erica+One&family=Jockey+One&family=Kdam+Thmor+Pro&display=swap');
-
 *{
     margin:0;
     padding: 0;
@@ -20,7 +18,7 @@
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 3s infinite linear;
+    animation: pipe-animation 1.5s infinite linear;
 }
 
 .super-mario{
@@ -30,33 +28,13 @@
 }
 
 .jump-mario {
-    animation: mario-animation 800ms ease-out;
+    animation: mario-animation 500ms ease-out;
 }
 
 .cloud-game{
-/*    margin-top: 100px;*/
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
-}
-
-.score{
-    font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
-    font-size: 2em;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-}
-
-.left {
-    margin-left: 50px;
-    justify-content: left;
-}
-
-.right {
-    margin-right: 50px;
-    justify-content: right;
-    align-items: flex-end;
 }
 
 @keyframes pipe-animation {
