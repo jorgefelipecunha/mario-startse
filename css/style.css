@@ -28,6 +28,11 @@
     z-index: 4;
     text-align: center;
 }
+.restart{
+    background-color: orange;
+    padding: 30px;
+    border: 10px double #000;
+}
 .start, .start img {
     max-width: 90%;
 }
@@ -68,16 +73,16 @@
 
 #score {
     position: absolute;
-    right: 0;
     top: 0;
     z-index:1;
-    margin: 30px;
+    margin: 75px 0;
     color: #FFF;
+    font-size: 1.5rem;
 }
 
 .points {
     text-shadow: -2px 2px #000000;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 /* Game Over */
@@ -109,9 +114,11 @@
 
 .pipe-game {
     position: absolute;
+    right: -80px;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 2.5s infinite linear;
+    animation: pipe-animation 2s infinite linear;
+    animation-delay: 1.5s;
 }
 
 .super-mario{
@@ -126,8 +133,8 @@
 
 .cloud-game{
     position: absolute;
-    top: 30px;
-    width: 350px;
+    top: 90px;
+    width: 250px;
     animation: clouds-animation 20s infinite linear;
 }
 
@@ -187,14 +194,17 @@
         font-size: 2rem;
     }
     .game-over {
-        font-size: 8rem;
+        font-size: 6rem;
     }
     .btnRestart {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .cloud-game{
-        top: 75px;
-        width: 550px;
+        width: 350px;
+    }
+    #score {
+        margin: 80px 50px;
+        right: 0;
     }
     
     
