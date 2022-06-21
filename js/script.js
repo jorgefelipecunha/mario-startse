@@ -1,13 +1,23 @@
 const gameEnd = document.querySelector(".restart");
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
-const marioGame = new Audio('../assets/mario-game.mp3');
 const marioJumpSound = new Audio('../assets/jump-small.mp3');
 const gameOver = new Audio('../assets/gameover.mp3');
 
 var score = 0;
 
+const marioGame = new Audio('../assets/mario-game.mp3');
+if (typeof marioGame.loop == 'boolean') {
+  marioGame.loop = true;
+}
+else {
+  marioGame.addEventListener('ended', function () {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+}
 marioGame.play(); // start mario game sound
+marioGame.loop = true;
 
 const jump = () => {
   mario.classList.add("jump-mario");
