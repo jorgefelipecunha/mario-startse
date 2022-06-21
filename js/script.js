@@ -32,11 +32,12 @@ let playerScore = 0;
 const scoreCounter = () => {
   playerScore++;
   score.innerHTML = `Score ${playerScore}`;
-  pipe.style.animation = "pipe-animation "+`${2-(Math.floor(playerScore/50)/5)}`+"s infinite linear"
+  pipe.style.animation = "pipe-animation "+`${1.5-(Math.floor(playerScore/25)/150)}`+"s infinite linear"
   level.innerHTML = "Level "+`${Math.floor(playerScore/50)+1}`
   return;
 }
 intervalScore = setInterval(scoreCounter, 400);
+console.log(intervalScore);
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
