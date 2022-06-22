@@ -42,12 +42,10 @@ const loopLevel = setInterval(function () {
   if (velocity > 0) {
     velocity = velocity - 0.2;
     pipe.style.animation = "pipe-animation "+`${velocity}`+"s infinite linear" //sets new velocity for pipe animation
-    // pipe.style.animation - duration = `${velocity}` + "s" //sets new velocity for pipe animation
-    console.log(velocity);
     levelUp.play();
     document.querySelector('.points').style.animation = "blink 1s 3";   
   }
-}, 5000);
+}, 20000);
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
