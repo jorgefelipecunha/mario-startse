@@ -30,14 +30,14 @@ const deathMario = () => {
 
 let intervalScore = null;
 let playerScore = 0;
-let hiScore = 0;
+//let hiScore = 0;
 localStorage.setItem("hiScore", 0);
 
 
 const scoreCounter = () => {
   playerScore++;
   score.innerHTML = `Score ${playerScore}`;
-
+                          // ACABOU AQUI
   // dificuldade baseada em velocidade
   pipe.style.animation = "pipe-animation "+
   `${1.5-(Math.floor(playerScore/25)/150)}`
@@ -47,6 +47,7 @@ const scoreCounter = () => {
   level.innerHTML = "Level "+`${Math.floor(playerScore/50)+1}`
 
   //Melhor score
+ /*
   if (hiScore !== null) {
     if (playerScore > parseInt(localStorage.getItem("hiScore"))) {
       hiScore = playerScore;
@@ -56,6 +57,7 @@ const scoreCounter = () => {
       localStorage.setItem("HIGH_SCORE", hiScore);
     }
   }
+*/
   return;
 }
 intervalScore = setInterval(scoreCounter, 400);
