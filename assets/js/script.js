@@ -37,7 +37,7 @@ localStorage.setItem("hiScore", 0);
 const scoreCounter = () => {
   playerScore++;
   score.innerHTML = `Score ${playerScore}`;
-                          // ACABOU AQUI
+
   // dificuldade baseada em velocidade
   pipe.style.animation = "pipe-animation "+
   `${1.5-(Math.floor(playerScore/25)/150)}`
