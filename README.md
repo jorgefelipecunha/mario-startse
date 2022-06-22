@@ -1,4 +1,4 @@
-# mario-startse
+# Mario Game - StartSe
 
 Desafio do Módulo VII do curso Tech Academy
 
