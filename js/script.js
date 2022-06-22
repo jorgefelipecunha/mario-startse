@@ -28,6 +28,7 @@ const btnSelectPerson = document.querySelector('.main-menu__select-person')
 const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
 
 var gameover = false
+var runOnceSetInterval = 0
 
 let characters = document.querySelectorAll('.person__img')
 const personMenu = document.querySelector('.main-menu__person')
@@ -40,6 +41,7 @@ const bg2 = document.querySelector('.background__img--2')
 const bg3 = document.querySelector('.background__img--3')
 const bgTerrain = document.querySelector('.background__terrain')
 
+// funções
 const jump = () => {
   if (!gameover) {
     mario.classList.add('jump-mario')
@@ -80,17 +82,21 @@ const loop = () => {
     pipe.style.animation = 'none'
     pipe.style.right = null
     pipe.style.left = `${pipePosition}px + 100`
-    pipe.src = './Images/enemy_idle.gif'
 
     //fazendo o personagem parar ao morrer
     // mario.style.bottom = `${marioPosition}px`
 
     //mudando a animação do personagem ao morrer
-
-    sceneGameOver.style.display = 'flex'
-    mario.src = `${playerDead}`
     mario.style.width = '105px'
     mario.style.marginLeft = '20px'
+
+    sceneGameOver.style.display = 'flex'
+
+    if (runOnceSetInterval <= 1) {
+      mario.src = `${playerDead}`
+      pipe.src = './Images/enemy_idle.gif'
+      runOnceSetInterval++
+    }
 
     clearInterval(loopGame)
   }
@@ -134,6 +140,7 @@ const scoreCounter = () => {
 
 //restart
 const restartGame = () => {
+  runOnceSetInterval = 0
   gameover = false
   sceneGameOver.style.display = `none`
   playerScore = 0
@@ -172,28 +179,6 @@ let changeScene = (scene1, scene2) => {
 
   //restarta o game
   restartGame()
-}
-
-// eventos de click dos botões
-restart.addEventListener('click', restartGame)
-
-btnMenu.addEventListener('click', () => {
-  changeScene(sceneMenu, sceneGame)
-})
-
-btnStart.addEventListener('click', () => {
-  changeScene(sceneMenu, sceneGame)
-})
-
-btnSelectPerson.addEventListener('click', () => {
-  changeScene(sceneMenu, sceneSelectPerson)
-})
-
-for (let i = 1; i >= 0; i--) {
-  btnBackMenu[i].addEventListener('click', () => {
-    changeScene(sceneMenu, sceneSelectPerson)
-    changeCharacters([i][0], characters[i])
-  })
 }
 
 function changeCharacters(i, character) {
@@ -317,3 +302,25 @@ function LockedBtn(points) {
 intervalScore = setInterval(scoreCounter, 100)
 
 document.addEventListener('keydown', jump)
+
+// eventos de click dos botões
+restart.addEventListener('click', restartGame)
+
+btnMenu.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneGame)
+})
+
+btnStart.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneGame)
+})
+
+btnSelectPerson.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneSelectPerson)
+})
+
+for (let i = 1; i >= 0; i--) {
+  btnBackMenu[i].addEventListener('click', () => {
+    changeScene(sceneMenu, sceneSelectPerson)
+    changeCharacters([i][0], characters[i])
+  })
+}
