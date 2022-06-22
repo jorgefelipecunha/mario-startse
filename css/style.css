@@ -20,7 +20,21 @@
     position: absolute;
     bottom: 0;
     width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.pipe-game-slow {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
     animation: pipe-animation 3s infinite linear;
+}
+
+.pipe-game-fast {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1s infinite linear;
 }
 
 .super-mario{
@@ -30,11 +44,19 @@
 }
 
 .jump-mario {
+    animation: mario-animation 500ms ease-out;
+}
+
+.jump-mario-slow {
     animation: mario-animation 800ms ease-out;
 }
 
+.jump-mario-fast {
+    animation: mario-animation 300ms ease-out;
+}
+
 .cloud-game{
-/*    margin-top: 100px;*/
+    margin-top: -200px;
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
@@ -57,6 +79,33 @@
     margin-right: 50px;
     justify-content: right;
     align-items: flex-end;
+}
+.menu{
+    color:black;
+    position: relative;
+    top: 4em;
+    z-index: 5;
+}
+
+input, label {
+    cursor: pointer;
+}
+
+#botao{
+/*    margin-left: 1em;*/
+    border-radius: 15%;
+    font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
+/*    font-family: Arial, Helvetica, sans-serif;*/
+    font-size: .6em;
+    width: 165px;
+    height: 50px;
+    background-color: #0066b8;
+    padding: 9px 50px;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    
 }
 
 @keyframes pipe-animation {
