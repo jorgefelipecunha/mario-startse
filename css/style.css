@@ -4,40 +4,54 @@
     box-sizing: border-box;
 }
 
+
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    border-bottom: 100px solid rgb(213, 213, 218);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    background: linear-gradient(#030746, #111010);
 }
 
-.pipe-game {
+.coringa{
     position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    top: 650px;
+    width: 70px;
+    animation: coringa-animation 3.0s infinite linear;
 }
 
-.super-mario{
+.batman{
     width:150px;
     position: absolute;
     bottom: 0;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.jump-batman {
+    animation: batman-animation 500ms ease-out;
 }
 
-.cloud-game{
+.morcego-game{
     position: absolute;
     width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    animation: morcego-animation 20s infinite linear;
 }
 
-@keyframes pipe-animation {
+.moon {
+    position: relative;
+    width: 300px;
+    top: 30px;
+    left: 500px;
+}
+
+.batman.src .i{
+    position: relative;
+    width: 300px;
+    
+}
+
+@keyframes coringa-animation {
     from {
         right: -80px;
     }
@@ -46,7 +60,7 @@
     }
 }
 
-@keyframes clouds-animation {
+@keyframes morcego-animation {
     from{
         right: -550px;
     }
@@ -55,7 +69,7 @@
     }
 }
 
-@keyframes mario-animation{
+@keyframes batman-animation{
     0% {
         bottom:0;
     }
