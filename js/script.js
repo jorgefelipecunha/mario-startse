@@ -35,7 +35,7 @@ const jump = () => {
 
 let velocity = 2.3; //initial animation duration for pipe
 
-// Increase level each 20seconds
+// Increase level each 10seconds
 const loopLevel = setInterval(function () {
   ++level;
   document.getElementById('levelScore').innerHTML = level; //shows current level
@@ -45,7 +45,7 @@ const loopLevel = setInterval(function () {
     levelUp.play();
     document.querySelector('.points').style.animation = "blink 1s 3";   
   }
-}, 20000);
+}, 10000);
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
