@@ -1,30 +1,30 @@
-const mario = document.querySelector(".super-mario");
-const pipe = document.querySelector(".pipe-game");
+const batman = document.querySelector(".batman");
+const coringa = document.querySelector(".coringa");
 
 const jump = () => {
-  mario.classList.add("jump-mario");
+  batman.classList.add("jump-batman");
 
   setTimeout(() => {
-    mario.classList.remove("jump-mario");
+    batman.classList.remove("jump-batman");
   }, 500);
 };
 
 const loopGame = setInterval(() => {
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window
-    .getComputedStyle(mario)
+  const coringaPosition = coringa.offsetLeft;
+  const batmanPosition = + window
+    .getComputedStyle(batman)
     .bottom.replace("px", "");
 
-  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
+  if (coringaPosition <= 120 && coringaPosition > 0 && batmanPosition < 80) {
+    coringa.style.animation = "none";
+    coringa.style.left = `${coringaPosition}px`;
 
-    mario.style.animation = "none";
-    mario.style.bottom = `${marioPosition}px`;
+    batman.style.animation = "none";
+    batman.style.bottom = `${batmanPosition}px`;
 
-    mario.src = "./Images/mario-game-over.png";
-    mario.style.width = "75px";
-    mario.style.marginLeft = "45px";
+    batman.src = "./img/hit.png"
+    batman.style.width = "200px";
+    batman.style.marginLeft = "5px";
 
     clearInterval(loopGame);
   }
