@@ -10,6 +10,9 @@ var playerDead = './Images/characters/ninja_man/ninja_man_dead.gif'
 // pontuação
 const score = document.querySelector('.score')
 const bestScore = document.querySelector('.best__score')
+const bestScoreSelectPerson = document.querySelector(
+  '.select-person_best__score'
+)
 
 // cenas
 const sceneGameOver = document.querySelector('.game-over')
@@ -28,6 +31,8 @@ var gameover = false
 
 let characters = document.querySelectorAll('.person__img')
 const personMenu = document.querySelector('.main-menu__person')
+const cardsPerson = document.querySelectorAll('.select-person__person')
+console.log(cardsPerson)
 
 // backgrounds
 const bg1 = document.querySelector('.background__img--1')
@@ -97,7 +102,10 @@ let intervalScore = null
 var playerScore = 0
 
 let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
+LockedBtn(bestPoints)
 bestScore.innerHTML = `Best Score: ${bestPoints}`
+bestScoreSelectPerson.innerHTML = `Best Score: ${bestPoints}`
+
 let velocityEnemy = 2
 console.log(parseInt(localStorage.getItem('recorde')))
 
@@ -116,8 +124,10 @@ const scoreCounter = () => {
     if (playerScore > bestPoints) {
       bestPoints = playerScore
       bestScore.innerHTML = `Best Score: ${bestPoints}`
+      bestScoreSelectPerson.innerHTML = `Best Score: ${bestPoints}`
       //adiciona recorde no localStorage
       localStorage.setItem('recorde', bestPoints)
+      LockedBtn(bestPoints)
     }
   }
 }
@@ -179,7 +189,7 @@ btnSelectPerson.addEventListener('click', () => {
   changeScene(sceneMenu, sceneSelectPerson)
 })
 
-for (let i = 0; i < btnBackMenu.length; i++) {
+for (let i = 1; i >= 0; i--) {
   btnBackMenu[i].addEventListener('click', () => {
     changeScene(sceneMenu, sceneSelectPerson)
     changeCharacters([i][0], characters[i])
@@ -187,9 +197,6 @@ for (let i = 0; i < btnBackMenu.length; i++) {
 }
 
 function changeCharacters(i, character) {
-  console.log(i)
-  console.log(character)
-
   switch (i) {
     case 0:
       playerIdle = './Images/characters/ninja_man/ninja_man_idle_70.gif'
@@ -248,6 +255,63 @@ function changeCharacters(i, character) {
       break
   }
   personMenu.src = playerIdle
+}
+
+// função responsável por bloquear personagens
+function setLockedBtn(i, points) {
+  btnBackMenu[i].innerHTML = points
+  btnBackMenu[i].classList.add('select-person__back-menu--locked')
+  btnBackMenu[i].classList.add('select-person__person--locked')
+}
+
+// função responsável por desbloquear personagens
+function unsetLockedBtn(i) {
+  btnBackMenu[i].innerHTML = 'Selecionar'
+  btnBackMenu[i].classList.remove('select-person__back-menu--locked')
+  btnBackMenu[i].classList.remove('select-person__person--locked')
+
+  btnBackMenu[i].addEventListener('click', () => {
+    changeScene(sceneMenu, sceneSelectPerson)
+    changeCharacters([i][0], characters[i])
+  })
+}
+
+// função para a adiministração da pontuação nescessaria para desbloquear personagens
+function LockedBtn(points) {
+  console.log(points)
+  console.log(btnBackMenu[1].innerHTML)
+
+  if (points >= 10000) {
+    unsetLockedBtn(2)
+    unsetLockedBtn(3)
+  } else {
+    setLockedBtn(2, 10000)
+    setLockedBtn(3, 10000)
+  }
+
+  if (points >= 15000) {
+    unsetLockedBtn(4)
+  } else {
+    setLockedBtn(4, 15000)
+  }
+
+  if (points >= 25000) {
+    unsetLockedBtn(5)
+  } else {
+    setLockedBtn(5, 25000)
+  }
+
+  if (points >= 50000) {
+    unsetLockedBtn(6)
+  } else {
+    setLockedBtn(6, 50000)
+  }
+
+  if (points >= 100000) {
+    unsetLockedBtn(7)
+  } else {
+    setLockedBtn(7, 100000)
+  }
 }
 
 intervalScore = setInterval(scoreCounter, 100)
