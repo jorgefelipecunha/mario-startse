@@ -4,6 +4,8 @@ const pipe = document.querySelector(".pipe-game");
 const marioJump = new Audio('../assets/jump-small.mp3');
 const gameOver = new Audio('../assets/gameover.mp3');
 const marioGame = new Audio('../assets/mario-game.mp3');
+const levelUp = new Audio('../assets/level-up.mp3');
+
 
 let level = 1; //level pontuation
 let score = 0; //score pontuation
@@ -31,11 +33,21 @@ const jump = () => {
   }, 600);
 };
 
+let velocity = 2.3; //initial animation duration for pipe
+
 // Increase level each 20seconds
 const loopLevel = setInterval(function () {
   ++level;
-  document.getElementById('levelScore').innerHTML = level;
-}, 20000);
+  document.getElementById('levelScore').innerHTML = level; //shows current level
+  if (velocity > 0) {
+    velocity = velocity - 0.2;
+    pipe.style.animation = "pipe-animation "+`${velocity}`+"s infinite linear" //sets new velocity for pipe animation
+    // pipe.style.animation - duration = `${velocity}` + "s" //sets new velocity for pipe animation
+    console.log(velocity);
+    levelUp.play();
+    document.querySelector('.points').style.animation = "blink 1s 3";   
+  }
+}, 5000);
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
@@ -63,6 +75,8 @@ const loopGame = setInterval(() => {
 
     clearInterval(loopGame);
     clearInterval(loopLevel);
+    document.querySelector('.points').style.animation = "blink 1.5s infinite";   
+
   }
 }, 10);
 
