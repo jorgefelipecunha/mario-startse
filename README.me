@@ -1,0 +1,35 @@
+# # Projeto originalmente desenvolvido pela equipe da StartSe.
+
+# # Esta é uma réplica do documento construído por mim durante a live coding do dia 17/06.
+# Link do documento com os commits originais: https://github.com/Mauro-Domingues/Mario-teste.
+# Link do mini game propriamente dito: https://mauro-domingues.github.io/Mario-teste/.
+
+# # Novas características adicionadas ao mini jogo do Mario:
+# Alteração da fonte do documento;
+# Adição de um menu principal;
+# Adição de efeitos sonoros no menu principal e no mini game propriamente dito;
+# Adição de uma música tema ao mini game;
+# Adição da animação do personagem ao perder o jogo;
+# Adição de uma tela final ao perder o jogo;
+# Adição de um contador de pontuação por passagem do cano;
+# Adição de um sistema de dificuldades baseado na pontuação;
+# Adição de um layer responsivo para mobile, funcionando na tela vertical e horizontal
+preenchendo a tela sem qualquer rolagem mesmo com a barra de endereços do navegador obstruindo parte da tela;
+# Adição de detectores de tecla pressionada, clique do mouse e toques na tela durante a gameplay;
+
+# # Características do sistema de dificuldades:
+# A cada dificuldade aumentada uma mensagem aparece na tela indicando o nivel, compreendendo-se
+"Level-1, Level-2, Level-3, Level-4, Level-5 e Level Master";
+# A velocidade de movimentação do cano é aumentada;
+# O tempo de ação do pulo é reduzido;
+# Para compensar a limitação de jogabilidade em telas menores,
+quanto menor for a largura da tela, mais fácil será a obtenção de pontos;
+# A cada dificuldade introduzida os pontos obtidos ficam mais escassos;
+
+# # Observações:
+# Por favor, não se assuste com o tamanho do código XD, eu fiz o projeto limitado ao meu conhecimento que era nulo.
+# É possivel otimizar o código de maneira assustadora utilizando:
+"object.style.animation = "object-animation" + `${x-(Math.floor(playerScore/50)/5)}` + "s infinite linear"",
+mas preferi mostrar minha gambiarra resultante na linha de raciocínio de alguém que aprendeu 99% do que sabe sobre js durante o projeto.
+E também não queria plagiar o coleguinha que me ensinou a lógica no qual esse código trabalha.
+# Enfim, que a força esteja com vocês e bebam água.
