@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maaaaaaaarioo</title>
+        <link rel="stylesheet" href="../css/game-style.css">
+        <link rel="icon" type="image/x-icon" href="https://th.bing.com/th/id/R.2b46d42cfc6070d3a41776bc2227f34b?rik=XsLckDoXcmK11A&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f2%2fMario-Transparent-Background.png&ehk=aA0B%2fxuuAYXgvK%2bzwgmeGrEHet%2biIw2X9Sz7vaFp7m8%3d&risl=&pid=ImgRaw&r=0">
+    </head>
+
+    <body>
+        <div class="game">
+
+            <p class="ingame">Score: <span class="result">0</span></p>
+            <h1 class="level"><span class="write-lvl">Level 1</span></h1>
+     
+            <div class="restart">
+                <p>Você Perdeu!</p>
+                <p>Sua Pontuação:</p>
+                <p class="score"><span class="total">0</span> pts</p>
+                <a href="./game.html">
+                    <input type="button" value="restart" href>
+                </a>
+                <a href="../index.html">
+                    <input type="button" id="back-to-main" value="Menu" href>
+                </a>
+            </div>
+
+            <div class="main-content">
+                <img class="cloud-game" src="../Images/clouds-gamer.png">
+                <img class="super-mario" src="../Images/super-mario.gif">
+                <img class="pipe-form pipe-moving" src="../Images/pipe-game.png">
+            </div>
+
+        </div>
+
+        <audio class="theme-song" autoplay="autoplay">
+            <source src="../audios/mario-theme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <audio class="jump-song">
+            <source src="../audios/mario-jump.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <script src="../js/script.js"></script>
+
+    </body>
+
+</html>
