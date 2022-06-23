@@ -303,3 +303,87 @@ input:active {
         transform: scale(1);
     }
 }
+
+/* Media-Query */
+
+@media (max-width: 820px),
+(max-height: 380px) {
+
+    .game {
+        border-bottom: 30px solid rgb(24, 174, 34);
+    }
+
+    div.restart {
+        top: 10px;
+    }
+
+    p.ingame {
+        font-size: 15px;
+    }
+
+    h1.level {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 820px) {
+
+    .game {
+        height: 93vh;
+    }
+
+    div.restart {
+        width: 70%;
+        left: 15%;
+        right: 15%;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    p.score {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    h1.level {
+        padding-top: 40px;
+    }
+
+    input {
+        width: 50%;
+        left: 25%;
+        right: 25%;
+    }
+
+}
+
+@media screen and (max-height: 380px) {
+
+    .game {
+        height: 84.5vh;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    p.score {
+        font-size: 20px;
+    }
+
+    input {
+        width: 20%;
+        left: 40%;
+        right: 40%;
+    }
+
+    .cloud-game {
+        top: 0;
+        transform: scale(0.5);
+    }
+
+}
