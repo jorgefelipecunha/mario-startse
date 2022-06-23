@@ -81,3 +81,37 @@ h1.level {
     z-index: 4;
     animation: come-in 500ms ease;
 }
+
+/* Buttons */
+
+input {
+    display: block;
+    position: relative;
+    margin-top: 40px;
+    width: 30%;
+    left: 35%;
+    right: 35%;
+    height: 40px;
+    z-index: 4;
+
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+
+    background-color: gold;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+}
+
+input#back-to-main {
+    margin-top: 10px;
+}
+
+input:hover {
+    transform: scale(1.05);
+}
+
+input:active {
+    transform: scale(0.9);
+    border: none;
+}
