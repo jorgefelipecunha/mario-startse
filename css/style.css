@@ -20,3 +20,19 @@ body{
     height: 100vh;
     padding-top: 20%;
 }
+
+/* Text-Elements */
+
+div {
+    text-align: center;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+p{
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 80px;
+    text-shadow: 2px 3px 1px #000000;
+}
