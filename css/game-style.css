@@ -125,3 +125,22 @@ input:active {
     animation: clouds-animation 20s infinite linear;
     z-index: 1;
 }
+
+/* Mario */
+
+.super-mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    z-index: 3;
+}
+
+.jump-mario {
+    animation: mario-animation 1500ms ease-out;
+}
+
+.die-mario {
+    position: absolute;
+    animation: mario-death 2000ms forwards 1 linear,
+        dissapear 0s ease;
+}
