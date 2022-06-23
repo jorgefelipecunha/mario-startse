@@ -41,11 +41,27 @@ const bg2 = document.querySelector('.background__img--2')
 const bg3 = document.querySelector('.background__img--3')
 const bgTerrain = document.querySelector('.background__terrain')
 
+// sons
+const soundMenu = new Audio()
+const soundGame = new Audio()
+const soundGameOver = new Audio()
+const soundJump = new Audio()
+
+soundMenu.src = './sound/marked.mp3'
+soundGame.src = './sound/ambient_bongos.mp3'
+soundGameOver.src = './sound/asking_questions.mp3'
+soundJump.src = './sound/jump2.mp3'
+
 // funções
 const jump = () => {
-  if (!gameover) {
+  if (
+    !gameover &&
+    sceneGame.style.display == 'flex' &&
+    sceneGameOver.style.display == 'none'
+  ) {
     mario.classList.add('jump-mario')
     mario.src = `${playerJump}`
+    changeSound(soundJump)
   }
   setTimeout(() => {
     mario.classList.remove('jump-mario')
@@ -92,9 +108,10 @@ const loop = () => {
 
     sceneGameOver.style.display = 'flex'
 
-    if (runOnceSetInterval <= 1) {
+    if (runOnceSetInterval <= 1 && sceneGame.style.display == 'flex') {
       mario.src = `${playerDead}`
       pipe.src = './Images/enemy_idle.gif'
+      changeSound(soundGameOver, soundGame, soundMenu)
       runOnceSetInterval++
     }
 
@@ -107,25 +124,27 @@ const loopGame = setInterval(loop, 10)
 let intervalScore = null
 var playerScore = 0
 
+// Atribui à variável bestPoints o valor do recorde armazenado na localStorage ou 0 caso não exista
 let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
 LockedBtn(bestPoints)
 bestScore.innerHTML = `Best Score: ${bestPoints}`
 bestScoreSelectPerson.innerHTML = `Best Score: ${bestPoints}`
 
-let velocityEnemy = 2
+let veloEnemy = 2
 console.log(parseInt(localStorage.getItem('recorde')))
 
+//função responsável por controlar a pontuação e o recorde
 const scoreCounter = () => {
   if (!gameover) {
-    playerScore = parseInt(playerScore + 20 / Math.pow(velocityEnemy, -1))
+    playerScore = parseInt(playerScore + 20 / Math.pow(veloEnemy, -1))
     score.innerHTML = `Score: ${playerScore}`
     pipe.style.animation =
-      'pipe-animation ' + `${velocityEnemy}` + 's infinite linear'
+      'pipe-animation ' + `${veloEnemy}` + 's infinite linear'
 
-    if (velocityEnemy >= 1) {
-      velocityEnemy -= 0.0005
+    if (veloEnemy >= 1) {
+      veloEnemy -= 0.0005
     }
-
+    soundGameOver.pause()
     // Atualiza a melhor pontuação
     if (playerScore > bestPoints) {
       bestPoints = playerScore
@@ -138,13 +157,13 @@ const scoreCounter = () => {
   }
 }
 
-//restart
+// função responsável por "restartar" o game
 const restartGame = () => {
   runOnceSetInterval = 0
   gameover = false
   sceneGameOver.style.display = `none`
   playerScore = 0
-  velocityEnemy = 2
+  veloEnemy = 2
 
   mario.src = `${playerRun}`
   mario.style.width = '70px'
@@ -162,8 +181,8 @@ const restartGame = () => {
 
   pipe.style.right = `-80px`
   pipe.src = './Images/enemy_1.gif'
+  changeSound(soundGame, soundGameOver, soundMenu)
 
-  console.log(gameover)
   setInterval(loop, 10)
 }
 
@@ -178,9 +197,9 @@ let changeScene = (scene1, scene2) => {
     : (scene2.style.display = 'none')
 
   //restarta o game
-  restartGame()
 }
 
+// função responsável por trocar o personagem principal
 function changeCharacters(i, character) {
   switch (i) {
     case 0:
@@ -270,32 +289,32 @@ function LockedBtn(points) {
     unsetLockedBtn(2)
     unsetLockedBtn(3)
   } else {
-    setLockedBtn(2, 10000)
-    setLockedBtn(3, 10000)
+    setLockedBtn(2, '10.000')
+    setLockedBtn(3, '10.000')
   }
 
   if (points >= 15000) {
     unsetLockedBtn(4)
   } else {
-    setLockedBtn(4, 15000)
+    setLockedBtn(4, '15.000')
   }
 
   if (points >= 25000) {
     unsetLockedBtn(5)
   } else {
-    setLockedBtn(5, 25000)
+    setLockedBtn(5, '25.000')
   }
 
   if (points >= 50000) {
     unsetLockedBtn(6)
   } else {
-    setLockedBtn(6, 50000)
+    setLockedBtn(6, '50.000')
   }
 
   if (points >= 100000) {
     unsetLockedBtn(7)
   } else {
-    setLockedBtn(7, 100000)
+    setLockedBtn(7, '100.000')
   }
 }
 
@@ -303,15 +322,29 @@ intervalScore = setInterval(scoreCounter, 100)
 
 document.addEventListener('keydown', jump)
 
+//função responsável por fazer a troca de som
+function changeSound(soundPlay, ...sounds) {
+  soundPlay.play()
+  soundPlay.currentTime = 0
+
+  for (let sound of sounds) {
+    sound.pause()
+  }
+}
+
 // eventos de click dos botões
 restart.addEventListener('click', restartGame)
 
 btnMenu.addEventListener('click', () => {
+  restartGame()
   changeScene(sceneMenu, sceneGame)
+  changeSound(soundMenu, soundGameOver, soundGame)
 })
 
 btnStart.addEventListener('click', () => {
+  restartGame()
   changeScene(sceneMenu, sceneGame)
+  changeSound(soundGame, soundGameOver, soundMenu)
 })
 
 btnSelectPerson.addEventListener('click', () => {
