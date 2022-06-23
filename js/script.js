@@ -7,3 +7,71 @@ const restart = document.querySelector(".restart");
 const jumpSong = document.querySelector(".jump-song");
 const ingameScore = document.querySelector(".ingame");
 const levelDisplay = document.querySelector(".level");
+
+// Jump-action
+
+function jump() {
+
+    mario.classList.add("jump-mario");
+  
+    setTimeout(() => {
+      mario.classList.remove("jump-mario");
+    }, 1500);
+  
+    if (points >= 50) {
+  
+      mario.classList.remove("jump-mario");
+      mario.classList.add("jump-mario-1");
+  
+      setTimeout(() => {
+        mario.classList.remove("jump-mario-1");
+      }, 1250);
+    }
+  
+    if (points >= 100) {
+  
+      mario.classList.remove("jump-mario-1");
+      mario.classList.add("jump-mario-2");
+  
+      setTimeout(() => {
+        mario.classList.remove("jump-mario-2");
+      }, 1000);
+    }
+  
+    if (points >= 150) {
+  
+      mario.classList.remove("jump-mario-2");
+      mario.classList.add("jump-mario-3");
+  
+      setTimeout(() => {
+        mario.classList.remove("jump-mario-3");
+      }, 750);
+    }
+  
+    if (points >= 200) {
+  
+      mario.classList.remove("jump-mario-3");
+      mario.classList.add("jump-mario-4");
+  
+      setTimeout(() => {
+        mario.classList.remove("jump-mario-4");
+      }, 500);
+    }
+  
+    if (points >= 250) {
+  
+      mario.classList.remove("jump-mario-4");
+      mario.classList.add("jump-mario-5");
+  
+      setTimeout(() => {
+        mario.classList.remove("jump-mario-5");
+      }, 250);
+    }
+  
+    jumpSong.play();
+  
+  };
+  
+  document.addEventListener("keydown", jump);
+  document.addEventListener("click", jump);
+  document.addEventListener("touchstart", jump);
