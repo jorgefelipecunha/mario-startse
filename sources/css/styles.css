@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Press Start 2P', cursive;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.container{
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.game{
+    width: 100%;
+    height: 90vh;
+    /*border-bottom: 100px solid rgb(24, 174, 24);*/
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+    z-index: 0;
+}
+.ground{
+    width: 100%;
+    height: 10vh;
+    background-color: #94CC20;
+}
+
+.grass-2{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 20vh;
+    background-image: url("../img/grass-2.png");
+    background-size: contain;
+    z-index: 15;
+    animation: grass-2-animation 3s infinite linear;
+}
+.grass-3{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 20vh;
+    background-image: url("../img/grass-2.png");
+    background-size: contain;
+    z-index: 15;
+    animation: grass-2-animation 3s infinite linear;
+    animation-delay: 1.5s;
+}
+
+.static-ground{
+    width: 100%;
+    height: 10vh;
+    background-color: #94CC20;
+}
+.static-ground::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+    background-image: url("../img/grass-2.png");
+    background-size: contain;
+    z-index: 15;
+}
+
+.restart-game{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    z-index: 5;
+    display: none;
+    text-shadow: 2px 2px 5px black;   
+}
+.game-over h3{
+    margin: 0;
+    font-size: 3rem;
+    width: 100%;
+}
+
+.restart{
+    width: 150px;
+    text-align: center;
+    border-radius: 7px;
+    border: 5px solid white;
+    background-color: #FF0004;
+    box-shadow: 5px 5px black;
+    margin-top: 20px;
+    display: none;
+}
+.restart a{
+    display: inline-block;
+    width: 100%;
+}
+.restart h3{
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-size: 0.8rem;
+}
+.restart:hover{
+    transform: translate(10px, 10px);
+    box-shadow: none;
+}
+
+.logo{
+    margin-top: 25vh;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logo-mario {
+    width: 60%;
+    min-width: 300px;
+}
+
+.logo-mario img{
+    width: 100%;
+    filter: drop-shadow(10px 10px 10px #000);
+}
+
+.play-buttom{
+    width: 150px;
+    text-align: center;
+    border-radius: 7px;
+    border: 5px solid white;
+    background-color: #FF0004;
+    box-shadow: 5px 5px black;
+}
+
+.play-buttom a{
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 10px;  
+}
+
+.play-buttom h3{
+    margin: 0;
+}
+
+.play-buttom:hover{
+    transform: translate(10px, 10px);
+    box-shadow: none;
+}
+
+.pipe-logo img{
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+}
+
+.pipe-game{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+    z-index: 5;
+}
+
+.pipe-game-2{
+    position: absolute;
+    bottom: 0;
+    right: -115px;
+    width: 115px;
+    animation: pipe-animation-2 7.5s infinite linear;
+    animation-delay: 5.25s;
+    z-index: 5;
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.bullet{
+    width: 50px;
+    position: absolute;
+    top: 35%;
+    right: -50px;
+    animation: bullet-animation-1 10s infinite linear;
+    animation-delay: 5s;
+    z-index: 3;  
+}
+
+.bullet-2{
+    width: 20px;
+    position: absolute;
+    top: 90%;
+    right: -50px;
+    animation: bullet-animation-1 16s infinite linear;
+    animation-delay: 7s;
+    z-index: 3;
+    opacity: 0.6;
+}
+
+.enemy{
+    position: absolute;
+    bottom: -1px;
+    width: 40px;
+    right: -40px;
+    animation: enemy-animation 7.5s infinite linear;
+    animation-delay: 8.25s;
+    z-index: 5;
+}
+.bird{
+    width: 100px;
+    position: absolute;
+    top: 50px;
+    left: -100px;
+    animation: flappy-bird 15s infinite linear;
+    animation-delay: 5s;
+    z-index: 1;
+}
+.cloud-game{
+    position: absolute;
+    top: 10px;
+    width: 450px;
+    filter: drop-shadow(5px 5px 10px #000);
+    animation: clouds-animation 20s infinite linear;
+    z-index: 2;
+}
+
+.jump-mario{
+    animation: mario-animation 500ms ease-out;
+}
+
+.score{
+    position: absolute;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px black;
+    color: white;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+}
+
+/*animações*/
+@keyframes grass-animation {
+    0%{
+        right: 0;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@keyframes grass-2-animation {
+    from{
+        right: -100%;
+    }
+    to{
+        right: 100%;
+    }
+}
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes pipe-animation-score{
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+@keyframes pipe-animation-2 {
+    0%{
+        right: -115px;
+    }
+    20.5% {
+        right: 100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@keyframes pipe-animation-2-score {
+    0%{
+        right: -115px;
+    }
+    20.5% {
+        right: 100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@keyframes clouds-animation {
+    from{
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes bullet-animation-1 {
+    0%{
+        right: -50px;
+    }
+    20%{
+        right: 100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+@keyframes bullet-animation-2 {
+    0%{
+        right: -50px;
+    }
+    20%{
+        right: 100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+@keyframes flappy-bird {
+    0% {
+        left: -100px;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes enemy-animation {
+    0% {
+        right: -40px;
+    }
+    19.5%{
+        right: 100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@keyframes enemy-animation-score {
+    0% {
+        right: -40px;
+    }
+    19.5%{
+        right: 100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@keyframes mario-animation{
+    0% {
+        bottom: 0;
+    }
+    20%{
+        bottom: 140px;
+    }
+    40% {
+        bottom: 200px;
+    }
+    60% {
+        bottom: 200px;
+    }
+    80% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@media (max-width: 480px){
+
+    .pipe-game{
+        animation: pipe-animation 1s infinite linear;
+        animation-delay: 1s;
+        right: -80px;
+    }
+    .bullet{
+        animation: bullet-animation-1 6.6666s infinite linear;
+        animation-delay: 3.3333s;  
+    }
+    .bullet-2{
+        animation: bullet-animation-1 9.3333s infinite linear;
+        animation-delay: 4.6666s;
+    }
+    .bird{
+        animation: flappy-bird 10s infinite linear;
+        animation-delay: 3.3333s;
+    }
+    .cloud-game{
+        animation: clouds-animation 13.3333s infinite linear;
+    }
+    .pipe-game-2{
+        display: none;
+    }
+    .enemy{
+        display: none;
+    }
+}
