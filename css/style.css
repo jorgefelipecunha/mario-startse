@@ -62,3 +62,33 @@ input:active{
     transform: scale(0.9);
     border: none;
 }
+
+/* Media-Query */
+
+@media screen and (max-width: 820px) {
+    body{
+        height: 83vh;
+    }
+    p{
+        font-size: 60px;
+    }
+    input{
+        width: 70%;
+        left: 15%;
+        right: 15%;
+    }
+
+}
+
+@media screen and (max-height: 380px){
+    
+    body{
+        height: 81.5vh;
+        padding-top: 10px;
+    }
+
+    p{
+        font-size: 60px;
+    }
+
+}
