@@ -4,12 +4,12 @@ const clouds = document.querySelector(".cloud-game");
 const ground = document.querySelector(".ground-game");
 const trees = document.querySelector(".trees");
 const mountain = document.querySelector(".mountain-game");
-const bgclouds= document.querySelector(".bg-clouds");
+const bgmountain = document.querySelector(".bg-mountain");
+const bgclouds = document.querySelector(".bg-clouds");
 const titlescreen = document.querySelector(".title-screen");
+const button = document.querySelector(".restart-buttom");
 
 //TITLE-SCREEN
-
-//.title-screen-hidden  classe para esconder  a title screen
 
 const titleopacity = () => {
   titlescreen.classList.add("title-screen-hidden");
@@ -51,11 +51,15 @@ const loopGame = setInterval(() => {
 
     mountain.classList.add("animation-stop");
 
+    bgmountain.classList.add("animation-stop");
+
     bgclouds.classList.add("animation-stop");
     
     clearInterval(loopGame);
   }
 }, 10);
+
+
 
 document.addEventListener("keydown", titleopacity); 
 document.addEventListener("keydown", jump);

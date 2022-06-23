@@ -15,8 +15,6 @@ body{
 
 /* Title Screen */
 
-
-
 .title-screen{
     box-sizing: border-box;
     min-height: 100vh;
@@ -128,12 +126,21 @@ body{
     z-index: -1;
 }
 
+.bg-mountain{
+    position: absolute;
+    bottom: 150px;
+    width: 3853px;
+    height: 312px;
+    z-index: -4;
+    animation: bgmountain 150s infinite linear;
+}
+
 .bg-clouds {
     position: absolute;
     top: 30px;
     width: 4597px;
     height: 582px;
-    z-index: -2;
+    z-index: -4;
     animation: bgclouds 300s infinite linear;
 }
  
@@ -197,6 +204,16 @@ body{
     }
     to{
         left: -1980px;
+    }
+}
+
+@keyframes bgmountain{
+    from{
+        left: 0px;
+    }
+
+    to{
+        left: -1925px;
     }
 }
 
