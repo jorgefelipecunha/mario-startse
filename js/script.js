@@ -75,3 +75,38 @@ function jump() {
   document.addEventListener("keydown", jump);
   document.addEventListener("click", jump);
   document.addEventListener("touchstart", jump);
+  
+// Death-action
+
+const loopGame = setInterval(() => {
+
+    const pipePosition = pipe.offsetLeft;
+    const marioPosition = + window.getComputedStyle(mario).bottom.replace("px", "");
+  
+    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+  
+      pipe.style.animation = "none";
+      pipe.style.left = `${pipePosition}px`;
+  
+      mario.src = "../images/mario-game-over.png";
+      mario.classList.add("die-mario");
+      mario.style.width = "75px";
+      mario.style.marginLeft = "45px";
+  
+      ingameScore.style.display = "none";
+  
+      document.querySelector(".write-lvl").textContent = ``;
+  
+      restart.style.display = "block";
+  
+      document.querySelector(".total").textContent = points;
+  
+      jumpSong.src = "none";
+  
+      theme.src = "../audios/game-over.mp3";
+  
+      clearInterval(loopGame)
+  
+    }
+  
+  }, 0);
