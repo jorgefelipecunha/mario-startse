@@ -36,3 +36,29 @@ p{
     font-size: 80px;
     text-shadow: 2px 3px 1px #000000;
 }
+
+/* Button */
+
+input {
+    margin-top: 50px;
+    width: 30%;
+    max-width: 150px;
+    height: 35px;
+    text-align: center;
+    background-color: gold;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+}
+
+input#back-to-main {
+    top: 68%;
+}
+
+input:hover{
+    transform: scale(1.05);
+}
+
+input:active{
+    transform: scale(0.9);
+    border: none;
+}
