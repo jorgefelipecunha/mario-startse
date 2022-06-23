@@ -28,3 +28,56 @@ body {
     overflow: hidden;
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
+
+/* Text-Elements */
+
+div.restart {
+    display: none;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    max-width: 980px;
+    padding: 0;
+    top: 10%;
+    animation: come-in 500ms ease;
+}
+
+p {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 2px 3px 1px #000000;
+    z-index: 4;
+}
+
+p.score{
+    font-size: 35px;
+}
+
+p.ingame {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 10px;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #ffffff;
+    color: #000000;
+}
+
+h1.level {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow: 2px 3px 1px #000000;
+    z-index: 4;
+    animation: come-in 500ms ease;
+}
