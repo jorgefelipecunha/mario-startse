@@ -1,10 +1,10 @@
 const gameEnd = document.querySelector(".restart");
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
-const marioJump = new Audio('../assets/jump-small.mp3');
-const gameOver = new Audio('../assets/gameover.mp3');
-const marioGame = new Audio('../assets/mario-game.mp3');
-const levelUp = new Audio('../assets/level-up.mp3');
+const marioJump = new Audio('../sounds/jump-small.mp3');
+const gameOver = new Audio('../sounds/gameover.mp3');
+const marioGame = new Audio('../sounds/mario-game.mp3');
+const levelUp = new Audio('../sounds/level-up.mp3');
 
 
 let level = 1; //level pontuation
@@ -20,6 +20,7 @@ else {
     this.play();
   }, false);
 }
+
 marioGame.play(); // start mario game sound
 marioGame.loop = true;
 
@@ -43,9 +44,9 @@ const loopLevel = setInterval(function () {
     velocity = velocity - 0.2;
     pipe.style.animation = "pipe-animation "+`${velocity}`+"s infinite linear" //sets new velocity for pipe animation
     levelUp.play();
-    document.querySelector('.points').style.animation = "blink 1s 3";   
+    document.querySelector('.points').style.animation = "blink 0.5s 6"; // blinks score when increase level
   }
-}, 10000);
+},5000);
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
@@ -53,13 +54,13 @@ const loopGame = setInterval(() => {
 
   ++score;
   document.getElementById('totalScore').innerHTML = ('00000' + (score / 10).toFixed(0)).slice(-5);
-  
-  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+  console.log(pipePosition+'px');
 
+  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
     gameOver.play(); // play game over
     marioGame.pause(); // stops mario game sound
 
-    gameEnd.style.display = "";
+    gameEnd.style.display = ""; // show restart menu
 
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
@@ -73,8 +74,7 @@ const loopGame = setInterval(() => {
 
     clearInterval(loopGame);
     clearInterval(loopLevel);
-    document.querySelector('.points').style.animation = "blink 1.5s infinite";   
-
+    document.querySelector('.points').style.animation = "blink 1.5s infinite";
   }
 }, 10);
 
