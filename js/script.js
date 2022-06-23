@@ -29,6 +29,8 @@ const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
 
 var gameover = false
 var runOnceSetInterval = 0
+var itemsUnlocked = [true, true, false, false, false, false, false, false]
+var pulo = false
 
 let characters = document.querySelectorAll('.person__img')
 const personMenu = document.querySelector('.main-menu__person')
@@ -57,15 +59,20 @@ const jump = () => {
   if (
     !gameover &&
     sceneGame.style.display == 'flex' &&
-    sceneGameOver.style.display == 'none'
+    sceneGameOver.style.display == 'none' &&
+    pulo === false
   ) {
+    pulo = true
     mario.classList.add('jump-mario')
     mario.src = `${playerJump}`
     changeSound(soundJump)
+
+    setTimeout(() => {
+      pulo = false
+    }, 490)
   }
   setTimeout(() => {
     mario.classList.remove('jump-mario')
-
     if (!gameover) {
       mario.src = `${playerRun}`
     }
@@ -112,6 +119,7 @@ const loop = () => {
       mario.src = `${playerDead}`
       pipe.src = './Images/enemy_idle.gif'
       changeSound(soundGameOver, soundGame, soundMenu)
+
       runOnceSetInterval++
     }
 
@@ -126,12 +134,20 @@ var playerScore = 0
 
 // Atribui à variável bestPoints o valor do recorde armazenado na localStorage ou 0 caso não exista
 let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
-LockedBtn(bestPoints)
+
 bestScore.innerHTML = `Best Score: ${bestPoints}`
 bestScoreSelectPerson.innerHTML = `Best Score: ${bestPoints}`
 
 let veloEnemy = 2
 console.log(parseInt(localStorage.getItem('recorde')))
+
+setLockedBtn(2, '10.000')
+setLockedBtn(3, '10.000')
+setLockedBtn(4, '15.000')
+setLockedBtn(5, '25.000')
+setLockedBtn(6, '50.000')
+setLockedBtn(7, '100.000')
+LockedBtn(bestPoints)
 
 //função responsável por controlar a pontuação e o recorde
 const scoreCounter = () => {
@@ -153,6 +169,7 @@ const scoreCounter = () => {
       //adiciona recorde no localStorage
       localStorage.setItem('recorde', bestPoints)
       LockedBtn(bestPoints)
+      console.log(itemsUnlocked)
     }
   }
 }
@@ -266,6 +283,7 @@ function setLockedBtn(i, points) {
   btnBackMenu[i].innerHTML = points
   btnBackMenu[i].classList.add('select-person__back-menu--locked')
   btnBackMenu[i].classList.add('select-person__person--locked')
+  itemsUnlocked[i] = false
 }
 
 // função responsável por desbloquear personagens
@@ -278,43 +296,27 @@ function unsetLockedBtn(i) {
     changeScene(sceneMenu, sceneSelectPerson)
     changeCharacters([i][0], characters[i])
   })
+
+  itemsUnlocked[i] = true
 }
 
 // função para a adiministração da pontuação nescessaria para desbloquear personagens
 function LockedBtn(points) {
-  console.log(points)
-  console.log(btnBackMenu[1].innerHTML)
-
-  if (points >= 10000) {
+  if (points >= 10000 && !itemsUnlocked[2] && !itemsUnlocked[3]) {
     unsetLockedBtn(2)
     unsetLockedBtn(3)
-  } else {
-    setLockedBtn(2, '10.000')
-    setLockedBtn(3, '10.000')
   }
-
-  if (points >= 15000) {
+  if (points >= 15000 && !itemsUnlocked[4]) {
     unsetLockedBtn(4)
-  } else {
-    setLockedBtn(4, '15.000')
   }
-
-  if (points >= 25000) {
+  if (points >= 25000 && !itemsUnlocked[5]) {
     unsetLockedBtn(5)
-  } else {
-    setLockedBtn(5, '25.000')
   }
-
-  if (points >= 50000) {
+  if (points >= 50000 && !itemsUnlocked[6]) {
     unsetLockedBtn(6)
-  } else {
-    setLockedBtn(6, '50.000')
   }
-
-  if (points >= 100000) {
+  if (points >= 100000 && !itemsUnlocked[7]) {
     unsetLockedBtn(7)
-  } else {
-    setLockedBtn(7, '100.000')
   }
 }
 
@@ -349,6 +351,7 @@ btnStart.addEventListener('click', () => {
 
 btnSelectPerson.addEventListener('click', () => {
   changeScene(sceneMenu, sceneSelectPerson)
+  soundMenu.play()
 })
 
 for (let i = 1; i >= 0; i--) {
