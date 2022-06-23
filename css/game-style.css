@@ -144,3 +144,17 @@ input:active {
     animation: mario-death 2000ms forwards 1 linear,
         dissapear 0s ease;
 }
+
+/* Pipe */
+
+.pipe-form {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-width 1s ease;
+    z-index: 2;
+}
+
+.pipe-moving {
+    animation: pipe-animation 3s infinite linear;
+}
