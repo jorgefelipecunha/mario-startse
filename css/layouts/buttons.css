@@ -12,7 +12,14 @@
 }
 
 .button--small {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   padding: 7.5px 13.5px;
   border-radius: 15px;
+  z-index: 100;
+}
+
+.select-person__back-menu--locked {
+  cursor: default;
+  z-index: 150;
+  font-weight: 700;
 }

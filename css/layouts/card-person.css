@@ -14,8 +14,20 @@
   background-color: gray;
   border: 3px solid black;
   border-radius: 30px;
+  position: relative;
 }
 
+.select-person__person--locked::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  border-radius: 30px;
+}
 .select-person__person-box {
   width: 70%;
   height: 80%;

@@ -59,6 +59,16 @@ body {
   animation: clouds-animation 20s infinite linear;
 }
 
+.game__pause {
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 20px;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+}
+
 @keyframes pipe-animation {
   from {
     right: -80px;

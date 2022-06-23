@@ -12,6 +12,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  position: relative;
 }
 
 .select-person__title {
@@ -19,4 +21,10 @@
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.select-person_best__score {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
