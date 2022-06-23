@@ -128,3 +128,161 @@ const counter = setInterval(() => {
   document.querySelector(".result").textContent = points;
 
 }, 50);
+
+// Difficult
+
+function moving() {
+
+    if (points >= 50) {
+      pipe.classList.remove("pipe-moving");
+      pipe.classList.add("pipe-moving-1");
+    }
+  
+    if (points >= 100) {
+      pipe.classList.remove("pipe-moving-1");
+      pipe.classList.add("pipe-moving-2");
+    }
+  
+    if (points >= 150) {
+      pipe.classList.remove("pipe-moving-2");
+      pipe.classList.add("pipe-moving-3");
+    }
+  
+    if (points >= 200) {
+      pipe.classList.remove("pipe-moving-3");
+      pipe.classList.add("pipe-moving-4");
+    }
+  
+    if (points >= 250) {
+      pipe.classList.remove("pipe-moving-4");
+      pipe.classList.add("pipe-moving-5");
+    }
+  
+  };
+  
+  const difficult = setInterval(() => {
+  
+    const pipePositionEnd = + window.getComputedStyle(pipe).left.replace("px", "");
+  
+    if (points >= 0 && points <= 5) {
+  
+      levelDisplay.style.display = "block";
+  
+      setTimeout(() => {
+        levelDisplay.style.display = "none";
+      }, 5000);
+  
+    }
+  
+    if (points >= 50 && points <= 53 && pipePositionEnd < -50) {
+  
+      moving();
+      pipe.style.display = "none";
+  
+      setTimeout(() => {
+        pipe.style.display = "block"
+      }, 250);
+  
+      levelDisplay.style.display = "block";
+      document.querySelector(".write-lvl").textContent = `Level 2`;
+      levelDisplay.style.color = "blue";
+  
+      setTimeout(() => {
+        levelDisplay.style.display = "none";
+      }, 5000);
+  
+    };
+  
+    if (points >= 100 && points <= 105 && pipePositionEnd < -50) {
+  
+      moving();
+      pipe.style.display = "none";
+  
+      if (points === 100) {
+        points++;
+      };
+  
+      setTimeout(() => {
+        pipe.style.display = "block"
+      }, 250);
+  
+      levelDisplay.style.display = "block";
+      document.querySelector(".write-lvl").textContent = `Level 3`;
+      levelDisplay.style.color = "green";
+  
+      setTimeout(() => {
+        levelDisplay.style.display = "none";
+      }, 5000);
+  
+    };
+  
+    if (points >= 150 && points <= 153 && pipePositionEnd < -50) {
+  
+      moving();
+      pipe.style.display = "none";
+  
+      if (points === 150) {
+        points++;
+      };
+  
+      setTimeout(() => {
+        pipe.style.display = "block"
+      }, 250);
+  
+      levelDisplay.style.display = "block";
+      document.querySelector(".write-lvl").textContent = `Level 4`;
+      levelDisplay.style.color = "yellow";
+  
+      setTimeout(() => {
+        levelDisplay.style.display = "none";
+      }, 5000);
+  
+    };
+  
+    if (points >= 200 && points <= 205 && pipePositionEnd < -50) {
+  
+      moving();
+      pipe.style.display = "none";
+  
+      if (points === 200) {
+        points++;
+      };
+  
+      setTimeout(() => {
+        pipe.style.display = "block"
+      }, 250);
+  
+      levelDisplay.style.display = "block";
+      document.querySelector(".write-lvl").textContent = `Level 5`;
+      levelDisplay.style.color = "orange";
+  
+      setTimeout(() => {
+        levelDisplay.style.display = "none";
+      }, 5000);
+  
+    };
+  
+    if (points >= 250 && points <= 253 && pipePositionEnd < -50) {
+  
+      moving();
+      pipe.style.display = "none";
+  
+      if (points === 250) {
+        points++;
+      };
+  
+      setTimeout(() => {
+        pipe.style.display = "block"
+      }, 250);
+  
+      levelDisplay.style.display = "block";
+      document.querySelector(".write-lvl").textContent = `Level Master`;
+      levelDisplay.style.color = "red";
+  
+      setTimeout(() => {
+        levelDisplay.style.display = "none";
+      }, 5000);
+  
+    };
+  
+  }, 0);
