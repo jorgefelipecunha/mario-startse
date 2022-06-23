@@ -1,40 +1,176 @@
+@font-face {
+    font-family: SuperMarioFont;
+    src: url(../font/SuperMario256.ttf) format('truetype');
+  }
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Title Screen */
+
+
+
+.title-screen{
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.title-screen-hidden {
+    visibility: hidden;
+}
+
+.central-box {
+    background-color: rgb(255, 102, 0);
+    padding: 20px 15px;
+    border-top: 5px white solid;
+    border-left: 5px white solid;
+    border-right: 5px black solid;
+    border-bottom: 5px black solid;  
+}
+
+.central-box h1{
+    font-family: SuperMarioFont;
+    font-size: 70px;
+    color: white;
+}
+
+.central-box h2 {
+    font-size: 30px;
+    color: white;
+    margin-top: 10px;
+    animation: key-animation 2s infinite; 
+}
+
+
+
+/* Game */
 
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    border-bottom: 100px solid rgba(24,174,24,0); 
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+    z-index: 0;
 }
+
+
+.ground-game{
+    position: absolute;
+    height: 100px;
+    bottom: 0px;
+    z-index: 4;
+    animation: ground-animation 1.5s infinite linear;
+}
+
 
 .pipe-game {
     position: absolute;
     bottom: 0;
     width: 80px;
     animation: pipe-animation 1.5s infinite linear;
+    z-index: -1;
 }
+
 
 .super-mario{
     width:150px;
     position: absolute;
     bottom: 0;
+    z-index: -1;
+
 }
 
 .jump-mario {
     animation: mario-animation 500ms ease-out;
 }
 
+.trees{
+    position: absolute;
+    bottom: -5px;
+    height: 350px;
+
+    z-index: -1;
+    animation: trees-animation 3s infinite linear;
+}
+
+.mountain-game{
+    position: absolute;
+    top: 200px;
+    width: 5612px;
+    height: 1000px;
+    z-index: -2;
+    animation: mountain-animation 24s infinite linear;
+}
+
 .cloud-game{
     position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    top: -90px;
+    width: 900px;
+    height: 450px;
+    animation: clouds-animation 26s infinite linear;  
+    z-index: -1;
+}
+
+.bg-clouds {
+    position: absolute;
+    top: 30px;
+    width: 4597px;
+    height: 582px;
+    z-index: -2;
+    animation: bgclouds 300s infinite linear;
+}
+ 
+
+
+.animation-stop{
+    animation-play-state: paused;
+} 
+
+
+
+@keyframes key-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes ground-animation{
+    from{
+        left: 0px;
+    }
+    to{
+        left: -2000px;
+    }  
+}
+
+@keyframes trees-animation{
+    from {
+        left: 0px
+    }
+    to{
+        left: -1304px;
+    }
 }
 
 @keyframes pipe-animation {
@@ -48,12 +184,30 @@
 
 @keyframes clouds-animation {
     from{
-        right: -550px;
+        right: -900px;
     }
     to{
         right:  100%;
     }
 }
+
+@keyframes mountain-animation{
+    from{
+        left: 0px; 
+    }
+    to{
+        left: -1980px;
+    }
+}
+
+@keyframes bgclouds{
+    from{
+        left: 0px;
+    }
+    to{
+        left: -2298px;
+    }
+} 
 
 @keyframes mario-animation{
     0% {
