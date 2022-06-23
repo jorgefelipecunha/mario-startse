@@ -110,3 +110,21 @@ const loopGame = setInterval(() => {
     }
   
   }, 0);
+
+// Points-counter
+
+let points = 0;
+
+const counter = setInterval(() => {
+
+  const pipePositionLeft = + window.getComputedStyle(pipe).left.replace("px", "");
+
+  if (pipePositionLeft <= 0) {
+
+    points++;
+
+  }
+
+  document.querySelector(".result").textContent = points;
+
+}, 50);
