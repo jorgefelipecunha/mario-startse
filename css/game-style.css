@@ -158,3 +158,45 @@ input:active {
 .pipe-moving {
     animation: pipe-animation 3s infinite linear;
 }
+
+/* Difficult */
+
+.pipe-moving-1 {
+    animation: pipe-animation 2.5s infinite linear;
+}
+
+.jump-mario-1 {
+    animation: mario-animation 1250ms ease-out;
+}
+
+.pipe-moving-2 {
+    animation: pipe-animation 2s infinite linear;
+}
+
+.jump-mario-2 {
+    animation: mario-animation 1000ms ease-out;
+}
+
+.pipe-moving-3 {
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.jump-mario-3 {
+    animation: mario-animation 750ms ease-out;
+}
+
+.pipe-moving-4 {
+    animation: pipe-animation 1s infinite linear;
+}
+
+.jump-mario-4 {
+    animation: mario-animation 500ms ease-out;
+}
+
+.pipe-moving-5 {
+    animation: pipe-animation 0.5s infinite linear;
+}
+
+.jump-mario-5 {
+    animation: mario-animation 250ms ease-out;
+}
