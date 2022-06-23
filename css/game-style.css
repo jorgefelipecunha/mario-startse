@@ -200,3 +200,106 @@ input:active {
 .jump-mario-5 {
     animation: mario-animation 250ms ease-out;
 }
+
+/* Keyframes */
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes mario-animation {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    70% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes mario-death {
+    0% {
+        bottom: 0;
+    }
+
+    10% {
+        bottom: 90px;
+    }
+
+    20% {
+        bottom: 90px;
+    }
+
+    30% {
+        bottom: 90px;
+    }
+
+    40% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -180px;
+    }
+
+    60% {
+        bottom: -180px;
+    }
+
+    70% {
+        bottom: -180px;
+    }
+
+    100% {
+        bottom: -180px;
+    }
+
+}
+
+@keyframes dissapear {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes come-in {
+    from {
+        transform: scale(0.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
