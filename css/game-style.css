@@ -115,3 +115,13 @@ input:active {
     transform: scale(0.9);
     border: none;
 }
+
+/* Clouds */
+
+.cloud-game {
+    margin-top: 20px;
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+    z-index: 1;
+}
