@@ -1,37 +1,5 @@
-.game-over {
-  display: none;
+.score-box {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 150;
-
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.game-over__title {
+  z-index: 200;
   color: white;
-  font-size: 36px;
-  font-weight: 700;
-}
-.game-over::after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0;
-  z-index: -1;
-  animation: gameOverOpacity 0.08s linear forwards;
-}
-
-@keyframes gameOverOpacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.8;
-  }
 }

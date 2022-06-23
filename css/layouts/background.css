@@ -13,51 +13,86 @@
   height: auto;
 }
 
-.background__img--1 {
-  animation: bg-animation 3s infinite linear;
+.background__img--florest {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: auto;
+  height: 100%;
 }
 
+/*
+.background__img--1 {
+  animation: bg-animation 0s infinite linear;
+}
+*/
+
 .background__img--2 {
-  animation: bg-animation 5s infinite linear;
+  animation: bg-animation 11s infinite linear;
 }
 
 .background__img--3 {
+  animation: bg-animation 10s infinite linear;
+}
+
+.background__img--4 {
+  animation: light-animation 18s infinite linear;
+}
+
+.background__img--5 {
+  animation: bg-animation 8s infinite linear;
+}
+
+.background__img--6 {
   animation: bg-animation 7s infinite linear;
+}
+.background__img--7 {
+  animation: light-animation 12s infinite linear;
+}
+
+.background__img--8 {
+  animation: bg-animation 5s infinite linear;
+}
+
+.background__img--9 {
+  animation: bg-animation 4s infinite linear;
+}
+.background__img--10 {
+  animation: bg-animation 1s infinite linear;
 }
 
 .background__terrain {
-  width: 3726px;
-  height: 348px;
+  width: auto;
+  height: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 50;
-  animation: terrain-animation 4s infinite linear;
+  animation: terrain-animation 1s infinite linear;
 }
 
 @keyframes bg-animation {
   from {
-    left: 0;
+    left: -6px;
   }
   to {
-    left: -583.33px;
+    left: -928px;
   }
 }
 
-@keyframes decoration-animation {
+@keyframes light-animation {
   from {
-    left: 100%;
+    left: 900px;
   }
   to {
-    left: -2000px;
+    left: -900px;
   }
 }
 
 @keyframes terrain-animation {
   from {
-    left: 0;
+    left: -6px;
   }
   to {
-    left: -1863px;
+    left: -928px;
   }
 }

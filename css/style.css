@@ -1,5 +1,6 @@
 @import url(./layouts/background.css);
 @import url(./layouts/score.css);
+@import url(./layouts/game-over.css);
 @import url(./layouts/main-menu.css);
 @import url(./layouts/select-person.css);
 @import url(./layouts/buttons.css);
@@ -35,7 +36,7 @@ body {
 
 .pipe-game {
   position: absolute;
-  bottom: 70px;
+  bottom: 40px;
   width: 120px;
   animation: pipe-animation 2s infinite linear;
   z-index: 100;
@@ -45,7 +46,7 @@ body {
 .super-mario {
   width: 90px;
   position: absolute;
-  bottom: 88px;
+  bottom: 57px;
   z-index: 100;
 }
 

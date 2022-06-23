@@ -41,6 +41,13 @@ console.log(cardsPerson)
 const bg1 = document.querySelector('.background__img--1')
 const bg2 = document.querySelector('.background__img--2')
 const bg3 = document.querySelector('.background__img--3')
+const bg4 = document.querySelector('.background__img--4')
+const bg5 = document.querySelector('.background__img--5')
+const bg6 = document.querySelector('.background__img--6')
+const bg7 = document.querySelector('.background__img--7')
+const bg8 = document.querySelector('.background__img--8')
+const bg9 = document.querySelector('.background__img--9')
+const bg10 = document.querySelector('.background__img--10')
 const bgTerrain = document.querySelector('.background__terrain')
 
 // sons
@@ -54,6 +61,9 @@ soundGame.src = './sound/ambient_bongos.mp3'
 soundGameOver.src = './sound/asking_questions.mp3'
 soundJump.src = './sound/jump2.mp3'
 
+soundMenu.loop = true
+soundGame.loop = true
+soundGameOver.loop = true
 // funções
 const jump = () => {
   if (
@@ -83,6 +93,13 @@ const loop = () => {
   const bg1Position = bg1.offsetLeft
   const bg2Position = bg2.offsetLeft
   const bg3Position = bg3.offsetLeft
+  const bg4Position = bg4.offsetLeft
+  const bg5Position = bg5.offsetLeft
+  const bg6Position = bg6.offsetLeft
+  const bg7Position = bg7.offsetLeft
+  const bg8Position = bg8.offsetLeft
+  const bg9Position = bg9.offsetLeft
+  const bg10Position = bg10.offsetLeft
   const bgTerrainPosition = bgTerrain.offsetLeft
 
   const pipePosition = pipe.offsetLeft + 100
@@ -98,6 +115,20 @@ const loop = () => {
     bg2.style.left = `${bg2Position}px`
     bg3.style.animation = 'none'
     bg3.style.left = `${bg3Position}px`
+    bg4.style.animation = 'none'
+    bg4.style.left = `${bg4Position}px`
+    bg5.style.animation = 'none'
+    bg5.style.left = `${bg5Position}px`
+    bg6.style.animation = 'none'
+    bg6.style.left = `${bg6Position}px`
+    bg7.style.animation = 'none'
+    bg7.style.left = `${bg7Position}px`
+    bg8.style.animation = 'none'
+    bg8.style.left = `${bg8Position}px`
+    bg9.style.animation = 'none'
+    bg9.style.left = `${bg9Position}px`
+    bg10.style.animation = 'none'
+    bg10.style.left = `${bg9Position}px`
     bgTerrain.style.animation = 'none'
     bgTerrain.style.left = `${bgTerrainPosition}px`
 
@@ -187,14 +218,28 @@ const restartGame = () => {
   mario.style.marginLeft = null
 
   //fazendo Paralax parar ao morrer
-  bg1.style.animation = `bg-animation 3s infinite linear`
-  bg1.style.left = `0`
-  bg2.style.animation = `bg-animation 5s infinite linear`
-  bg2.style.left = `0`
-  bg3.style.animation = `bg-animation 7s infinite linear`
-  bg3.style.left = `0`
-  bgTerrain.style.animation = `terrain-animation 4s infinite linear`
-  bgTerrain.style.left = `0`
+  bg1.style.animation = `bg-animation 0s infinite linear`
+  bg1.style.left = `-6px`
+  bg2.style.animation = `bg-animation 6s infinite linear`
+  bg2.style.left = `-6px`
+  bg3.style.animation = `bg-animation 5s infinite linear`
+  bg3.style.left = `-6px`
+  bg4.style.animation = `light-animation 9s infinite linear`
+  bg4.style.left = `500px`
+  bg5.style.animation = `bg-animation 4s infinite linear`
+  bg5.style.left = `-6px`
+  bg6.style.animation = `bg-animation 3s infinite linear`
+  bg6.style.left = `-6px`
+  bg7.style.animation = `light-animation 0s infinite linear`
+  bg7.style.left = `500px`
+  bg8.style.animation = `bg-animation 1.8s infinite linear`
+  bg8.style.left = `-6px`
+  bg9.style.animation = `bg-animation 1.6s infinite linear`
+  bg9.style.left = `-6px`
+  bg10.style.animation = `bg-animation 1.4s infinite linear`
+  bg10.style.left = `-6px`
+  bgTerrain.style.animation = `terrain-animation 1.3s infinite linear`
+  bgTerrain.style.left = `-6px`
 
   pipe.style.right = `-80px`
   pipe.src = './Images/enemy_1.gif'
