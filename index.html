@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
-        <title>Super Mario StartSe</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sources/css/styles.css">
+    <title>Mario Bross - StartSe</title>
+</head>
+
+<body>
+    <div class="container">
         <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
+            <audio autoplay>
+                <source src="sources/audio/smb_stage_clear.mp3" type="audio/mpeg">
+            </audio>
+            <img src="sources/img/clouds-gamer.png" class="cloud-game" alt="imagens de nuvens">
+            <div class="logo">
+                <div class="logo-mario"><img src="sources/img/logo-mario.png" alt=""></div>
+                <div class="play-buttom">
+                    <a href="play.html">
+                        <h3>play</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="pipe-logo"><img src="sources/img/pipe-game.png" alt=""></div>
         </div>
-        <script src="./js/script.js"></script>
-    </body>
+        <div class="static-ground"></div>
+    </div>
+</body>
+
 </html>
