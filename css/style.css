@@ -27,10 +27,6 @@ body{
     z-index: 1;
 }
 
-.title-screen-hidden {
-    visibility: hidden;
-}
-
 .central-box {
     background-color: rgb(255, 102, 0);
     padding: 20px 15px;
@@ -68,6 +64,15 @@ body{
     z-index: 0;
 }
 
+.score{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: black;
+}
 
 .ground-game{
     position: absolute;
@@ -144,6 +149,9 @@ body{
     animation: bgclouds 300s infinite linear;
 }
  
+.element-hidden {
+    visibility: hidden;
+}
 
 
 .animation-stop{
@@ -186,7 +194,7 @@ body{
     }
     to{
         right: 100%;
-    }
+    } 
 }
 
 @keyframes clouds-animation {

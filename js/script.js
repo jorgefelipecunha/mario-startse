@@ -8,15 +8,27 @@ const bgmountain = document.querySelector(".bg-mountain");
 const bgclouds = document.querySelector(".bg-clouds");
 const titlescreen = document.querySelector(".title-screen");
 const button = document.querySelector(".restart-buttom");
+const score = document.querySelector(".score");
+const pontuation = document.querySelector(".pontuation");
+let alive = false;
 
-//TITLE-SCREEN
+
+
+//Title-Screen
 
 const titleopacity = () => {
-  titlescreen.classList.add("title-screen-hidden");
+  titlescreen.classList.add("element-hidden");
   pipe.classList.remove("animation-stop");
+  score.classList.remove("element-hidden");
+  alive = true;
+  return alive
 }
 
+document.addEventListener("keydown", titleopacity); 
 
+
+
+// Jump-Action
 
 const jump = () => {
   mario.classList.add("jump-mario");
@@ -26,7 +38,13 @@ const jump = () => {
   }, 500);
 };
 
+document.addEventListener("keydown", jump);
+
+
+// Death-Action
+
 const loopGame = setInterval(() => {
+  
   const pipePosition = pipe.offsetLeft;
   const marioPosition = +window
     .getComputedStyle(mario)
@@ -43,6 +61,8 @@ const loopGame = setInterval(() => {
     mario.style.width = "75px";
     mario.style.marginLeft = "45px";
 
+    score.classList.add("element-hidden");
+
     clouds.classList.add("animation-stop");
 
     ground.classList.add("animation-stop");
@@ -54,12 +74,40 @@ const loopGame = setInterval(() => {
     bgmountain.classList.add("animation-stop");
 
     bgclouds.classList.add("animation-stop");
-    
+
+    alive = false;
+  
+  
     clearInterval(loopGame);
   }
+
 }, 10);
 
 
+// Points
 
-document.addEventListener("keydown", titleopacity); 
-document.addEventListener("keydown", jump);
+
+let points = 0;
+
+const counter = setInterval (() =>{
+
+  const pipeleftposition = + window.getComputedStyle(pipe).left.replace("px", "");
+  if (pipeleftposition <= 0){
+    points = points + 10;
+  }
+  
+  pontuation.textContent = points;
+}, 100);
+
+
+const interval = setInterval(function() { 
+    if (alive == true) { 
+       points++;
+    }
+    else {
+      return;
+    }
+  }, 500); 
+
+
+
