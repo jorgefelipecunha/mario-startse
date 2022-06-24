@@ -75,9 +75,9 @@ const loopGame = setInterval(() => {
     clearInterval(loopLevel);
     document.querySelector('.points').style.animation = "blink 1.5s infinite";
 
-    // Restart on Gameover with spacebar or arrow up key press
+    // Restart on Gameover with spacebar
     document.addEventListener('keydown', event => {
-      if (event.code === 'Space' || event.code === 'ArrowUp' || event.code === 'Enter') {
+      if (event.code === 'Space') {
         restart();
       }
     })
@@ -89,9 +89,9 @@ function restart(){
   document.location.reload();
 }
 
-// Mario jump's on spacebar or arrow up key press
+// Mario jump's on spacebar
 document.addEventListener('keydown', event => {
-  if (event.code === 'Space' || event.code === 'ArrowUp' || event.code === 'Enter') {
+  if (event.code === 'Space') {
     jump();
   }
 })
