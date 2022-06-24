@@ -166,8 +166,8 @@ var playerScore = 0
 // Atribui à variável bestPoints o valor do recorde armazenado na localStorage ou 0 caso não exista
 let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
 
-bestScore.innerHTML = `Best Score: ${bestPoints}`
-bestScoreSelectPerson.innerHTML = `Best Score: ${bestPoints}`
+bestScore.innerHTML = `Recorde:  ${bestPoints}`
+bestScoreSelectPerson.innerHTML = `Recorde:  ${bestPoints}`
 
 let veloEnemy = 2
 console.log(parseInt(localStorage.getItem('recorde')))
@@ -184,7 +184,7 @@ LockedBtn(bestPoints)
 const scoreCounter = () => {
   if (!gameover) {
     playerScore = parseInt(playerScore + 20 / Math.pow(veloEnemy, -1))
-    score.innerHTML = `Score: ${playerScore}`
+    score.innerHTML = `Pontos:  ${playerScore}`
     pipe.style.animation =
       'pipe-animation ' + `${veloEnemy}` + 's infinite linear'
 
@@ -195,12 +195,11 @@ const scoreCounter = () => {
     // Atualiza a melhor pontuação
     if (playerScore > bestPoints) {
       bestPoints = playerScore
-      bestScore.innerHTML = `Best Score: ${bestPoints}`
-      bestScoreSelectPerson.innerHTML = `Best Score: ${bestPoints}`
+      bestScore.innerHTML = `Recorde:  ${bestPoints}`
+      bestScoreSelectPerson.innerHTML = `Recorde:  ${bestPoints}`
       //adiciona recorde no localStorage
       localStorage.setItem('recorde', bestPoints)
       LockedBtn(bestPoints)
-      console.log(itemsUnlocked)
     }
   }
 }
@@ -236,9 +235,9 @@ const restartGame = () => {
   bg8.style.left = `-6px`
   bg9.style.animation = `bg-animation 1.6s infinite linear`
   bg9.style.left = `-6px`
-  bg10.style.animation = `bg-animation 1.4s infinite linear`
+  bg10.style.animation = `bg-animation 1.3s infinite linear`
   bg10.style.left = `-6px`
-  bgTerrain.style.animation = `terrain-animation 1.3s infinite linear`
+  bgTerrain.style.animation = `terrain-animation 1.4s infinite linear`
   bgTerrain.style.left = `-6px`
 
   pipe.style.right = `-80px`

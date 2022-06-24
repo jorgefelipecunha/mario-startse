@@ -3,34 +3,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: start;
+  padding: 60px 0;
+  gap: 80px;
   width: 1166.66px;
   height: 600px;
   border: 3px solid black;
   margin: 0 auto;
 
-  background-image: url('../../Images/menu.png');
+  background-image: url('../../Images/bg_menu.png');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: -235px center;
 
   overflow: hidden;
 }
 
 .main-menu__person {
   position: absolute;
-  bottom: 80px;
+  bottom: 58px;
   left: 0;
-  width: 250px;
+  width: 70px;
 }
 .main-menu__buttons {
+  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .main-menu__title {
-  color: white;
-  font-size: 3rem;
-  font-weight: 700;
+  color: var(--color-game-title);
+  font-family: var(--font-primary);
+  font-size: 4rem;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 60px;
+}
+
+.main-menu__start {
+  top: 185px;
+  right: -45px;
+}
+
+.main-menu__select-person {
+  top: 155px;
+  right: -295px;
+}
+
+.main-menu__select-scene {
+  top: 155px;
+  right: 125px;
 }

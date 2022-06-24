@@ -23,3 +23,20 @@
   z-index: 150;
   font-weight: 700;
 }
+
+.button--menu {
+  font-family: var(--font-secundary);
+  color: var(--color-text-button);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  position: absolute;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.button--menu:hover {
+  color: var(--color-text-button-hover);
+  font-size: 1.27rem;
+  transform: translate(1px, -1px);
+}
