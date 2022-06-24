@@ -1,7 +1,13 @@
 @font-face {
     font-family: SuperMarioFont;
     src: url(../font/SuperMario256.ttf) format('truetype');
-  }
+}
+
+@font-face {
+    font-family: Upheaval;
+    src: url(../font/upheavtt.ttf) format('truetype');
+}
+
 
 *{
     margin:0;
@@ -65,13 +71,16 @@ body{
 }
 
 .score{
+    font-family: Upheaval;
     position: absolute;
     top: 0;
     right: 0;
     margin: 20px;
+    padding: 10px;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 40px;
     color: black;
+    background-color: rgba(255,255,255, .3);
 }
 
 .ground-game{
@@ -80,6 +89,7 @@ body{
     bottom: 0px;
     z-index: 4;
     animation: ground-animation 1.5s infinite linear;
+    z-index: 0;
 }
 
 
@@ -108,7 +118,6 @@ body{
     position: absolute;
     bottom: -5px;
     height: 350px;
-
     z-index: -1;
     animation: trees-animation 3s infinite linear;
 }
@@ -148,9 +157,50 @@ body{
     z-index: -4;
     animation: bgclouds 300s infinite linear;
 }
- 
+
+.restart{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 0;
+    color: white;
+}
+.restart p {
+    font-family: Upheaval;
+    font-size: 70px;
+    letter-spacing: 4px;
+
+}
+
+.restart input {
+   font-family: Upheaval;
+   margin-top: 10px;
+   color: white;
+   font-size: 50px;
+   background-color: rgb(255, 102, 0);
+   letter-spacing: 3px;
+   border: none;
+}
+
+.restart input:hover{
+    color: green;
+    transition: .5s ease;
+    
+}
+
+.restart .total{
+    color: green;
+}
+
 .element-hidden {
     visibility: hidden;
+    display: none;
 }
 
 

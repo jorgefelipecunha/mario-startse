@@ -10,9 +10,9 @@ const titlescreen = document.querySelector(".title-screen");
 const button = document.querySelector(".restart-buttom");
 const score = document.querySelector(".score");
 const pontuation = document.querySelector(".pontuation");
+const restart = document.querySelector(".restart");
+const total = document.querySelector(".total");
 let alive = false;
-
-
 
 //Title-Screen
 
@@ -21,11 +21,10 @@ const titleopacity = () => {
   pipe.classList.remove("animation-stop");
   score.classList.remove("element-hidden");
   alive = true;
-  return alive
+  document.removeEventListener("keydown", titleopacity);
 }
 
 document.addEventListener("keydown", titleopacity); 
-
 
 
 // Jump-Action
@@ -35,11 +34,10 @@ const jump = () => {
 
   setTimeout(() => {
     mario.classList.remove("jump-mario");
-  }, 500);
+  }, 500); 
 };
 
 document.addEventListener("keydown", jump);
-
 
 // Death-Action
 
@@ -75,9 +73,12 @@ const loopGame = setInterval(() => {
 
     bgclouds.classList.add("animation-stop");
 
+    restart.classList.remove("element-hidden");
+
     alive = false;
-  
-  
+
+    total.textContent = points;
+    
     clearInterval(loopGame);
   }
 
