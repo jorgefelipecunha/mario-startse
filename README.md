@@ -9,6 +9,9 @@
 </div>
 
 ##
+<p align="center">O intuito da aula era a criação de um jogo do Super Mario, e o desafio foi, baseado nos conhecimentos ensinados, elevar o jogo com nossa criatividade e novas funcionalidades. A arte e o tema do jogo original do foram alterados e foram adicionados novos inimigos, sistema de pontuação, tela de Game Over com botão de jogue novamente, efeitos sonoros e música de fundo.</p>
+
+##
 <div align="center">
   <h1>Agradecimentos e Créditos</h1>
   <br>
