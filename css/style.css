@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Rubik+Bubbles&family=Rubik+Microbe&family=Rubik+Puddles&display=swap');
 @import url(./layouts/background.css);
+@import url(./layouts/buttons.css);
 @import url(./layouts/score.css);
 @import url(./layouts/game-over.css);
 @import url(./layouts/main-menu.css);
 @import url(./layouts/select-person.css);
-@import url(./layouts/buttons.css);
 @import url(./layouts/card-person.css);
+@import url(./layouts/select-scene.css);
+@import url(./layouts/card-scene.css);
 
 :root {
   --color-game-title: #27412f;
   --color-text-button: #3f5e44;
   --color-text-button-hover: #70a679;
   --color-text-ui: #70a679;
+  --color-btn: #65ff83;
 
   --font-primary: 'Rubik Bubbles', cursive, sans-serif;
   --font-secundary: 'Rubik Puddles', cursive, sans-serif;

@@ -19,13 +19,16 @@ const sceneGameOver = document.querySelector('.game-over')
 const sceneMenu = document.querySelector('.main-menu')
 const sceneGame = document.querySelector('.game')
 const sceneSelectPerson = document.querySelector('.select-person')
+const sceneSelectScene = document.querySelector('.select-scene')
 
 // botões
 const restart = document.querySelector('.game-over__restart')
 const btnMenu = document.querySelector('.game-over__menu')
 const btnStart = document.querySelector('.main-menu__start')
 const btnSelectPerson = document.querySelector('.main-menu__select-person')
+const btnSelectScene = document.querySelector('.main-menu__select-scene')
 const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
+const btnScene = document.querySelectorAll('.select-scene__back-menu')
 
 var gameover = false
 var runOnceSetInterval = 0
@@ -398,9 +401,20 @@ btnSelectPerson.addEventListener('click', () => {
   soundMenu.play()
 })
 
+btnSelectScene.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneSelectScene)
+  soundMenu.play()
+})
+
 for (let i = 1; i >= 0; i--) {
   btnBackMenu[i].addEventListener('click', () => {
     changeScene(sceneMenu, sceneSelectPerson)
     changeCharacters([i][0], characters[i])
   })
 }
+
+//for (let i = 1; i >= 0; i--) {
+btnScene[0].addEventListener('click', () => {
+  changeScene(sceneMenu, sceneSelectScene)
+})
+//}

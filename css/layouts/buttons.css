@@ -4,11 +4,12 @@
 
   padding: 10px 18px;
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid var(--color-btn);
   border-radius: 20px;
-  color: rgb(0, 0, 0);
+  color: var(--color-btn);
   text-transform: uppercase;
   cursor: pointer;
+  font-family: var(--font-secundary);
 }
 
 .button--small {
@@ -39,4 +40,8 @@
   color: var(--color-text-button-hover);
   font-size: 1.27rem;
   transform: translate(1px, -1px);
+}
+
+.button--ui {
+  font-family: var(--font-ui);
 }
