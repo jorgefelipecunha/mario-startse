@@ -16,7 +16,6 @@ const total = document.querySelector(".total");
 const jumpSong = document.querySelector(".jump-song");
 const maintheme = document.querySelector(".main-theme");
 const gameover = document.querySelector(".game-over");
-const gameover2 = document.querySelector("game-over2");
 let alive = false;
 
 //Title-Screen
