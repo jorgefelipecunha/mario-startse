@@ -1,5 +1,5 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -7,72 +7,290 @@
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
+.witch {
+    height: 256px;
+    width: 256px;
     position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    bottom:0;
+    margin-bottom: 90px;
+    margin-left: 150px; 
 }
 
-.super-mario{
-    width:150px;
+.pumpkin {
+    width: 500px;
     position: absolute;
-    bottom: 0;
+    bottom:0;
+    margin-bottom: 90px;
+    transform: scaleX(-1);
+    animation: enemie-pumpkin 4s infinite linear;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
-}
-
-.cloud-game{
-    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
-}
-
-@keyframes pipe-animation {
+@keyframes enemie-pumpkin {
     from {
-        right: -80px;
+        right: -500px;
     }
-    to{
+    to {
         right: 100%;
     }
 }
 
-@keyframes clouds-animation {
-    from{
-        right: -550px;
+.thorn {
+    width: 300px;
+    position: absolute;
+    bottom:0;
+    margin-bottom: 65px;
+    right: -350px;
+    animation: enemie-thorn 5s infinite linear;
+}
+
+@keyframes enemie-thorn {
+    from {
+        right: -350px;
     }
-    to{
-        right:  100%;
+    to {
+        right: 100%;
     }
 }
 
-@keyframes mario-animation{
-    0% {
-        bottom:0;
-    }
-    40% {
-        bottom: 180px;
-    }
-    50% {
-        bottom: 180px;
-    }
-    60%{
-        bottom: 180px;
-    }
-    70%{
-        bottom: 180px;
-    }
-    100%{
-        bottom: 0%
-    }
+.pulo {
+    animation: pulo-animacao 700ms ease-out; 
+ }
 
+#layer0 {
+    background: url('../assets/img/BackgroundLayers/Layer_0.png');
+    background-repeat: repeat-x;
+    background-size:contain;    
+    height: 1300px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -5px;  
+    animation: layer0 2s infinite linear;
+    overflow: hidden;    
+}
+
+@keyframes layer0 {
+    from {
+        background-position: 2000px;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#layer1 {
+    background: url('../assets/img/BackgroundLayers/Layer_1.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 1300px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;  
+    animation: layer1 5s infinite linear;
+    overflow: hidden;
+    
+}
+
+@keyframes layer1 {
+    from {
+        background-position: 2000px;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#layer2 {
+    background: url('../assets/img/BackgroundLayers/Layer_2.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 1300px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;  
+    animation: layer2 15s infinite linear;
+    overflow: hidden;    
+}
+
+@keyframes layer2 {
+    from {
+        background-position: 2000px;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#layer3 {
+    background: url('../assets/img/BackgroundLayers/Layer_3.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 1300px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;  
+    animation: layer3 15s infinite linear;
+    overflow: hidden;
+}
+
+#layer3-luz{
+    position: absolute;
+    bottom:0;
+    margin-bottom: 250px;
+}
+
+#layer5-luz{
+    position: absolute;
+    bottom:0;
+    margin-bottom: 250px;
+}
+
+@keyframes layer3{
+    from {
+        background-position: 2000px;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#layer4 {
+    background: url('../assets/img/BackgroundLayers/Layer_4.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 1300px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;  
+    animation: layer4 30s infinite linear;
+    overflow: hidden;
+}
+
+@keyframes layer4 {
+    from {
+        background-position: 2000px;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#layer5 {
+    background: url('../assets/img/BackgroundLayers/Layer_5.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 1300px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;  
+    animation: layer5 50s infinite linear;
+    overflow: hidden;
+}
+
+@keyframes layer5 {
+    from {
+        background-position: 2000px;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#layer6 {
+    background: url('../assets/img/BackgroundLayers/Layer_6.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 1300px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0;  
+    animation: layer6 80s infinite linear;
+    overflow: hidden;
+    opacity: 50%;
+}
+
+@keyframes layer6 {
+    from {
+        background-position: 2000px;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#layer-gradiente {
+    height: 700px;
+    width: 1920px;
+    position: absolute;
+    bottom: 0%;
+}
+
+@keyframes pulo-animacao {
+    0% {bottom:0}
+    40% {bottom: 350px;}
+    50% {bottom: 350px;}
+    60% {bottom: 380px;}
+    70% {bottom: 380px;}
+    80% {bottom: 350px;}
+    90% {bottom: 250px;}
+    100% {bottom: 0}
+}
+
+audio {
+    margin: 30px;
+    color: darkslategray;
+}
+
+.game-over {
+    display: none;
+    text-align: center;
+    margin-top: 150px;
+    background-color: transparent;
+    position: relative;
+    animation: game-over 3s infinite linear;
+}
+
+@keyframes game-over {
+    0% {bottom:30px}
+    50% {bottom: 0}
+    100% {bottom: 30px}
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 100px;
+    color: rgb(209, 65, 99);
+}
+
+button {
+    background-color: rgb(105, 129, 100);
+    border: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: medium;
+    color: rgb(219, 237, 219);
+    cursor: pointer;
+}
+
+#score {
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    position:relative;
+    
+    color:rgb(219, 237, 219);
+    font-size: 30px;
+    background-color: rgb(105, 129, 100);
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
 }

@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
-        <title>Super Mario StartSe</title>
-    </head>
-    <body>
-        <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witch In The Woods</title>
+    <link rel="icon" href="assets/img/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="game">
+        
+        <div id="layer-gradiente">
+            <img src="assets/img/BackgroundLayers/backgroudgradiente.png">    
         </div>
-        <script src="./js/script.js"></script>
-    </body>
+
+        <div id="layer6"></div>
+        
+        <div id="layer5"></div>
+        
+        <div id="layer5-luz">
+            <img class="layer3-luz" src="assets/img/BackgroundLayers/Layer_5_Lights.png">
+            <img class="layer3-luz" src="assets/img/BackgroundLayers/Layer_5_Lights.png">
+        </div>
+        
+        <div id="layer4"></div>
+
+        <div id="layer3-luz">
+            <img class="layer3-luz" src="assets/img/BackgroundLayers/Layer_3_Lights.png">
+            <img class="layer3-luz" src="assets/img/BackgroundLayers/Layer_3_Lights.png">
+        </div>
+
+        <div id="layer3"></div>
+        
+        <div id="layer2"></div>
+        
+        <div id="layer1"></div>
+        
+        <div id="witch-container">
+            <img class="witch" src="assets/img/Witch/witch1.gif"> 
+        </div>
+        
+        <div id="enemie-container">
+            <img class="pumpkin" src="assets/img/Enemies/pumpkin.gif">
+            <img class="thorn" src="assets/img/Enemies/thorns.png">
+        </div>
+        
+        <div id="layer0"></div>
+
+        <div id="score">
+            <h3 class="score"><h3></h3>
+        </div>
+
+        <div class="game-over">
+            <h1>GAME OVER</h1>
+            <button type="reset" onclick="window.location.reload()">Tentar de Novo</button>
+        </div>
+
+        <audio src="assets/Sound/The-Lone-Wolf.mp3" type="audio/mp3" autoplay loop></audio>
+    </div>  
+    <script src="js/script.js"></script>
+</body>
 </html>
