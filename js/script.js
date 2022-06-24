@@ -1,10 +1,10 @@
 const gameEnd = document.querySelector(".restart");
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
-const marioJump = new Audio('../sounds/jump-small.mp3');
-const gameOver = new Audio('../sounds/gameover.mp3');
-const marioGame = new Audio('../sounds/mario-game.mp3');
-const levelUp = new Audio('../sounds/level-up.mp3');
+const marioJump = new Audio('./sounds/jump-small.mp3');
+const gameOver = new Audio('./sounds/gameover.mp3');
+const marioGame = new Audio('./sounds/mario-game.mp3');
+const levelUp = new Audio('./sounds/level-up.mp3');
 
 
 let level = 1; //level pontuation
@@ -46,7 +46,7 @@ const loopLevel = setInterval(function () {
     levelUp.play();
     document.querySelector('.points').style.animation = "blink 0.5s 6"; // blinks score when increase level
   }
-},5000);
+},10000);
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
@@ -54,7 +54,6 @@ const loopGame = setInterval(() => {
 
   ++score;
   document.getElementById('totalScore').innerHTML = ('00000' + (score / 10).toFixed(0)).slice(-5);
-  console.log(pipePosition+'px');
 
   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
     gameOver.play(); // play game over
@@ -75,6 +74,13 @@ const loopGame = setInterval(() => {
     clearInterval(loopGame);
     clearInterval(loopLevel);
     document.querySelector('.points').style.animation = "blink 1.5s infinite";
+
+    // Restart on Gameover with spacebar or arrow up key press
+    document.addEventListener('keydown', event => {
+      if (event.code === 'Space' || event.code === 'ArrowUp' || event.code === 'Enter') {
+        restart();
+      }
+    })
   }
 }, 10);
 
@@ -83,9 +89,9 @@ function restart(){
   document.location.reload();
 }
 
-// Mario jump's on spacebar ou arrow up key press
+// Mario jump's on spacebar or arrow up key press
 document.addEventListener('keydown', event => {
-  if (event.code === 'Space' || event.code === 'ArrowUp') {
+  if (event.code === 'Space' || event.code === 'ArrowUp' || event.code === 'Enter') {
     jump();
   }
 })
