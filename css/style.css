@@ -8,12 +8,12 @@
     src: url(../font/upheavtt.ttf) format('truetype');
 }
 
-
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     max-width: 100%;
     overflow-x: hidden;
@@ -49,13 +49,14 @@ body{
 }
 
 .central-box h2 {
-    font-size: 30px;
+    font-family: Upheaval;
+    font-size: 25px;
+    font-weight: 100;
+    letter-spacing: 3px;
     color: white;
     margin-top: 10px;
     animation: key-animation 2s infinite; 
 }
-
-
 
 /* Game */
 
@@ -92,7 +93,6 @@ body{
     z-index: 0;
 }
 
-
 .pipe-game {
     position: absolute;
     bottom: 0;
@@ -101,17 +101,19 @@ body{
     z-index: -1;
 }
 
-
 .super-mario{
     width:150px;
     position: absolute;
     bottom: 0;
     z-index: -1;
-
 }
 
 .jump-mario {
     animation: mario-animation 500ms ease-out;
+}
+
+.mario-game-over{
+    animation: mariogameover 2s  forwards;
 }
 
 .trees{
@@ -124,7 +126,7 @@ body{
 
 .mountain-game{
     position: absolute;
-    top: 200px;
+    bottom: -350px;
     width: 5612px;
     height: 1000px;
     z-index: -2;
@@ -133,10 +135,10 @@ body{
 
 .cloud-game{
     position: absolute;
-    top: -90px;
+    bottom: 480px;
     width: 900px;
     height: 450px;
-    animation: clouds-animation 26s infinite linear;  
+    animation: clouds-animation 23s infinite linear;  
     z-index: -1;
 }
 
@@ -151,12 +153,15 @@ body{
 
 .bg-clouds {
     position: absolute;
-    top: 30px;
+    bottom: 200px;
     width: 4597px;
     height: 582px;
     z-index: -4;
     animation: bgclouds 300s infinite linear;
 }
+
+
+/* Restart */
 
 .restart{
     width: 100%;
@@ -171,11 +176,11 @@ body{
     padding: 0;
     color: white;
 }
+
 .restart p {
     font-family: Upheaval;
     font-size: 70px;
     letter-spacing: 4px;
-
 }
 
 .restart input {
@@ -189,14 +194,16 @@ body{
 }
 
 .restart input:hover{
-    color: green;
+    color: rgb(75, 15, 15);
     transition: .5s ease;
     
 }
 
 .restart .total{
-    color: green;
+    color: rgb(75, 15, 15);
 }
+
+/*General Effects*/
 
 .element-hidden {
     visibility: hidden;
@@ -209,6 +216,7 @@ body{
 } 
 
 
+/*Keyframes */
 
 @keyframes key-animation {
     0% {
@@ -303,5 +311,18 @@ body{
     100%{
         bottom: 0%
     }
+}
 
+@keyframes mariogameover{
+    0% {
+        bottom: 0px;
+    }
+
+    20%{
+        bottom: 40px;
+    }
+
+    100% {
+        bottom: -350px;
+    }
 }

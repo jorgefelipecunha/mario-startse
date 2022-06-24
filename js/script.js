@@ -4,6 +4,7 @@ const clouds = document.querySelector(".cloud-game");
 const ground = document.querySelector(".ground-game");
 const trees = document.querySelector(".trees");
 const mountain = document.querySelector(".mountain-game");
+const mariogameover= document.querySelector(".mario-game-over");
 const bgmountain = document.querySelector(".bg-mountain");
 const bgclouds = document.querySelector(".bg-clouds");
 const titlescreen = document.querySelector(".title-screen");
@@ -12,6 +13,10 @@ const score = document.querySelector(".score");
 const pontuation = document.querySelector(".pontuation");
 const restart = document.querySelector(".restart");
 const total = document.querySelector(".total");
+const jumpSong = document.querySelector(".jump-song");
+const maintheme = document.querySelector(".main-theme");
+const gameover = document.querySelector(".game-over");
+const gameover2 = document.querySelector("game-over2");
 let alive = false;
 
 //Title-Screen
@@ -22,6 +27,7 @@ const titleopacity = () => {
   score.classList.remove("element-hidden");
   alive = true;
   document.removeEventListener("keydown", titleopacity);
+  maintheme.play();
 }
 
 document.addEventListener("keydown", titleopacity); 
@@ -35,6 +41,8 @@ const jump = () => {
   setTimeout(() => {
     mario.classList.remove("jump-mario");
   }, 500); 
+
+  jumpSong.play();
 };
 
 document.addEventListener("keydown", jump);
@@ -52,12 +60,14 @@ const loopGame = setInterval(() => {
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
 
-    mario.style.animation = "none";
+   
     mario.style.bottom = `${marioPosition}px`;
 
     mario.src = "./Images/mario-game-over.png";
     mario.style.width = "75px";
     mario.style.marginLeft = "45px";
+
+    mario.classList.add("mario-game-over");
 
     score.classList.add("element-hidden");
 
@@ -78,7 +88,13 @@ const loopGame = setInterval(() => {
     alive = false;
 
     total.textContent = points;
-    
+
+    jumpSong.src = "none";
+
+    maintheme.src="none";
+
+    gameover.play();
+
     clearInterval(loopGame);
   }
 
@@ -110,5 +126,6 @@ const interval = setInterval(function() {
     }
   }, 500); 
 
+  
 
 
