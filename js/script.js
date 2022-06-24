@@ -34,20 +34,6 @@ const jump = () => {
   }, 600);
 };
 
-let velocity = 2.3; //initial animation duration for pipe
-
-// Increase level each 10seconds
-const loopLevel = setInterval(function () {
-  ++level;
-  document.getElementById('levelScore').innerHTML = level; //shows current level
-  if (velocity > 0) {
-    velocity = velocity - 0.2;
-    pipe.style.animation = "pipe-animation "+`${velocity}`+"s infinite linear" //sets new velocity for pipe animation
-    levelUp.play();
-    document.querySelector('.points').style.animation = "blink 0.5s 6"; // blinks score when increase level
-  }
-},10000);
-
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
   const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
@@ -73,6 +59,7 @@ const loopGame = setInterval(() => {
 
     clearInterval(loopGame);
     clearInterval(loopLevel);
+
     document.querySelector('.points').style.animation = "blink 1.5s infinite";
 
     // Restart on Gameover with spacebar
@@ -84,14 +71,32 @@ const loopGame = setInterval(() => {
   }
 }, 10);
 
+// Level UP 
+let velocity = 2.2; //initial animation duration for pipe
+const loopLevel = setInterval(function () {
+
+  ++level; // increase 1 level each loop
+  document.getElementById('levelScore').innerHTML = level; //shows current level
+  levelUp.play(); //play level up
+  pipe.style.animation = "pipe-animation " + `${velocity}` + "s infinite linear" //sets new velocity for pipe animation
+
+  if (velocity >= 0.8) { //level up to 10 then stops increase
+    velocity = velocity - 0.2;
+    document.querySelector('.points').style.animation = "blink 0.5s 4"; // blinks score when increase level
+  } else {
+    clearInterval(loopLevel);
+    document.getElementById('levelScore').innerHTML = "OMG";
+  }
+},10000); //Increase level each 10seconds
+
 // Reload the page and restart game
 function restart(){
   document.location.reload();
 }
 
-// Mario jump's on spacebar
+// Mario jump's on spacebar or arrowup
 document.addEventListener('keydown', event => {
-  if (event.code === 'Space') {
+  if (event.code === 'Space' || event.code === 'ArrowUp') {
     jump();
   }
 })

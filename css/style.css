@@ -115,7 +115,7 @@
     width: 80px;
     animation: pipe-animation infinite linear;
     animation-delay: 1.5s;
-    animation-duration: 2.3s;
+    animation-duration: 2.2s;
 }
 
 .super-mario{
@@ -209,5 +209,4 @@
     50% { color: #FFF; }
     51% { color: #ffdd00 }
     100% { color: #ffdd00 }
-
 }
