@@ -8,23 +8,16 @@
   border: 3px solid black;
   margin: 0 auto;
 
-  background-image: url('/Images/scene1/background/day/bg_4.png');
+  background-image: url('/Images/background/bg_florest.png');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: -228px center;
   background-size: cover;
 
   position: relative;
 }
 
-.select-person__title {
-  color: rgb(0, 0, 0);
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .select-person_best__score {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: -55px;
+  top: 33px;
 }

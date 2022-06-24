@@ -2,7 +2,7 @@
   max-width: 150px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -10,9 +10,11 @@
   font-size: 0.8rem;
   font-weight: 700;
   margin: 0 auto;
-  padding: 20px 0px;
-  background-color: gray;
-  border: 3px solid black;
+  padding: 0;
+  background-color: var(--color-game-title);
+
+  background: linear-gradient(90deg, #0d4b17 0%, #349e46 100%);
+  border: 1px solid black;
   border-radius: 30px;
   position: relative;
 }
@@ -38,5 +40,5 @@
 
 .person__img {
   width: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
