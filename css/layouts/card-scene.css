@@ -69,15 +69,6 @@
   display: flex;
 }
 
-.select-scene__scene:nth-child(1):hover ~ .select-scene__scene:nth-child(2),
-.select-scene__scene:nth-child(1):hover ~ .select-scene__scene:nth-child(3),
-.select-scene__scene:nth-child(1):hover ~ .select-scene__scene:nth-child(4),
-.select-scene__scene:nth-child(1):hover ~ .select-scene__scene:nth-child(5),
-.select-scene__scene:nth-child(1):hover ~ .select-scene__scene:nth-child(6),
-.select-scene__scene:nth-child(1):hover ~ .select-scene__scene:nth-child(7) {
-  opacity: 0.1;
-}
-
 .scene__info {
   width: 100%;
   height: 100%;

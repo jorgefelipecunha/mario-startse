@@ -29,6 +29,7 @@ const btnSelectPerson = document.querySelector('.main-menu__select-person')
 const btnSelectScene = document.querySelector('.main-menu__select-scene')
 const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
 const btnScene = document.querySelectorAll('.select-scene__back-menu')
+const sceneUnlocked = [true, true, false, false, false, false]
 
 var gameover = false
 var runOnceSetInterval = 0
@@ -299,7 +300,7 @@ const restartGame = () => {
   bg8.style.left = `-6px`
   bg9.style.animation = `bg-animation 1.6s infinite linear`
   bg9.style.left = `-6px`
-  bg10.style.animation = `bg-animation 1.3s infinite linear`
+  bg10.style.animation = `bg-animation 1.1s infinite linear`
   bg10.style.left = `-6px`
   bgTerrain.style.animation = `terrain-animation 1.4s infinite linear`
   bgTerrain.style.left = `-6px`
@@ -474,8 +475,27 @@ for (let i = 1; i >= 0; i--) {
   })
 }
 
-//for (let i = 1; i >= 0; i--) {
-btnScene[0].addEventListener('click', () => {
-  changeScene(sceneMenu, sceneSelectScene)
-})
-//}
+console.log(btnScene.length)
+
+for (let i = 0; i < btnScene.length; i++) {
+  if (sceneUnlocked[i]) {
+    btnScene[i].addEventListener('click', () => {
+      changeScene(sceneMenu, sceneSelectScene)
+    })
+  }
+}
+
+//Evento e logica dos hovers do card da seção de seleção de cenas
+for (let i = 0; i < btnScene.length; i++) {
+  btnScene[i].addEventListener('mouseenter', () => {
+    for (let j = 0; j < btnScene.length; j++) {
+      btnScene[j].style.opacity = 0.2
+    }
+    btnScene[i].style.opacity = 1
+  })
+  btnScene[i].addEventListener('mouseleave', () => {
+    for (let j = 0; j < btnScene.length; j++) {
+      btnScene[j].style.opacity = 1
+    }
+  })
+}
