@@ -18,7 +18,7 @@
   left: 0;
   background-image: url('/Images/background/bg_florest.png');
   background-repeat: no-repeat;
-  background-position: -228px center;
-  background-size: cover;
+  background-position: center;
+
   z-index: -1;
 }

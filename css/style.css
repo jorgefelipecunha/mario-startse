@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Rubik+Bubbles&family=Rubik+Microbe&family=Rubik+Puddles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Rubik+Bubbles&family=Rubik+Microbe&family=Rubik+Puddles&family=Uncial+Antiqua&display=swap');
 @import url(./layouts/background.css);
 @import url(./layouts/buttons.css);
 @import url(./layouts/score.css);
@@ -20,6 +20,7 @@
   --font-secundary: 'Rubik Puddles', cursive, sans-serif;
   --font-alternative: 'Rubik Microbe', cursive, sans-serif;
   --font-ui: 'Emilys Candy', cursive, sans-serif;
+  --font-open-scene: 'Uncial Antiqua', cursive, sans-serif;
 }
 
 * {

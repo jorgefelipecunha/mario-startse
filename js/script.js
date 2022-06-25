@@ -17,6 +17,7 @@ const bestScoreSelectPerson = document.querySelector(
 // cenas
 const sceneGameOver = document.querySelector('.game-over')
 const sceneMenu = document.querySelector('.main-menu')
+const sceneOpen = document.querySelector('.main-menu__open-scene')
 const sceneGame = document.querySelector('.game')
 const sceneSelectPerson = document.querySelector('.select-person')
 const sceneSelectScene = document.querySelector('.select-scene')
@@ -29,7 +30,7 @@ const btnSelectPerson = document.querySelector('.main-menu__select-person')
 const btnSelectScene = document.querySelector('.main-menu__select-scene')
 const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
 const btnScene = document.querySelectorAll('.select-scene__back-menu')
-const sceneUnlocked = [true, true, false, false, false, false]
+const sceneUnlocked = [true, true, true, true, true, false]
 
 var gameover = false
 var runOnceSetInterval = 0
@@ -69,6 +70,12 @@ soundJump.src = './sound/jump2.mp3'
 soundMenu.loop = true
 soundGame.loop = true
 soundGameOver.loop = true
+
+// Desativa a cena de abertura depois de 6s que o site foi aberto
+setTimeout(() => {
+  sceneOpen.style.display = 'none'
+}, 6500)
+
 // funções
 const jump = () => {
   if (
@@ -475,11 +482,39 @@ for (let i = 1; i >= 0; i--) {
   })
 }
 
-console.log(btnScene.length)
+function chanceBgMenu(index) {
+  switch (index) {
+    case 0:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_florest.png')"
+      break
+    case 1:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_cyberpunk.png')"
+      break
+    case 2:
+      sceneMenu.style.background = "url('../../Images/background/bg_farm.png')"
+      break
+    case 3:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_desert.png')"
+
+      break
+    case 4:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_industry.png')"
+      break
+    case 5:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_halloween.png')"
+      break
+  }
+}
 
 for (let i = 0; i < btnScene.length; i++) {
   if (sceneUnlocked[i]) {
     btnScene[i].addEventListener('click', () => {
+      chanceBgMenu(i)
       changeScene(sceneMenu, sceneSelectScene)
     })
   }
@@ -489,13 +524,17 @@ for (let i = 0; i < btnScene.length; i++) {
 for (let i = 0; i < btnScene.length; i++) {
   btnScene[i].addEventListener('mouseenter', () => {
     for (let j = 0; j < btnScene.length; j++) {
-      btnScene[j].style.opacity = 0.2
+      //animation: title-open-scene 4s ease-in-out forwards 1s;
+      if (j != i) {
+        btnScene[j].style.animation = 'card-hover 0.8s ease-in-out forwards'
+      }
     }
-    btnScene[i].style.opacity = 1
   })
   btnScene[i].addEventListener('mouseleave', () => {
     for (let j = 0; j < btnScene.length; j++) {
-      btnScene[j].style.opacity = 1
+      if (j != i) {
+        btnScene[j].style.animation = 'card-hover-out 0.4s ease-in-out forwards'
+      }
     }
   })
 }

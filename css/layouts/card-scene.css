@@ -38,27 +38,33 @@
 }
 
 .select-scene__scene:nth-child(1):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in-out forwards;
   background-image: url('/Images/background/bg_florest.png');
 }
 
 .select-scene__scene:nth-child(2):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in-out forwards;
   background-image: url('/Images/background/bg_cyberpunk.png');
 }
 
 .select-scene__scene:nth-child(3):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in-out forwards;
   background-image: url('/Images/background/bg_farm.png');
 }
 
 .select-scene__scene:nth-child(4):hover ~ .select-scene_background {
-  background-image: url('/Images/background/bg_halloween.png');
+  animation: bg-scene-in 0.5s ease-in-out forwards;
+  background-image: url('/Images/background/bg_desert.png');
 }
 
 .select-scene__scene:nth-child(5):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in-out forwards;
   background-image: url('/Images/background/bg_industry.png');
 }
 
 .select-scene__scene:nth-child(6):hover ~ .select-scene_background {
-  background-image: url('/Images/background/bg_desert.png');
+  animation: bg-scene-in 0.5s ease-in-out forwards;
+  background-image: url('/Images/background/bg_halloween.png');
 }
 
 .select-scene__scene:hover {
@@ -99,4 +105,31 @@
   color: var(--color-game-title);
   opacity: 1;
   z-index: 50;
+}
+
+@keyframes card-hover {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+@keyframes card-hover-out {
+  0% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bg-scene-in {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
