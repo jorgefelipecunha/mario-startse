@@ -34,6 +34,7 @@ var gameover = false
 var runOnceSetInterval = 0
 var itemsUnlocked = [true, true, false, false, false, false, false, false]
 var pulo = false
+const messageUnlocked = document.querySelector('.game_message-unlocked')
 
 let characters = document.querySelectorAll('.person__img')
 const personMenu = document.querySelector('.main-menu__person')
@@ -197,6 +198,7 @@ const scoreCounter = () => {
     soundGameOver.pause()
     // Atualiza a melhor pontuação
     if (playerScore > bestPoints) {
+      printMensagemitemUnlocked(itemsUnlocked, playerScore, messageUnlocked)
       bestPoints = playerScore
       bestScore.innerHTML = `Recorde:  ${bestPoints}`
       bestScoreSelectPerson.innerHTML = `Recorde:  ${bestPoints}`
@@ -204,6 +206,65 @@ const scoreCounter = () => {
       localStorage.setItem('recorde', bestPoints)
       LockedBtn(bestPoints)
     }
+  }
+}
+
+// função responsável pela exibição da mensagem de skin liberada
+function printMensagemitemUnlocked(
+  itemsUnlockedMessage,
+  bestPointsMessage,
+  messageUnlockedDiv
+) {
+  if (bestPointsMessage >= 10000 && itemsUnlockedMessage[3] === false) {
+    console.log('entrou if')
+    messageUnlockedDiv.innerHTML = `nova skin desbloqueada! <br />
+    10000 pontos`
+
+    messageUnlockedDiv.style.animation = `message-unlocked 4s ease-out forwards`
+
+    setTimeout(() => {
+      messageUnlockedDiv.style.animation = `none`
+    }, 4000)
+  }
+
+  if (bestPointsMessage >= 15000 && itemsUnlockedMessage[4] === false) {
+    messageUnlockedDiv.innerHTML = `nova skin desbloqueada! <br />
+    15000 pontos`
+
+    messageUnlockedDiv.style.animation = `message-unlocked 4s ease-out forwards`
+    setTimeout(() => {
+      messageUnlockedDiv.style.animation = `none`
+    }, 4000)
+  }
+
+  if (bestPointsMessage >= 25000 && itemsUnlockedMessage[5] === false) {
+    messageUnlockedDiv.innerHTML = `nova skin desbloqueada! <br />
+    25000 pontos`
+
+    messageUnlockedDiv.style.animation = `message-unlocked 4s ease-out forwards`
+    setTimeout(() => {
+      messageUnlockedDiv.style.animation = `none`
+    }, 4000)
+  }
+
+  if (bestPointsMessage >= 50000 && itemsUnlockedMessage[6] === false) {
+    messageUnlockedDiv.innerHTML = `nova skin desbloqueada! <br />
+    50000 pontos`
+
+    messageUnlockedDiv.style.animation = `message-unlocked 4s ease-out forwards`
+    setTimeout(() => {
+      messageUnlockedDiv.style.animation = `none`
+    }, 4000)
+  }
+
+  if (bestPointsMessage >= 100000 && itemsUnlockedMessage[7] === false) {
+    messageUnlockedDiv.innerHTML = `nova skin desbloqueada! <br />
+    100000 pontos`
+
+    messageUnlockedDiv.style.animation = `message-unlocked 4s ease-out forwards`
+    setTimeout(() => {
+      messageUnlockedDiv.style.animation = `none`
+    }, 4000)
   }
 }
 

@@ -82,6 +82,23 @@ body {
   cursor: pointer;
 }
 
+.game_message-unlocked {
+  position: absolute;
+  top: -80px;
+  right: 40%;
+  z-index: 500;
+  background: linear-gradient(90deg, #051f11 0%, #133b1a 90%);
+  padding: 12px 17px;
+
+  border-radius: 8px;
+  color: var(--color-btn);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
 @keyframes pipe-animation {
   from {
     right: -80px;
@@ -113,5 +130,28 @@ body {
   }
   100% {
     bottom: 90px;
+  }
+}
+
+@keyframes message-unlocked {
+  0% {
+    opacity: 1;
+    top: -80px;
+  }
+
+  10% {
+    top: 35px;
+  }
+  90% {
+    top: 35px;
+    opacity: 1;
+  }
+  99% {
+    top: 35px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -80px;
   }
 }
