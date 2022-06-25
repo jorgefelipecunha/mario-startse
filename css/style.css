@@ -1,5 +1,5 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -7,7 +7,7 @@
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    border-bottom: 100px solid rgb(24, 174, 24);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -21,8 +21,8 @@
     animation: pipe-animation 1.5s infinite linear;
 }
 
-.super-mario{
-    width:150px;
+.super-mario {
+    width: 150px;
     position: absolute;
     bottom: 0;
 }
@@ -31,47 +31,72 @@
     animation: mario-animation 500ms ease-out;
 }
 
-.cloud-game{
+.cloud-game {
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
+}
+
+.score-container {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    font-size: 22px;
+    border: 2px dashed azure;
+    border-radius: 50px;
+    color: yellow;
+
+
+}
+
+.score {
+    font-size: 28px;
+    color: blue;
+    font-weight: 900;
 }
 
 @keyframes pipe-animation {
     from {
         right: -80px;
     }
-    to{
+
+    to {
         right: 100%;
     }
 }
 
 @keyframes clouds-animation {
-    from{
+    from {
         right: -550px;
     }
-    to{
-        right:  100%;
+
+    to {
+        right: 100%;
     }
 }
 
-@keyframes mario-animation{
+@keyframes mario-animation {
     0% {
-        bottom:0;
+        bottom: 0;
     }
+
     40% {
         bottom: 180px;
     }
+
     50% {
         bottom: 180px;
     }
-    60%{
+
+    60% {
         bottom: 180px;
     }
-    70%{
+
+    70% {
         bottom: 180px;
     }
-    100%{
+
+    100% {
         bottom: 0%
     }
 

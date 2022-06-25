@@ -1,5 +1,6 @@
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
+const score = document.querySelector('.score');
 
 const jump = () => {
   mario.classList.add("jump-mario");
@@ -8,6 +9,9 @@ const jump = () => {
     mario.classList.remove("jump-mario");
   }, 500);
 };
+
+let scoreValue = 0;
+let counter = true;
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
@@ -27,6 +31,17 @@ const loopGame = setInterval(() => {
     mario.style.marginLeft = "45px";
 
     clearInterval(loopGame);
+  }
+  else if (pipePosition - marioPosition <= -120 && counter) {
+    scoreValue += 10;
+    score.textContent = scoreValue;
+    counter = false;
+  }
+  else if (pipePosition - marioPosition > 0) {
+    counter = true;
+  }
+  else {
+
   }
 }, 10);
 
