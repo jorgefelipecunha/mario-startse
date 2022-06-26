@@ -1,78 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
+}
 *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  background-color: black;
+
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  flex-direction: column;
+}
+
+.boardContainer{
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.endMenu{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.692);
+  display: none;
+}
+
+.endButtons{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 999;
+}
+
+.gameOverContainer
+{
+  display: flex;
+  flex-direction: column;
+  color: yellow;
+  width: 300px;
+  text-align: center;
+  height: 150px;
+  background-color: rgba(19, 19, 18, 0.8);
+  justify-content: center;
+  border: 4px dashed yellow;
+  border-radius: 8px;
+  font-family: 'PressStart2P';
+  font-size: small;
+}
+.gameOverContainer h1{
+  text-shadow: 5px 5px 8px black;
+}
+
+.buttonsFinal
+{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.buttonsMenu{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-left: 10px;
+  margin-top: 15px;
+  font-size: x-large;
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: black;
+  }
+.buttonsMenu i{
+  color: yellow;
+}
+.buttonsMenu:hover{
+  box-shadow: 1px 1px 1px yellow;
+}
+
+.darthFinal{
+  position: relative;
+  right: -35px;
+  top: -10px;
+}
+
+#pointScore{
+  position: absolute;
+  color: yellow;
+  top: 30px;
+  right: 50px;
+  z-index: 99999;
+  font-family: 'PressStart2P';
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 .game {
-    width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+  width: 100%;
+  align-self: flex-end;
+  height: 92vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  background-image: url(../resources/stars.gif);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  animation: animate 20s linear infinite;
+}
+.plataform {
+  width: 100%;
+  height: 7vh;
+  background-image: url(../resources/texturaplataforma.png);
+  background-repeat: repeat-x;
+  margin: 0 auto;
+  max-width: 1198px;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  animation: animate 350s linear infinite;
+}
+.plataformMove
+{
+  height: 1vh;
+  background: rgb(0,2,11);
+  background-image: url(../resources/texturaplataforma.png);
 }
 
-.pipe-game {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+.hiddenElementsGameOver{
+  display: none;
 }
 
-.super-mario{
-    width:150px;
-    position: absolute;
-    bottom: 0;
+.enemy {
+  position: absolute;
+  bottom: 0px;
+  width: 80px;
+  animation: enemy-animation 2s infinite linear;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.yoda{
+  width:150px;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 50px;
+}
+.yodaDead
+{
+  width: 120px;
 }
 
-.cloud-game{
-    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+.jump-yoda {
+  animation: yoda-animation 500ms ease-out;
 }
 
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-    to{
-        right: 100%;
-    }
+.bgAnimated{
+  position: absolute;
+  width: 550px;
+  animation: stars-animation 10s infinite linear;
+}
+#nave{
+  width: 200px;
+  z-index: 10;
+  margin-top: 100px;
+  position: absolute;
+  animation: stars-animation 23s infinite linear;
+}
+#nave2{
+  width: 120px;
+  opacity: 0.9;
+  margin-top: 200px;
+ }
+
+#starDeath{
+  width: 180px;
+  opacity: 0.9;
+  animation: stars-animation 60s infinite linear;
 }
 
-@keyframes clouds-animation {
-    from{
-        right: -550px;
-    }
-    to{
-        right:  100%;
-    }
+@keyframes animate{
+  from{
+    background-position: 100% 0;
+  }
+  to{
+    background-position: 0% 0%;
+  }
 }
 
-@keyframes mario-animation{
-    0% {
-        bottom:0;
-    }
-    40% {
-        bottom: 180px;
-    }
-    50% {
-        bottom: 180px;
-    }
-    60%{
-        bottom: 180px;
-    }
-    70%{
-        bottom: 180px;
-    }
-    100%{
-        bottom: 0%
-    }
+
+@keyframes enemy-animation {
+  from {
+      right: -80px;
+  }
+  to{
+      right: 100%;
+  }
+}
+
+@keyframes stars-animation {
+  from{
+      right: -550px;
+  }
+  to{
+      right:  100%;
+  }
+}
+
+
+
+@keyframes yoda-animation{
+  0% {
+      bottom: 0px;;
+  }
+  40% {
+      bottom: 180px;
+  }
+  50% {
+      bottom: 180px;
+  }
+  60%{
+      bottom: 180px;
+  }
+  70%{
+      bottom: 180px;
+  }
+  100%{
+      bottom: 0px;
+  }
 
 }

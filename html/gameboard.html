@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="shortcut icon" href="../resources/faviconR2D2.ico">
+  <title>Startse Wars Run</title>
+</head>
+<body>
+    <div class="boardContainer">
+      <div class="game">
+
+        <!--GameOver-->
+          <div class="endMenu">
+              <div class="endButtons">
+                <div><img src="../resources/darthGameOvwe.png" width="120px" class="darthFinal"></div>
+                <div class="gameOverContainer">
+                  <h1 id="gameOvertext">Game Over</h1>
+                  <div class="buttonsFinal">
+                    <div id="restart" class="buttonsMenu" onclick=""><a><i class="fa-solid fa-rotate-right"></i></a></div>
+                    <div id="backMenu" class="buttonsMenu"><a href="../index.html"><i class="fa-solid fa-bars"></i></a></div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+        <div id="pointScore">Score 0</div>
+
+          <!--Assets Img-->
+          <img src="../resources/milleniumfal.png" class="bgAnimated" id="nave">
+          <img src="../resources/deathstar.png"class="bgAnimated" id="starDeath">
+          <img src="../resources/yoda_finalsprite.gif" class="yoda">
+          <img src="../resources/stormtroop.gif" class="enemy">
+          <img src="../resources/nave1.png" class="bgAnimated" id="nave2">
+        
+          <!--Efeitos-->
+          <audio class="jumpSound">
+            <source src="../resources/sounds/pixeljump.mp3" type="audio/mp3">
+          </audio>
+          <audio id="gameOverSound">
+            <source src="../resources/sounds/gameOver.mp3" type="audio/mp3">
+          </audio>
+          <audio id="trilhaSonora">
+            <source src="../resources/sounds/Star Wars Medley (8-Bit) (mp3cut.net).mp3" type="audio/mp3">
+          </audio>
+
+      </div>
+      <div class="plataformMove"></div>
+      <div class="plataform"></div>  
+      <script src="../js/script.js"></script>
+      <script src="https://kit.fontawesome.com/81d880f28b.js" crossorigin="anonymous"></script>
+      
+    </div>
+
+</body>
+</html>

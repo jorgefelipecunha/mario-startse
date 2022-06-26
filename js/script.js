@@ -1,33 +1,72 @@
-const mario = document.querySelector(".super-mario");
-const pipe = document.querySelector(".pipe-game");
+//Elementos DOM
+const yoda = document.querySelector('.yoda');
+const enemy = document.querySelector('.enemy');
+const jumpSound = document.querySelector('.jumpSound');
+const gameOversound = document.querySelector('#gameOverSound');
+const trilhaSonora = document.querySelector('#trilhaSonora');
+const recarga = document.querySelector('#restart');
+const endMenu = document.querySelector('.endMenu');
+const darkSide = document.querySelector('.darksideselected');
 
+//Configuracao do Contador
+const countScore = document.querySelector('#pointScore')
+let score = 0;
+
+const contador = setInterval(() => {
+  score ++;
+  countScore.innerHTML = `Score ${score}`
+}, 500);
+
+
+//Acrescentando a mecanica de Pulo
 const jump = () => {
-  mario.classList.add("jump-mario");
+  yoda.classList.add('jump-yoda');
+  jumpSound.play()
+  jumpSound.volume = 0.7;
 
   setTimeout(() => {
-    mario.classList.remove("jump-mario");
-  }, 500);
+  yoda.classList.remove('jump-yoda');
+}, 500);
 };
 
-const loopGame = setInterval(() => {
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window
-    .getComputedStyle(mario)
-    .bottom.replace("px", "");
+//Core do game
+const loopegame = setInterval (() => {
+  const enemyPosition = enemy.offsetLeft;
+  const yodaPosition = +window
+  .getComputedStyle(yoda)
+  .bottom.replace("px", "");
+  trilhaSonora.play();
+  trilhaSonora.volume = 0.4;
 
-  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
+if (enemyPosition <= 120 && enemyPosition > 0 && yodaPosition < 80) {
+  enemy.style.animation = "none";
+  enemy.style.left = `${yodaPosition}px`;
+    
+  yoda.style.animation = "none";
+  yoda.style.bottom = `${yodaPosition}px`;
+  
+  endMenu.style.display = 'flex';
 
-    mario.style.animation = "none";
-    mario.style.bottom = `${marioPosition}px`;
+  clearInterval(contador);
+  jumpSound.volume = 0.0;
+  trilhaSonora.volume = 0.0;
+  gameOversound.play();
+  gameOversound.volume = 0.5;
+  
+  yoda.src ="../resources/dead.gif";
+  yoda.style.width ="120px";
 
-    mario.src = "./Images/mario-game-over.png";
-    mario.style.width = "75px";
-    mario.style.marginLeft = "45px";
+  enemy.src="../resources/stormtrooperStatic.gif"
+  enemy.style.width ="68px"
 
-    clearInterval(loopGame);
-  }
+  clearInterval(loopegame);
+}
 }, 10);
 
+
+//Escutador de eventos
+recarga.addEventListener("click", function() {
+  location.reload();
+});
 document.addEventListener("keydown", jump);
+document.addEventListener("click", jump);
