@@ -42,18 +42,18 @@ const loopLevel = setInterval(function () {
   document.getElementById('levelScore').innerHTML = level; //shows current level
   levelUp.play(); //play level up
   pipe.style.animation = "pipe-animation " + `${velocity}` + "s infinite linear" //sets new velocity for pipe animation
+  document.querySelector('.points').style.animation = "blink 0.5s 4"; // blinks score when increase level
+  setTimeout(() => {
+    document.querySelector('.points').style.animation = "none"; //clear blinks style
+  }, 2100);
 
   if (velocity >= 0.8) { //level up to 10 then stops increase
     velocity = velocity - 0.2;
-    document.querySelector('.points').style.animation = "blink 0.5s 4"; // blinks score when increase level
-    setTimeout(() => {
-      document.querySelector('.points').style.animation = "none"; //clear blinks style
-    }, 2000);
   } else {
     clearInterval(loopLevel);
     document.getElementById('levelScore').innerHTML = "OMG";
   }
-},10000); //Increase level each 10seconds
+},3000); //Increase level each 10seconds
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
