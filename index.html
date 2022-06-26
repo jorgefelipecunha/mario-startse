@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
-        <title>Super Mario StartSe</title>
-    </head>
-    <body>
-        <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
-        </div>
-        <script src="./js/script.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./Images/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Pokemon StartSe</title>
+  </head>
+  <body>
+    <div class="game">
+      <img src="./Images/clouds-gamer.png" class="cloud-game" />
+      <img src="./Images/pikachu.gif" class="pikachu" />
+      <img src="./Images/pokebola-game.png" class="pokebola-game" />
+    </div>
+    <div class="container-gameover hidden">
+      <img src="./Images/pokemon-game-over.png" class="game-over" />
+      <button class="button-reset game-over">Jogar Novamente</button>
+    </div>
+    <div id="display-tempo"></div>
+
+    <audio id="sound-jump" src="./sounds/jump-sound.wav" preload="auto"></audio>
+    <audio
+      id="sound-gameover"
+      src="./sounds/gameover-sound.wav"
+      preload="auto"
+    ></audio>
+    <audio
+      id="sound-game"
+      src="./sounds/pokemon-sound.mp3"
+      preload="autoplay"
+    ></audio>
+
+    <script src="./js/script.js"></script>
+  </body>
 </html>
