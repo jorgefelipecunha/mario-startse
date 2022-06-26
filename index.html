@@ -8,7 +8,44 @@
         <title>Super Mario StartSe</title>
     </head>
     <body>
-        <div class="game">
+        <main class="game">
+            <section class="inform">
+                <div id="score">
+                    <span class="left">MARIO</span><br>
+                    <span id="score" class="left">0</span>
+                </div>
+                <div id="timer">
+                    <span class="right">TIME</span><br>
+                    <spam id="time" class="right">0</spam>
+                </div>
+            </section>
+            <img src="./Images/clouds-gamer.png" class="cloud-game" />
+            <nav class="menu">
+                <h2 id="titulomenu">Nível</h2>
+                <div id="menuItems">
+                    <input type="radio" id="facil" name="nivel" value=1>
+                    <label for="facil">Fácil</label><br>
+                    <input type="radio" id="normal" name="nivel" value=2>
+                    <label for="normal">Normal</label><br>
+                    <input type="radio" id="dificil" name="nivel" value=3>
+                    <label for="dificil">Difícil</label><br>
+                </div>
+                <button id="botao" onclick="iniciar()">Iniciar</button>
+                <div id="msg">
+                    <p id="msg1">Selecione</p>
+                    <p id="msg2">um nível</p>
+                    <p id="msg3">para jogar</p>
+                </div>
+            </nav>
+			<div id="recomeca" class="botaoOff">
+				<img src="./Images/perdeu.jpg" class="perdeu"/>
+                <button id="botao2" onclick="window.location.reload()">Reiniciar</button>
+			</div>	
+			<img src="./Images/super-mario.gif" class="super-mario" />
+            <img src="./Images/pipe-game.png" class="pipe-game" />
+        </main>
+        <script src="./js/script.js"></script>
+<!--        <div class="game">
             <div class="score">
                 <div id="left">
                     <span class="left">MARIO</span><br>
@@ -40,7 +77,7 @@
             console.log("agora "+value);
             document.write("agora "+value);
             document.querySelector("#teste").innerHTML = ("agora "+ value);
-        </script> -->
-        <script src="./js/script.js"></script>
+        </script> 
+        <script src="./js/script.js"></script> -->
     </body>
 </html>

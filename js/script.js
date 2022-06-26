@@ -1,35 +1,42 @@
-//function iniciar() {
-let mario = document.querySelector(".super-mario");
-let pipe = document.querySelector(".pipe-game");
+function iniciar() {
+const nav = document.querySelector(".menu");
+const tfacil = document.querySelector('#facil').checked;
+const tnormal = document.querySelector('#normal').checked;
+const tdificil = document.querySelector('#dificil').checked;
+const recomeca = document.querySelector("#recomeca");
+const mario = document.querySelector(".super-mario");
+const pipe = document.querySelector(".pipe-game");
+let pipePosition = pipe.offsetLeft;
+
 let score = 0
 let atualizaScore = true;
 let timer = 0;
-let pipePosition = 0;
 
-let velocidade = 500;
-let optclass = 2
+let velocidade;
+let classMario;
+let classPipe;
 
-let tfacil = document.querySelector('#facil').checked;
-let tnormal = document.querySelector('#normal').checked;
-let tdificil = document.querySelector('#dificil').checked;
+nav.classList.remove("menu");
+nav.classList.add("menuNone");
+
+  //pipe.style.left = `${pipePosition}px`;
+
+console.log("VARIAVEIS")
 
 if (tfacil === true) {
-  Velocidade = 800;
-  optclass = 1;
-  pipe.classList.add(".pipe-game-slow");
-
+  velocidade = 800;
+  classPipe = "pipe-game-slow";
+  classMario = "jump-mario-slow";
 } else if (tnormal === true){
-  Velocidade = 500;
-  optclass = 2;
-  pipe.classList.add(".pipe-game");
-
+  velocidade = 500;
+  classPipe = "pipe-game-normal";
+  classMario = "jump-mario";
 } else if (tdificil === true){
-  Velocidade = 300;
-  optclass = 3;
-  pipe.classList.add(".pipe-game-fast");
+  velocidade = 300;
+  classPipe = "pipe-game-fast";
+  classMario = "jump-mario-fast";
 }
-
-document.querySelector("#teste").innerHTML = (optclass);
+pipe.classList.add(classPipe);
 
 let activeTimer = setInterval(funcTimer, 1000);
 
@@ -38,41 +45,23 @@ function funcTimer() {
   document.querySelector("#time").innerHTML = (timer + " sec");
 }
 
-const jump = () => {
-  switch (optclass) {
-    case 1:
-      mario.classList.add("jump-mario-slow");
-      break;
-    case 2:
-      mario.classList.add("jump-mario");
-      break;
-    case 3:
-      mario.classList.add("jump-mario-fast");
-      break;
-    }
+  const jump = () => {
+    mario.classList.add(classMario);
+  
+    setTimeout(() => {
+      mario.classList.remove(classMario);
+    }, velocidade);
+	console.log("JUMP pipePosition "+pipePosition);
+	if (atualizaScore === true && pipePosition >= 150 && pipePosition <= 300) {
+		score += 100;
+		document.querySelector("#score").innerHTML = score;
+	}
+  };
 
-  setTimeout(() => {
-    switch (optclass) {
-      case 1:
-        mario.classList.remove("jump-mario-slow");
-        break;
-      case 2:
-        mario.classList.remove("jump-mario");
-        break;
-        case 3:
-          mario.classList.remove("jump-mario-fast");
-          break;
-    }
-    if (atualizaScore === true && (pipePosition <= 0 || pipePosition >= 900)) {
-      score += 100;
-      document.querySelector("#score").innerHTML = score;
-    }
-  }, velocidade);
-};
 
 const loopGame = setInterval(() => {
   pipePosition = pipe.offsetLeft;
-  marioPosition = +window
+  const marioPosition = +window
     .getComputedStyle(mario)
     .bottom.replace("px", "");
 
@@ -90,21 +79,11 @@ const loopGame = setInterval(() => {
     atualizaScore = false;
     clearInterval(loopGame);
     clearInterval(activeTimer);
-    switch (optclass) {
-      case 1:
-        pipe.classList.remove(".pipe-game-slow");
-        pipe.classList.add(".pipe-game");
-        break;
-      case 2:
-        break;
-      case 3:
-        pipe.classList.remove(".pipe-game-fast");
-        pipe.classList.add(".pipe-game");
-        break;
-    }
+	recomeca.classList.remove("botaoOff");
+    recomeca.classList.add("botaoOn");
 
   }
 }, 10);
 
 document.addEventListener("keydown", jump);
-//}
+}
