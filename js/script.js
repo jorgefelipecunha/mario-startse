@@ -17,9 +17,9 @@ let marioPosition = +window
     .getComputedStyle(mario)
     .bottom.replace("px", "");
 
-const song = new Audio('../sounds/Overworld (Hurry).mp3');
-const deathSound = new Audio('../sounds/Player Down.mp3');
-const gameOverSong = new Audio('../sounds/Game Over.mp3');
+const song = new Audio('./sounds/Overworld (Hurry).mp3');
+const deathSound = new Audio('./sounds/Player Down.mp3');
+const gameOverSong = new Audio('./sounds/Game Over.mp3');
 
 let scoreValue = 0;
 let scoreTimer = setInterval(() => {
