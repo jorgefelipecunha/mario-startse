@@ -53,7 +53,7 @@ const loopLevel = setInterval(function () {
     clearInterval(loopLevel);
     document.getElementById('levelScore').innerHTML = "OMG";
   }
-},3000); //Increase level each 10seconds
+},10000); //Increase level each 10seconds
 
 const loopGame = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
