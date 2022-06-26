@@ -4,14 +4,23 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
+        <link rel="stylesheet" href="./css/style.css" />
         <title>Super Mario StartSe</title>
     </head>
     <body>
-        <div class="game">
+        <div id="game-container" class="game , initial-screen">
+            <img src="./Images/logo.png" class="logo">
+            <span id="score-board">score: <span id="score-value">0</span></span>
+            <span id="game-over">Game Over</span>
+            <span class="start-button-container"><button type="button" class="start-button" onclick="startGame()">start game</button></span>
             <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
+            <img src="./Images/super-mario.gif" class="super-mario"/>
             <img src="./Images/pipe-game.png" class="pipe-game" />
+            <img src="./Images/red-shell.gif" class="shell-game">
+            <img src="./Images/spiny.gif" class="spiny">
+            <img src="./Images/mushroom.png" class="mushroom-game">
+        </div>
+        <div id="ground" class="game , initial-screen">
         </div>
         <script src="./js/script.js"></script>
     </body>

@@ -1,17 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono&display=swap');
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
 }
 
 .game {
-    width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    width: 100vw;
+    height: 85vh;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+    z-index:1;
+}
+
+.initial-screen::after{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color:black;
+    opacity:0.5;
+    z-index:-1;
+}
+.started-game::after{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color:black;
+    opacity:0;
+    z-index:-1;
+}
+
+.start-button-container{
+    position:absolute;
+    top:50vh;
+    left:40vw;
+    z-index:4;
+}
+
+.start-button{
+    font-size: 2em;
+    padding:0 0.2em 0.2em 0.2em;
+    border-radius: 25px;
+    background-color: blue;
+    color:white;
+    font-family: 'Roboto Mono', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.start-button:hover{
+    background-color: rgb(70,70,255);
+}
+
+.logo{
+    position:absolute;
+    width:40vw;
+    left:28vw;
+    z-index: 3;
+}
+
+#game-over{
+    position:absolute;
+    top:40%;
+    left: 24%;
+    font-size: 4em;
+    z-index: 4;
+}
+
+#score-board{
+    position:absolute;
+    top:6%;
+    left:3%;
+    z-index:2;
+    font-size: 1.3em;
+}
+
+#ground{
+    height:15vh;
+    bottom:0;
+    background-image: url(../Images/ground.png);
+    background-size:contain;
+    animation: ground-animation 1.2s infinite linear;
+    z-index:0;
+}
+
+.mushroom-game{
+    position:absolute;
+    bottom:0;
+    width:65px;
+    animation: mushroom-animation 15s infinite linear;
 }
 
 .pipe-game {
@@ -21,20 +106,59 @@
     animation: pipe-animation 1.5s infinite linear;
 }
 
+.shell-game{
+    position:absolute;
+    bottom:0;
+    width:50px;
+    animation: shell-animation 6.5s infinite linear;
+}
+
+.spiny{
+    position:absolute;
+    bottom:0;
+    width:80px;
+    animation: spiny-animation 2.5s infinite linear;
+}
+
 .super-mario{
-    width:150px;
     position: absolute;
     bottom: 0;
+    z-index:1;
+}
+
+.big {
+    margin-left:0;
+    width:100px;
+}
+
+.small {
+    margin-left: 20px;
+    width:60px;
 }
 
 .jump-mario {
     animation: mario-animation 500ms ease-out;
 }
 
+.mario-dead{
+    animation: mario-dead 3s linear forwards;
+    margin-left: 20px;
+    width:60px;
+}
+
 .cloud-game{
     position: absolute;
-    width: 550px;
+    width: 450px;
     animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes mushroom-animation{
+    from {
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
 }
 
 @keyframes pipe-animation {
@@ -43,6 +167,41 @@
     }
     to{
         right: 100%;
+    }
+}
+
+@keyframes shell-animation{
+    0%{
+        right: -80px;
+    }
+
+    85%{
+        right:-80px;
+    }
+
+    100%{
+        right: 100%;
+    }
+}
+
+@keyframes spiny-animation{
+    0%{
+        right: -80px;
+    }
+    30%{
+        right: -80px;
+    }
+    100%{
+        right: 100vw;
+    }
+}
+
+@keyframes ground-animation{
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position:-100%;
     }
 }
 
@@ -62,17 +221,26 @@
     40% {
         bottom: 180px;
     }
-    50% {
-        bottom: 180px;
-    }
-    60%{
-        bottom: 180px;
-    }
-    70%{
+        70%{
         bottom: 180px;
     }
     100%{
-        bottom: 0%
+        bottom: 0%;
+    }
+}
+
+@keyframes mario-dead{
+    0%{
+        bottom: 0%;
+    }
+    20%{
+        bottom: 0;
+    }
+    30%{
+        bottom: 40vh;
     }
 
+    100%{
+        bottom: -190vh;
+    }
 }
