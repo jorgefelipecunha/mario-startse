@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+body{
+    height: 100vh;
+    background-color: #171616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuBoard{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #171625;
+    width: 80%;
+}
+
+.botaoMenu{
+    width: 200px;
+    background-color: black;
+    margin: 18px;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid yellow;
+    border-radius: 100vmax;
+    cursor: pointer;
+    font-family: 'PressStart2P';
+    font-weight: 100;
+    transition: 0.4s ease-in;
+}
+
+a{
+    text-decoration: none;
+    color: yellow;
+}
+.botaoMenu:hover{
+    box-shadow: 5px 5px 15px yellow;
+    background-color: yellow;
+    border: 1px solid black;
+}
+a:hover{
+    color: black;
+    padding: 5px;
+}
+
+.aboutGame
+{   
+    font-family: 'PressStart2P';
+    font-size: 14px;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    text-align: justify;
+    
+}
+.aboutGame p
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+figcaption{
+    font-size: small;
+}
+
+#backAboutToMenu{
+    width: 80px;
+    transition: 0s;
+    font-size: 18px;
+}
+
+#backAboutToMenu a:hover{
+    color: black;
+    font-weight: 900;
+}
+
+.voltarcontainer{
+    display: flex;
+    align-items: center;
+}
+.gitIcon i{
+    margin: 20px;
+}
+
+
+@media (max-height: 530px){
+    body{
+        height: 100%;
+    }
+}
