@@ -6,6 +6,37 @@ const gameOver = new Audio('./sounds/gameover.mp3');
 const marioGame = new Audio('./sounds/mario-game.mp3');
 const levelUp = new Audio('./sounds/level-up.mp3');
 
+// Pipe Animation - START
+
+const FRAME_DURATION = 1000 / 60; // 60fps frame duration
+const getTime = typeof performance === 'function' ? performance.now : Date.now;
+const MAX_POSITION = -window.innerWidth - 80;
+var speed = 10; //inital pipe speed
+let count = 0; //couter for pipe animation
+let pipeX = 0; //pipe position
+
+var pipeAnim = '';
+
+function movePipe() {
+  pipeX -= speed;
+
+  // Reset position
+  if (pipeX < MAX_POSITION) {
+    pipeX = 80;
+    ++count; // adds 1 for each animation end
+
+    if (speed < 40) {
+      ++speed; // increase speed
+    }
+  }
+  // Update position
+  pipe.style.transform = `translateX(${pipeX}px)`;
+  pipeAnim=requestAnimationFrame(movePipe);
+}
+
+pipeAnim=requestAnimationFrame(movePipe); //calls movePipe animation
+
+// Pipe Animation - END
 
 let level = 1; //level pontuation
 let score = 0; //score pontuation
@@ -35,9 +66,8 @@ const jump = () => {
 };
 
 const loopGame = setInterval(() => {
-  const pipePosition = pipe.offsetLeft;
+  const pipePosition = window.scrollX + pipe.getBoundingClientRect().left // gets pipe position
   const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
-
   ++score;
   document.getElementById('totalScore').innerHTML = ('00000' + (score / 10).toFixed(0)).slice(-5);
 
@@ -46,9 +76,6 @@ const loopGame = setInterval(() => {
     marioGame.pause(); // stops mario game sound
 
     gameEnd.style.display = ""; // show restart menu
-
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
 
     mario.style.animation = "none";
     mario.style.bottom = `${marioPosition}px`;
@@ -59,7 +86,8 @@ const loopGame = setInterval(() => {
 
     clearInterval(loopGame);
     clearInterval(loopLevel);
-
+    cancelAnimationFrame(pipeAnim); // stops movePipe animation
+    
     document.querySelector('.points').style.animation = "blink 1.5s infinite";
 
     // Restart on Gameover with spacebar
@@ -71,7 +99,8 @@ const loopGame = setInterval(() => {
   }
 }, 10);
 
-// Level UP 
+// Score Pontuation - START
+
 let velocity = 2.2; //initial animation duration for pipe
 const loopLevel = setInterval(function () {
 
@@ -87,10 +116,12 @@ const loopLevel = setInterval(function () {
     clearInterval(loopLevel);
     document.getElementById('levelScore').innerHTML = "OMG";
   }
-},10000); //Increase level each 10seconds
+}, 10000); //Increase level each 10seconds
+
+// Score Pontuation - END
 
 // Reload the page and restart game
-function restart(){
+function restart() {
   document.location.reload();
 }
 

@@ -137,15 +137,6 @@
 
 /* Animations */
 
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-    to{
-        right: 100%;
-    }
-}
-
 @keyframes clouds-animation {
     from{
         right: -550px;
