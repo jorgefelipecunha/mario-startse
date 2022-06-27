@@ -1,78 +1,63 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.game {
-    width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+body {
+  background-color: rgb(54, 52, 52);
+  font-size: 0.6em;
+  font-family: 'Press Start 2P', sans-serif;
+  color: white;
 }
 
-.pipe-game {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+div#container {
+  margin-top: 50px;
+  
+  display: flex;  
+  justify-content: center;
+  align-items: center;  
 }
 
-.super-mario{
-    width:150px;
-    position: absolute;
-    bottom: 0;
+canvas {  
+  border: 1px solid black;
+  display: block;
+  margin: 0 auto;  
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.controlls {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.cloud-game{
-    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+footer {
+  margin-top: 50px;
+  text-align: center;  
+  padding-block: 5px;
 }
 
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-    to{
-        right: 100%;
-    }
+footer a {
+  text-decoration: none;
 }
 
-@keyframes clouds-animation {
-    from{
-        right: -550px;
-    }
-    to{
-        right:  100%;
-    }
+footer a:visited {
+  text-decoration: none;
+  color: white;  
 }
 
-@keyframes mario-animation{
-    0% {
-        bottom:0;
-    }
-    40% {
-        bottom: 180px;
-    }
-    50% {
-        bottom: 180px;
-    }
-    60%{
-        bottom: 180px;
-    }
-    70%{
-        bottom: 180px;
-    }
-    100%{
-        bottom: 0%
-    }
-
+footer a:hover {
+  text-decoration: underline;
 }
+
+
+
+
+@media (min-width:1000px) {
+  canvas {
+    width: 520px;    
+  }
+} 
