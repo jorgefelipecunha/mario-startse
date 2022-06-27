@@ -8,6 +8,8 @@
 @import url(./layouts/card-person.css);
 @import url(./layouts/select-scene.css);
 @import url(./layouts/card-scene.css);
+@import url(./layouts/credits.css);
+@import url(./layouts/grid-credits.css);
 
 :root {
   --color-game-title: #27412f;

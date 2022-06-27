@@ -25,34 +25,18 @@
   width: 70px;
 }
 .main-menu__buttons {
-  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .main-menu__title {
-  color: var(--color-game-title);
+  color: var(--color-btn);
   font-family: var(--font-primary);
   font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
   line-height: 60px;
-}
-
-.main-menu__start {
-  top: 185px;
-  right: -45px;
-}
-
-.main-menu__select-person {
-  top: 155px;
-  right: -295px;
-}
-
-.main-menu__select-scene {
-  top: 155px;
-  right: 125px;
 }
 
 .main-menu__open-scene {

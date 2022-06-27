@@ -21,6 +21,7 @@ const sceneOpen = document.querySelector('.main-menu__open-scene')
 const sceneGame = document.querySelector('.game')
 const sceneSelectPerson = document.querySelector('.select-person')
 const sceneSelectScene = document.querySelector('.select-scene')
+const sceneCredits = document.querySelector('.credits')
 
 // botões
 const restart = document.querySelector('.game-over__restart')
@@ -28,7 +29,9 @@ const btnMenu = document.querySelector('.game-over__menu')
 const btnStart = document.querySelector('.main-menu__start')
 const btnSelectPerson = document.querySelector('.main-menu__select-person')
 const btnSelectScene = document.querySelector('.main-menu__select-scene')
+const btnCredits = document.querySelector('.main-menu__credits')
 const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
+const btnCreditsBackMenu = document.querySelector('.credits__back-menu')
 const btnScene = document.querySelectorAll('.select-scene__back-menu')
 const sceneUnlocked = [true, true, true, true, true, false]
 
@@ -473,6 +476,15 @@ btnSelectPerson.addEventListener('click', () => {
 btnSelectScene.addEventListener('click', () => {
   changeScene(sceneMenu, sceneSelectScene)
   soundMenu.play()
+})
+
+btnCredits.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneCredits)
+  soundMenu.play()
+})
+
+btnCreditsBackMenu.addEventListener('click', () => {
+  changeScene(sceneMenu, sceneCredits)
 })
 
 for (let i = 1; i >= 0; i--) {

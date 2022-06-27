@@ -1,0 +1,55 @@
+.credit-box__items {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.8rem;
+
+  margin-left: 9rem;
+  padding: 0;
+}
+
+.credits__credit-box {
+  width: 80%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  gap: 1rem;
+}
+
+.items__title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.items__list-skills {
+  margin-left: 1rem;
+}
+
+.list-skills__items {
+  margin-bottom: 0.5rem;
+}
+
+.items__list-socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: 1.1rem;
+}
+
+.list-socials__items {
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+.items__link {
+  text-decoration: none;
+  color: var(--color-text-ui);
+  transition: all 0.2s ease;
+}
+
+.items__link:hover {
+  text-decoration: none;
+  color: var(--color-btn);
+}

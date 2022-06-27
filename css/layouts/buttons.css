@@ -26,12 +26,9 @@
 }
 
 .button--menu {
-  font-family: var(--font-secundary);
-  color: var(--color-text-button);
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  position: absolute;
+  font-family: var(--font-ui);
+  color: var(--color-btn);
+  background: linear-gradient(90deg, #072b0e 0%, #287a36 90%);
   font-size: 1.25rem;
   transition: all 0.2s ease;
 }
