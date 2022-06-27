@@ -26,9 +26,9 @@ O jogo foi refatorado em um todo. A principal diferença é a utilização da AP
 ### Principais Implementações:
 
 * Novos sprites, baixados gratuitamente do site <a href="https://www.spriters-resource.com/" target="_blank">Spriters-resource</a>
-* Criação da tela de ínico e de Game Over;
+* Criação da tela de início e de Game Over;
 * Efeitos sonoros, baixados gratuitamento do site <a href="https://kenney.nl/" target="_blanck">Kenney</a>;
-* Pontução do jogador (score)
+* Pontuação do jogador (score)
  <br>
 
 
