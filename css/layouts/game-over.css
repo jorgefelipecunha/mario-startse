@@ -6,16 +6,18 @@
   z-index: 150;
 
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
 
 .game-over__title {
-  color: white;
-  font-size: 36px;
-  font-weight: 700;
+  color: var(--color-btn);
+  font-size: 3rem;
+  font-family: var(--font-ui);
+  margin-bottom: 2rem;
 }
+
 .game-over::after {
   position: absolute;
   content: '';
