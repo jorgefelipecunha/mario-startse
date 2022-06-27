@@ -1,9 +1,9 @@
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
-const clouds = document.querySelector(".cloud-game");
 const ground = document.querySelector(".ground-game");
 const trees = document.querySelector(".trees");
-const mountain = document.querySelector(".mountain-game");
+const trees2 = document.querySelector(".trees2");
+const trees3 = document.querySelector(".trees3");
 const mariogameover= document.querySelector(".mario-game-over");
 const bgmountain = document.querySelector(".bg-mountain");
 const bgclouds = document.querySelector(".bg-clouds");
@@ -70,13 +70,13 @@ const loopGame = setInterval(() => {
 
     score.classList.add("element-hidden");
 
-    clouds.classList.add("animation-stop");
-
     ground.classList.add("animation-stop");
 
     trees.classList.add("animation-stop");
 
-    mountain.classList.add("animation-stop");
+    trees2.classList.add("animation-stop");
+
+    trees3.classList.add("animation-stop");
 
     bgmountain.classList.add("animation-stop");
 

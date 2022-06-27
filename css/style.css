@@ -118,34 +118,35 @@ body{
 
 .trees{
     position: absolute;
-    bottom: -5px;
-    height: 350px;
+    bottom: 0px;
+    width: 5045px;
+    height: 400px;
     z-index: -1;
-    animation: trees-animation 3s infinite linear;
+    animation: trees-animation 5s infinite linear;
 }
 
-.mountain-game{
+.trees2{
     position: absolute;
-    bottom: -350px;
-    width: 5612px;
-    height: 1000px;
-    z-index: -2;
-    animation: mountain-animation 24s infinite linear;
-}
+    bottom: 0px;
+    width: 4087px;
+    height: 460px;
+    z-index: -2; 
+    animation: trees-animation2 7s infinite linear;  
+} 
 
-.cloud-game{
+.trees3{
     position: absolute;
-    bottom: 480px;
-    width: 900px;
-    height: 450px;
-    animation: clouds-animation 23s infinite linear;  
-    z-index: -1;
-}
+    bottom: 300px;
+    width: 3000px;
+    height: 280px;
+    z-index: -3;
+    animation: trees-animation3 6s infinite linear;
+} 
 
 .bg-mountain{
     position: absolute;
-    bottom: 150px;
-    width: 3853px;
+    bottom: 330px;
+    width: 3853px; 
     height: 312px;
     z-index: -4;
     animation: bgmountain 150s infinite linear;
@@ -153,8 +154,8 @@ body{
 
 .bg-clouds {
     position: absolute;
-    bottom: 200px;
-    width: 4597px;
+    bottom: 400px;
+    width: 4597px; 
     height: 582px;
     z-index: -4;
     animation: bgclouds 300s infinite linear;
@@ -239,10 +240,28 @@ body{
 
 @keyframes trees-animation{
     from {
-        left: 0px
+        left: 0px;
     }
     to{
-        left: -1304px;
+        left: -2515px;
+    }
+}
+
+@keyframes trees-animation2{
+    from {
+        left: 0px;
+    }
+    to{
+        left: -2048px;
+    }
+}
+
+@keyframes trees-animation3{
+    from{
+        left:0px;
+    }
+    to {
+        left: -1000px;
     }
 }
 
