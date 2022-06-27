@@ -6,14 +6,16 @@ const gameOver = new Audio('./sounds/gameover.mp3');
 const marioGame = new Audio('./sounds/mario-game.mp3');
 const levelUp = new Audio('./sounds/level-up.mp3');
 
-// Pipe Animation - START
+// Pipe Animation / Levels - START
 
 const FRAME_DURATION = 1000 / 60; // 60fps frame duration
 const getTime = typeof performance === 'function' ? performance.now : Date.now;
 const MAX_POSITION = -window.innerWidth - 80;
-var speed = 10; //inital pipe speed
+var speed = 8; //inital pipe speed
 let count = 0; //couter for pipe animation
 let pipeX = 0; //pipe position
+let level = 1; //level pontuation
+let score = 0; //score pontuation
 
 var pipeAnim = '';
 
@@ -22,24 +24,34 @@ function movePipe() {
 
   // Reset position
   if (pipeX < MAX_POSITION) {
+
     pipeX = 80;
     ++count; // adds 1 for each animation end
 
-    if (speed < 40) {
-      ++speed; // increase speed
+    if (Number.isInteger(speed/5) && speed <= 46) {
+      console.log(speed);
+      ++level; // increase 1 level 
+      document.getElementById('levelScore').innerHTML = level; //shows current level
+      levelUp.play(); //play level up
+      document.querySelector('.points').style.animation = "blink 0.5s 2"; // blinks score when increase level
+      setTimeout(() => {
+        document.querySelector('.points').style.animation = "none"; //clear blinks style
+      }, 1100);
+    }
+    if (speed <= 46) {
+      ++speed;
+    } else {
+      document.getElementById('levelScore').innerHTML = 'OMG';
     }
   }
   // Update position
   pipe.style.transform = `translateX(${pipeX}px)`;
-  pipeAnim=requestAnimationFrame(movePipe);
+  pipeAnim = requestAnimationFrame(movePipe);
 }
 
-pipeAnim=requestAnimationFrame(movePipe); //calls movePipe animation
+pipeAnim = requestAnimationFrame(movePipe); //calls movePipe animation
 
-// Pipe Animation - END
-
-let level = 1; //level pontuation
-let score = 0; //score pontuation
+// Pipe Animation / Levels - END
 
 // Play marioGame sounds in loop until gameover
 if (typeof marioGame.loop == 'boolean') {
@@ -85,9 +97,8 @@ const loopGame = setInterval(() => {
     mario.style.marginLeft = "45px";
 
     clearInterval(loopGame);
-    clearInterval(loopLevel);
     cancelAnimationFrame(pipeAnim); // stops movePipe animation
-    
+
     document.querySelector('.points').style.animation = "blink 1.5s infinite";
 
     // Restart on Gameover with spacebar
@@ -98,31 +109,6 @@ const loopGame = setInterval(() => {
     })
   }
 }, 10);
-
-// Score Pontuation - START
-
-let velocity = 2.2; //initial animation duration for pipe
-const loopLevel = setInterval(function () {
-
-  ++level; // increase 1 level each loop
-  document.getElementById('levelScore').innerHTML = level; //shows current level
-  levelUp.play(); //play level up
-  pipe.style.animation = "pipe-animation " + `${velocity}` + "s infinite linear" //sets new velocity for pipe animation
-  document.querySelector('.points').style.animation = "blink 0.5s 4"; // blinks score when increase level
-  
-  setTimeout(() => {
-    document.querySelector('.points').style.animation = "none"; //clear blinks style
-  }, 2100);
-
-  if (velocity >= 0.8) { //level up to 10 then stops increase
-    velocity = velocity - 0.2;
-  } else {
-    clearInterval(loopLevel);
-    document.getElementById('levelScore').innerHTML = "OMG";
-  }
-}, 10000); //Increase level each 10seconds
-
-// Score Pontuation - END
 
 // Reload the page and restart game
 function restart() {
