@@ -1,33 +1,311 @@
 const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
+const cloud = document.querySelector(".cloud-game");
+const bullet = document.querySelector(".bullet-game");
+const fungus = document.querySelector(".fungus-game");
+const game = document.querySelector(".game");
+const coinCountText = document.querySelector(".coin-count-text");
+const coinCounterEl = document.querySelector(".coin-counter");
+const startButton = document.querySelector(".start-game-button");
+const startGameModal = document.querySelector(".start-game-modal");
 
+let marioIsSmall = true;
+let blockInterval = false;
+let coinCounter = 0;
+let marioWalking = true;
+let gameOver = false;
+
+const music = playSound("./sounds/smb_medley.mp3", true, 0.5);
+
+// Helper logic
+function playSound(url, repeat, volume) {
+  const sound = new Audio(url);
+
+  if (repeat) sound.loop = true;
+
+  if (volume) sound.volume = volume;
+
+  const play = () => sound.play();
+
+  const stop = () => {
+    sound.currentTime = 0;
+    sound.pause();
+  };
+
+  return { play, stop };
+}
+
+const checkIntersection = (obj1, obj2) => {
+  const obj1Loc = obj1.getBoundingClientRect();
+  const obj2Loc = obj2.getBoundingClientRect();
+
+  const onTargetX =
+    obj1Loc.right > obj2Loc.left + 5 && obj2Loc.right - 5 > obj1Loc.left;
+
+  const onTargetY =
+    obj1Loc.bottom > obj2Loc.top + 3 && obj2Loc.bottom - 3 > obj1Loc.top;
+
+  const hasIntersection = onTargetX && onTargetY;
+
+  return hasIntersection;
+};
+
+// Mario Logic
 const jump = () => {
-  mario.classList.add("jump-mario");
+  if (!marioWalking) {
+    return;
+  }
 
+  if (marioWalking) {
+    mario.classList.add("jump-mario");
+    marioWalking = false;
+
+    if (marioIsSmall) playSound("./sounds/smb_jump-small.wav").play();
+
+    if (!marioIsSmall) playSound("./sounds/smb_jump-super.wav").play();
+
+    setTimeout(() => {
+      mario.classList.remove("jump-mario");
+      marioWalking = true;
+    }, 500);
+  }
+};
+
+// Coin logic
+const createCoin = (positionX) => {
+  const el = document.createElement("img");
+  el.src = "./Images/coin-game.gif";
+  el.className = "coin-game coin-animation";
+  el.style.right = `-${positionX}px`;
+  el.style.bottom = `${Math.random() * 20 + 20}%`;
+  el.style.animationDelay = `${Math.random() * 2}s`;
+
+  return el;
+};
+
+const generateCoin = () => {
+  let coinPosition = 80;
+  game.appendChild(createCoin(coinPosition));
+};
+
+const stopCoinsAnimation = () => {
   setTimeout(() => {
-    mario.classList.remove("jump-mario");
+    const coins = document.querySelectorAll(".coin-game");
+
+    coins.forEach((coin) => {
+      coin.style.left = coin.offsetLeft + "px";
+      coin.style.animation = "";
+    });
+  }, 10);
+};
+
+const startCoinGeneration = () => {
+  let interval;
+
+  interval = setInterval(() => {
+    const coins = document.querySelectorAll(".coin-game");
+
+    if (gameOver) {
+      stopCoinsAnimation();
+      clearInterval(interval);
+    }
+
+    if (coins.length < 10) {
+      generateCoin();
+    }
   }, 500);
 };
 
-const loopGame = setInterval(() => {
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window
-    .getComputedStyle(mario)
-    .bottom.replace("px", "");
+const removeAllCoins = () => {
+  const coins = document.querySelectorAll(".coin-game");
+  coins.forEach((coin) => coin.remove());
+};
 
-  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
+const coinTouch = () => {
+  const coins = document.querySelectorAll(".coin-game");
 
-    mario.style.animation = "none";
-    mario.style.bottom = `${marioPosition}px`;
+  coins.forEach((coin) => {
+    const onTouch = checkIntersection(mario, coin);
 
-    mario.src = "./Images/mario-game-over.png";
-    mario.style.width = "75px";
-    mario.style.marginLeft = "45px";
+    if (onTouch) {
+      coin.remove();
+      coinCounter++;
+      coinCountText.textContent = coinCounter;
 
-    clearInterval(loopGame);
-  }
-}, 10);
+      playSound("./sounds/smb_coin.wav").play();
+    }
+  });
+};
+
+// Power logic
+const spawnPower = () => {
+  fungus.style.animation = "fungus-animation 2s infinite linear";
+  fungus.style.right = `-${Math.random() * 400 + 100}px`;
+};
+
+const startPowerGeneration = () => {
+  setInterval(() => {
+    spawnPower();
+  }, 15000);
+};
+
+// Game controllers
+const startAnimations = () => {
+  cloud.classList.add("cloud-animation");
+  pipe.classList.add("pipe-animation");
+  bullet.classList.add("bullet-animation");
+
+  startPowerGeneration();
+
+  startCoinGeneration();
+};
+
+const getRecord = () => {
+  const record = localStorage.getItem("mario_record") || 0;
+  return parseInt(record);
+};
+
+const setRecord = (coins) => {
+  const lastRecord = getRecord();
+
+  if (lastRecord < coins) localStorage.setItem("mario_record", coins);
+};
+
+const updateModal = () => {
+  const record = document.querySelector(".start-game-record");
+  record.textContent = getRecord();
+};
+
+const startGame = () => {
+  playSound("./sounds/smb_medley.mp3", true, 0.2);
+
+  const loopGame = setInterval(() => {
+    const pipePosition = pipe.offsetLeft;
+    const cloudPosition = cloud.offsetLeft;
+    const bulletPosition = bullet.offsetLeft;
+    const fungusPosition = fungus.offsetLeft;
+    const marioPosition = +window
+      .getComputedStyle(mario)
+      .bottom.replace("px", "");
+
+    const hitEnemy =
+      checkIntersection(mario, bullet) || checkIntersection(mario, pipe);
+
+    if (!blockInterval && hitEnemy && marioIsSmall) {
+      pipe.classList.remove("pipe-animation");
+      pipe.style.left = `${pipePosition}px`;
+
+      cloud.classList.remove("cloud-animation");
+      cloud.style.left = `${cloudPosition}px`;
+
+      mario.classList.add("block-mario");
+      mario.style.bottom = `${marioPosition}px`;
+
+      bullet.classList.remove("bullet-animation");
+      bullet.style.left = `${bulletPosition}px`;
+
+      fungus.classList.remove("fungus-animation");
+      fungus.style.left = `${fungusPosition}px`;
+
+      mario.src = "./Images/mario-game-over.png";
+      mario.style.width = "50px";
+
+      playSound("./sounds/smb_mariodie.wav").play();
+      music.stop();
+
+      stopCoinsAnimation();
+
+      setRecord(coinCounter);
+
+      startGameModal.classList.remove("hidden");
+      updateModal();
+
+      gameOver = true;
+
+      clearInterval(loopGame);
+    } else if (hitEnemy && !marioIsSmall) {
+      marioIsSmall = true;
+      blockInterval = true;
+
+      mario.src = "./Images/super-mario-small2.gif";
+      mario.style.width = "50px";
+
+      playSound("./sounds/smb_pipe.wav").play();
+
+      setTimeout(() => (blockInterval = false), 500);
+    }
+
+    if (checkIntersection(mario, fungus) && marioIsSmall) {
+      marioIsSmall = false;
+      mario.src = "./Images/super-mario2.gif";
+      mario.style.width = "90px";
+      fungus.style.animation = "none";
+
+      playSound("./sounds/smb_powerup.wav").play();
+    }
+
+    coinTouch();
+  }, 10);
+};
+
+const resetGame = () => {
+  marioIsSmall = true;
+  blockInterval = false;
+  coinCounter = 0;
+  marioWalking = true;
+  gameOver = false;
+  coinCountText.textContent = 0;
+
+  music.stop();
+
+  mario.style.bottom = "0";
+  mario.classList.remove("block-mario");
+  mario.src = "./Images/super-mario-small2.gif";
+
+  pipe.style.left = "auto";
+  pipe.classList.add("pipe-animation");
+
+  fungus.style.left = "auto";
+  fungus.classList.add("fungus-animation");
+
+  bullet.style.left = "auto";
+  bullet.classList.add("bullet-animation");
+
+  cloud.style.left = "auto";
+  cloud.classList.add("cloud-animation");
+};
+
+startButton.addEventListener("click", () => {
+  startGameModal.classList.add("hidden");
+
+  mario.classList.remove("hidden");
+  pipe.classList.remove("hidden");
+  coinCounterEl.classList.remove("hidden");
+
+  resetGame();
+
+  startAnimations();
+
+  removeAllCoins();
+
+  startGame();
+
+  music.play();
+});
+
+bullet.addEventListener("animationiteration", () => {
+  const height = Math.trunc(Math.random() * 50);
+  bullet.style.bottom = `${height}%`;
+});
+
+fungus.addEventListener("animationiteration", () => {
+  fungus.style.animation = "none";
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const record = document.querySelector(".start-game-record");
+  record.textContent = getRecord();
+});
 
 document.addEventListener("keydown", jump);
+document.addEventListener("touchstart", jump);
