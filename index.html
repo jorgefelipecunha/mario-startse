@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./css/style.css" /> 
         <title>Super Mario StartSe</title>
     </head>
-    <body>
+    <body onload="preCarregamento()">
         <main class="game">
             <section class="inform">
                 <div id="score">
@@ -19,7 +19,9 @@
                     <spam id="time" class="right">0</spam>
                 </div>
             </section>
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
+            <figure>
+                <img src="./Images/clouds-gamer.png" class="cloud-game" />
+            </figure>
             <nav class="menu">
                 <h2 id="titulomenu">Nível</h2>
                 <div id="menuItems">
@@ -38,12 +40,16 @@
                 </div>
             </nav>
 			<div id="recomeca" class="botaoOff">
-				<img src="./Images/perdeu.jpg" class="perdeu"/>
+                <figure>
+				    <img src="./Images/perdeu.jpg" class="perdeu"/>
+                </figure>
                 <button id="botao2" onclick="window.location.reload()">Reiniciar</button>
-			</div>	
-			<img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
-			<audio id="audio" src="./Sound/theme-overworld.mp3" type="audio/mp3" autoplay loop></audio>
+			</div>
+            <figure>
+			    <img src="./Images/super-mario.gif" class="super-mario" />
+                <img id="componente" src="./Images/pipe-game.png" class="componente-game" />
+            </figure>	
+			<audio autoplay loop src="./Sound/theme-overworld.mp3" type="audio/mpeg" ></audio>
         </main>
         <script src="./js/script.js"></script>
     </body>

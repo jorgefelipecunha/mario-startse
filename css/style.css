@@ -18,31 +18,31 @@
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
+.componente-game {
     position: absolute;
     bottom: 0;
     width: 80px;
 }
 
-.pipe-game-normal {
+.componente-game-normal {
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    animation: componente-animation 1.5s infinite linear;
 }
 
-.pipe-game-slow {
+.componente-game-slow {
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 2.5s infinite linear;
+    animation: componente-animation 2.5s infinite linear;
 }
 
-.pipe-game-fast {
+.componente-game-fast {
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1s infinite linear;
+    animation: componente-animation 1s infinite linear;
 }
 
 .super-mario{
@@ -68,13 +68,6 @@
     width: 550px;
     animation: clouds-animation 20s infinite linear;
 }
-
-/*.cloud-game-menu{
-/*    margin-top: -500px; */
-/*    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
-}*/
 
 .inform{
     color: white;
@@ -131,7 +124,7 @@ input, label {
 #botao{
     border-radius: 15%;
     font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
-    font-size: .6em;
+    font-size: .8em;
     width: 165px;
     height: 50px;
     background-color: #0066b8;
@@ -175,7 +168,7 @@ input, label {
 	display: none;
 }
 
-@keyframes pipe-animation {
+@keyframes componente-animation {
     from {
         right: -80px;
     }
