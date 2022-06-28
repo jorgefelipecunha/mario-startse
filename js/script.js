@@ -36,3 +36,20 @@ const loopGame = setInterval(() => {
 }, 10);
 
 document.addEventListener("keydown", jump);
+
+const score = document.querySelector('#score');
+score.textContent = 0;
+let placar = parseInt(score.textContent);
+const teste = over2.style.display;
+
+console.log(teste); 
+
+const loopOver = setInterval( () => {         
+    if(over2.style.display == "none"){
+        placar = placar + 1;
+        console.log(placar);
+        score.textContent = placar;
+    } else{ 
+        placar = placar + 0;          
+    }          
+}, 1500);      

@@ -94,3 +94,23 @@
     margin: auto;
     width: min-content;    
 }
+
+.score{
+    width: 170px;
+    height: 130px;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: 5px solid rgb(236, 236, 206);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    font-family: VT323, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    display: block;   
+    
+}
+
+.score h3, .score h4{
+    font-size: 60px;            
+}
+
