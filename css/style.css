@@ -3,6 +3,7 @@
 @import url(./layouts/buttons.css);
 @import url(./layouts/score.css);
 @import url(./layouts/game-over.css);
+@import url(./layouts/pause.css);
 @import url(./layouts/main-menu.css);
 @import url(./layouts/select-person.css);
 @import url(./layouts/card-person.css);
@@ -100,6 +101,17 @@ body {
   text-align: center;
 
   text-transform: uppercase;
+}
+
+.game__pause-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 100;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  color: var(--color-text-ui);
 }
 
 @keyframes pipe-animation {

@@ -16,6 +16,7 @@ const bestScoreSelectPerson = document.querySelector(
 
 // cenas
 const sceneGameOver = document.querySelector('.game-over')
+const scenePause = document.querySelector('.pause')
 const sceneMenu = document.querySelector('.main-menu')
 const sceneOpen = document.querySelector('.main-menu__open-scene')
 const sceneGame = document.querySelector('.game')
@@ -27,6 +28,7 @@ const sceneCredits = document.querySelector('.credits')
 const restart = document.querySelector('.game-over__restart')
 const btnMenu = document.querySelector('.game-over__menu')
 const btnStart = document.querySelector('.main-menu__start')
+const btnPause = document.querySelector('.game__pause-icon')
 const btnSelectPerson = document.querySelector('.main-menu__select-person')
 const btnSelectScene = document.querySelector('.main-menu__select-scene')
 const btnCredits = document.querySelector('.main-menu__credits')
@@ -36,6 +38,7 @@ const btnScene = document.querySelectorAll('.select-scene__back-menu')
 const sceneUnlocked = [true, true, true, true, true, false]
 
 var gameover = false
+var pause = false
 var runOnceSetInterval = 0
 var itemsUnlocked = [true, true, false, false, false, false, false, false]
 var pulo = false
@@ -44,7 +47,6 @@ const messageUnlocked = document.querySelector('.game_message-unlocked')
 let characters = document.querySelectorAll('.person__img')
 const personMenu = document.querySelector('.main-menu__person')
 const cardsPerson = document.querySelectorAll('.select-person__person')
-console.log(cardsPerson)
 
 // backgrounds
 const bg1 = document.querySelector('.background__img--1')
@@ -85,7 +87,8 @@ const jump = () => {
     !gameover &&
     sceneGame.style.display == 'flex' &&
     sceneGameOver.style.display == 'none' &&
-    pulo === false
+    pulo === false &&
+    !pause
   ) {
     pulo = true
     mario.classList.add('jump-mario')
@@ -98,7 +101,7 @@ const jump = () => {
   }
   setTimeout(() => {
     mario.classList.remove('jump-mario')
-    if (!gameover) {
+    if (!gameover && !pause) {
       mario.src = `${playerRun}`
     }
   }, 500)
@@ -171,6 +174,40 @@ const loop = () => {
 
     clearInterval(loopGame)
   }
+
+  if (pause) {
+    //fazendo Paralax parar ao morrer
+    bg1.style.animation = 'none'
+    bg1.style.left = `${bg1Position}px`
+    bg2.style.animation = 'none'
+    bg2.style.left = `${bg2Position}px`
+    bg3.style.animation = 'none'
+    bg3.style.left = `${bg3Position}px`
+    bg4.style.animation = 'none'
+    bg4.style.left = `${bg4Position}px`
+    bg5.style.animation = 'none'
+    bg5.style.left = `${bg5Position}px`
+    bg6.style.animation = 'none'
+    bg6.style.left = `${bg6Position}px`
+    bg7.style.animation = 'none'
+    bg7.style.left = `${bg7Position}px`
+    bg8.style.animation = 'none'
+    bg8.style.left = `${bg8Position}px`
+    bg9.style.animation = 'none'
+    bg9.style.left = `${bg9Position}px`
+    bg10.style.animation = 'none'
+    bg10.style.left = `${bg9Position}px`
+    bgTerrain.style.animation = 'none'
+    bgTerrain.style.left = `${bgTerrainPosition}px`
+
+    //fazendo o inimigo parar ao morrer
+    if (runOnceSetInterval <= 1) {
+      pipe.style.animation = 'none'
+      pipe.style.right = null
+      runOnceSetInterval++
+      pipe.style.left = `${pipePosition - 100}px`
+    }
+  }
 }
 
 const loopGame = setInterval(loop, 10)
@@ -197,7 +234,7 @@ LockedBtn(bestPoints)
 
 //função responsável por controlar a pontuação e o recorde
 const scoreCounter = () => {
-  if (!gameover) {
+  if (!gameover && !pause) {
     playerScore = parseInt(playerScore + 20 / Math.pow(veloEnemy, -1))
     score.innerHTML = `Pontos:  ${playerScore}`
     pipe.style.animation =
@@ -453,8 +490,51 @@ function changeSound(soundPlay, ...sounds) {
   }
 }
 
+function chanceBgMenu(index) {
+  switch (index) {
+    case 0:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_florest.png')"
+      break
+    case 1:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_cyberpunk.png')"
+      break
+    case 2:
+      sceneMenu.style.background = "url('../../Images/background/bg_farm.png')"
+      break
+    case 3:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_desert.png')"
+
+      break
+    case 4:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_industry.png')"
+      break
+    case 5:
+      sceneMenu.style.background =
+        "url('../../Images/background/bg_halloween.png')"
+      break
+  }
+}
+
 // eventos de click dos botões
+for (let i = 0; i < btnScene.length; i++) {
+  if (sceneUnlocked[i]) {
+    btnScene[i].addEventListener('click', () => {
+      chanceBgMenu(i)
+      changeScene(sceneMenu, sceneSelectScene)
+    })
+  }
+}
+
 restart.addEventListener('click', restartGame)
+
+btnPause.addEventListener('click', () => {
+  pause = true
+  scenePause.style.display = 'flex'
+})
 
 btnMenu.addEventListener('click', () => {
   restartGame()
@@ -492,44 +572,6 @@ for (let i = 1; i >= 0; i--) {
     changeScene(sceneMenu, sceneSelectPerson)
     changeCharacters([i][0], characters[i])
   })
-}
-
-function chanceBgMenu(index) {
-  switch (index) {
-    case 0:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_florest.png')"
-      break
-    case 1:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_cyberpunk.png')"
-      break
-    case 2:
-      sceneMenu.style.background = "url('../../Images/background/bg_farm.png')"
-      break
-    case 3:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_desert.png')"
-
-      break
-    case 4:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_industry.png')"
-      break
-    case 5:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_halloween.png')"
-      break
-  }
-}
-
-for (let i = 0; i < btnScene.length; i++) {
-  if (sceneUnlocked[i]) {
-    btnScene[i].addEventListener('click', () => {
-      chanceBgMenu(i)
-      changeScene(sceneMenu, sceneSelectScene)
-    })
-  }
 }
 
 //Evento e logica dos hovers do card da seção de seleção de cenas
