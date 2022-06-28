@@ -136,6 +136,15 @@
     animation: clouds-animation 20s infinite linear;
 }
 
+.bg-game {
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/bg-game.gif");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    animation: bg-animation 15s linear infinite;
+}
+
 /* Animations */
 
 @keyframes clouds-animation {
@@ -166,14 +175,21 @@
 
 }
 
-@keyframes city-animation {
-    from{
-        right: -550px;
-    }
-    to{
-        right:  100%;
-    }
+@keyframes blink {
+    0% { color: #FFF; }
+    50% { color: #FFF; }
+    51% { color: #ffdd00 }
+    100% { color: #ffdd00 }
 }
+
+@keyframes bg-animation {
+    from {
+      background-position: 100% bottom ;
+    }
+    to {
+      background-position: 0 bottom;
+    }
+  }
 
 
 /* Media Query para Desktop*/
@@ -197,11 +213,4 @@
     #score {
         margin: 80px 50px;
     }  
-}
-
-@keyframes blink {
-    0% { color: #FFF; }
-    50% { color: #FFF; }
-    51% { color: #ffdd00 }
-    100% { color: #ffdd00 }
 }

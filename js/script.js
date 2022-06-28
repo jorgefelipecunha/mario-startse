@@ -91,6 +91,7 @@ const loopGame = setInterval(() => {
 
     mario.style.animation = "none";
     mario.style.bottom = `${marioPosition}px`;
+    document.querySelector(".bg-game").style.animation = "none";
 
     mario.src = "./Images/mario-game-over.png";
     mario.style.width = "75px";
@@ -123,3 +124,12 @@ document.addEventListener('keydown', event => {
 })
 // Mario jump's on touch screen
 document.addEventListener("touchstart", jump);
+
+// Mute Sounds
+document.addEventListener('keydown', event => {
+  if (event.code === 'ArrowDown' ) {
+    marioGame.pause();
+  }
+})
+
+
