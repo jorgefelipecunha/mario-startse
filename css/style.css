@@ -16,7 +16,8 @@
 
 body{
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
+    object-fit: cover;
 }
 
 /* Title Screen */
@@ -31,6 +32,7 @@ body{
     text-align: center;
     flex-direction: column;
     z-index: 1;
+    animation: menuanimation 400ms ease;
 }
 
 .central-box {
@@ -63,7 +65,7 @@ body{
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgba(24,174,24,0); 
+    border-bottom: 100px solid rgba(24,174,24,0) ; 
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -88,9 +90,8 @@ body{
     position: absolute;
     height: 100px;
     bottom: 0px;
-    z-index: 4;
-    animation: ground-animation 1.5s infinite linear;
     z-index: 0;
+    animation: ground-animation 1.5s infinite linear;
 }
 
 .pipe-game {
@@ -176,6 +177,7 @@ body{
     z-index: 1;
     padding: 0;
     color: white;
+    animation: menuanimation 400ms ease;
 }
 
 .restart p {
@@ -219,6 +221,19 @@ body{
 
 /*Keyframes */
 
+@keyframes menuanimation{
+    from {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
 @keyframes key-animation {
     0% {
         opacity: 1;
@@ -243,7 +258,7 @@ body{
         left: 0px;
     }
     to{
-        left: -2515px;
+        left: -2516px;
     }
 }
 
@@ -274,23 +289,6 @@ body{
     } 
 }
 
-@keyframes clouds-animation {
-    from{
-        right: -900px;
-    }
-    to{
-        right:  100%;
-    }
-}
-
-@keyframes mountain-animation{
-    from{
-        left: 0px; 
-    }
-    to{
-        left: -1980px;
-    }
-}
 
 @keyframes bgmountain{
     from{

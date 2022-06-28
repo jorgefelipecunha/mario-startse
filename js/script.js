@@ -88,9 +88,9 @@ const loopGame = setInterval(() => {
 
     total.textContent = points;
 
-    jumpSong.src = "none";
+    jumpSong.src = "#";
 
-    maintheme.src="none";
+    maintheme.src="#";
 
     gameover.play();
 
@@ -108,7 +108,7 @@ let points = 0;
 const counter = setInterval (() =>{
 
   const pipeleftposition = + window.getComputedStyle(pipe).left.replace("px", "");
-  if (pipeleftposition <= 0){
+  if (pipeleftposition <= 10){  
     points = points + 10;
   }
   
