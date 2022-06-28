@@ -114,3 +114,44 @@
     font-size: 60px;            
 }
 
+.restart{   
+    position: absolute;
+    width: 20%;
+    height: 12%; 
+    border: 5px solid rgb(236, 236, 206);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;    
+    bottom: 15%;    
+    left: 40%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.restart button{
+    font-family: VT323, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 50px;
+    border: none;
+}
+
+.restart button:hover{
+    cursor: pointer;
+}
+
+@keyframes restart-blink {
+    0% { opacity: 0; }
+    20% { opacity: 0.5; }
+    50% { opacity: 0.9; }
+    100% { opacity: 1; }
+}
+.restart-blink {
+  -webkit-animation: restart-blink 1.25s linear infinite;
+  -moz-animation: restart-blink 1.25s linear infinite;
+  -ms-animation: restart-blink 1.25s linear infinite;
+  -o-animation: restart-blink 1.25s linear infinite;
+  animation: restart-blink 1.25s linear infinite;
+}

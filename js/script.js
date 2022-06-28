@@ -2,6 +2,7 @@ const mario = document.querySelector(".super-mario");
 const pipe = document.querySelector(".pipe-game");
 const over1 = document.querySelector('.game-over-1'); //Desafio
 const over2 = document.querySelector('.game-over-2'); //Desafio
+const restart = document.querySelector('.restart');  //Desafio
 
 const jump = () => {
   mario.classList.add("jump-mario");
@@ -30,6 +31,7 @@ const loopGame = setInterval(() => {
 
     over1.style.display = "block";  //Desafio
     over2.style.display = "block";  //Desafio
+    restart.style.display = "flex";  //Desafio
 
     clearInterval(loopGame);
   }
