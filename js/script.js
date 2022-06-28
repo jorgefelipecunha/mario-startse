@@ -11,7 +11,7 @@ const levelUp = new Audio('./sounds/level-up.mp3');
 const FRAME_DURATION = 1000 / 60; // 60fps frame duration
 const getTime = typeof performance === 'function' ? performance.now : Date.now;
 const MAX_POSITION = -window.innerWidth - 80;
-var speed = 8; //inital pipe speed
+var speed = 9; //inital pipe speed
 let count = 0; //couter for pipe animation
 let pipeX = 0; //pipe position
 let level = 1; //level pontuation

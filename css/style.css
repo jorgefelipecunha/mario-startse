@@ -32,6 +32,7 @@
     background-color: orange;
     padding: 30px;
     border: 10px double #000;
+    max-width: 90%;
 }
 .start, .start img {
     max-width: 90%;
@@ -102,7 +103,7 @@
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid #18ae18;
+    border-bottom: 60px ridge #18ae18;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -180,6 +181,9 @@
 @media only screen and (min-width: 420px) {
     .points {
         font-size: 2rem;
+    }
+    .game{
+        border-bottom: 100px ridge #18ae18;
     }
     .game-over {
         font-size: 6rem;
