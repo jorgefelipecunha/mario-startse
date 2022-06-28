@@ -249,7 +249,7 @@ audio {
 .game-over {
     display: none;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 100px;
     background-color: transparent;
     position: relative;
     animation: game-over 3s infinite linear;
@@ -278,6 +278,7 @@ button {
     font-size: medium;
     color: rgb(219, 237, 219);
     cursor: pointer;
+    margin: 10px;
 }
 
 #score {
