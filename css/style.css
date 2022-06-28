@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;1,100;1,300;1,400;1,700&family=VT323&display=swap');
+
 *{
     margin:0;
     padding: 0;
@@ -75,4 +77,20 @@
         bottom: 0%
     }
 
+}
+
+.game-over{
+    font-family: VT323, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 80px;
+    position: absolute;
+    width: 30%;
+    top: 35%;
+    left: 35%;
+    display: block;    
+    color: rgb(99, 28, 28);
+}
+
+.game-over h1{
+    margin: auto;
+    width: min-content;    
 }
