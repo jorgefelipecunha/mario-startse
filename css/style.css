@@ -20,6 +20,10 @@ body{
     object-fit: cover;
 }
 
+img{
+    margin-bottom: 100px;
+}
+
 /* Title Screen */
 
 .title-screen{
@@ -60,12 +64,54 @@ body{
     animation: key-animation 2s infinite; 
 }
 
+/* Restart */
+
+.restart{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 0;
+    color: white;
+    animation: menuanimation 400ms ease;
+}
+
+.restart p {
+    font-family: Upheaval;
+    font-size: 70px;
+    letter-spacing: 4px;
+}
+
+.restart input {
+   font-family: Upheaval;
+   margin-top: 10px;
+   color: white;
+   font-size: 50px;
+   background-color: rgb(255, 102, 0);
+   letter-spacing: 3px;
+   border: none;
+}
+
+.restart input:hover{
+    color: rgb(75, 15, 15);
+    transition: .5s ease;
+    
+}
+
+.restart .total{
+    color: rgb(75, 15, 15);
+}
+
 /* Game */
 
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgba(24,174,24,0) ; 
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -90,7 +136,8 @@ body{
     position: absolute;
     height: 100px;
     bottom: 0px;
-    z-index: 0;
+    margin-bottom: 0;
+    z-index: -1;
     animation: ground-animation 1.5s infinite linear;
 }
 
@@ -163,7 +210,7 @@ body{
 }
 
 
-/* Restart */
+/* Restart 
 
 .restart{
     width: 100%;
@@ -204,7 +251,7 @@ body{
 
 .restart .total{
     color: rgb(75, 15, 15);
-}
+} */
 
 /*General Effects*/
 
@@ -242,7 +289,6 @@ body{
         opacity: 0;
     }
 }
-
 
 @keyframes ground-animation{
     from{
@@ -288,7 +334,6 @@ body{
         right: 100%;
     } 
 }
-
 
 @keyframes bgmountain{
     from{

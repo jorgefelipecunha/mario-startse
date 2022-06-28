@@ -59,7 +59,6 @@ const loopGame = setInterval(() => {
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
 
-   
     mario.style.bottom = `${marioPosition}px`;
 
     mario.src = "./Images/mario-game-over.png";
@@ -67,21 +66,13 @@ const loopGame = setInterval(() => {
     mario.style.marginLeft = "45px";
 
     mario.classList.add("mario-game-over");
-
     score.classList.add("element-hidden");
-
     ground.classList.add("animation-stop");
-
     trees.classList.add("animation-stop");
-
     trees2.classList.add("animation-stop");
-
     trees3.classList.add("animation-stop");
-
     bgmountain.classList.add("animation-stop");
-
     bgclouds.classList.add("animation-stop");
-
     restart.classList.remove("element-hidden");
 
     alive = false;
@@ -89,7 +80,6 @@ const loopGame = setInterval(() => {
     total.textContent = points;
 
     jumpSong.src = "#";
-
     maintheme.src="#";
 
     gameover.play();
