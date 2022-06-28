@@ -1,24 +1,122 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Press Start 2P', monospace;
 }
+
+/* Main */
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #90C0F8;
+    background-image: url("../Images/clouds-bg-top.gif");
+    background-position: top;
+    background-repeat: repeat-x;
+}
+
+/* Restart */
+
+.start, .restart {
+    position: absolute;
+    z-index: 4;
+    text-align: center;
+}
+.restart{
+    background-color: orange;
+    padding: 30px;
+    border: 10px double #000;
+    max-width: 90%;
+}
+.start, .start img {
+    max-width: 90%;
+}
+.mario-start {
+    position: relative;
+    top: 15px;
+}
+
+
+.btnRestart {
+    font-size: 1rem;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #00ff00;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #000;
+    border-left: 3px solid #000;
+}
+.btnRestart:hover {
+    background-color: #18ae18;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #fff;
+    border-left: 3px solid #fff;
+}
+
+.restart a, .restart a:visited {
+    text-decoration: none;
+    color: #000;
+}
+.restart a:hover {
+    color: #fff;
+}
+
+/* Score */
+
+#score {
+    position: absolute;
+    top: 0;
+    z-index:1;
+    margin: 75px 0;
+    color: #FFF;
+    font-size: 1.5rem;
+}
+
+.points {
+    text-shadow: -2px 2px #000000;
+}
+
+/* Game Over */
+
+.game-over {
+    color: #FFF;
+    font-size: 4rem;
+    text-shadow: -3px 3px #000000;
+}
+
+.blink {
+    color: #FFF;
+    animation: blink 1.5s infinite;   
+ }
+
+/* Game Elements */
 
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    border-bottom: 60px ridge #18ae18;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
 .pipe-game {
     position: absolute;
+    right: -80px;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    animation: pipe-animation infinite linear;
+    animation-delay: 1.5s;
+    animation-duration: 2.2s;
 }
 
 .super-mario{
@@ -28,23 +126,26 @@
 }
 
 .jump-mario {
-    animation: mario-animation 500ms ease-out;
+    animation: mario-animation 600ms ease-out;
 }
 
 .cloud-game{
     position: absolute;
-    width: 550px;
+    top: 90px;
+    width: 250px;
     animation: clouds-animation 20s infinite linear;
 }
 
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-    to{
-        right: 100%;
-    }
+.bg-game {
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/bg-game.gif");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    animation: bg-animation 15s linear infinite;
 }
+
+/* Animations */
 
 @keyframes clouds-animation {
     from{
@@ -60,19 +161,56 @@
         bottom:0;
     }
     40% {
-        bottom: 180px;
+        bottom: 170px;
     }
     50% {
         bottom: 180px;
     }
-    60%{
-        bottom: 180px;
-    }
-    70%{
-        bottom: 180px;
+    60% {
+        bottom: 160px;
     }
     100%{
         bottom: 0%
     }
 
+}
+
+@keyframes blink {
+    0% { color: #FFF; }
+    50% { color: #FFF; }
+    51% { color: #ffdd00 }
+    100% { color: #ffdd00 }
+}
+
+@keyframes bg-animation {
+    from {
+      background-position: 100% bottom ;
+    }
+    to {
+      background-position: 0 bottom;
+    }
+  }
+
+
+/* Media Query para Desktop*/
+
+@media only screen and (min-width: 420px) {
+    .points {
+        font-size: 2rem;
+    }
+    .game{
+        border-bottom: 100px ridge #18ae18;
+    }
+    .game-over {
+        font-size: 6rem;
+    }
+    .btnRestart {
+        font-size: 1.5rem;
+    }
+    .cloud-game{
+        width: 350px;
+    }
+    #score {
+        margin: 80px 50px;
+    }  
 }

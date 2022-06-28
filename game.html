@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image.png" href="./Images/favicon.ico">
+    <title>Super Mario StartSe</title>
+</head>
+
+<body>
+    <div class="main">
+        <div id="score">
+            <p class="points">LEVEL <span id="levelScore" class="points">1</span> - SCORE <span id="totalScore" class="points"></span></p>
+        </div>
+        <div class="restart" style="display: none;">
+            <p class="game-over blink">GAME<br>OVER</p><br/>
+            <p>Press SPACEBAR to restart,</p><br/>
+            <p><a href=index.html><< Go back to MAIN MENU</a></p>
+        </div>
+        <div class="game">
+            <img src="./Images/clouds-gamer.png" class="cloud-game" />
+            <img src="./Images/super-mario.gif" class="super-mario" />
+            <img src="./Images/pipe-game.png" class="pipe-game" />
+            <div class="bg-game"></div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
