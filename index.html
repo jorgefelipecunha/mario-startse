@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
-        <title>Super Mario StartSe</title>
-    </head>
-    <body>
-        <div class="game">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Super Mario StartSe</title>
+</head>
+
+<body>
+
+    <header>
+        <section class="game-options">
+            <h2>SELECIONE O JOGADOR</h2>
+            <figure class="player-class">
+                <img src="./Images/player1.png" id="player1id" alt="Michael Jackson" onclick="selectPlayer1()" />
+            </figure>
+            <figure class="player-class">
+                <img src="./Images/player2.png" id="player2id" alt="Homer Simpon" onclick="selectPlayer2()" />
+            </figure>
+            <figure class="player-class">
+                <img src="./Images/player3.png" id="player3id" alt="Super Mário" onclick="selectPlayer3()" />
+            </figure>
+            <audio class="background-music" autoplay loop hidden>
+                <source src="./music/mariotheme.mp3" type="audio/mpeg">
+            </audio>
+            <audio class="GO-sound" autoplay hidden>
+                <source src="./music/silence.mp3" type="audio/mpeg">
+            </audio>
+            <button id="start-game" onclick="startGame()">RE-INICIAR JOGO</button>
+        </section>
+    </header>
+
+    <main class="game">
+        <figure>
             <img src="./Images/clouds-gamer.png" class="cloud-game" />
+            <img src="./Images/bird.gif" class="bird" />
             <img src="./Images/super-mario.gif" class="super-mario" />
             <img src="./Images/pipe-game.png" class="pipe-game" />
-        </div>
-        <script src="./js/script.js"></script>
-    </body>
+            <img src="./Images/mario-game-over.png" class="mario-fail" />
+            <img src="./Images/sol.png" class="sun-game" />
+        </figure>
+    </main>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
 </html>

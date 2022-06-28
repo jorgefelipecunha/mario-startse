@@ -6,7 +6,7 @@
 
 .game {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     border-bottom: 100px solid rgb(24,174,24);
     margin: 0 auto;
     position: relative;
@@ -18,7 +18,7 @@
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    animation: pipe-animation 3.5s infinite linear;
 }
 
 .super-mario{
@@ -27,14 +27,36 @@
     bottom: 0;
 }
 
+.mario-fail{
+    width:150px;
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
 .jump-mario {
-    animation: mario-animation 500ms ease-out;
+    animation: mario-animation 1.3s ease-out;
+}
+
+.sun-game{
+    position: absolute;
+    width: 400px;
+    right: 60px;
 }
 
 .cloud-game{
     position: absolute;
     width: 550px;
+    z-index: 1;
     animation: clouds-animation 20s infinite linear;
+}
+
+.bird {
+    position: absolute;
+    top: 70px;
+    width: 60px;
+    z-index: 2;
+    animation: bird-animation 5s infinite linear;
 }
 
 @keyframes pipe-animation {
@@ -55,24 +77,125 @@
     }
 }
 
+@keyframes bird-animation {
+    from{
+        right: -60px;
+    }
+    to{
+        right:  100%;
+    }
+}
+
 @keyframes mario-animation{
     0% {
         bottom:0;
     }
-    40% {
+    20% {
         bottom: 180px;
     }
     50% {
         bottom: 180px;
+        transform: rotateY(180deg);
     }
     60%{
         bottom: 180px;
+        transform: rotateY(45deg);
     }
-    70%{
+    90%{
         bottom: 180px;
     }
     100%{
         bottom: 0%
     }
+}
 
+.game-options {
+    width: 100%;
+    height: 20vh;
+    background-color: gray;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    border: 5px solid rgb(235, 234, 234);
+    border-radius: 10px;
+}
+
+.player-class {
+    display: inline-block;
+}
+
+h2 {
+    color: #87CEEB;
+    font-size: 25px;
+    padding: 15px 20px 0 20px;
+    text-align: center;
+    text-shadow: 2px 2px white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    animation: title-animation 3s ease infinite;
+}
+
+#start-game {
+    color: white;
+    background-color: rgb(63, 63, 63);
+    font-size: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 15px;
+    position:absolute;
+    right: 100px;
+    box-shadow: 2px 2px white;
+}
+
+#start-game:hover {
+    background-color: rgb(155, 154, 154);
+    }
+
+
+#player1id {
+    height: 70px;
+ /*   padding: 0 20px 0 20px;*/
+    animation: player-animation 1.0s infinite ease;
+}
+
+#player2id {
+    height: 70px;
+    animation: player-animation 1.2s infinite ease;
+}
+
+#player3id {
+    height: 70px;
+ /*   padding: 0 20px 0 20px;*/
+    animation: player-animation 1.4s infinite ease;
+}
+
+.player-class:hover {
+    transform: scaleY(1.5);
+}
+
+@keyframes title-animation {
+    0% {
+        color: yellow;
+    }
+    50% {
+        color: rgb(76, 167, 228);
+    }
+    70% {
+        color: yellow;
+    }
+    80% {
+        color: #87CEEB;
+    }
+
+}
+
+@keyframes player-animation{
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    40% {
+        transform: scale(1);
+    }
 }
