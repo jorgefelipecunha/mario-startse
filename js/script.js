@@ -13,7 +13,7 @@ let marioIsSmall = true;
 let blockInterval = false;
 let coinCounter = 0;
 let marioWalking = true;
-let gameOver = false;
+let gameOver = true;
 
 const music = playSound("./sounds/smb_medley.mp3", true, 0.5);
 
@@ -40,10 +40,10 @@ const checkIntersection = (obj1, obj2) => {
   const obj2Loc = obj2.getBoundingClientRect();
 
   const onTargetX =
-    obj1Loc.right > obj2Loc.left + 5 && obj2Loc.right - 5 > obj1Loc.left;
+    obj1Loc.right > obj2Loc.left + 5 && obj2Loc.right - 10 > obj1Loc.left;
 
   const onTargetY =
-    obj1Loc.bottom > obj2Loc.top + 3 && obj2Loc.bottom - 3 > obj1Loc.top;
+    obj1Loc.bottom > obj2Loc.top && obj2Loc.bottom > obj1Loc.top;
 
   const hasIntersection = onTargetX && onTargetY;
 
@@ -52,9 +52,9 @@ const checkIntersection = (obj1, obj2) => {
 
 // Mario Logic
 const jump = () => {
-  if (!marioWalking) {
-    return;
-  }
+  if (gameOver) return;
+
+  if (!marioWalking) return;
 
   if (marioWalking) {
     mario.classList.add("jump-mario");
@@ -137,16 +137,26 @@ const coinTouch = () => {
   });
 };
 
+// Bullet logic
+const spawnBullet = () => {
+  bullet.classList.add("bullet-animation");
+};
+
+const bulletGenerator = () => {
+  setInterval(() => {
+    if (!gameOver) spawnBullet();
+  }, 6000);
+};
+
 // Power logic
 const spawnPower = () => {
-  fungus.style.animation = "fungus-animation 2s infinite linear";
-  fungus.style.right = `-${Math.random() * 400 + 100}px`;
+  fungus.classList.add("fungus-animation");
 };
 
 const startPowerGeneration = () => {
   setInterval(() => {
     spawnPower();
-  }, 15000);
+  }, 10000);
 };
 
 // Game controllers
@@ -158,6 +168,8 @@ const startAnimations = () => {
   startPowerGeneration();
 
   startCoinGeneration();
+
+  bulletGenerator();
 };
 
 const getRecord = () => {
@@ -178,6 +190,7 @@ const updateModal = () => {
 
 const startGame = () => {
   playSound("./sounds/smb_medley.mp3", true, 0.2);
+  gameOver = false;
 
   const loopGame = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
@@ -217,8 +230,10 @@ const startGame = () => {
 
       setRecord(coinCounter);
 
-      startGameModal.classList.remove("hidden");
-      updateModal();
+      setTimeout(() => {
+        startGameModal.classList.remove("hidden");
+        updateModal();
+      }, 2500);
 
       gameOver = true;
 
@@ -238,8 +253,10 @@ const startGame = () => {
     if (checkIntersection(mario, fungus) && marioIsSmall) {
       marioIsSmall = false;
       mario.src = "./Images/super-mario2.gif";
-      mario.style.width = "90px";
-      fungus.style.animation = "none";
+      mario.style.width = "80px";
+
+      fungus.style.animation = "";
+      fungus.classList.remove("fungus-animation");
 
       playSound("./sounds/smb_powerup.wav").play();
     }
@@ -294,12 +311,14 @@ startButton.addEventListener("click", () => {
 });
 
 bullet.addEventListener("animationiteration", () => {
-  const height = Math.trunc(Math.random() * 50);
-  bullet.style.bottom = `${height}%`;
+  bullet.style.animation = "";
+  bullet.style.bottom = `${Math.random() * 50}%`;
+  bullet.classList.remove("bullet-animation");
 });
 
 fungus.addEventListener("animationiteration", () => {
-  fungus.style.animation = "none";
+  fungus.style.animation = "";
+  fungus.classList.remove("fungus-animation");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -308,4 +327,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("keydown", jump);
-document.addEventListener("touchstart", jump);
+
+game.addEventListener("touchstart", jump);

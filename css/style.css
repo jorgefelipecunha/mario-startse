@@ -22,7 +22,7 @@
 }
 
 .jump-mario {
-  animation: mario-animation 500ms ease-out;
+  animation: mario-animation 550ms ease-out;
 }
 
 .block-mario {
@@ -77,7 +77,7 @@
   position: absolute;
   bottom: 0;
   width: 50px;
-  right: -100px;
+  right: -300px;
 }
 
 .coin-game {
@@ -96,7 +96,11 @@
 
 .bullet-animation {
   animation: bullet-animation 2s infinite linear;
-  animation-delay: 1.25s;
+  animation-delay: 1.5s;
+}
+
+.fungus-animation {
+  animation: fungus-animation 2s infinite linear;
 }
 
 .coin-animation {
@@ -173,6 +177,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: translate();
 }
 
 @keyframes pipe-animation {
@@ -238,5 +243,46 @@
   }
   100% {
     bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .start-game-modal * {
+    box-sizing: border-box;
+  }
+
+  .start-game-modal {
+    width: 90%;
+  }
+
+  .coin-counter {
+    left: 10%;
+  }
+
+  .super-mario {
+    width: 50px;
+    left: 50px;
+  }
+
+  .pipe-game {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+  }
+
+  .pipe-animation {
+    animation: pipe-animation 1.2s infinite linear;
+  }
+
+  .bullet-animation {
+    animation: bullet-animation 1.5s infinite linear;
+  }
+
+  .coin-animation {
+    animation: coin-animation 1.2s infinite linear;
+  }
+
+  .cloud-animation {
+    animation: clouds-animation 20s infinite linear;
   }
 }
