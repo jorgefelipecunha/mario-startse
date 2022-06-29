@@ -16,7 +16,6 @@ const bestScoreSelectPerson = document.querySelector(
 
 // cenas
 const sceneGameOver = document.querySelector('.game-over')
-const scenePause = document.querySelector('.pause')
 const sceneMenu = document.querySelector('.main-menu')
 const sceneOpen = document.querySelector('.main-menu__open-scene')
 const sceneGame = document.querySelector('.game')
@@ -28,7 +27,6 @@ const sceneCredits = document.querySelector('.credits')
 const restart = document.querySelector('.game-over__restart')
 const btnMenu = document.querySelector('.game-over__menu')
 const btnStart = document.querySelector('.main-menu__start')
-const btnPause = document.querySelector('.game__pause-icon')
 const btnSelectPerson = document.querySelector('.main-menu__select-person')
 const btnSelectScene = document.querySelector('.main-menu__select-scene')
 const btnCredits = document.querySelector('.main-menu__credits')
@@ -36,6 +34,7 @@ const btnBackMenu = document.querySelectorAll('.select-person__back-menu')
 const btnCreditsBackMenu = document.querySelector('.credits__back-menu')
 const btnScene = document.querySelectorAll('.select-scene__back-menu')
 const sceneUnlocked = [true, true, true, true, true, false]
+const pauseRestart = document.querySelector('.pause__restart')
 
 var gameover = false
 var pause = false
@@ -530,11 +529,6 @@ for (let i = 0; i < btnScene.length; i++) {
 }
 
 restart.addEventListener('click', restartGame)
-
-btnPause.addEventListener('click', () => {
-  pause = true
-  scenePause.style.display = 'flex'
-})
 
 btnMenu.addEventListener('click', () => {
   restartGame()

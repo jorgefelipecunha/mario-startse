@@ -11,13 +11,6 @@
   justify-content: center;
 }
 
-.game-over__title {
-  color: var(--color-btn);
-  font-size: 3rem;
-  font-family: var(--font-ui);
-  margin-bottom: 2rem;
-}
-
 .game-over::after {
   position: absolute;
   content: '';
@@ -27,6 +20,13 @@
   opacity: 0;
   z-index: -1;
   animation: gameOverOpacity 0.08s linear forwards;
+}
+
+.game-over__title {
+  color: var(--color-btn);
+  font-size: 3rem;
+  font-family: var(--font-ui);
+  margin-bottom: 2rem;
 }
 
 @keyframes gameOverOpacity {
