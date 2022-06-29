@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:
+    font-size: 1em;
+}
+
+body {
+    background-color: #0066b8;
+/*    font-size: 3em; */
+}
+
+section{
+    margin-top: 3em;
+/*    font-size: 2em; */
+}
+
+.game{
+//    border: 2px solid yellow; 
+    width: 200px;
+    height: 200px;
+}
+
+h1{
+    display: flex;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+h2{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+p, li{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+
+li{
+    margin-left: 3em;
+}
+
+section h2{
+    font-size: 3rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+img{
+    margin-bottom: 3rem;
+}
+
+#player{
+    margin-left: 50px;
+}

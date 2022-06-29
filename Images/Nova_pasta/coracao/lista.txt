@@ -1,0 +1,11 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç 0C4A-59DF
+
+ Pasta de C:\StartSe2\mario-startse-2\Images\Nova_pasta\coracao
+
+[.]                      [..]                     coracao-thumbnail.jpg
+coracao-thumbnail2.png   coracao.gif              coracao1.gif
+coracao1.png             coracao2.gif             coracao2.png
+coracao3.png             coracao4.png             lista.txt
+              10 arquivo(s)        536.961 bytes
+               2 pasta(s)   154.011.762.688 bytes dispon°veis

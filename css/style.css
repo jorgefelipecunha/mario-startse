@@ -18,6 +18,10 @@
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
+nav{
+    margin-top: -100px;
+}
+
 .componente-game {
     position: absolute;
     bottom: 0;
@@ -70,7 +74,7 @@
 }
 
 .inform{
-    color: white;
+    color: #E6E6E6;
     font-size: 2em;
     display: flex;
     justify-content: space-between;
@@ -78,14 +82,32 @@
 
 #score {
     margin-left: 50px;
+/*    display: flex;
+    justify-content: flex-end;*/
 }
 
 #timer {
     margin-right: 50px;
+/*    display: flex;
+    justify-content: flex-end;
+
     justify-content: right;
-    align-items: flex-end;
+    align-items: flex-end; */
+}
+/*
+.coracao {
+    width: 1.5em;
 }
 
+#vida{
+    display: flex;
+    align-items: center;
+}
+
+#vidas{
+    vertical-align: text-top;
+}
+*/
 .menu{
     color:black;
     font-size: 2em;
@@ -105,13 +127,13 @@
     margin-bottom: 30px;
 }
 
-#titulomenu, #botao, #botao2{
+#titulomenu, #botao, #botao2, #botao3{
     display: flex;
     margin: auto;
     justify-content: center;
 }
 
-#msg1, #msg2, #msg3{
+#msg1, #msg2{
     display: flex;
     justify-content: center;
     font-size: .8em;
@@ -130,7 +152,7 @@ input, label {
     background-color: #0066b8;
     padding: 9px 50px;
     border: none;
-    color: white;
+    color: #D8D8D8;
     text-align: center;
     cursor: pointer;
 }
@@ -145,10 +167,27 @@ input, label {
     background-color: #0066b8;
     padding: 9px 50px;
     border: none;
-    color: white;
+    color: #D8D8D8;
     text-align: center;
     cursor: pointer;
 }
+
+#botao3{
+    display: flex;
+    justify-content: center;
+    border-radius: 15%;
+    font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
+    font-size: .8em;
+    width: 165px;
+    height: 100px;
+    background-color: #0066b8;
+    padding: 9px 50px;
+    border: none;
+    color: #8A0808;
+    text-align: center;
+    cursor: pointer;
+}
+
 
 #recomeca{
 	margin-top: 10em;
