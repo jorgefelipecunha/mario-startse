@@ -48,7 +48,7 @@ const loopGame = setInterval(() => {
     witch.style.animation = "none";
     witch.style.bottom = `${witchPosition}px`;
         
-    witch.src = "../assets/img/Witch/witch-dead.gif";
+    witch.src = "../assets/img/Witch/witchdead.gif";
     witch.style.width = "358px";
     witch.style.height = "490px";
     witch.style.marginLeft = "45px";
