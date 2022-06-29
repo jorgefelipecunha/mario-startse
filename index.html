@@ -26,20 +26,27 @@
                     </div>
                     <div class="container-creditos">
                         <span class="text">Crédito:</span>
-                        <span class="text creditos">10</span>
+                        <span class="text creditos">2</span>
                     </div>
                 </header>
 
-                <section class="menu  end-game">
-                    <div class="menu-title">
-                        <h1>SUPER MARIO</h1>
+                <section class="menu menu-animation">
+                    <div class="menu-title end-game finalizar-hide">
+                        <h1 class="menu-title-h1" >SUPER MARIO</h1>
                     </div>
+                    <!-- <div class="menu-title game-over end-game">
+                        <h2>GAME OVER</h2>
+                    </div>     -->
                     <nav class="nav-menu">
-                        <ul class="options">
-                            <li><button class="button-game-play cor">Jogar</button></li>
-                            <li><button class="game-ranking cor">Ranking</button></li>
-                            <li><button class="hide restart cor">Restart</button></li>
-                            <li><button class="hide finalizar cor">Finalizar</button></li>
+                        <ul class="options-list">
+                            <li><button class="button-game-play finalizar-hide mudar-cor">Jogar</button></li>
+                            <li><button class="hide finalizar-hide start-game restart mudar-cor">Restart</button></li>
+                            <li><button class="game-ranking finalizar-hide start-game mudar-cor">Ranking</button></li>
+                            <li><button class="game-over finalizar-hide restart-game-over mudar-cor">Recarregar Jogo</button></li>
+                            <li><button class="finalizar finalizar-hide mudar-cor">Finalizar</button></li>
+                            <li><button class="option text-pergunta mudar-cor">Deseja Realmente Finalizar?</button></li>
+                            <li><button class="option option-no mudar-cor">Cancelar</button></li>
+                            <li><button class="option option-yes mudar-cor">Confirmar</button></li>
                         </ul>
                     </nav>
                 </section>
@@ -51,13 +58,13 @@
                 <audio src="./audio/mario_moeda_efeito_sonoro_toquesengracadosmp3.com.mp3" class="audio-moeda"></audio>
                 <img src="./Images/moeda_1.png" alt="moeda mario" class="show" id="moeda-img"/>
                 <img src="./Images/clouds-gamer.png" class="cloud-game show" />
-                <img src="./Images/super-mario.png" class="super-mario" />
+                <img src="./Images/super-mario.png" class="super-mario   " />
                 <img src="./Images/pipe-game.png" class="pipe-game-animation show"/>
                 <img src="./Images/pipe-game.png" class="pipe-game hide" />
             </section>
 
             <section class="container-end">
-                <div><h1>Obrigado Pelo Tempo Que Você Jogou. Até A Próxima!</h1></div>
+                <div class="tela-final-game"><h1>Obrigado Pelo Tempo Que Você Jogou. Até A Próxima!</h1></div>
                 <audio src="./audio/end_mario_rap_remix_toquesengracadosmp3.com.mp3" class="audio-fim"></audio>
             </section>
         </main>

@@ -5,7 +5,7 @@
     list-style: none;
 }
 
-.show, .hide {
+.show, .hide, .game-over, .option {
     display: none;
 }
 
@@ -13,7 +13,7 @@
     width: 100vw;
 }
 
-.container-main, .container-menu, .menu, li {
+.container-main, .container-menu, .menu, .nav-menu, .options-list, li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,18 +24,14 @@
     height: 100vh;
     background: linear-gradient(#87CEEB, #E0F6FF);
     background-size: cover;
-    /* background-image: none; */
-    /* linear-gradient(#0f1111, #0d0d0e) */
 }
 
 .menu { 
     justify-content: space-between;
     height: 23rem;
-    /* width: 50rem; */
     margin: auto;
     top: 3rem;
     z-index: 10;
-    /* background-color: rebeccapurple; */
     position: absolute;
 }
 
@@ -49,12 +45,19 @@
     background-color: #D54B00;
 }
 
-.nav-menu .options li {
+.nav-menu .options-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 25rem;
+}
+
+.nav-menu .options-list li {
     margin-top: .8rem;
 }
 
 
-.nav-menu .options li button {
+.nav-menu .options-list li button {
     padding: .5rem;
     background-color: #FFC3B8;
     border: none;
@@ -62,8 +65,12 @@
     font-size: 1.5rem;
 }
 
-.nav-menu .options li:hover button {
+.nav-menu .options-list li:hover button {
     cursor: pointer;
+}
+
+.nav-menu .options-list li:hover .text-pergunta {
+    cursor: text;
 }
 
 .game {
@@ -73,9 +80,6 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    /* z-index: 5; */
-    /* background-color: red; */
-    /* background: linear-gradient(#87CEEB, #E0F6FF); */
 }
 
 .container-info, .info-game {
@@ -170,6 +174,34 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.tela-final-game {
+    bottom: 50%;
+    position: absolute;
+    animation: end-game 5s linear;
+}
+
+.menu-animation {
+    animation: game-over 1s linear;
+}
+
+@keyframes end-game {
+
+    from {
+        bottom: 0;
+    }
+    
+}
+
+@keyframes game-over {
+    from {
+        margin-left: -200%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
 }
 
 @keyframes morte-mario {

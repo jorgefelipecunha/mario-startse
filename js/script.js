@@ -8,34 +8,41 @@ const marioPlay = document.querySelector(".button-game-play");
 const moeda = document.getElementById("moeda-img");
 const restart = document.querySelector(".restart");
 
+
 // Variável score
 let scoreInner = 0;
-let contIncremento = 10;
+let gameFase = 2;
+let contaInicioJogo = 0;
+
 
 const audioFasesGame = {
     1: "./audio/1-super-mario-bros.mp3",
     2: "./audio/2-super-mario-bros.mp3",
-    3: "./audio/3_mario_fase_caverna.mp3"
+    3: "./audio/3_mario_fase_caverna.mp3",
+    100: "./audio/Efeito_Sonoro_Morte_Mario.mp3",
 }
+
 
 const imgFasesObjeto = {
     2: "url('./Images/fundo2.png')",
     3: "url('./Images/fundo3.png')",
 }
 
+
 const chaoFasesObjeto = {
     bottomFase2: "#FEAC4F",
     bottomFase3: "#182852"
 }
 
+
 const personagemFases = {
     1: "./Images/pipe-game.png",
     2: "./Images/deserto-bicho.png",
-    3: "./Images/bicho3.png"
+    3: "./Images/bicho3.png",
 }
 
-const mudaPersonagem = (value) => {
 
+const mudaPersonagem = (value) => {
     const imgKey = Object.keys(personagemFases)[value-1];
     const imgValue = Object.values(personagemFases)[value-1];
 
@@ -46,7 +53,6 @@ const mudaPersonagem = (value) => {
 
 
 const getElementoDOM = (value) => {
-
     return document.querySelector(`${value}`);
     // return parseInt(getCreditosDOM.textContent) >= 0 ? parseInt(getCreditosDOM.textContent) : undefined;
 }
@@ -59,8 +65,7 @@ const setElementoDOM = (elementDOM, value) => {
 
 const jump = () => {
     mario.classList.add("jump-mario");
-    audioPulo.play()
-
+    audioPulo.play();
     setTimeout(() => {
         moeda.style.display = 'block';
         mario.classList.remove("jump-mario");
@@ -79,10 +84,13 @@ const mudaEstadoDisplay = (className, displayEstado) => {
     }
 }
 
+
 const startGame = () => {
+    
     const startG = () => {
-        // mudaFase();    
         document.addEventListener("keydown", jump);
+        mario.classList.remove("game-over-animation");
+
         audioFase.play();
         audioFase.volume = 0.6;
         audioFase.loop = true;
@@ -99,29 +107,39 @@ const startGame = () => {
         mario.src = './Images/super-mario.gif';
         document.querySelector(".game").style.height= '100vh';
         mudaEstadoDisplay(".show", "block");
-    }
-    marioPlay.removeEventListener("click", startG);
-    marioPlay.addEventListener("click", startG);   
+        contaInicioJogo++;
 
+    }
+
+    marioPlay.removeEventListener("click", startG);
+    marioPlay.addEventListener("click", startG);  
+}
+
+
+const checkFase = () => {
+    const faseValueDOM = parseInt(getElementoDOM(".fase").textContent);
+    const scoreValueDOM = parseInt(getElementoDOM(".score-valor").textContent);
+    return [faseValueDOM, scoreValueDOM];
 }
 
 
 const restartGame = () => {
-    
     let count = 0;
-
-    const addEvent = () => {
-
-        const checkFase = mudaFase();
-        checkFase < 2 ? mudaAudio(checkFase) : mudaFase();
+    // document.removeEventListener("keydown", jump); 
         
+    const addEvent = () => {
         count++;
-
+        document.addEventListener("keydown", jump);
         restart.removeEventListener("click", addEvent);
 
         if(checkCredito() > 0 && count <= 1) {
-            // if(e.key === 'Enter') 
-            // window.location.reload();
+            document.addEventListener("keydown", jump); 
+        
+            const check = checkFase()[0];
+            check < 2 ?  mudaAudio(1) : mudaAudio(check)
+            
+            count++;
+            
             mario.classList.remove("morte-mario")
             setAnimations();
             mario.src = "./Images/super-mario.gif";
@@ -142,6 +160,9 @@ const restartGame = () => {
                 }
             }, 50)
         }
+        else {
+            mudaEstadoDisplay(".start-game", "none")
+         }
 
     }
     restart.addEventListener('click', addEvent);
@@ -170,11 +191,13 @@ const loopGame = () => {
         stopLoopGame()
 
         mario.style.marginLeft = `${marioPosition}px`;
+        // audioFase.pause();
         
         return 0
     }
     return 1
 }
+
 
 const stopLoopGame = () => {
     mudaEstadoDisplay(".show", "block") 
@@ -188,59 +211,111 @@ const stopLoopGame = () => {
     audioFase.play();
     audioFase.loop = false;
 
+    document.removeEventListener("keydown", jump);
+
     mudaEstadoDisplay(".menu", "flex")
     mudaEstadoDisplay(".hide", "block");
     
-    marioPlay.style.display = 'none' /* Ocultando o botão jogar  */
+    marioPlay.style.display = 'none'; /* Ocultando o botão jogar  */
     
     removeCreditos();
     restartGame();
-    // endGame();
+
+    if(checkCredito() < 1) {
+        mudaEstadoDisplay(".start-game", "none");
+        gameOver();
+    }
 
 }
 
 
+const gameOver = () => {
+
+    const gameOverOption = getElementoDOM(".restart-game-over")
+    document.removeEventListener("click", restart)
+
+    mudaAudio(100); /* Colocando o som de morte do Mário */
+    mudaAudio.loop = false;
+    // audioFase.attributes.src.value = `${audioFasesGame[100]}`;
+    // audioFase.play();
+    // audioFase.loop = true;
+
+    mudaEstadoDisplay(".game-over", "block");
+    mudaEstadoDisplay(".menu", "flex")
+    
+    document.querySelector(".restart").style.display = "none";    
+    document.querySelector(".menu-title-h1").textContent = "GAME OVER";
+
+    document.removeEventListener("click", gameOverOption)
+
+    gameOverOption.addEventListener("click", () => {
+        window.location.reload();
+    })
+}
+
+
 const endGame = () => {
+    
     const end = getElementoDOM(".finalizar");
-    end.addEventListener("click", () => {
-        // mudaEstadoDisplay(".end-game", "none");
-        if(confirm("Deseja realmente encerrar?")) {
-            mudaEstadoDisplay(".end-game", "none");
-            getElementoDOM(".container-end").style.display = 'flex';
-            getElementoDOM(".audio-fim").play();
-            getElementoDOM(".audio-fim").volume = 0.4;
+    const yes = getElementoDOM(".option-yes");
+    const no = getElementoDOM(".option-no");
+
+    end.addEventListener("click", () => {    
+        mudaEstadoDisplay(".option", "block");
+        mudaEstadoDisplay(".finalizar-hide", "none")
+        mudaEstadoDisplay(".menu-title", "block");
+        
+        if (contaInicioJogo < 1) {
+            document.querySelector(".restart").classList.remove("start-game");
+
         }
-        // end.removeEventListener("click")
+        else {
+            document.querySelector(".restart").style.display = "none"
+        }
+        
+        yes.addEventListener("click", () => {
+            document.querySelector(".audio-fim").play();
+            mudaEstadoDisplay(".container-end", "flex");
+            mudaEstadoDisplay(".end-game", "none");
+            mudaEstadoDisplay(".mudar-cor", "none");
+        })
+
+        no.addEventListener("click", () => {
+            mudaEstadoDisplay(".option", "none");
+            mudaEstadoDisplay(".start-game", "block");
+            mudaEstadoDisplay(".finalizar", "block");
+
+            contaInicioJogo < 1 ? document.querySelector(".button-game-play").style.display = "block" :
+                checkCredito() >= 1 ? document.querySelector(".restart").style.display = "block" : 
+                    document.querySelector(".restart").style.display = "none";
+
+            checkCredito() < 1 ? document.querySelector(".restart-game-over").style.display = "block" :
+            document.querySelector(".restart-game-over").style.display = "none";
+        })
     })
 }
 
 
 const mudaFase = () => {
-    const faseValueDOM = parseInt(getElementoDOM(".fase").textContent);
-    const scoreValueDOM = parseInt(getElementoDOM(".score-valor").textContent);
-    let fase = 0;
+    let fase = 0
+    fase +=  checkFase()[0];
 
-    fase += faseValueDOM;
-
-    console.log("FASE ", fase)
-
-    if(scoreValueDOM == fase * contIncremento) {
+    if(checkFase()[1] == fase * gameFase) {
         fase++;
-        console.log("Vlaor fase", scoreValueDOM)
+        fase < 3 ? mudaAudio(fase) : mudaAudio(3)
         setElementoDOM(getElementoDOM(".fase"), fase)
     }
 
-
-    if(fase == 2) {
+    if(fase === 2) {
         mudaCenarioFase(fase);
         mudaPersonagem(fase)
-        mudaAudio(fase)
+        // mudaAudio(fase)
         cloud.style.opacity = '0.2';
     }
-    else if (fase == 3 ) {
+    else if (fase === 3 ) {
         mudaCenarioFase(fase);
         mudaPersonagem(fase)
-        mudaAudio(fase)
+        // mudaAudio(fase)
 
         cloud.style.display = "none";
         cloud.style.opacity = '0';
@@ -251,25 +326,15 @@ const mudaFase = () => {
         getElementoDOM(".container-end").style.color = "white";
         mudaCorTextoButton();
     }
-    return fase;
 }
 
 
 const mudaAudio = (value) => {
-    const audioValue = Object.values(audioFasesGame)[value-1];
-    const faseValueDOM = parseInt(getElementoDOM(".fase").textContent);
-    const getKeyAudio = parseInt(Object.keys(audioFasesGame)[value-1]);
-    
-    console.log("Chave audio ",getKeyAudio)
-    console.log("Audio Conteudo ", audioValue)
-    console.log("Valor do DOM ", faseValueDOM)
-
-    faseValueDOM == getKeyAudio ? document.querySelector(".audio-fase").src = `${audioValue}` : 
-        audioFase.attributes.src.value = `${Object.values(audioFasesGame)[0]}`;
-    
+    audioFase.attributes.src.value = `${audioFasesGame[value]}`
     audioFase.play();
-    audioFase.loop = true;
 
+    value === parseInt(Object.keys(audioFasesGame)[Object.keys(audioFasesGame).length-1]) ? 
+        audioFase.loop = false : audioFase.loop = true
 }
 
 
@@ -284,7 +349,7 @@ const mudaCenarioFase = (value) => {
 
 
 const mudaCorTextoButton = () => {
-    const  btn = document.querySelectorAll(".cor");
+    const  btn = document.querySelectorAll(".mudar-cor");
     btn.forEach(element => {
         element.style.color = "white";
     });
@@ -322,17 +387,25 @@ const checkCredito = () => {
 
 
 const removeCreditos = () => {
-    const creditos = getElementoDOM(".creditos").textContent;
     let removeCreditos = -1;
-    removeCreditos += parseInt(creditos)
+    removeCreditos += parseInt(getElementoDOM(".creditos").textContent)
     setElementoDOM(getElementoDOM(".creditos"), removeCreditos);
 }
+
+
+const insereCreditos = () => {
+    let addCreditos = 1;
+    addCreditos += parseInt(getElementoDOM(".creditos").textContent)
+    setElementoDOM(getElementoDOM(".creditos"), addCreditos);
+}
+
 
 const setAnimations = () => {
     pipe.style.animation = "pipe-animation 1.5s infinite linear";
     cloud.style.animation = "clouds-animation 20s infinite linear";
     moeda.style.animation = "moeda-animation 2.5s infinite linear";
 }
+
 
 const removeAnimation = () => {
     pipe.style.animation = "none";
@@ -342,4 +415,5 @@ const removeAnimation = () => {
 
 
 startGame();
+// restartGame();
 endGame();
