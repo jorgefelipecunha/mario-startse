@@ -6,12 +6,12 @@ const faixa = document.querySelector(".faixa");
 const vigaristamove = vigarista.offsetBottom
 const gameover = document.querySelector(".over");
 const playAgain = document.querySelector(".play-again");
-var score = Number;
 
-const musicEntrada = new Audio("./audio/corrida-maluca-entrada.ogg");
+
+const musicEntrada = new Audio("./audios/corrida-maluca-entrada.ogg");
 window.onload = musicEntrada.play();
 
-const musicMutley = new Audio("./audio/risada-muttley.mp3");
+const musicMutley = new Audio("./audios/risada-muttley.mp3");
 
 const topDow = () => {
   const vigaristaPosition = +window
@@ -50,7 +50,7 @@ const loopGame = setInterval(() => {
     vigarista.style.animation = "none";
     vigarista.style.bottom = `${vigaristaPosition}px`;
 
-    vigarista.src = "./imagens/muttleySmile.gif";
+    vigarista.src = "./images/muttleySmile.gif";
     vigarista.style.width = "150px";
     vigarista.style.marginLeft = "45px";
     musicMutley.play();
@@ -75,7 +75,7 @@ const loopGame = setInterval(() => {
     vigarista.style.animation = "none";
     vigarista.style.bottom = `${vigaristaPosition}px`;
 
-    vigarista.src = "./imagens/muttleySmile.gif";
+    vigarista.src = "./images/muttleySmile.gif";
     vigarista.style.width = "150px";
     vigarista.style.marginLeft = "45px";
     musicMutley.play();
@@ -100,7 +100,7 @@ const loopGame = setInterval(() => {
     vigarista.style.animation = "none";
     vigarista.style.bottom = `${vigaristaPosition}px`;
 
-    vigarista.src = "./imagens/muttleySmile.gif";
+    vigarista.src = "./images/muttleySmile.gif";
     vigarista.style.width = "150px";
     vigarista.style.marginLeft = "45px";
     musicMutley.play();
