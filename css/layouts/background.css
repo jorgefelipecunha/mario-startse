@@ -96,3 +96,21 @@
     left: -928px;
   }
 }
+
+@keyframes bg-cyberpunk-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1100px;
+  }
+}
+
+@keyframes bg-farm-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1024.6px;
+  }
+}
