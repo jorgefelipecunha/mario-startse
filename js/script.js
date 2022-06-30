@@ -1,3 +1,41 @@
+const data = [
+  {
+    background: `url("../../Images/background/bg_florest.png")`
+  },
+  {
+    paralax: [
+      '',
+      '',
+      '',
+      '',
+      '',
+      './Images/scenes/cyberpunk/layer_1.png',
+      '',
+      './Images/scenes/cyberpunk/layer_2.png',
+      '',
+      '',
+      './Images/scenes/cyberpunk/layer_3.png'
+    ],
+    musics: [
+      './sound/cyberpunk/cyberpunk-street.mp3',
+      './sound/cyberpunk/Goodnightmare.mp3',
+      './sound/cyberpunk/hear_hat_they_say.mp3'
+    ],
+    colors: ['oi', '', ''],
+    font: ['oi', '', ''],
+    background: "url('../../Images/background/bg_cyberpunk.png')"
+  },
+  {
+    background: "url('../../Images/background/bg_farm.png')"
+  },
+  {
+    background: "url('../../Images/background/bg_desert.png')"
+  },
+  {
+    background: "url('../../Images/background/bg_industry.png')"
+  }
+]
+
 //player e inimigos
 const mario = document.querySelector('.super-mario')
 const pipe = document.querySelector('.pipe-game')
@@ -59,6 +97,7 @@ const bg8 = document.querySelector('.background__img--8')
 const bg9 = document.querySelector('.background__img--9')
 const bg10 = document.querySelector('.background__img--10')
 const bgTerrain = document.querySelector('.background__terrain')
+const bgCredits = document.querySelector('.credits__background')
 
 // sons
 const soundMenu = new Audio()
@@ -489,32 +528,29 @@ function changeSound(soundPlay, ...sounds) {
   }
 }
 
-function chanceBgMenu(index) {
-  switch (index) {
-    case 0:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_florest.png')"
-      break
-    case 1:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_cyberpunk.png')"
-      break
-    case 2:
-      sceneMenu.style.background = "url('../../Images/background/bg_farm.png')"
-      break
-    case 3:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_desert.png')"
+function changeThemeGame(index) {
+  if (sceneMenu.style.background !== data[index].background) {
+    sceneMenu.style.background =
+      sceneSelectPerson.style.background =
+      bgCredits.style.background =
+        data[index].background
 
-      break
-    case 4:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_industry.png')"
-      break
-    case 5:
-      sceneMenu.style.background =
-        "url('../../Images/background/bg_halloween.png')"
-      break
+    bg1.src = data[index].paralax[0]
+    bg2.src = data[index].paralax[1]
+    bg3.src = data[index].paralax[2]
+    bg4.src = data[index].paralax[3]
+    bg5.src = data[index].paralax[4]
+    bg6.src = data[index].paralax[5]
+    bg7.src = data[index].paralax[6]
+    bg8.src = data[index].paralax[7]
+    bg9.src = data[index].paralax[8]
+    bg10.src = data[index].paralax[9]
+    bgTerrain.src = data[index].paralax[10]
+
+    soundMenu.src = data[index].musics[0]
+    soundGame.src = data[index].musics[1]
+    soundGameOver.src = data[index].musics[2]
+    soundMenu.play()
   }
 }
 
@@ -522,7 +558,7 @@ function chanceBgMenu(index) {
 for (let i = 0; i < btnScene.length; i++) {
   if (sceneUnlocked[i]) {
     btnScene[i].addEventListener('click', () => {
-      chanceBgMenu(i)
+      changeThemeGame(i)
       changeScene(sceneMenu, sceneSelectScene)
     })
   }
