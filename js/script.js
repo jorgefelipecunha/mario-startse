@@ -1,5 +1,29 @@
 const data = [
   {
+    paralax: [
+      './Images/scenes/florest/layer_1.png',
+      './Images/scenes/florest/layer_2.png',
+      './Images/scenes/florest/layer_3.png',
+      './Images/scenes/florest/Layer_0004_Lights.png',
+      './Images/scenes/florest/layer_4.png',
+      './Images/scenes/florest/layer_5.png',
+      '',
+      './Images/scenes/florest/layer_6.png',
+      './Images/scenes/florest/layer_7.png',
+      './Images/scenes/florest/layer_8.png',
+      './Images/scenes/florest/layer_9.png'
+    ],
+    musics: [
+      './sound/marked.mp3',
+      './sound/ambient_bongos.mp3',
+      './sound/asking_questions.mp3'
+    ],
+    colors: ['#70a679', '#65ff83', '#70a679'],
+    font: [
+      "'Rubik Bubbles', cursive, sans-serif",
+      "'Emilys Candy', cursive, sans-serif",
+      "'Emilys Candy', cursive, sans-serif"
+    ],
     background: `url("../../Images/background/bg_florest.png")`
   },
   {
@@ -21,8 +45,12 @@ const data = [
       './sound/cyberpunk/Goodnightmare.mp3',
       './sound/cyberpunk/hear_hat_they_say.mp3'
     ],
-    colors: ['oi', '', ''],
-    font: ['oi', '', ''],
+    colors: ['black', 'black', 'black'],
+    font: [
+      "'Rubik Glitch', cursive",
+      "'Press Start 2P', cursive",
+      "'Press Start 2P', cursive"
+    ],
     background: "url('../../Images/background/bg_cyberpunk.png')"
   },
   {
@@ -544,13 +572,29 @@ function changeThemeGame(index) {
     bg7.src = data[index].paralax[6]
     bg8.src = data[index].paralax[7]
     bg9.src = data[index].paralax[8]
-    bg10.src = data[index].paralax[9]
-    bgTerrain.src = data[index].paralax[10]
+    bgTerrain.src = data[index].paralax[9]
+    bg10.src = data[index].paralax[10]
 
     soundMenu.src = data[index].musics[0]
     soundGame.src = data[index].musics[1]
     soundGameOver.src = data[index].musics[2]
     soundMenu.play()
+
+    document.documentElement.style.setProperty(
+      '--color-text-ui',
+      data[index].colors[0]
+    )
+    document.documentElement.style.setProperty(
+      '--color-game-title',
+      data[index].colors[1]
+    )
+
+    document.documentElement.style.setProperty('--font-ui', data[index].font[1])
+
+    document.documentElement.style.setProperty(
+      '--font-primary',
+      data[index].font[0]
+    )
   }
 }
 
