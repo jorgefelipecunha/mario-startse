@@ -16,9 +16,9 @@ const layer4 = document.querySelector("#layer4");
 const layer5 = document.querySelector("#layer5");
 const layer6 = document.querySelector("#layer6");
 
-const audioGameOver = new Audio('./assets/Sound/mixkit-fairytale-game-over-1945.wav');
-const audioScream = new Audio('./assets/Sound/scream.mp3');
-const audioJump = new Audio('./assets/Sound/mixkit-quick-jump-arcade-game-239.wav') 
+const audioGameOver = new Audio('../assets/sound/mixkit-fairytale-game-over-1945.wav');
+const audioScream = new Audio('../assets/sound/scream.mp3');
+const audioJump = new Audio('../assets/sound/mixkit-quick-jump-arcade-game-239.wav') 
 const audioBack = document.querySelector('.music');
 
 
@@ -69,7 +69,7 @@ const loopGame = setInterval(() => {
     witch.style.animation = "none";
     witch.style.bottom = `${witchPosition}px`;
         
-    witch.src = "./assets/img/Witch/witchdead.gif";
+    witch.src = "../assets/img/witch/witchdead.gif";
     witch.style.width = "250px";
     witch.style.height = "343px";
     witch.style.marginLeft = "45px";
