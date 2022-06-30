@@ -13,26 +13,28 @@
 }
 
 .witch {
-    height: 256px;
-    width: 256px;
+    display: none;
+    height: 179px;
+    width: 179px;
     position: absolute;
     bottom:0;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
     margin-left: 150px; 
 }
 
 .pumpkin {
-    width: 500px;
+    display: none;
+    width: 350px;
     position: absolute;
     bottom:0;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
     transform: scaleX(-1);
-    animation: enemie-pumpkin 4s infinite linear;
+    animation: enemie-pumpkin 3s infinite linear;
 }
 
 @keyframes enemie-pumpkin {
     from {
-        right: -500px;
+        right: -350px;
     }
     to {
         right: 100%;
@@ -40,17 +42,18 @@
 }
 
 .thorn {
-    width: 300px;
+    display: none;
+    width: 200px;
     position: absolute;
     bottom:0;
-    margin-bottom: 65px;
+    margin-bottom: 60px;
     right: -350px;
-    animation: enemie-thorn 5s infinite linear;
+    animation: enemie-thorn 4s infinite linear;
 }
 
 @keyframes enemie-thorn {
     from {
-        right: -350px;
+        right: -200px;
     }
     to {
         right: 100%;
@@ -65,12 +68,12 @@
     background: url('../assets/img/BackgroundLayers/Layer_0.png');
     background-repeat: repeat-x;
     background-size:contain;    
-    height: 1300px;
+    height: 150vh;
     width: 1920px;
     position: absolute;
     bottom: 0;
     margin-bottom: -5px;  
-    animation: layer0 2s infinite linear;
+    animation: none;
     overflow: hidden;    
 }
 
@@ -87,11 +90,11 @@
     background: url('../assets/img/BackgroundLayers/Layer_1.png');
     background-repeat: repeat-x;
     background-size: contain;
-    height: 1300px;
+    height: 150vh;
     width: 1920px;
     position: absolute;
     bottom: 0;  
-    animation: layer1 5s infinite linear;
+    animation: none;
     overflow: hidden;
     
 }
@@ -109,11 +112,11 @@
     background: url('../assets/img/BackgroundLayers/Layer_2.png');
     background-repeat: repeat-x;
     background-size: contain;
-    height: 1300px;
+    height: 150vh;
     width: 1920px;
     position: absolute;
     bottom: 0;  
-    animation: layer2 15s infinite linear;
+    animation: none;
     overflow: hidden;    
 }
 
@@ -130,24 +133,24 @@
     background: url('../assets/img/BackgroundLayers/Layer_3.png');
     background-repeat: repeat-x;
     background-size: contain;
-    height: 1300px;
+    height: 150vh;
     width: 1920px;
     position: absolute;
     bottom: 0;  
-    animation: layer3 15s infinite linear;
+    animation: none;
     overflow: hidden;
 }
 
 #layer3-luz{
     position: absolute;
     bottom:0;
-    margin-bottom: 250px;
+    margin-bottom: 150px;
 }
 
 #layer5-luz{
     position: absolute;
     bottom:0;
-    margin-bottom: 250px;
+    margin-bottom: 150px;
 }
 
 @keyframes layer3{
@@ -163,11 +166,11 @@
     background: url('../assets/img/BackgroundLayers/Layer_4.png');
     background-repeat: repeat-x;
     background-size: contain;
-    height: 1300px;
+    height: 150vh;
     width: 1920px;
     position: absolute;
     bottom: 0;  
-    animation: layer4 30s infinite linear;
+    animation: none;
     overflow: hidden;
 }
 
@@ -184,11 +187,11 @@
     background: url('../assets/img/BackgroundLayers/Layer_5.png');
     background-repeat: repeat-x;
     background-size: contain;
-    height: 1300px;
+    height: 150vh;
     width: 1920px;
     position: absolute;
     bottom: 0;  
-    animation: layer5 50s infinite linear;
+    animation: none;
     overflow: hidden;
 }
 
@@ -205,11 +208,11 @@
     background: url('../assets/img/BackgroundLayers/Layer_6.png');
     background-repeat: repeat-x;
     background-size: contain;
-    height: 1300px;
+    height: 150vh;
     width: 1920px;
     position: absolute;
     bottom: 0;  
-    animation: layer6 80s infinite linear;
+    animation: none;
     overflow: hidden;
     opacity: 50%;
 }
@@ -249,22 +252,35 @@ audio {
 .game-over {
     display: none;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
     background-color: transparent;
     position: relative;
-    animation: game-over 3s infinite linear;
 }
 
-@keyframes game-over {
-    0% {bottom:30px}
-    50% {bottom: 0}
-    100% {bottom: 30px}
+.texto {
+    height: 100px;
+    position: relative;
+    top:0;
 }
 
-h1 {
-    margin-bottom: 20px;
+.titulo-game-over {
     font-size: 100px;
     color: rgb(209, 65, 99);
+    animation: texto 3s infinite linear;
+    position: relative;
+}
+
+.titulo {
+    font-size: 60px;
+    color: rgb(209, 65, 99);
+    animation: texto 3s infinite linear;
+    position: relative;
+}
+
+@keyframes texto {
+    0% {top:30px}
+    50% {top: 0}
+    100% {top: 30px}
 }
 
 button {
@@ -278,20 +294,54 @@ button {
     font-size: medium;
     color: rgb(219, 237, 219);
     cursor: pointer;
-    margin: 10px;
+    margin-top: 80px;
 }
 
 #score {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
     position:relative;
     
     color:rgb(219, 237, 219);
-    font-size: 30px;
+    font-size: 20px;
     background-color: rgb(105, 129, 100);
-    height: 40px;
-    width: 200px;
+    height: 30px;
+    width: 150px;
     border-radius: 20px;
+
+    display: none;
+}
+
+.menu-start {
+    text-align: center;
+    margin-top: 50px;
+    background-color: transparent;
+    position: relative;
+    display: block;
+}
+
+#bunny {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.bunny {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 345px;
+    width: 150px;
+    animation: bunny 12s infinite linear;
+}
+
+@keyframes bunny {
+    from {
+        right: -100px;
+    }
+    to {
+        right: 100%;
+    }
 }
