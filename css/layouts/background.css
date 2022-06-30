@@ -114,3 +114,12 @@
     left: -1024.6px;
   }
 }
+
+@keyframes bg-desert-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1200px;
+  }
+}
