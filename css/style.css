@@ -121,11 +121,10 @@
 #moeda-img {
     display: none;
     position: absolute;
-    height: 6rem;
+    width: 6rem;
     right: -6rem;
     top: 40%;
     z-index: 1;
-    animation: 'none';
 }
 
 .pipe-game-animation, .pipe-game {
@@ -134,21 +133,17 @@
     bottom: 0;
     width: 80px;
     right: -80px;
-    animation: 'none';
 }
 
 .pipe-game {
     left: 110px;
-    z-index: 2;
 }
 
 .super-mario {
-    /* display: none; */
     width:120px;
     left: 45px;
     position: absolute;
     bottom: -10px;
-    /* transform.rotateY = -180deg */
 }
 
 .jump-mario {
@@ -160,7 +155,6 @@
     position: absolute;
     width: 550px;
     right: -550px;
-    animation: 'none';
 }
 
 .morte-mario {

@@ -9,9 +9,9 @@ const moeda = document.getElementById("moeda-img");
 const restart = document.querySelector(".restart");
 
 
-// Variável score
+// Variável globais
 let scoreInner = 0;
-let gameFase = 2;
+let gameFase = 10;
 let contaInicioJogo = 0;
 
 
@@ -91,10 +91,7 @@ const startGame = () => {
         document.addEventListener("keydown", jump);
         mario.classList.remove("game-over-animation");
 
-        audioFase.play();
-        audioFase.volume = 0.6;
-        audioFase.loop = true;
-        
+        mudaAudio(1);        
         setAnimations();
 
         const start = setInterval(()=> {
@@ -125,7 +122,6 @@ const checkFase = () => {
 
 const restartGame = () => {
     let count = 0;
-    // document.removeEventListener("keydown", jump); 
         
     const addEvent = () => {
         count++;
@@ -134,7 +130,7 @@ const restartGame = () => {
 
         if(checkCredito() > 0 && count <= 1) {
             document.addEventListener("keydown", jump); 
-        
+
             const check = checkFase()[0];
             check < 2 ?  mudaAudio(1) : mudaAudio(check)
             
@@ -174,13 +170,13 @@ const loopGame = () => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
     const moedaPosition = checkPositionLeft("#moeda-img");
 
-    if(pipePosition < -40) {
+    if(pipePosition > 0 && pipePosition < 40 && marioPosition > 80) {
         scoreInner++
         alterScore(".score-valor", scoreInner);
         mudaFase();
     }
 
-    if(moedaPosition <= 80 && moedaPosition > 30 && marioPosition > 80) {
+    if(moedaPosition <= 120 && moedaPosition > 30 && marioPosition > 60) {
         scoreMoeda();
         moeda.style.display = 'none'
     }
@@ -191,10 +187,10 @@ const loopGame = () => {
         stopLoopGame()
 
         mario.style.marginLeft = `${marioPosition}px`;
-        // audioFase.pause();
         
         return 0
     }
+    
     return 1
 }
 
@@ -206,10 +202,6 @@ const stopLoopGame = () => {
     mario.style.width = "75px";
 
     mario.classList.add("morte-mario");
-    
-    audioFase.attributes.src.value = "./audio/Efeito_Sonoro_Morte_Mario.mp3";
-    audioFase.play();
-    audioFase.loop = false;
 
     document.removeEventListener("keydown", jump);
 
@@ -218,6 +210,7 @@ const stopLoopGame = () => {
     
     marioPlay.style.display = 'none'; /* Ocultando o botão jogar  */
     
+    mudaAudio(100); // Audio da morte morte do Mário
     removeCreditos();
     restartGame();
 
@@ -236,9 +229,6 @@ const gameOver = () => {
 
     mudaAudio(100); /* Colocando o som de morte do Mário */
     mudaAudio.loop = false;
-    // audioFase.attributes.src.value = `${audioFasesGame[100]}`;
-    // audioFase.play();
-    // audioFase.loop = true;
 
     mudaEstadoDisplay(".game-over", "block");
     mudaEstadoDisplay(".menu", "flex")
@@ -297,7 +287,9 @@ const endGame = () => {
 
 
 const mudaFase = () => {
-    let fase = 0
+    let fase = 0;
+    let durationFase = 0;
+
     fase +=  checkFase()[0];
 
     if(checkFase()[1] == fase * gameFase) {
@@ -329,9 +321,21 @@ const mudaFase = () => {
 }
 
 
+
 const mudaAudio = (value) => {
     audioFase.attributes.src.value = `${audioFasesGame[value]}`
-    audioFase.play();
+
+    const playAudio = audioFase.play();
+    
+    if(playAudio !== undefined) {
+        playAudio.then(_ => {
+            playAudio.pause();
+            console.log("OK - ", a)
+        }).catch(error => {
+            console.log("Falhou")
+        })
+    }
+
 
     value === parseInt(Object.keys(audioFasesGame)[Object.keys(audioFasesGame).length-1]) ? 
         audioFase.loop = false : audioFase.loop = true
