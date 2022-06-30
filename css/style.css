@@ -1,34 +1,222 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
+
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-.game {
-    width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+footer{
+    border: 1px solid lightcyan;
+   border-radius: 20px;
 }
 
+
+#container{
+    font-family: Space;
+    background-color: red;
+    border: 1px solid red;
+    height: 100vh;
+   position: relative;
+   margin: 0 auto;
+   display: flex;
+   overflow: hidden;
+  
+   
+}
+#montada{
+    width: 100%;
+}
+
+#start{
+    display: inline-block;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    flex-grow: column;
+    border: 1px dashed lightcyan;
+    width: 500px;
+    height: 300px;
+    z-index: 10;
+    position: absolute;
+    bottom: 25vh;
+    left: 30%;
+    
+}
+#menu{
+    display: flex;
+    font-size: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+   
+    height: 55%;
+    flex: 2;
+    text-shadow: 1px 1px cyan;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45%;
+    flex-direction: column;
+}
+#play{
+    height: 100%;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: transparent;
+    border: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#play:hover span{
+    cursor: pointer;
+    background-color: cyan;
+    opacity: .6;
+}
+
+#contador{
+  
+    position: absolute;
+    right: 20px;
+    margin-top: 30px;
+    
+    background-color: lightblue;
+    opacity: .8;
+   
+
+}
+.Pontuacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 50px 50px 20px 20px;
+    z-index: 2;
+}
 .pipe-game {
     position: absolute;
     bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    width: 100px;
+    height: 90px;
+    animation: eggmanRobot-animation 2.5s infinite linear;
+}
+#anel{
+    position: absolute;
+    bottom: 120px;
+    width: 100px;
+    height: 100px;
+    animation: pipe-animation 15s infinite linear;
+}
+#back{
+    background-color: rgb(110, 156, 255);
+  
+    height: 50% ;
+    width: 100%;
+    position: absolute;
+    margin-top: 30px;
+    margin-bottom:30% ;
+    flex: 2;
+  
+    
+   
+}
+#img1 {
+    position: center;
+    height: 100vh;
+   
+    width: 100%;
+    position: absolute;
+    margin-bottom:50% ;
+  /*  animation: clouds-animation 4s infinite linear; */
+    animation-delay: 0s;
+    background-repeat: repeat-x;
+    animation: clouds-animation 10s infinite linear;
+    z-index: 1;
+   
 }
 
-.super-mario{
-    width:150px;
+#img2{
+    position: center;
+    height: 100vh;
+   
+    width: 100%;
     position: absolute;
+    margin-bottom:50% ;
+    animation: clouds-animation-2 10s infinite linear;
+    animation-delay: -5s;
+    background-repeat: repeat-x;
+    z-index: 0;
+}
+#parado{
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+}
+.game{
+    background-color: white transparent; 
+  
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 18vh;
+    flex: 2;
+    z-index: 2;
+}
+/*daqui pra baixo refatorar*/
+.sonic{
+    width:100px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 70px;
+    animation: sonic-jump;
+}
+.sonic-2{
+    width:100px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 170px;
+    animation: sonic-jump;
+}
+.sonic-transformation{
+    width:100px;
+    height: 100px;
+    position: absolute;
+    bottom: 180px;
+}
+
+.tails{
+    width: 90px;
+    margin-left:  -30px;
+    position: absolute;
+    bottom: 250px;
+}
+.eggman{
+    width: 200px;
+    margin-top: 100px;
+    float: right;
+    position: static;
+    margin-right: 40px;
+
+}
+.eggmanHehe{
+    position: absolute;
+    width: 200px;
+    margin-left: 200px;
     bottom: 0;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.jump-sonic {
+    animation: sonic-animation 500ms ease-out;
 }
 
 .cloud-game{
@@ -37,6 +225,22 @@
     animation: clouds-animation 20s infinite linear;
 }
 
+@keyframes clouds-animation {
+    from{
+        right: -100%;
+    }
+    to{
+        right:  100%;
+    }
+}
+@keyframes clouds-animation-2 {
+    from{
+        right: -100%;
+    }
+    to{
+        right:  100%;
+    }
+}
 @keyframes pipe-animation {
     from {
         right: -80px;
@@ -45,17 +249,15 @@
         right: 100%;
     }
 }
-
-@keyframes clouds-animation {
-    from{
-        right: -550px;
+@keyframes eggmanRobot-animation {
+    from {
+        right: 10px;
     }
     to{
-        right:  100%;
+        right: 100% ;
     }
 }
-
-@keyframes mario-animation{
+@keyframes sonic-animation{
     0% {
         bottom:0;
     }
