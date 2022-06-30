@@ -2,77 +2,177 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.game {
-    width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
-    margin: 0 auto;
-    position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
+/* Pagina de entrada */
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+.audio {
     position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    bottom: -100%;
 }
-
-.super-mario{
-    width:150px;
+.telaInicial {
     position: absolute;
-    bottom: 0;
+    width: 80%;
+    height: 80%;
+    left: 10%;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
-}
-
-.cloud-game{
+.botao-play {
     position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    width: 100px;
+    height: 100px;
+    left: 47%;
+    bottom: 15px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    font-family: 'Galindo', cursive;
+
 }
 
-@keyframes pipe-animation {
+/* Pagina do Game */
+
+#sky {
+    background-color:#87CEEB;
+}
+
+.sol {
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    border: 10px solid orange;
+    box-shadow: 0 0 100px orange;
+    border-radius: 50%;
+    left: 80%;
+    z-index: -1;
+}
+
+.cactus-L, .cactus-R, .arbusto {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 140px;
+}
+
+.cactus-R {
+    right: 0px;
+}
+.arbusto {
+    right: 50%;
+}
+#container {
+    height: 80vh;
+    width: 100%;
+    margin-top:20vh;
+    background: grey;
+    border-top: 150px solid rgb(244, 190, 88);
+    border-bottom: 150px solid rgb(244, 190, 88);
+}
+
+.gif-vigarista {
+    position: absolute;
+    width: 300px;
+    height: 112px;
+    transform: rotatey(180deg);
+    bottom: 270px;
+    z-index: 2;
+}
+
+.gif-caipira {
+    position: absolute;
+    width: 230px;
+    height: 100px;
+    bottom: 270px;
+    animation: carsMove 4.5s infinite linear;
+}
+
+.gif-lenhador {
+    position: absolute;
+    width: 230px;
+    height: 100px;
+    bottom: 170px;
+    right: -50%;
+    animation: carsMove 4.5s infinite linear;
+    animation-delay: 1.5s;
+    z-index: 2;
+}
+
+.gif-penelope {
+    position: absolute;
+    width: 230px;
+    height: 100px;
+    bottom: 270px;
+    right: -50%;
+    animation: carsMove 4.5s infinite linear;
+    animation-delay: 3s;
+}
+
+.faixa {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: white;
+    bottom: 250px;
+    right: -10%;
+    animation: faixaMove 1s infinite linear;
+    z-index: 1;
+}
+
+.over {
+    position: absolute;
+    color: orange;
+    font-size: 150px;
+    left: 10%;
+    top: -200px;
+    font-family: 'Galindo', cursive;
+    opacity: 100%;
+    z-index: 1;
+}
+
+.play-again {
+    position: absolute;
+    left: 40%;
+    color: black;
+    z-index: 1;
+    top: -100px;
+}
+
+.botao-play:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.play-again:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 0 100px black;
+}
+
+.botao:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+@keyframes carsMove {
     from {
-        right: -80px;
+        right: -100%;
     }
-    to{
+    to {
+        right: 200%;
+    }
+}
+
+@keyframes faixaMove {
+    from {
+        right: 0%;
+    }
+    to {
         right: 100%;
     }
-}
-
-@keyframes clouds-animation {
-    from{
-        right: -550px;
-    }
-    to{
-        right:  100%;
-    }
-}
-
-@keyframes mario-animation{
-    0% {
-        bottom:0;
-    }
-    40% {
-        bottom: 180px;
-    }
-    50% {
-        bottom: 180px;
-    }
-    60%{
-        bottom: 180px;
-    }
-    70%{
-        bottom: 180px;
-    }
-    100%{
-        bottom: 0%
-    }
-
 }
