@@ -332,7 +332,7 @@ const mudaAudio = (value) => {
             playAudio.pause();
             console.log("OK - ", a)
         }).catch(error => {
-            console.log("Falhou")
+            // console.log("Interrompendo áudio")
         })
     }
 
