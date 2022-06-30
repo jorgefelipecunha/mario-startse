@@ -51,7 +51,6 @@ function startGame() {
   thorn.style.display = "block";
   scoreArea.style.display = "block";
   start.style.display = "none";
-}
 
 const loopGame = setInterval(() => {
 
@@ -93,4 +92,4 @@ const loopGame = setInterval(() => {
     pontos += 0.04  ;
     score.innerHTML = `${pontos.toFixed(0)}`
   }
-},10)
+},10)}
