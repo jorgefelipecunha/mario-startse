@@ -50,7 +50,7 @@ const loopGame = setInterval(() => {
     vigarista.style.animation = "none";
     vigarista.style.bottom = `${vigaristaPosition}px`;
 
-    vigarista.src = "./images/muttleySmile.gif";
+    vigarista.src = "./Images/muttleySmile.gif";
     vigarista.style.width = "150px";
     vigarista.style.marginLeft = "45px";
     musicMutley.play();
@@ -75,7 +75,7 @@ const loopGame = setInterval(() => {
     vigarista.style.animation = "none";
     vigarista.style.bottom = `${vigaristaPosition}px`;
 
-    vigarista.src = "./images/muttleySmile.gif";
+    vigarista.src = "./Images/muttleySmile.gif";
     vigarista.style.width = "150px";
     vigarista.style.marginLeft = "45px";
     musicMutley.play();
@@ -100,7 +100,7 @@ const loopGame = setInterval(() => {
     vigarista.style.animation = "none";
     vigarista.style.bottom = `${vigaristaPosition}px`;
 
-    vigarista.src = "./images/muttleySmile.gif";
+    vigarista.src = "./Images/muttleySmile.gif";
     vigarista.style.width = "150px";
     vigarista.style.marginLeft = "45px";
     musicMutley.play();
