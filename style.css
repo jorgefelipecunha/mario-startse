@@ -65,7 +65,7 @@
  }
 
 #layer0 {
-    background: url('../assets/img/BackgroundLayers/Layer_0.png');
+    background: url('assets/img/BackgroundLayers/Layer_0.png');
     background-repeat: repeat-x;
     background-size:contain;    
     height: 150vh;
@@ -87,7 +87,7 @@
 }
 
 #layer1 {
-    background: url('../assets/img/BackgroundLayers/Layer_1.png');
+    background: url('assets/img/BackgroundLayers/Layer_1.png');
     background-repeat: repeat-x;
     background-size: contain;
     height: 150vh;
@@ -109,7 +109,7 @@
 }
 
 #layer2 {
-    background: url('../assets/img/BackgroundLayers/Layer_2.png');
+    background: url('assets/img/BackgroundLayers/Layer_2.png');
     background-repeat: repeat-x;
     background-size: contain;
     height: 150vh;
@@ -130,7 +130,7 @@
 }
 
 #layer3 {
-    background: url('../assets/img/BackgroundLayers/Layer_3.png');
+    background: url('assets/img/BackgroundLayers/Layer_3.png');
     background-repeat: repeat-x;
     background-size: contain;
     height: 150vh;
@@ -163,7 +163,7 @@
 }
 
 #layer4 {
-    background: url('../assets/img/BackgroundLayers/Layer_4.png');
+    background: url('assets/img/BackgroundLayers/Layer_4.png');
     background-repeat: repeat-x;
     background-size: contain;
     height: 150vh;
@@ -184,7 +184,7 @@
 }
 
 #layer5 {
-    background: url('../assets/img/BackgroundLayers/Layer_5.png');
+    background: url('assets/img/BackgroundLayers/Layer_5.png');
     background-repeat: repeat-x;
     background-size: contain;
     height: 150vh;
@@ -205,7 +205,7 @@
 }
 
 #layer6 {
-    background: url('../assets/img/BackgroundLayers/Layer_6.png');
+    background: url('assets/img/BackgroundLayers/Layer_6.png');
     background-repeat: repeat-x;
     background-size: contain;
     height: 150vh;
