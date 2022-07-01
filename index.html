@@ -4,14 +4,52 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
+        <link rel="stylesheet" href="./css/style.css" />
         <title>Super Mario StartSe</title>
     </head>
     <body>
-        <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
+    
+        <div id="game-container" class="game , initial-screen">
+        
+        <div id="instructions" hidden>
+            <h2>Instruções:</h2>
+            <ul>
+                <li>Aperte <img src="./Images/arrow.png" class="arrow up"> ou toque na tela para pular.</li>
+                <li>Aperte <img src="./Images/arrow.png" class="arrow left"> para desacelerar ou <img src="./Images/arrow.png" class="arrow right"> para acelerar.</li>
+                <li>Cuidado com os obstáculos! Pule por cima deles para não ser atingido!</li>
+                <li>Se você for acertado pela primeira vez, nem tudo está perdido. O Mario ficará pequeno e voltará a correr.</li>
+                <li>Se o Mario estiver pequeno, qualquer obstáculo atingido o derrotará.</li>
+                <li>Quanto mais tempo permanecer no jogo, mais pontos você ganhará.</li>
+                <li>O cogumelo é seu melhor amigo! Pegue-o e volte a ficar grande! Se você já estiver grande, você ganhará 10 pontos!</li>
+            </ul>
+            <button type="button" id="closeInstructionsButton" onclick="closeInstructions()">Fechar</buttom>
+        </div>
+        
+            <img src="./Images/logo.png" class="logo">
+            <span id="score-board" class="gameOverText">score: 
+                <span id="score-value" class="gameOverText">0</span>
+            </span>
+            <span id="game-over" class="gameOverText">Game Over</span>
+            <span class="start-button-container">
+                <button type="button" class="start-button" onclick="startGame()">start game</button>
+            </span>
+            <span class="instructionsButtonContainer">
+                <button type="button" id="openInstructionsButton" onclick="openInstructions()">Instruções</button>
+            </span>
+            <img src="./Images/super-mario.gif" class="mario"/>
+            <img src="./Images/pipe-game.png" class="pipe , inGameAnimation" />
+            <img src="./Images/red-shell.gif" class="shell , inGameAnimation">
+            <span class="lakituContainer , inGameAnimation">
+                <img src="./Images/lakitu-standard.png" class="lakitu , lakitu-standard , inGameAnimation">
+                <img src="./Images/lakitu-throwing.png" class="lakitu , lakitu-throwing , inGameAnimation">
+            </span>
+            <span class="spinyContainer , inGameAnimation">
+                <img src="./Images/spiny.gif" class="spiny , inGameAnimation">
+            </span>
+            <img src="./Images/mushroom.png" class="mushroom , inGameAnimation item">
+            <div class="ground  , inGameAnimation"></div>
+        </div>
+        
         </div>
         <script src="./js/script.js"></script>
     </body>
