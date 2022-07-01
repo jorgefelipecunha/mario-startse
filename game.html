@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./css/style.css" /> 
+        <title>Star Wars Game</title>
+    </head>
+    
+    <body>
+        <div class="game">
+            <div class="score">Score 0</div>
+            <div class="floor"></div>
+            <img src="./Images/tie-fighter.png" class="tie-fighter" />
+            <img src="./Images/yoda.gif" class="yoda" />
+            <img src="./Images/stormtrooper.png" class="stormtrooper" />
+
+            <div class="game-over">
+                <div class="game-over-content">
+                    <img src="./Images/star-wars-logo.webp" class="logo" />
+                    <p class="text-game-over">Game Over</p>
+                    <button  class ="bt-restart" onclick ="window.location.href='./game.html' ">Play Again
+                    </button>
+                    <button  class ="bt-restart2" onclick ="window.location.href='./index.html' ">Menu
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>
