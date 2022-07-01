@@ -7,39 +7,103 @@
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    border-bottom: 100px solid #18AE18;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
+.pontos, .score{
     position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    top: 60%;
+    font-size: 30px;
+    color: blue;
+    background: white;
+    z-index: 4;
 }
 
-.super-mario{
-    width:150px;
-    position: absolute;
-    bottom: 0;
+.pontos{
+    left: 80%;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.score{
+    left: 70%;
+}
+
+.mensagem{
+    position: absolute;
+    background: white;
+    top: 73%;
+    left: 5%;
+    color: blue;
+    z-index: 5;
+}
+
+.garrafaStartse {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    animation: garrafa-animation 4s infinite linear;
+    z-index: 5;
+}
+
+.boneco{
+    width:80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.jump-boneco {
+    animation: boneco-animation 800ms ease-out; /* ease-in-out */
+    z-index: 5;
 }
 
 .cloud-game{
     position: absolute;
-    width: 550px;
+    width: 250px;
     animation: clouds-animation 20s infinite linear;
+    z-index: 2;
 }
 
-@keyframes pipe-animation {
+.aviao {
+    position: absolute;
+    width: 150px;
+    top: 20px;
+    animation: aviao-animation 10s infinite linear;
+    z-index: 1;
+}
+
+.cidade{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    bottom: 0;
+    z-index: 3;
+}
+
+.floresta{
+    position: absolute;
+    width: 200%;
+    z-index: 4;
+    animation: floresta-animation 20s linear infinite;
+    bottom: 0;
+}
+
+@keyframes floresta-animation{
     from {
-        right: -80px;
+        right: -200%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes garrafa-animation {
+    from {
+        right: -30px;
     }
     to{
         right: 100%;
@@ -48,14 +112,24 @@
 
 @keyframes clouds-animation {
     from{
-        right: -550px;
+        right: -150px;
     }
     to{
         right:  100%;
     }
 }
 
-@keyframes mario-animation{
+@keyframes aviao-animation{
+    from{
+        right: -150px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes boneco-animation{
     0% {
         bottom:0;
     }

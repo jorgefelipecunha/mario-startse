@@ -1,32 +1,44 @@
-const mario = document.querySelector(".super-mario");
-const pipe = document.querySelector(".pipe-game");
+const boneco = document.querySelector(".boneco");
+const garrafa = document.querySelector(".garrafaStartse");
 
 const jump = () => {
-  mario.classList.add("jump-mario");
+  boneco.classList.add("jump-boneco");
 
   setTimeout(() => {
-    mario.classList.remove("jump-mario");
+    boneco.classList.remove("jump-boneco");
   }, 500);
 };
 
+var quadroDePontos = document.querySelector(".pontos");
+var mensagens = document.querySelector(".mensagem");
+var pontos = 0;
+
 const loopGame = setInterval(() => {
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window
-    .getComputedStyle(mario)
+  
+  const garrafaPosition = garrafa.offsetLeft;
+  const bonecoPosition = +window
+    .getComputedStyle(boneco)
     .bottom.replace("px", "");
 
-  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
+  if (garrafaPosition <= 30 && garrafaPosition > 0 && bonecoPosition < 80) {
+    garrafa.style.animation = "none";
+    garrafa.style.left = `${garrafaPosition}px`;
 
-    mario.style.animation = "none";
-    mario.style.bottom = `${marioPosition}px`;
+    boneco.style.animation = "none";
+    boneco.style.bottom = `${bonecoPosition}px`;
 
-    mario.src = "./Images/mario-game-over.png";
-    mario.style.width = "75px";
-    mario.style.marginLeft = "45px";
+    boneco.src = "./Images/boneco-game-over.png";
+    boneco.style.width = "100px";
+    boneco.style.marginLeft = bonecoPosition; //"45px"
+
+    mensagens.innerHTML = "Beba água, tente outra vez.";
 
     clearInterval(loopGame);
+  }
+
+  if(garrafaPosition > 80 && garrafaPosition > 0 && bonecoPosition < 80){
+    pontos = pontos + 1;
+    quadroDePontos.innerHTML = pontos;
   }
 }, 10);
 
