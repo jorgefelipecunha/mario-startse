@@ -1,0 +1,173 @@
+/* General */
+@import url("http://fonts.cdnfonts.com/css/gameplay");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gameplay", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Background */
+.game {
+  width: 100%;
+  height: 100vh;
+  border-bottom: 100px solid rgb(207, 169, 124);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../images/scenery.png");
+  background-size: cover;
+}
+
+/* cuphead */
+.cuphead {
+  position: absolute;
+  width: 150px;
+  bottom: 0;
+  z-index: 2;
+  border: 0;
+}
+
+.jump-cuphead {
+  animation: cuphead-animation 600ms ease-out;
+}
+
+.death-cuphead {
+  animation: death 2000ms;
+}
+
+/* enemy */
+.enemy {
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+  animation: enemy-animation 2s infinite linear;
+  z-index: 2;
+  border: 0;
+}
+
+/* Page-Elements */
+
+p {
+  display: block;
+  position: relative;
+  margin-top: 10px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  text-shadow: 3px 3px black;
+  z-index: 4;
+}
+
+a {
+  display: block;
+  position: relative;
+  margin-top: 40px;
+  width: 30%;
+  left: 35%;
+  right: 35%;
+  height: 40px;
+  z-index: 4;
+  text-align: center;
+  color: #000000;
+  background-color: blueviolet;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  padding-top: 7px;
+}
+
+a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+div.restart {
+  display: none;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  max-width: 980px;
+  padding: 0;
+  top: 10%;
+  animation: show 500ms ease;
+}
+
+/* Keyframes */
+
+@keyframes enemy-animation {
+  from {
+    right: -100px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes cuphead-animation {
+  0% {
+    bottom: 0;
+  }
+
+  40% {
+    bottom: 180px;
+  }
+
+  50% {
+    bottom: 180px;
+  }
+
+  60% {
+    bottom: 180px;
+  }
+
+  70% {
+    bottom: 180px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes death {
+  0% {
+    bottom: 180px;
+  }
+
+  40% {
+    bottom: 350px;
+  }
+
+  50% {
+    bottom: 350px;
+  }
+
+  60% {
+    bottom: 350px;
+  }
+
+  70% {
+    bottom: 400px;
+  }
+
+  100% {
+    bottom: 500px;
+  }
+}

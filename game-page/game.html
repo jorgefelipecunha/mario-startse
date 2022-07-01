@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CupHead Game</title>
+    <link rel="stylesheet" href="./game-style.css" />
+  </head>
+  <body>
+    <div class="game">
+      <p id= "score-game" class="score">Score: <span class="result">0</span></p>
+      <div class="game-container">
+        <img class="cuphead" src="../images/cuphead-run.gif" />
+        <img class="enemy" src="../images/cuphead-brother.webp" />
+      </div>
+    </div>
+    <div class="restart">
+      <p>Game Over!</p>
+      <p>Pontos totais:</p>
+      <p class="score"><span class="total">0</span> pontos!</p>
+      <a href="./game.html" type="button"
+      >Restart</a>
+      <a href="../index.html" type="button"
+      >Menu</a>
+      </a>
+    </div>
+    <audio id="theme-audio" autoplay>
+      <source src="../audios/game-audio.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <script src="./script.js"></script>
+  </body>
+</html>
