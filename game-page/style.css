@@ -1,0 +1,74 @@
+@import url("http://fonts.cdnfonts.com/css/gameplay");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gameplay", sans-serif;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#cuphead-page {
+  width: 100%;
+}
+
+.rigth-side {
+  height: 100vh;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 100px;
+  font-size: 2.5em;
+  letter-spacing: 3px;
+}
+
+img {
+  height: 100%;
+}
+
+.left-side {
+  height: 100vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 210, 15);
+}
+
+a {
+  height: 20px;
+  width: 200px;
+  padding: 15px;
+  border: 1px solid black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: black;
+  background-color: blueviolet;
+}
+
+a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .rigth-side {
+    display: none;
+  }
+  .left-side {
+    height: 100vh;
+    width: 100%;
+  }
+}
