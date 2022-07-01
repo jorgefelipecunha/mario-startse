@@ -8,6 +8,7 @@
     src: url(../font/upheavtt.ttf) format('truetype');
 }
 
+
 *{
     margin:0;
     padding: 0;
@@ -295,7 +296,6 @@ img{
     0%{
         right:-80px;
     }
-
     50%{
         right: -80px;
     }
@@ -309,7 +309,6 @@ img{
     from{
         left: 0px;
     }
-
     to{
         left: -1925px;
     }
@@ -349,16 +348,13 @@ img{
     0% {
         bottom: 0px;
     }
-
     20%{
         bottom: 40px;
     }
-
     100% {
         bottom: -350px;
     }
 }
-
 
 /* Media Query */
 
@@ -374,4 +370,3 @@ img{
         animation-duration:  1.2s;
     }
 } 
-

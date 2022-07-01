@@ -48,6 +48,7 @@ const jump = () => {
 
 document.addEventListener("keydown", jump);
 document.addEventListener("click", jump);
+
 // Death-Action
 
 const loopGame = setInterval(() => {
@@ -94,16 +95,13 @@ const loopGame = setInterval(() => {
 
 // Points
 
-
 let points = 0;
 
 const counter = setInterval (() =>{
-
   const pipeleftposition = + window.getComputedStyle(pipe).left.replace("px", "");
   if (pipeleftposition <= 10){  
     points = points + 10;
   }
-  
   pontuation.textContent = points;
 }, 100);
 
@@ -112,11 +110,4 @@ const interval = setInterval(function() {
     if (alive == true) { 
        points++;
     }
-    else {
-      return;
-    }
   }, 500); 
-
-  
-
-
