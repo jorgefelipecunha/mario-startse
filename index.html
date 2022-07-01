@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
-        <title>Super Mario StartSe</title>
-    </head>
-    <body>
-        <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Jump Potter</title>
+</head>
+
+<body>
+
+    <!-- START -->
+
+    <div class="startbuttom">
+        <div>
+            <img src="./img/Start-Button.png" alt="" onclick="telaInicial()">
+            <p>Pressione qualquer tecla para pular sobre Aquele-Que-Não-Deve-Ser-Nomeado</p>
         </div>
-        <script src="./js/script.js"></script>
-    </body>
+    </div>
+
+    <!-- ELEMENTOS DO CENÁRIO -->
+    <img src="./img/forest.jpg" class="background-forest" alt="">
+    <img src="./img/black-smoke-png.png" class="smoke" alt="">
+    <img src="./img/smoke.png" class="smoke" alt="">
+    <img src="./img/harry-potter-running.gif" class="harry-potter" alt="">
+    <img src="./img/voldemort.png" class="voldemort" alt="" hidden>
+
+    <!-- PONTUAÇÃO -->
+    <div class="score" hidden>
+        <h3>Pontos: <span id="label-pontos"></span></h3>
+    </div>
+
+    <!-- GAME OVER -->
+    <div class="gameover">
+        <div>
+            <img src="./img/game-over.png" alt="">
+            <button onclick="document.location.reload()">Tentar novamente</button>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="./js/script.js"></script>
+
+</body>
+
 </html>
