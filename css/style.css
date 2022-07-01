@@ -1,78 +1,307 @@
-*{
+* {
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.game {
+button {
+    position: absolute;
+    background: black;
+    color: #fcde2b;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 6px 25px;
+    border-radius: 100px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:hover {
+    border: 3px solid black;
+    background: rgba(255, 255, 255, .1);
+}
+
+
+/* ==== Tela Inicial ==== */
+
+.start {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    background: url(../Images/background.jpg);
 }
 
-.pipe-game {
+.start-content {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    font-family: monospace;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-start {
     position: absolute;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    top: 535px;
+}
+
+.logo1 {
+    position: absolute;
+    width: 400px;
+    margin-top: -80px;
+}
+
+.yoda-start {
+    width: 190px;
+    margin-top: 290px;
+}
+
+.bt-start {
+    margin-top: 460px;
+}
+
+
+/* ==== JOGO ==== */
+
+/* ==== Tela Jogo ==== */
+
+.game {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: url(../Images/background.jpg);
+    animation: background-animation 25s infinite linear;
+}
+
+@keyframes background-animation {
+    100% { background-position-x: -1270px;
+    }
+}
+
+
+/* ==== Piso ==== */
+
+.floor {
+    position: absolute;
+    width: 100%;
+    height: 100px;
     bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    background: linear-gradient(#dd9002ea, #d3b28e, #ad8c6b, #997652);
 }
 
-.super-mario{
-    width:150px;
+
+/* ==== Nave Espacial ==== */
+.tie-fighter {
     position: absolute;
-    bottom: 0;
+    width: 220px;
+    top: 80px;
+    animation: tie-fighter-animation 20s infinite linear;
+    z-index: 1;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
-}
-
-.cloud-game{
-    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
-}
-
-@keyframes pipe-animation {
-    from {
-        right: -80px;
+@keyframes tie-fighter-animation {
+    from{
+        right: -250px;
     }
     to{
         right: 100%;
     }
 }
 
-@keyframes clouds-animation {
-    from{
-        right: -550px;
+
+/* ==== Obstáculo ====  */
+
+.stormtrooper {
+    position: absolute;
+    bottom: 100px;
+    width: 115px;
+    margin-left: 50px;
+    animation: stormtrooper-animation 2s infinite linear;
+    z-index: 1;
+}
+
+@keyframes stormtrooper-animation {
+    from {
+        right: -90px;
     }
     to{
-        right:  100%;
+        right: 100%;
     }
 }
 
-@keyframes mario-animation{
+
+/* ==== Yoda ==== */
+
+.yoda {
+    width: 190px;
+    position: absolute;
+    bottom: 95px;
+    margin-left: 50px;
+    z-index: 2;
+}
+
+.jump-yoda {
+    animation: yoda-animation 1000ms ease-out;
+}
+
+@keyframes yoda-animation {
     0% {
         bottom:0;
     }
     40% {
-        bottom: 180px;
+        bottom: 270px;
     }
     50% {
-        bottom: 180px;
+        bottom: 270px;
     }
     60%{
-        bottom: 180px;
+        bottom: 270px;
     }
     70%{
-        bottom: 180px;
+        bottom: 270px;
     }
     100%{
         bottom: 0%
     }
+}
 
+
+/* ==== Score ==== */
+
+.score {
+    background: rgba(255, 255, 255, .5);
+    border-radius: 100px;
+    width: 200px;
+    font-family: monospace;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #fcde2b;
+    padding: 2px 10px;
+}
+
+
+/* ==== Game Over ==== */
+
+.game-over {
+    visibility: hidden;
+}
+
+.game-over-content {
+    display: flex ;
+    position: relative;
+    flex-direction: column;
+    border: 5px solid black;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 100px;
+    width: 480px;
+    height: 112px;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-game-over {
+    position: absolute;
+    font-family: monospace;
+    font-size: 80px;
+    font-weight: 700;
+    color: black;
+    text-shadow: 4px 4px #fcde2b;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    width: 300px;
+    top: -170px;
+}
+
+.bt-restart {
+    margin-top: 230px;
+}
+
+.bt-restart2 {
+    margin-top: 370px;
+}
+
+
+/* ==== Responsividade ===*/
+
+@media (max-width: 580px){
+
+    button {
+        font-size: 18px;
+        padding: 4px 18px;
+    }
+    button:hover {
+        border: 2.5px solid black;
+    }
+
+    .start-content {
+        width: 250px;
+        top: 150px;
+    }
+    .text-start {
+        font-size: 20px;
+        top: 310px;
+    }
+    .logo1 {
+        width: 260px;
+    }
+    .yoda-start {
+        width: 100px;
+        margin-top: 160px;
+    }
+    .bt-start {
+        margin-top: 250px;
+    }
+
+    .score {
+        width: 170px;
+        font-size: 24px;
+        text-shadow: 1.5px 1.5px #fcde2b;
+    }
+
+    .game-over-content {
+        border: 3.5px solid black;
+        width: 310px;
+        height: 70px;
+        top: 320px;
+    }
+    .text-game-over {
+        font-size: 50px;
+        text-shadow: 3px 3px #fcde2b;
+    }
+    .logo {
+        width: 220px;
+        top: -140px;
+    }
+    .bt-restart {
+        margin-top: 180px;
+    }
+    .bt-restart2 {
+        margin-top: 280px;
+    }
 }
