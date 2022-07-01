@@ -26,9 +26,11 @@ const titleopacity = () => {
   score.classList.remove("element-hidden");
   alive = true;
   document.removeEventListener("keydown", titleopacity);
+  document.removeEventListener("click", titleopacity);
   maintheme.play();
 }
 
+document.addEventListener("click", titleopacity); 
 document.addEventListener("keydown", titleopacity); 
 
 
@@ -45,7 +47,7 @@ const jump = () => {
 };
 
 document.addEventListener("keydown", jump);
-
+document.addEventListener("click", jump);
 // Death-Action
 
 const loopGame = setInterval(() => {

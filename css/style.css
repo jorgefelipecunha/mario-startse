@@ -209,50 +209,6 @@ img{
     animation: bgclouds 300s infinite linear;
 }
 
-
-/* Restart 
-
-.restart{
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    z-index: 1;
-    padding: 0;
-    color: white;
-    animation: menuanimation 400ms ease;
-}
-
-.restart p {
-    font-family: Upheaval;
-    font-size: 70px;
-    letter-spacing: 4px;
-}
-
-.restart input {
-   font-family: Upheaval;
-   margin-top: 10px;
-   color: white;
-   font-size: 50px;
-   background-color: rgb(255, 102, 0);
-   letter-spacing: 3px;
-   border: none;
-}
-
-.restart input:hover{
-    color: rgb(75, 15, 15);
-    transition: .5s ease;
-    
-}
-
-.restart .total{
-    color: rgb(75, 15, 15);
-} */
-
 /*General Effects*/
 
 .element-hidden {
@@ -335,6 +291,20 @@ img{
     } 
 }
 
+@keyframes pipe-animation-responsive{
+    0%{
+        right:-80px;
+    }
+
+    50%{
+        right: -80px;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+
 @keyframes bgmountain{
     from{
         left: 0px;
@@ -388,3 +358,20 @@ img{
         bottom: -350px;
     }
 }
+
+
+/* Media Query */
+
+@media only screen and (max-width: 1000px){
+    .pipe-game {
+        animation-duration:  1.1s;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .pipe-game {
+        animation-name:  pipe-animation-responsive;
+        animation-duration:  1.2s;
+    }
+} 
+
