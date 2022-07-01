@@ -1,78 +1,215 @@
-*{
-    margin:0;
+@import url('https://fonts.googleapis.com/css2?family=Nova+Oval&display=swap');
+
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.game {
-    width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
-    margin: 0 auto;
-    position: relative;
+body {
+    background: #000;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
+.background-forest {
     position: absolute;
+    height: 100vh;
+    width: 100vw;
+    opacity: .8;
+}
+
+.smoke {
+    position: absolute;
+    width: 100vw;
+    bottom: 70px;
+    opacity: .5;
+    animation: smoke 10s infinite alternate;
+}
+
+/* START */
+.startbuttom {
+    display: block;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
     bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    left: 0;
+    right: 0;
+    color: #fff;
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 2;
 }
 
-.super-mario{
-    width:150px;
+.startbuttom>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.startbuttom img {
+    width: 500px;
+    z-index: 1;
+    transition: .5s ease-in-out;
+}
+
+.startbuttom img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .5s ease-in-out;
+}
+
+.startbuttom p {
+    font-family: 'Nova Oval', cursive;
+    text-align: center;
+    font-size: 26px;
+    z-index: 1;
+}
+
+/* GAME OVER */
+.gameover {
+    display: none;
+    color: #fff;
+    flex-direction: column;
     position: absolute;
+    top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.gameover>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.cloud-game{
+.gameover img {
+    width: 300px;
+    margin-top: 15%;
+}
+
+.gameover button {
+    cursor: pointer;
+    padding: 20px 50px;
+    border-radius: 8px;
+    background-color: rgb(173, 21, 21);
+    border: 2px dashed #000;
+    font-family: 'Nova Oval', cursive;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+    transition: .3s ease-in-out;
+}
+
+.gameover button:hover {
+    background-color: rgb(110, 11, 11);
+    transform: scale(1.1);
+    transition: .3s ease-in-out;
+}
+
+/* PONTUAÇÃO */
+.score {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    color: #fff;
+    padding: 3px;
+    font-family: 'Nova Oval', cursive;
+    font-size: 30px;
+    text-align: center;
+}
+
+#label-pontos {
+    color: #ffffff;
+}
+
+/* PERSONAGENS */
+.harry-potter {
     position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    width: 250px;
+    bottom: 65px;
+    left: 50px;
 }
 
-@keyframes pipe-animation {
-    from {
-        right: -80px;
+.jump-harry {
+    animation: harry-jump 1.5s ease-out;
+}
+
+.voldemort {
+    position: absolute;
+    width: 200px;
+    bottom: 65px;
+}
+
+/* ANIMAÇÕES */
+@keyframes harry-jump {
+    0% {
+        bottom: 65px;
     }
-    to{
+    40%{
+        bottom: 400px;
+        filter: drop-shadow(0px 0px 15px green);
+    }
+    50% {
+        bottom: 400px;
+        filter: drop-shadow(0px 0px 15px green);
+    }
+    60% {
+        bottom: 400px;
+        filter: drop-shadow(0px 0px 15px green);
+    }
+    70% {
+        bottom: 350px;
+        filter: drop-shadow(0px 0px 15px green);
+    }
+    100% {
+        bottom: 65px;
+    }
+}
+
+@keyframes voldemort-running {
+    from {
+        right: -250px;
+    }
+
+    to {
         right: 100%;
     }
 }
 
-@keyframes clouds-animation {
-    from{
-        right: -550px;
+@keyframes harry-game-over {
+    0% {
+        margin-bottom: 75px; 
     }
-    to{
-        right:  100%;
+    30% {
+        margin-bottom: 85px;
+        opacity: .3;
+    }
+    70% {
+        margin-bottom: 80px;
+        opacity: .5;
+    }
+    100% {
+        margin-bottom: 75px;
+        opacity: .8;
     }
 }
 
-@keyframes mario-animation{
-    0% {
-        bottom:0;
-    }
-    40% {
-        bottom: 180px;
-    }
-    50% {
-        bottom: 180px;
-    }
-    60%{
-        bottom: 180px;
-    }
-    70%{
-        bottom: 180px;
-    }
-    100%{
-        bottom: 0%
+@keyframes smoke {
+    from {
+        bottom: 150px;
     }
 
+    to {
+        bottom: 70px;
+    }
 }
