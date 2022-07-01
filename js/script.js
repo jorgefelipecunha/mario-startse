@@ -304,7 +304,7 @@ const mudaFase = () => {
         // mudaAudio(fase)
         cloud.style.opacity = '0.2';
     }
-    else if (fase === 3 ) {
+    else if (fase >= 3 ) {
         mudaCenarioFase(fase);
         mudaPersonagem(fase)
         // mudaAudio(fase)
