@@ -123,3 +123,12 @@
     left: -1200px;
   }
 }
+
+@keyframes bg-industry-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1088px;
+  }
+}

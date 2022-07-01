@@ -112,7 +112,32 @@ const data = [
     animationParalaxName: 'bg-desert-animation'
   },
   {
-    background: "url('../../Images/background/bg_industry.png')"
+    paralax: [
+      '',
+      './Images/scenes/industry/layer_1.png',
+      './Images/scenes/industry/layer_2.png',
+      '',
+      './Images/scenes/industry/layer_3.png',
+      './Images/scenes/industry/layer_4.png',
+      '',
+      './Images/scenes/industry/layer_5.png',
+      '',
+      '',
+      ''
+    ],
+    musics: [
+      './sound/cyberpunk/cyberpunk-street.mp3',
+      './sound/cyberpunk/Goodnightmare.mp3',
+      './sound/cyberpunk/hear_hat_they_say.mp3'
+    ],
+    colors: ['black', 'black', 'black'],
+    font: [
+      "'Rubik Glitch', cursive",
+      "'Press Start 2P', cursive",
+      "'Press Start 2P', cursive"
+    ],
+    background: "url('../../Images/background/bg_industry.png')",
+    animationParalaxName: 'bg-industry-animation'
   }
 ]
 
@@ -447,27 +472,27 @@ const restartGame = () => {
   mario.style.marginLeft = null
 
   //fazendo voltar ao reiniciar
-  bg1.style.animation = `${data[3].animationParalaxName} 0s infinite linear`
+  bg1.style.animation = `${data[4].animationParalaxName} 0s infinite linear`
   bg1.style.left = `-6px`
-  bg2.style.animation = `${data[3].animationParalaxName} 6s infinite linear`
+  bg2.style.animation = `${data[4].animationParalaxName} 6s infinite linear`
   bg2.style.left = `-6px`
-  bg3.style.animation = `${data[3].animationParalaxName} 5s infinite linear`
+  bg3.style.animation = `${data[4].animationParalaxName} 5s infinite linear`
   bg3.style.left = `-6px`
   bg4.style.animation = `light-animation 9s infinite linear`
   bg4.style.left = `500px`
-  bg5.style.animation = `${data[3].animationParalaxName} 4s infinite linear`
+  bg5.style.animation = `${data[4].animationParalaxName} 4s infinite linear`
   bg5.style.left = `-6px`
-  bg6.style.animation = `${data[3].animationParalaxName} 3s infinite linear`
+  bg6.style.animation = `${data[4].animationParalaxName} 3s infinite linear`
   bg6.style.left = `-6px`
   bg7.style.animation = `light-animation 0s infinite linear`
   bg7.style.left = `500px`
-  bg8.style.animation = `${data[3].animationParalaxName} 1.8s infinite linear`
+  bg8.style.animation = `${data[4].animationParalaxName} 1.8s infinite linear`
   bg8.style.left = `-6px`
-  bg9.style.animation = `${data[3].animationParalaxName} 1.6s infinite linear`
+  bg9.style.animation = `${data[4].animationParalaxName} 1.6s infinite linear`
   bg9.style.left = `-6px`
-  bg10.style.animation = `${data[3].animationParalaxName} 1.1s infinite linear`
+  bg10.style.animation = `${data[4].animationParalaxName} 1.1s infinite linear`
   bg10.style.left = `-6px`
-  bgTerrain.style.animation = `${data[3].animationParalaxName} 1.4s infinite linear`
+  bgTerrain.style.animation = `${data[4].animationParalaxName} 1.4s infinite linear`
   bgTerrain.style.left = `-6px`
 
   pipe.style.right = `-80px`
@@ -646,7 +671,7 @@ function changeThemeGame(index) {
     '--font-primary',
     data[index].font[0]
   )
-  console.log(data[index].animationParalaxName)
+
   bg1.style.animation = `${data[index].animationParalaxName} 0s infinite linear`
   bg1.style.left = `-6px`
   bg2.style.animation = `${data[index].animationParalaxName} 6s infinite linear`
