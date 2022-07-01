@@ -5,14 +5,57 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" /> 
+        <link rel="icon" type="image/x-icon" href="./Images/favicon.ico">
         <title>Super Mario StartSe</title>
     </head>
     <body>
         <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
+
+            <div class="title-screen">
+                <div class="central-box">
+                    <h1> Super </h1>
+                    <h1>Mario .StartSe</h1>
+                    <h2> Press any key to continue...</h2>   
+                </div>
+            </div>
+
+            <div class="score element-hidden">
+             <p> Score: <span class="pontuation">0</span></p>   
+            </div>
+              
+            <div class="restart element-hidden">
+                <div class="central-box">
+                    <p>You lost!</p>
+                    <p>Score: <span class="total">0</span> points</p>
+                    <a href="index.html">
+                        <input type="button" value="restart" href>
+                    </a>
+                </div>       
+            </div>  
+            
+            <img src="./Images/bigclouds.png" class="bg-clouds"/>
+            <img src="./Images/trees1.png" class="trees"/>
+            <img src="./Images/trees2.png" class="trees2"/>  
+            <img src="./Images/Trees3.png" class="trees3"/>   
+            <img src="./Images/bgmountain.png" class="bg-mountain"/>
             <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
+            <img src="./Images/grass.jpg" class="ground-game" />
+            <img src="./Images/pipe-game.png" class="pipe-game animation-stop" />   
         </div>
+
+        <audio class="main-theme">
+            <source src="./audio/main-theme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <audio class="jump-song">
+            <source src="./audio/mario-jump.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio class="game-over">
+            <source src="./audio/game-over.mp3" type="audio/mpeg">
+        </audio>
+
         <script src="./js/script.js"></script>
     </body>
 </html>
