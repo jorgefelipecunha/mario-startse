@@ -1,78 +1,140 @@
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .game {
     width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
-    margin: 0 auto;
+    height: 80vh;
+    background-image: url();
+    border-bottom: 5px solid #b09371;
+    margin: 0;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    background: linear-gradient(#1343e3, #e0f6ff);
 }
 
-.pipe-game {
+.ground-game {
+    height: 19vh;
+    width: 100%;
+}
+
+.power {
     position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    bottom: 80px;
+    width: 120px;
+    animation: pipe-animation 2.0s infinite linear;
 }
 
-.super-mario{
-    width:150px;
+.goku-run {
+    width: 200px;
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
+    left: 250px;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
-}
-
-.cloud-game{
+.raditz {
+    width: 190px;
     position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    bottom: -10px;
+    right: 200px;
+    z-index: 1;
+}
+
+.raditz-atack {
+    display: none;
+    width: 330px;
+    position: absolute;
+    bottom: -10px;
+    right: 100px;
+    z-index: 1;
+}
+
+.thunder {
+    width: 200px;
+    position: absolute;
+    bottom: -50px;
+    left: 350px; 
+    display: none;
+}
+
+.clouds {
+    position: absolute;
+    width: 900px;
+    animation: clouds-animation 30s infinite linear;
+}
+
+#intro {
+    background-color:lightgray;
+}
+
+.flex-container {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.goku-logo {
+    width: 300px;
+    z-index: 1;
+    position: relative;
+}
+
+.dbz-logo {
+    width: 700px;
+    margin-top: -80px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    font-size: 24px;
+    background-color: rgb(238, 238, 25);
+}
+
+button:hover {
+    background-color: rgb(236, 8, 8);
+    color: white;
+    cursor: pointer;
+}
+
+#reset {
+    display: none;
+    position: relative;
+    top: -500px;
+    left: 700px;
+    z-index: 1;
+    font-size: 28px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#1343e3;
 }
 
 @keyframes pipe-animation {
     from {
-        right: -80px;
-    }
-    to{
+        right: 200px;
+    }    
+    to {
         right: 100%;
     }
 }
 
 @keyframes clouds-animation {
-    from{
+    from {
         right: -550px;
     }
-    to{
-        right:  100%;
+    to {
+        right: 100%;
     }
-}
-
-@keyframes mario-animation{
-    0% {
-        bottom:0;
-    }
-    40% {
-        bottom: 180px;
-    }
-    50% {
-        bottom: 180px;
-    }
-    60%{
-        bottom: 180px;
-    }
-    70%{
-        bottom: 180px;
-    }
-    100%{
-        bottom: 0%
-    }
-
 }
