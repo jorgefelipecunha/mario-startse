@@ -9,7 +9,7 @@
   margin: 0 auto;
   position: relative;
   font-family: var(--font-ui);
-  color: var(--color-text-ui);
+  color: var(--color-credits);
 }
 
 .credits__background {
@@ -30,21 +30,21 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .credits__back-menu {
   position: absolute;
   top: 50px;
   right: 40px;
-  color: var(--color-text-ui);
+  color: var(--color-credits);
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .credits__back-menu:hover {
-  color: var(--color-btn);
+  color: var(--color-credits-hover);
 }
 
 .credits__title {

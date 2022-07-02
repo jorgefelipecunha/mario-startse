@@ -16,7 +16,7 @@
   padding: 0;
   background-color: var(--color-game-title);
 
-  background: linear-gradient(90deg, #072b0e 0%, #287a36 90%);
+  background: var(--linear-btn);
   border: 1px solid black;
   border-radius: 30px;
   position: relative;

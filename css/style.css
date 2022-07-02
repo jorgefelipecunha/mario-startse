@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Rubik+Bubbles&family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Glitch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Rubik+Beastly&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Shojumaru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Reggae+One&display=swap');
 @import url(./layouts/background.css);
 @import url(./layouts/buttons.css);
 @import url(./layouts/score.css);
@@ -14,9 +16,12 @@
 @import url(./layouts/grid-credits.css);
 
 :root {
-  --color-text-button-hover: #70a679;
+  --color-credits: #70a679;
+  --color-credits-hover: #65ff83;
   --color-text-ui: #70a679;
   --color-btn: #65ff83;
+  --linear-btn: linear-gradient(90deg, #072b0e 0%, #287a36 90%);
+  --btn-hover: linear-gradient(90deg, #051f0a 0%, #113617 90%);
 
   --font-primary: 'Rubik Bubbles', cursive, sans-serif;
   --font-ui: 'Emilys Candy', cursive, sans-serif;
@@ -88,7 +93,7 @@ body {
   top: -80px;
   right: 40%;
   z-index: 500;
-  background: linear-gradient(90deg, #051f11 0%, #133b1a 90%);
+  background: var(--linear-btn);
   padding: 12px 17px;
 
   border-radius: 8px;

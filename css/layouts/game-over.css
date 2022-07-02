@@ -23,7 +23,7 @@
 }
 
 .game-over__title {
-  color: var(--color-btn);
+  color: var(--color-credits);
   font-size: 3rem;
   font-family: var(--font-ui);
   margin-bottom: 2rem;

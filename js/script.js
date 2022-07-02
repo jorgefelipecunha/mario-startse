@@ -18,13 +18,21 @@ const data = [
       './sound/ambient_bongos.mp3',
       './sound/asking_questions.mp3'
     ],
-    colors: ['#70a679', '#65ff83', '#70a679'],
+    colors: [
+      '#70a679',
+      '#65ff83',
+      'linear-gradient(90deg, #072b0e 0%, #287a36 90%)',
+      'linear-gradient(90deg, #051f0a 0%, #113617 90%)',
+      '#70a679',
+      '#65ff83'
+    ],
     font: [
       "'Rubik Bubbles', cursive, sans-serif",
       "'Emilys Candy', cursive, sans-serif"
     ],
     background: `url("../../Images/background/bg_florest.png")`,
-    animationParalaxName: 'bg-animation'
+    animationParalaxName: 'bg-animation',
+    paralaxVelocity: 1
   },
   {
     paralax: [
@@ -45,14 +53,18 @@ const data = [
       './sound/cyberpunk/Goodnightmare.mp3',
       './sound/cyberpunk/hear_hat_they_say.mp3'
     ],
-    colors: ['black', 'black', 'black'],
-    font: [
-      "'Rubik Glitch', cursive",
-      "'Press Start 2P', cursive",
-      "'Press Start 2P', cursive"
+    colors: [
+      '#B6B6B6',
+      '#B6B6B6',
+      'linear-gradient(90.44deg, #151515 3.56%, #747171 99.69%)',
+      'linear-gradient(90.44deg, #181818 3.56%, #3F3F3F 99.69%)',
+      '#B6B6B6',
+      '#E4E4E4'
     ],
+    font: ["'Rubik Glitch', cursive", "'Uncial Antiqua', cursive, sans-serif"],
     background: "url('../../Images/background/bg_cyberpunk.png')",
-    animationParalaxName: 'bg-cyberpunk-animation'
+    animationParalaxName: 'bg-cyberpunk-animation',
+    paralaxVelocity: 1.4
   },
   {
     paralax: [
@@ -73,10 +85,18 @@ const data = [
       './sound/cyberpunk/Goodnightmare.mp3',
       './sound/cyberpunk/hear_hat_they_say.mp3'
     ],
-    colors: ['black', 'black', 'black'],
-    font: ["'Rubik Glitch', cursive", "'Press Start 2P', cursive"],
+    colors: [
+      '#344733',
+      '#344733',
+      'linear-gradient(90.44deg, #048648 3.56%, #B4FFA5 99.69%)',
+      'linear-gradient(90.44deg, #056537 3.56%, #8CC77F 99.69%)',
+      '#A2DCA1',
+      '#93FF92'
+    ],
+    font: ["'Faster One', cursive", "'Reggae One', cursive"],
     background: "url('../../Images/background/bg_farm.png')",
-    animationParalaxName: 'bg-farm-animation'
+    animationParalaxName: 'bg-farm-animation',
+    paralaxVelocity: 1.5
   },
   {
     paralax: [
@@ -97,18 +117,26 @@ const data = [
       './sound/cyberpunk/Goodnightmare.mp3',
       './sound/cyberpunk/hear_hat_they_say.mp3'
     ],
-    colors: ['#BB9200', '#840000'],
-    font: ["'Macondo Swash Caps', cursive", "'Rubik Beastly', cursive"],
+    colors: [
+      '#BB9200',
+      '#BB0000',
+      'linear-gradient(90.44deg, #A6A901 3.56%, #FFF500 99.69%)',
+      'linear-gradient(90.44deg, #8D8F00 3.56%, #B7AF00 99.69%)',
+      '#D8D100',
+      '#EBFF00'
+    ],
+    font: ["'Macondo Swash Caps', cursive", "'Shojumaru', cursive"],
     background: "url('../../Images/background/bg_desert.png')",
-    animationParalaxName: 'bg-desert-animation'
+    animationParalaxName: 'bg-desert-animation',
+    paralaxVelocity: 0.7
   },
   {
     paralax: [
       '',
       './Images/scenes/industry/layer_1.png',
-      './Images/scenes/industry/layer_2.png',
-      '',
       './Images/scenes/industry/layer_3.png',
+      '',
+      './Images/scenes/industry/layer_2.png',
       './Images/scenes/industry/layer_4.png',
       '',
       './Images/scenes/industry/layer_5.png',
@@ -121,14 +149,18 @@ const data = [
       './sound/cyberpunk/Goodnightmare.mp3',
       './sound/cyberpunk/hear_hat_they_say.mp3'
     ],
-    colors: ['black', 'black', 'black'],
-    font: [
-      "'Rubik Glitch', cursive",
-      "'Press Start 2P', cursive",
-      "'Press Start 2P', cursive"
+    colors: [
+      '#3DE404',
+      '#04D300',
+      'linear-gradient(90.44deg, #123900 3.56%, #11D300 99.69%)',
+      'linear-gradient(90.44deg, #123900 3.56%, #097100 99.69%)',
+      '#3DE404',
+      '#05FF00'
     ],
+    font: ["'Rubik Wet Paint', cursive", "'Rubik Moonrocks', cursive"],
     background: "url('../../Images/background/bg_industry.png')",
-    animationParalaxName: 'bg-industry-animation'
+    animationParalaxName: 'bg-industry-animation',
+    paralaxVelocity: 0.7
   }
 ]
 
@@ -357,7 +389,6 @@ bestScore.innerHTML = `Recorde:  ${bestPoints}`
 bestScoreSelectPerson.innerHTML = `Recorde:  ${bestPoints}`
 
 let veloEnemy = 2
-console.log(parseInt(localStorage.getItem('recorde')))
 
 setLockedBtn(2, '10.000')
 setLockedBtn(3, '10.000')
@@ -399,7 +430,6 @@ function printMensagemitemUnlocked(
   messageUnlockedDiv
 ) {
   if (bestPointsMessage >= 10000 && itemsUnlockedMessage[3] === false) {
-    console.log('entrou if')
     messageUnlockedDiv.innerHTML = `nova skin desbloqueada! <br />
     10000 pontos`
 
@@ -466,43 +496,71 @@ const restartGame = () => {
   //fazendo voltar ao reiniciar
   bg1.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 0s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 0
+  }s infinite linear`
   bg1.style.left = `-6px`
+
   bg2.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 6s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 6
+  }s infinite linear`
   bg2.style.left = `-6px`
+
   bg3.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 5s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 5
+  }s infinite linear`
   bg3.style.left = `-6px`
+
   bg4.style.animation = `light-animation 9s infinite linear`
   bg4.style.left = `500px`
+
   bg5.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 4s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 4
+  }s infinite linear`
   bg5.style.left = `-6px`
+
   bg6.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 3s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 3
+  }s infinite linear`
   bg6.style.left = `-6px`
+
   bg7.style.animation = `light-animation 0s infinite linear`
   bg7.style.left = `500px`
+
   bg8.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 1.8s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 1.8
+  }s infinite linear`
   bg8.style.left = `-6px`
+
   bg9.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 1.6s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 1.6
+  }s infinite linear`
   bg9.style.left = `-6px`
+
   bg10.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 1.1s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 1.1
+  }s infinite linear`
   bg10.style.left = `-6px`
+
   bgTerrain.style.animation = `${
     data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
-  } 1.4s infinite linear`
+  } ${
+    data[parseInt(localStorage.getItem('theme')) || 0].paralaxVelocity * 1.4
+  }s infinite linear`
   bgTerrain.style.left = `-6px`
 
   pipe.style.right = `-80px`
@@ -675,35 +733,71 @@ function changeThemeGame(index) {
     '--color-btn',
     data[index].colors[1]
   )
+  document.documentElement.style.setProperty(
+    '--linear-btn',
+    data[index].colors[2]
+  )
 
-  document.documentElement.style.setProperty('--font-ui', data[index].font[1])
+  document.documentElement.style.setProperty(
+    '--btn-hover',
+    data[index].colors[3]
+  )
+  document.documentElement.style.setProperty(
+    '--color-credits',
+    data[index].colors[4]
+  )
+  document.documentElement.style.setProperty(
+    '--color-credits-hover',
+    data[index].colors[5]
+  )
 
   document.documentElement.style.setProperty(
     '--font-primary',
     data[index].font[0]
   )
+  document.documentElement.style.setProperty('--font-ui', data[index].font[1])
 
-  bg1.style.animation = `${data[index].animationParalaxName} 0s infinite linear`
+  bg1.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 0
+  }s infinite linear`
   bg1.style.left = `-6px`
-  bg2.style.animation = `${data[index].animationParalaxName} 6s infinite linear`
+  bg2.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 6
+  }s infinite linear`
   bg2.style.left = `-6px`
-  bg3.style.animation = `${data[index].animationParalaxName} 5s infinite linear`
+
+  bg3.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 5
+  }s infinite linear`
   bg3.style.left = `-6px`
+
   bg4.style.animation = `light-animation 9s infinite linear`
   bg4.style.left = `500px`
-  bg5.style.animation = `${data[index].animationParalaxName} 4s infinite linear`
+  bg5.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 4
+  }s infinite linear`
   bg5.style.left = `-6px`
-  bg6.style.animation = `${data[index].animationParalaxName} 3s infinite linear`
+  bg6.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 3
+  }s infinite linear`
   bg6.style.left = `-6px`
   bg7.style.animation = `light-animation 0s infinite linear`
   bg7.style.left = `500px`
-  bg8.style.animation = `${data[index].animationParalaxName} 1.8s infinite linear`
+  bg8.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 1.8
+  }s infinite linear`
   bg8.style.left = `-6px`
-  bg9.style.animation = `${data[index].animationParalaxName} 1.6s infinite linear`
+  bg9.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 1.6
+  }s infinite linear`
   bg9.style.left = `-6px`
-  bg10.style.animation = `${data[index].animationParalaxName} 1.1s infinite linear`
+  bg10.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 1.1
+  }s infinite linear`
   bg10.style.left = `-6px`
-  bgTerrain.style.animation = `${data[index].animationParalaxName} 1.4s infinite linear`
+  bgTerrain.style.animation = `${data[index].animationParalaxName} ${
+    data[parseInt(localStorage.getItem('theme'))].paralaxVelocity * 1.4
+  }s infinite linear`
   bgTerrain.style.left = `-6px`
 }
 

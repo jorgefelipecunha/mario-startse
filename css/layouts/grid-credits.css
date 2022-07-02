@@ -45,11 +45,11 @@
 
 .items__link {
   text-decoration: none;
-  color: var(--color-text-ui);
+  color: var(--color-credits);
   transition: all 0.2s ease;
 }
 
 .items__link:hover {
   text-decoration: none;
-  color: var(--color-btn);
+  color: var(--color-credits-hover);
 }
