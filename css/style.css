@@ -1,23 +1,53 @@
+@import url('http://fonts.cdnfonts.com/css/super-mario-world-text-box');
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Super Mario World Text Box', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .game {
     width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    height: calc(100vh - 100px);
+
+
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+    background-image: url("../Images/bg.png");
+    background-size: contain;
+    background-position: -200px;
+}
+.ground {
+    height: 100px; 
+    background-image:url("../Images/ground.png");
+    background-size: contain;
+    background-repeat: repeat;
+}
+.paralax {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.paralax1 {
+    animation: paralax-animation 40s infinite linear;
+}
+.paralax2 {
+    animation: paralax-animation 40s infinite linear;
 }
 
 .pipe-game {
     position: absolute;
     bottom: 0;
-    width: 80px;
+    width: 100px;
     animation: pipe-animation 1.5s infinite linear;
 }
 
@@ -34,7 +64,49 @@
 .cloud-game{
     position: absolute;
     width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    animation: clouds-animation infinite linear;
+    animation-duration: 15s;
+}
+.gameOver {
+    min-width: 384px;
+    min-height: 384px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url("../Images/GameOver.png");
+}
+.gameOver h2 {
+    font-size: 40px;
+    margin-top: 140px;
+
+}
+.gameOver a {
+    font-size: 30px;
+}
+.gameOver a:hover {
+    color: white;
+}
+
+@keyframes paralax-animation {
+    from {
+        right: -100vw;
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes paralax-start-animation {
+    from {
+        right: 0px;
+    }
+    to {
+        right: 200%;
+    }
 }
 
 @keyframes pipe-animation {
@@ -55,6 +127,7 @@
     }
 }
 
+
 @keyframes mario-animation{
     0% {
         bottom:0;
@@ -63,13 +136,13 @@
         bottom: 180px;
     }
     50% {
-        bottom: 180px;
+        bottom: 200px;
     }
     60%{
         bottom: 180px;
     }
     70%{
-        bottom: 180px;
+        bottom: 90px;
     }
     100%{
         bottom: 0%
