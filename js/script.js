@@ -14,9 +14,9 @@ const data = [
       './Images/scenes/florest/layer_9.png'
     ],
     musics: [
-      './sound/marked.mp3',
-      './sound/ambient_bongos.mp3',
-      './sound/asking_questions.mp3'
+      './sound/florest/marked.mp3',
+      './sound/florest/ambient_bongos.mp3',
+      './sound/florest/asking_questions.mp3'
     ],
     colors: [
       '#70a679',
@@ -81,9 +81,9 @@ const data = [
       './Images/scenes/farm/layer_3.png'
     ],
     musics: [
-      './sound/cyberpunk/cyberpunk-street.mp3',
-      './sound/cyberpunk/Goodnightmare.mp3',
-      './sound/cyberpunk/hear_hat_they_say.mp3'
+      './sound/farm/forest_frolic.mp3',
+      './sound/farm/bar_brawl.mp3',
+      './sound/farm/murder_on_the_bayou.mp3'
     ],
     colors: [
       '#344733',
@@ -113,9 +113,9 @@ const data = [
       ''
     ],
     musics: [
-      './sound/cyberpunk/cyberpunk-street.mp3',
-      './sound/cyberpunk/Goodnightmare.mp3',
-      './sound/cyberpunk/hear_hat_they_say.mp3'
+      './sound/desert/desert_conflict.mp3',
+      './sound/desert/breaking_bollywood.mp3',
+      './sound/desert/blood_eagle.mp3'
     ],
     colors: [
       '#BB9200',
@@ -145,9 +145,9 @@ const data = [
       ''
     ],
     musics: [
-      './sound/cyberpunk/cyberpunk-street.mp3',
-      './sound/cyberpunk/Goodnightmare.mp3',
-      './sound/cyberpunk/hear_hat_they_say.mp3'
+      './sound/industry/think_about_it.mp3',
+      './sound/industry/experimental_test_subject.mp3',
+      './sound/industry/evil_incoming.mp3'
     ],
     colors: [
       '#3DE404',
@@ -233,9 +233,9 @@ const soundGame = new Audio()
 const soundGameOver = new Audio()
 const soundJump = new Audio()
 
-soundMenu.src = './sound/marked.mp3'
-soundGame.src = './sound/ambient_bongos.mp3'
-soundGameOver.src = './sound/asking_questions.mp3'
+soundMenu.src = './sound/florest/marked.mp3'
+soundGame.src = './sound/florest/ambient_bongos.mp3'
+soundGameOver.src = './sound/florest/asking_questions.mp3'
 soundJump.src = './sound/jump2.mp3'
 
 soundMenu.loop = true
