@@ -37,12 +37,6 @@ a {
     position: absolute;
     bottom: 0;
 }
-.paralax1 {
-    animation: paralax-animation 40s infinite linear;
-}
-.paralax2 {
-    animation: paralax-animation 40s infinite linear;
-}
 
 .pipe-game {
     position: absolute;
@@ -50,9 +44,15 @@ a {
     width: 100px;
     animation: pipe-animation 1.5s infinite linear;
 }
+.mushroom-game {
+    position: absolute;
+    bottom: -10px;
+    width: 90px;
+    animation: mushroom-animation 10s infinite linear;
+}
 
 .super-mario{
-    width:150px;
+    width: 150px;
     position: absolute;
     bottom: 0;
 }
@@ -67,6 +67,7 @@ a {
     animation: clouds-animation infinite linear;
     animation-duration: 15s;
 }
+
 .gameOver {
     min-width: 384px;
     min-height: 384px;
@@ -92,26 +93,27 @@ a {
     color: white;
 }
 
-@keyframes paralax-animation {
-    from {
-        right: -100vw;
-    }
-    to {
-        right: 100%;
-    }
-}
-@keyframes paralax-start-animation {
-    from {
-        right: 0px;
-    }
-    to {
-        right: 200%;
-    }
+.meters-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 20px;
+    display: flex;
+    font-size: 30px;
 }
 
 @keyframes pipe-animation {
     from {
-        right: -80px;
+        right: -100px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes mushroom-animation {
+    from {
+        right: -500px;
     }
     to{
         right: 100%;
