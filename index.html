@@ -10,9 +10,21 @@
     <body>
         <div class="game">
             <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
+            <img src="./Images/super-mario-cape.gif" class="super-mario" />
             <img src="./Images/pipe-game.png" class="pipe-game" />
+            <img src="./Images/mushroom.png" class="mushroom-game" />
+            <div class="gameOver">
+                <h2>Game Over</h2>
+                <p class="gameOverScore">Sua pontuação:</p>
+                <a href="./index.html">Denovo</a>
+            </div>
+            <div class="meters-container">
+                <p class="meters">Metros percorridos: 200m</p>
+            </div>
         </div>
-        <script src="./js/script.js"></script>
+        <div class="ground"></div>
+        <audio class="audioJump" src="./audio/jump.mp3"></audio>
+        <audio class="deathSound" src="./audio/deathSound.mp3"></audio>
+        <script type="module" src="./js/index.js"></script>
     </body>
 </html>
