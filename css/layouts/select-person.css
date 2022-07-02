@@ -1,0 +1,24 @@
+.select-person {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 1166.66px;
+  height: 600px;
+  border: 3px solid black;
+  margin: 0 auto;
+
+  background-image: url('/Images/background/bg_florest.png');
+  background-repeat: no-repeat;
+  background-position: -228px center;
+  background-size: cover;
+
+  position: relative;
+}
+
+.select-person_best__score {
+  max-width: 100px;
+  position: absolute;
+  right: -130px;
+  top: 33px;
+}

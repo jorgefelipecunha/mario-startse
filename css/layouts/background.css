@@ -1,0 +1,134 @@
+.background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1750px;
+}
+
+.background__img {
+  position: absolute;
+  bottom: 94px;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.background__img--florest {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: auto;
+  height: 100%;
+}
+
+/*
+.background__img--1 {
+  animation: bg-animation 0s infinite linear;
+}
+*/
+
+.background__img--2 {
+  animation: bg-animation 11s infinite linear;
+}
+
+.background__img--3 {
+  animation: bg-animation 10s infinite linear;
+}
+
+.background__img--4 {
+  animation: light-animation 18s infinite linear;
+}
+
+.background__img--5 {
+  animation: bg-animation 8s infinite linear;
+}
+
+.background__img--6 {
+  animation: bg-animation 7s infinite linear;
+}
+.background__img--7 {
+  animation: light-animation 12s infinite linear;
+}
+
+.background__img--8 {
+  animation: bg-animation 5s infinite linear;
+}
+
+.background__img--9 {
+  animation: bg-animation 4s infinite linear;
+}
+.background__img--10 {
+  animation: bg-animation 1s infinite linear;
+}
+
+.background__terrain {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: terrain-animation 1s infinite linear;
+}
+
+@keyframes bg-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -928px;
+  }
+}
+
+@keyframes light-animation {
+  from {
+    left: 900px;
+  }
+  to {
+    left: -900px;
+  }
+}
+
+@keyframes terrain-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -928px;
+  }
+}
+
+@keyframes bg-cyberpunk-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1100px;
+  }
+}
+
+@keyframes bg-farm-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1024.6px;
+  }
+}
+
+@keyframes bg-desert-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1200px;
+  }
+}
+
+@keyframes bg-industry-animation {
+  from {
+    left: -6px;
+  }
+  to {
+    left: -1088px;
+  }
+}

@@ -1,0 +1,135 @@
+.select-scene__scene {
+  position: relative;
+  width: 227px;
+  height: 138px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+  padding: 0;
+  background-color: var(--color-game-title);
+
+  background: linear-gradient(90deg, #0d4b17 0%, #349e46 100%);
+}
+
+.select-scene__scene--locked::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  border-radius: 30px;
+}
+.select-scene__scene-box {
+  width: 70%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
+  gap: 1rem;
+}
+
+.select-scene__scene {
+  cursor: pointer;
+}
+
+.select-scene__scene:nth-child(1):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in forwards;
+  background-image: url('/Images/background/bg_florest.png');
+}
+
+.select-scene__scene:nth-child(2):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in forwards;
+  background-image: url('/Images/background/bg_cyberpunk.png');
+}
+
+.select-scene__scene:nth-child(3):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in forwards;
+  background-image: url('/Images/background/bg_farm.png');
+}
+
+.select-scene__scene:nth-child(4):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in forwards;
+  background-image: url('/Images/background/bg_desert.png');
+}
+
+.select-scene__scene:nth-child(5):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in forwards;
+  background-image: url('/Images/background/bg_industry.png');
+}
+
+.select-scene__scene:nth-child(6):hover ~ .select-scene_background {
+  animation: bg-scene-in 0.5s ease-in forwards;
+  background-image: url('/Images/background/bg_halloween.png');
+}
+
+.select-scene__scene:hover {
+  background: #4de466;
+}
+
+.select-scene__scene:hover .scene__locked {
+  display: flex;
+}
+
+.scene__info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene__img {
+  width: 97%;
+  height: 95%;
+  object-fit: cover;
+}
+
+.scene__locked {
+  display: none;
+  position: absolute;
+  background-color: black;
+  opacity: 0.8;
+  width: 98%;
+  height: 95%;
+  align-items: center;
+  justify-content: center;
+}
+
+.locked__text {
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  color: #4de466;
+  opacity: 1;
+  z-index: 200;
+}
+
+@keyframes card-hover {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes card-hover-out {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bg-scene-in {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}

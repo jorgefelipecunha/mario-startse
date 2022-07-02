@@ -1,0 +1,10 @@
+.score-box {
+  position: absolute;
+  z-index: 200;
+  color: var(--color-text-ui);
+  font-family: var(--font-ui);
+  text-align: justify;
+  font-size: 1rem;
+  left: 20px;
+  top: 30px;
+}
