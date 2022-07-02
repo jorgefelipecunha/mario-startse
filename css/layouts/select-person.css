@@ -17,6 +17,7 @@
 }
 
 .select-person_best__score {
+  max-width: 100px;
   position: absolute;
   right: -130px;
   top: 33px;

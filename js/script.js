@@ -384,6 +384,7 @@ var playerScore = 0
 // Atribui à variável bestPoints o valor do recorde armazenado na localStorage ou 0 caso não exista
 let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
 changeThemeGame(parseInt(localStorage.getItem('theme')) || 2)
+changeCharacters(parseInt(localStorage.getItem('person')) || 0)
 
 bestScore.innerHTML = `Recorde:  ${bestPoints}`
 bestScoreSelectPerson.innerHTML = `Recorde:  ${bestPoints}`
@@ -642,6 +643,7 @@ function changeCharacters(i, character) {
       playerDead = './Images/characters/christmas/christmas_dead.gif'
       break
   }
+  localStorage.setItem('person', i)
   personMenu.src = playerIdle
 }
 
