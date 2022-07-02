@@ -1,33 +1,69 @@
-const mario = document.querySelector(".super-mario");
-const pipe = document.querySelector(".pipe-game");
+const goku = document.querySelector('.goku-run');
+const power = document.querySelector('.power');
+const thunder = document.querySelector('.thunder')
 
 const jump = () => {
-  mario.classList.add("jump-mario");
+    goku.src = './img/goku-ataq.gif';
+    goku.style.bottom = "210px";
 
-  setTimeout(() => {
-    mario.classList.remove("jump-mario");
-  }, 500);
+    setTimeout(() => {
+        goku.src = './img/goku-run.gif'
+        goku.style.bottom = "-10px";
+    }, 700);
 };
 
 const loopGame = setInterval(() => {
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window
-    .getComputedStyle(mario)
-    .bottom.replace("px", "");
+    const powerPosition = power.offsetLeft;
+    const reset = document.querySelector('#reset');
+    const raditz = document.querySelector('.raditz');
+    const gokuPosition = +window
+        .getComputedStyle(goku)
+        .bottom.replace('px', '');
 
-  if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
+     if (powerPosition <= 400 && powerPosition > 200 && gokuPosition < 150) {   
 
-    mario.style.animation = "none";
-    mario.style.bottom = `${marioPosition}px`;
+        thunder.style.display = 'block';
 
-    mario.src = "./Images/mario-game-over.png";
-    mario.style.width = "75px";
-    mario.style.marginLeft = "45px";
+        goku.src = './img/goku-down.gif';
+        goku.style.width = '180px';
+        goku.style.marginLeft = '45px';
+        goku.style.bottom = "-5px";
 
-    clearInterval(loopGame);
-  }
+        power.style.animation = 'none'
+        power.style.left = '-150px'
+
+        raditz.src = './img/raditz-win.gif'
+        raditz.style.width = '280px'
+
+        reset.style.display = 'block';
+        
+
+        setTimeout(() => {
+            thunder.style.display = 'none'
+        }, 500);
+
+    }
+
 }, 10);
 
-document.addEventListener("keydown", jump);
+const loopRaditz = setInterval(() => {
+    const raditzPosition = document.querySelector('.raditz').offsetLeft;
+    const raditz = document.querySelector('.raditz');
+    const raditzAtack = document.querySelector('.raditz-atack')
+    const powerPosition = power.offsetLeft;
+
+     if (powerPosition >= raditzPosition ) {    
+
+        raditz.style.display = 'none';
+        raditzAtack.style.display = 'block';
+        
+        setTimeout(() => {
+            raditz.style.display = 'block';
+            raditzAtack.style.display = 'none';
+        }, 450);
+    }
+
+}, 10);
+
+
+document.addEventListener('keydown', jump);
