@@ -88,6 +88,7 @@ const mudaEstadoDisplay = (className, displayEstado) => {
 const startGame = () => {
     
     const startG = () => {
+        document.addEventListener("touchstart", jump);
         document.addEventListener("keydown", jump);
         mario.classList.remove("game-over-animation");
 
@@ -109,6 +110,8 @@ const startGame = () => {
     }
 
     marioPlay.removeEventListener("click", startG);
+    // marioPlay.removeEventListener("touchstart", startG);
+    // marioPlay.addEventListener("touchstart", startG);
     marioPlay.addEventListener("click", startG);  
 }
 
@@ -125,7 +128,10 @@ const restartGame = () => {
         
     const addEvent = () => {
         count++;
+
+        document.addEventListener("touchstart", jump);
         document.addEventListener("keydown", jump);
+        
         restart.removeEventListener("click", addEvent);
 
         if(checkCredito() > 0 && count <= 1) {
