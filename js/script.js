@@ -21,7 +21,6 @@ const data = [
     colors: ['#70a679', '#65ff83', '#70a679'],
     font: [
       "'Rubik Bubbles', cursive, sans-serif",
-      "'Emilys Candy', cursive, sans-serif",
       "'Emilys Candy', cursive, sans-serif"
     ],
     background: `url("../../Images/background/bg_florest.png")`,
@@ -75,11 +74,7 @@ const data = [
       './sound/cyberpunk/hear_hat_they_say.mp3'
     ],
     colors: ['black', 'black', 'black'],
-    font: [
-      "'Rubik Glitch', cursive",
-      "'Press Start 2P', cursive",
-      "'Press Start 2P', cursive"
-    ],
+    font: ["'Rubik Glitch', cursive", "'Press Start 2P', cursive"],
     background: "url('../../Images/background/bg_farm.png')",
     animationParalaxName: 'bg-farm-animation'
   },
@@ -102,12 +97,8 @@ const data = [
       './sound/cyberpunk/Goodnightmare.mp3',
       './sound/cyberpunk/hear_hat_they_say.mp3'
     ],
-    colors: ['black', 'black', 'black'],
-    font: [
-      "'Rubik Glitch', cursive",
-      "'Press Start 2P', cursive",
-      "'Press Start 2P', cursive"
-    ],
+    colors: ['#BB9200', '#840000'],
+    font: ["'Macondo Swash Caps', cursive", "'Rubik Beastly', cursive"],
     background: "url('../../Images/background/bg_desert.png')",
     animationParalaxName: 'bg-desert-animation'
   },
@@ -360,6 +351,7 @@ var playerScore = 0
 
 // Atribui à variável bestPoints o valor do recorde armazenado na localStorage ou 0 caso não exista
 let bestPoints = parseInt(localStorage.getItem('recorde')) || 0
+changeThemeGame(parseInt(localStorage.getItem('theme')) || 2)
 
 bestScore.innerHTML = `Recorde:  ${bestPoints}`
 bestScoreSelectPerson.innerHTML = `Recorde:  ${bestPoints}`
@@ -472,27 +464,45 @@ const restartGame = () => {
   mario.style.marginLeft = null
 
   //fazendo voltar ao reiniciar
-  bg1.style.animation = `${data[4].animationParalaxName} 0s infinite linear`
+  bg1.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 0s infinite linear`
   bg1.style.left = `-6px`
-  bg2.style.animation = `${data[4].animationParalaxName} 6s infinite linear`
+  bg2.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 6s infinite linear`
   bg2.style.left = `-6px`
-  bg3.style.animation = `${data[4].animationParalaxName} 5s infinite linear`
+  bg3.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 5s infinite linear`
   bg3.style.left = `-6px`
   bg4.style.animation = `light-animation 9s infinite linear`
   bg4.style.left = `500px`
-  bg5.style.animation = `${data[4].animationParalaxName} 4s infinite linear`
+  bg5.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 4s infinite linear`
   bg5.style.left = `-6px`
-  bg6.style.animation = `${data[4].animationParalaxName} 3s infinite linear`
+  bg6.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 3s infinite linear`
   bg6.style.left = `-6px`
   bg7.style.animation = `light-animation 0s infinite linear`
   bg7.style.left = `500px`
-  bg8.style.animation = `${data[4].animationParalaxName} 1.8s infinite linear`
+  bg8.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 1.8s infinite linear`
   bg8.style.left = `-6px`
-  bg9.style.animation = `${data[4].animationParalaxName} 1.6s infinite linear`
+  bg9.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 1.6s infinite linear`
   bg9.style.left = `-6px`
-  bg10.style.animation = `${data[4].animationParalaxName} 1.1s infinite linear`
+  bg10.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 1.1s infinite linear`
   bg10.style.left = `-6px`
-  bgTerrain.style.animation = `${data[4].animationParalaxName} 1.4s infinite linear`
+  bgTerrain.style.animation = `${
+    data[parseInt(localStorage.getItem('theme')) || 0].animationParalaxName
+  } 1.4s infinite linear`
   bgTerrain.style.left = `-6px`
 
   pipe.style.right = `-80px`
@@ -634,6 +644,7 @@ function changeSound(soundPlay, ...sounds) {
 }
 
 function changeThemeGame(index) {
+  localStorage.setItem('theme', index)
   sceneMenu.style.background =
     sceneSelectPerson.style.background =
     bgCredits.style.background =
@@ -661,7 +672,7 @@ function changeThemeGame(index) {
     data[index].colors[0]
   )
   document.documentElement.style.setProperty(
-    '--color-game-title',
+    '--color-btn',
     data[index].colors[1]
   )
 

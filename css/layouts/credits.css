@@ -50,4 +50,5 @@
 .credits__title {
   font-size: 4rem;
   text-transform: uppercase;
+  font-family: var(--font-primary);
 }

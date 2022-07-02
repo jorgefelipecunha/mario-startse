@@ -102,9 +102,9 @@
 .locked__text {
   text-transform: uppercase;
   font-family: var(--font-primary);
-  color: var(--color-game-title);
+  color: var(--color-btn);
   opacity: 1;
-  z-index: 50;
+  z-index: 200;
 }
 
 @keyframes card-hover {

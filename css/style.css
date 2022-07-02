@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Rubik+Bubbles&family=Rubik+Microbe&family=Rubik+Puddles&family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Rubik+Bubbles&family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Rubik+Beastly&display=swap');
 @import url(./layouts/background.css);
 @import url(./layouts/buttons.css);
 @import url(./layouts/score.css);
@@ -13,15 +14,11 @@
 @import url(./layouts/grid-credits.css);
 
 :root {
-  --color-game-title: #27412f;
-  --color-text-button: #3f5e44;
   --color-text-button-hover: #70a679;
   --color-text-ui: #70a679;
   --color-btn: #65ff83;
 
   --font-primary: 'Rubik Bubbles', cursive, sans-serif;
-  --font-secundary: 'Rubik Puddles', cursive, sans-serif;
-  --font-alternative: 'Rubik Microbe', cursive, sans-serif;
   --font-ui: 'Emilys Candy', cursive, sans-serif;
   --font-open-scene: 'Uncial Antiqua', cursive, sans-serif;
 }
