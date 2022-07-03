@@ -2,117 +2,122 @@
 // Array de componentes
 
 let componentes = new Array("./Images/pipe-game.png",
-"./Images/Aliensbig.gif",
-"./Images/artneoseeker.png",
-"./Images/banzai.png",
-"./Images/bigboo_boom.gif",
-"./Images/block.gif",
-"./Images/BobombNSMBU.webp",
-"./Images/Bomb.png",
-"./Images/Bombred.png",
-"./Images/Boo.png",
-"./Images/booboo.png",
-"./Images/boomanbluff.png",
-"./Images/bowser.png",
-"./Images/bowser.webp",
-"./Images/bowser1.png",
-"./Images/bowserking.png",
-"./Images/bowserkoopa.gif",
-"./Images/bowserpng.png",
-"./Images/broozeromega.png",
-"./Images/bully.png",
-"./Images/Buzzybeetle.png",
-"./Images/buzzycolors.gif",
-"./Images/CatGoomba.png",
-"./Images/chainchomp.png",
-"./Images/cheepcheep.png",
-"./Images/chomp.png",
-"./Images/chuck.gif",
-"./Images/Coccinelly.webp",
-"./Images/DarkBowserDX.webp",
-"./Images/deadturtle.gif",
-"./Images/Dryfish.png",
-"./Images/fire.gif",
-"./Images/firebreathingflower.png",
-"./Images/firebreathingflowerfireball.png",
-"./Images/firebreathingflowerfireball2.png",
-"./Images/Fireflower.png",
-"./Images/Fireflower1.png",
-"./Images/flowercolors.gif",
-"./Images/Foo.webp",
-"./Images/Fuzzy.webp",
-"./Images/Galoomba.webp",
-"./Images/Goomba.gif",
-"./Images/goomba.png",
-"./Images/goomba1.png",
-"./Images/goombacolors.gif",
-"./Images/goombahd.png",
-"./Images/Goombaspino.png",
-"./Images/goombawalk.gif",
-"./Images/grandgoomba.webp",
-"./Images/grittygoomba.png",
-"./Images/grittygoombaclipart.png",
-"./Images/huffnpuff.gif",
-"./Images/HyperGoomba.png",
-"./Images/iggykoopa.png",
-"./Images/images.png",
-"./Images/koczwaraenemies.png",
-"./Images/koopa.gif",
-"./Images/Koopatroopa.png",
-"./Images/larrykoopa.png",
-"./Images/Ludwigkoopa.png",
-"./Images/MechaKoopa.png",
-"./Images/Mkddbobomb.png",
-"./Images/MLSSBMChuckGuyIdle.webp",
-"./Images/MLSSBMEliteChuckGuyIdle.webp",
-"./Images/newenemies.png",
-"./Images/ninjiamtagif.webp",
-"./Images/nsmbunovart.png",
-"./Images/paperstar.png",
-"./Images/Penguin.png",
-"./Images/PiranhaPlant.png",
-"./Images/piranhaplantmario.gif",
-"./Images/Pyroguy.png",
-"./Images/Rainbowspiny.webp",
-"./Images/rhomproller.gif",
-"./Images/RhompRoller.webp",
-"./Images/roykoopa.png",
-"./Images/ShyGuyArtwork.png",
-"./Images/SledgebrosNSMBW.png",
-"./Images/slugger.png",
-"./Images/SpikeTopSMWU.webp",
-"./Images/spiny.png",
-"./Images/TailBoo.png",
-"./Images/thwimp.png",
-"./Images/transferir.gif",
-"./Images/turtlecolors.gif",
-"./Images/uminecraft.png",
-"./Images/villainswikigoomba.png",
-"./Images/wiienemies.png",
-"./Images/wiiredfav.png",
-"./Images/xBowsersI koopa.png",
-"./Images/yispooky.png",
-"./Images/cogumelo.png",
-"./Images/luigi.gif",
-"./Images/mushroomcolors.gif",
-"./Images/mushroomred.gif",
-"./Images/mushroomgreen.gif",
-"./Images/yellowmushroom.png",
-"./Images/yoshi.gif",
-"./Images/Yoshi.webp",
-"./Images/coin1.png",
-"./Images/coin2.png",
-"./Images/coincolors.png",
-"./Images/coinmaster.webp",
-"./Images/coin.gif",
-"./Images/coracao3.gif")
+  "https://pa1.narvii.com/6519/ac28a11ef719df068bd8b598d3fc069704406fa2_hq.gif",
+  "https://thumbs.gfycat.com/TangibleDefiantGlassfrog-max-1mb.gif",
+  "https://c.tenor.com/AQOzchC9P0AAAAAi/fawful-bug-fawful.gif",
+  "https://static.wikia.nocookie.net/sm64community/images/7/74/Old_Dark_Star_X.gif",
+  "https://static.wikia.nocookie.net/sm64community/images/6/67/Dark-Bowser-X-Animation.gif",
+  "./Images/Aliensbig.gif",
+  "./Images/artneoseeker.png",
+  "./Images/banzai.png",
+  "./Images/bigboo_boom.gif",
+  "./Images/block.gif",
+  "./Images/BobombNSMBU.webp",
+  "./Images/Bomb.png",
+  "./Images/Bombred.png",
+  "./Images/Boo.png",
+  "./Images/booboo.png",
+  "./Images/boomanbluff.png",
+  "./Images/bowser.png",
+  "./Images/bowser.webp",
+  "./Images/bowser1.png",
+  "./Images/bowserking.png",
+  "./Images/bowserkoopa.gif",
+  "./Images/bowserpng.png",
+  "./Images/broozeromega.png",
+  "./Images/bully.png",
+  "./Images/Buzzybeetle.png",
+  "./Images/buzzycolors.gif",
+  "./Images/CatGoomba.png",
+  "./Images/chainchomp.png",
+  "./Images/cheepcheep.png",
+  "./Images/chomp.png",
+  "./Images/chuck.gif",
+  "./Images/Coccinelly.webp",
+  "./Images/DarkBowserDX.webp",
+  "./Images/deadturtle.gif",
+  "./Images/drturtle.webp",
+  "./Images/Dryfish.png",
+  "./Images/fire.gif",
+  "./Images/firebreathingflower.png",
+  "./Images/firebreathingflowerfireball.png",
+  "./Images/firebreathingflowerfireball2.png",
+  "./Images/Fireflower.png",
+  "./Images/Fireflower1.png",
+  "./Images/flowercolors.gif",
+  "./Images/Foo.webp",
+  "./Images/Fuzzy.webp",
+  "./Images/Galoomba.webp",
+  "./Images/Goomba.gif",
+  "./Images/goomba.png",
+  "./Images/goomba1.png",
+  "./Images/goombacolors.gif",
+  "./Images/goombahd.png",
+  "./Images/Goombaspino.png",
+  "./Images/goombawalk.gif",
+  "./Images/grandgoomba.webp",
+  "./Images/grittygoomba.png",
+  "./Images/grittygoombaclipart.png",
+  "./Images/huffnpuff.gif",
+  "./Images/HyperGoomba.png",
+  "./Images/iggykoopa.png",
+  "./Images/images.png",
+  "./Images/koczwaraenemies.png",
+  "./Images/koopa.gif",
+  "./Images/Koopatroopa.png",
+  "./Images/larrykoopa.png",
+  "./Images/Ludwigkoopa.png",
+  "./Images/MechaKoopa.png",
+  "./Images/Mkddbobomb.png",
+  "./Images/MLSSBMChuckGuyIdle.webp",
+  "./Images/MLSSBMEliteChuckGuyIdle.webp",
+  "./Images/mushroomgreen.gif",
+  "./Images/newenemies.png",
+  "./Images/ninjiamtagif.webp",
+  "./Images/nsmbunovart.png",
+  "./Images/paperstar.png",
+  "./Images/Penguin.png",
+  "./Images/PiranhaPlant.png",
+  "./Images/piranhaplantmario.gif",
+  "./Images/Pyroguy.png",
+  "./Images/Rainbowspiny.webp",
+  "./Images/rhomproller.gif",
+  "./Images/RhompRoller.webp",
+  "./Images/roykoopa.png",
+  "./Images/ShyGuyArtwork.png",
+  "./Images/SledgebrosNSMBW.png",
+  "./Images/slugger.png",
+  "./Images/SpikeTopSMWU.webp",
+  "./Images/spiny.png",
+  "./Images/TailBoo.png",
+  "./Images/thwimp.png",
+  "./Images/transferir.gif",
+  "./Images/turtlecolors.gif",
+  "./Images/uminecraft.png",
+  "./Images/villainswikigoomba.png",
+  "./Images/wiienemies.png",
+  "./Images/wiiredfav.png",
+  "./Images/xBowsersI koopa.png",
+  "./Images/yispooky.png",
+  "./Images/drturtleinvisible.webp",
+  "./Images/toad.png",
+  "./Images/luigi.gif",
+  "./Images/mushroomcolors.gif",
+  "./Images/mushroomred.gif",
+  "./Images/yellowmushroom.png",
+  "./Images/yoshi.gif",
+  "./Images/Yoshi.webp",
+  "./Images/coin1.png",
+  "./Images/coin2.png",
+  "./Images/coincolors.png",
+  "./Images/coinmaster.webp",
+  "./Images/coin.gif",
+  "./Images/coracao3.gif");
 
 
 let imgs = [];
-//let component = document.getElementById("componente");
 let component = document.querySelector("#componente");
 const musictrilha = new Audio("./Sound/theme-overworld.mp3");
-let teste = true;
 
 // pré carregamento dos componentes
 
@@ -120,16 +125,38 @@ function preCarregamento() {
   for (let i = 0; i < componentes.length; i++) {
     imgs[i] = new Image();
     imgs[i].src = componentes[i];
-    console.log(i);
-    console.log(imgs[i].src);
-    console.log(imgs[i]);
   }
 }
+
+// Arquivo para auxílio depuração
+// para a coleta dos dados devrão ser inseridos os pontos de coleta no código
+/*
+  function downloadFiles(data, file_name, file_type) {
+/*    let vdata;
+    for (let i = 0; i < data.length; i++) {
+      vdata += data[i];
+    } */
+/*    var file = new Blob([data], {type: file_type});
+    if (window.navigator.msSaveOrOpenBlob) 
+        window.navigator.msSaveOrOpenBlob(file, file_name);
+    else { 
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = file_name;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+}
+*/
 
 function iniciar() {
   musictrilha.play();
   musictrilha.loop = true;
-  //  trilha.playbackRate = 2;
 
   const nav = document.querySelector(".menu");
   const tfacil = document.querySelector('#facil').checked;
@@ -138,7 +165,7 @@ function iniciar() {
   const recomeca = document.querySelector("#recomeca");
   const mario = document.querySelector(".super-mario");
   const componente = document.querySelector(".componente-game");
-  
+
   // áudios do jogo
   const musiccoin = new Audio("./Sound/smb_coin.mp3");
   const musicgameover = new Audio("./Sound/smb_mariodie.mp3");
@@ -150,12 +177,13 @@ function iniciar() {
   let classComponente;
 
   let score = 0
-  let atualizaScore = true;
-  let aumentaDificuldade = true;
+  //  let atualizaScore = true;
+  let pontuar = false;
+  let aumentaDificuldade = false;
   let timer = 0;
   let sortear = false;
-  let pontuar = false;
   let velocidade = 0;
+  let imgSorteada = 0;
   let imgAtual = 0;
   let imgAnterior1 = 0;
   let imgAnterior2 = 0;
@@ -168,13 +196,14 @@ function iniciar() {
   let imgAnterior9 = 0;
   let imgAnterior0 = 0;
 
+
   nav.classList.remove("menu");
   nav.classList.add("menuNone");
 
-  //seleção de nível de jogo
+// Seleção de nível de jogo
 
   if (tfacil === true) {
-    velocidade = 800;
+    velocidade = 1000;
     classComponente = "componente-game-slow";
     classMario = "jump-mario-slow";
   } else if (tnormal === true) {
@@ -189,15 +218,13 @@ function iniciar() {
     window.location.reload();
   }
   componente.classList.add(classComponente);
-//  console.log("VELOCIDADE " + velocidade);
 
-  //Contador de tempo de jogo
+// Contador de tempo de jogo
 
   const ativaTimer = setInterval(funcTimer, 1000);
 
   function funcTimer() {
     timer++;
-    console.log("TIMER " + timer);
     document.querySelector("#time").innerHTML = (timer + " sec");
   }
 
@@ -207,51 +234,47 @@ function iniciar() {
 
 // Contador de pontos 
 
-  function aumentaScore(p) {
-//    console.log("SCORE ");
-    if (imgAtual < 91) {
+  function aumentaScore() {
+    if (imgAtual < 99) {
       score += 50;
-//      console.log("AUMENTOU SCORE 50 " + imgAtual);
-    } else if (imgAtual < 99 && pontuar== true) {
+      pontuar = false;
+    } else if (imgAtual < 106) {
       musicfriend.play();
       score += 70;
-      pontuar= false;
-//      console.log("AUMENTOU SCORE 70 " + imgAtual);
-    } else if (imgAtual < 103 && pontuar== true) {
+      pontuar = false;
+    } else if (imgAtual < 110) {
       musiccoin.play();
       score += 100;
-      pontuar= false;
-//      console.log("AUMENTOU SCORE 100 " + imgAtual);
-    } else if (imgAtual == 103 || imgAtual == 104 && pontuar== true) {
+      pontuar = false;
+    } else if (imgAtual == 110 || imgAtual == 111) {
       musicmega.play();
       score += 200;
-      pontuar= false;
-//      console.log("AUMENTOU SCORE 200 " + imgAtual);
+      pontuar = false;
     }
-//    console.log("AUMENTOU SCORE " + imgAtual);
-    document.querySelector("#score").innerHTML = score;
+    document.querySelector("#scores").innerHTML = score;
     return;
   }
 
-  //Função para pular
+// Função para pular
 
   const jump = () => {
-//    console.log("PULAR ");
     mario.classList.add(classMario);
-
     setTimeout(() => {
       mario.classList.remove(classMario);
     }, velocidade);
-    if (atualizaScore === true && componentePosition >= 150 && componentePosition <= 300) {
-//      console.log("PULOU ");
-      aumentaScore(false);
+    if (imgAtual > 98 && componentePosition <= 250) {
+      sortear = true;
+      pontuar = false;
+    }
+    if (imgAtual < 99 && componentePosition <= 350) {
+      sortear = true;
+      pontuar = true;
     }
   };
 
-  // Módulo para sortear os componentes
+// Módulo para sortear os componentes
 
   function sortearComponente() {
-//    console.log("SORTEAR " + imgAtual);
     imgAnterior0 = imgAnterior9;
     imgAnterior9 = imgAnterior8;
     imgAnterior8 = imgAnterior7;
@@ -262,135 +285,111 @@ function iniciar() {
     imgAnterior3 = imgAnterior2;
     imgAnterior2 = imgAnterior1;
     imgAnterior1 = imgAtual;
-    do {
-      imgAtual = Math.round(Math.random() * (componentes.length - 1));
-      console.log("imgAtual "+imgAtual);
-      console.log("imgAnterior1 "+imgAnterior1);
-      console.log("imgAnterior2 "+imgAnterior2);
-      console.log("imgAnterior3 "+imgAnterior3);
-      console.log("imgAnterior4 "+imgAnterior4);
-      console.log("imgAnterior5 "+imgAnterior5);
-      console.log("imgAnterior6 "+imgAnterior6);
-      console.log("imgAnterior7 "+imgAnterior7);
-      console.log("imgAnterior8 "+imgAnterior8);
-      console.log("imgAnterior9 "+imgAnterior9);
-      console.log("imgAnterior0 "+imgAnterior0);
-  //      imgAnterior = imgAtual;
-    } while (imgAnterior1 == imgAtual || imgAnterior2 == imgAtual || imgAnterior3 == imgAtual || imgAnterior4 == imgAtual || imgAnterior5 == imgAtual);
-//    console.log("SORTEOU " + imgAtual);
+    if (tfacil === true) {
+      do {
+        imgSorteada = Math.round(Math.random() * (componentes.length - 1));
+      } while (imgSorteada == 98 || imgAnterior1 == imgSorteada || imgAnterior2 == imgSorteada || imgAnterior3 == imgSorteada || imgAnterior4 == imgSorteada || imgAnterior5 == imgSorteada || imgAnterior6 == imgSorteada || imgAnterior7 == imgSorteada || imgAnterior8 == imgSorteada || imgAnterior9 == imgSorteada || imgAnterior0 == imgSorteada);
+    } else {
+      do {
+        imgSorteada = Math.round(Math.random() * (componentes.length - 1));
+      } while (imgAnterior1 == imgSorteada || imgAnterior2 == imgSorteada || imgAnterior3 == imgSorteada || imgAnterior4 == imgSorteada || imgAnterior5 == imgSorteada || imgAnterior6 == imgSorteada || imgAnterior7 == imgSorteada || imgAnterior8 == imgSorteada || imgAnterior9 == imgSorteada || imgAnterior0 == imgSorteada);
+    }
+  }
+
+// Módulo de comando para atualizar Score, dificuldade e imagens
+
+  function atualizaGeral() {
+    if (pontuar == true) {
+      aumentaScore();
+    }
+    imgAtual = imgSorteada;
     trocacomponente(imgAtual);
-  }
-
-  // módulo para troca de componenete
-  function trocacomponente(img) {
-//    console.log("TROCA " + img);
-    //    console.log("CONSOLE-LOG " + "('" + imgs[img].src + "')");
-    componente.src = imgs[img].src;
-  }
-
-  // Módulo de controle / fim de jogo
-
-  const loopGame = setInterval(() => {
-//    console.log("IN LOOPGAME / imgAtual " + imgAtual);
-//    console.log("aumentaDificuldade " + aumentaDificuldade);
     if (aumentaDificuldade == true) {
       velocidade -= 25;
-      console.log("VELOCIDADE " + velocidade);
       if (velocidade == 500) {
-        console.log("AUMENTOU DIFICULDADE NORMAL ");
         classComponente = "componente-game-normal";
         classMario = "jump-mario";
         componente.classList.add(classComponente);
       } else if (velocidade == 300) {
-        console.log("AUMENTOU DIFICULDADE DIFICIL ");
         classComponente = "componente-game-fast";
         classMario = "jump-mario-fast";
         componente.classList.add(classComponente);
       }
-//      console.log("AUMENTOU DIFICULDADE - VELOCIDADE " + velocidade);
       aumentaDificuldade = false;
     }
+  }
 
-//    console.log("sortear " + sortear);
-//    console.log("componentePosition A" + componentePosition);
+// função para troca de imagens
 
-    componente.style.display = "block";
+  function trocacomponente(img) {
+    componente.src = imgs[img].src;
+  }
 
-    if (componentePosition <= -50 || sortear == true) {
-      console.log("LOOP ==> SORTEAR ");
-      sortear = false;
-      sortearComponente()
-    }
-//    console.log("componentePosition D" + componentePosition);
+// Módulo de controle / fim de jogo
 
+  const loopGame = setInterval(() => {
     componentePosition = componente.offsetLeft;
     const marioPosition = +window
       .getComputedStyle(mario)
       .bottom.replace("px", "");
-    if (imgAtual < 91 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
-//        console.log("LOOP if FIM entrou ");
-        musictrilha.pause();
-        musicgameover.play();
 
-        const ativaMusicTrilha = setInterval(() => {
-          musictrilha.play();
-          musictrilha.loop = true;
-          clearInterval(ativaMusicTrilha);
-        }, 3020);
-
-        componente.style.animation = "none";
-        componente.style.left = `${componentePosition}px`;
-        componente.style.display = "none";
-
-        mario.style.animation = "none";
-        mario.style.bottom = `${marioPosition}px`;
-
-        mario.src = "./Images/mariogameover.gif";
-        mario.style.width = "75px";
-        mario.style.marginLeft = "45px";
-
-        atualizaScore = false;
-        clearInterval(loopGame);
-        clearInterval(ativaTimer);
-        clearInterval(ativaDificuldadeTimer);
-        recomeca.classList.remove("botaoOff");
-        recomeca.classList.add("botaoOn");
-    } else if (imgAtual > 90 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
-//      console.log("LOOP else if FIM entrou ");
-      componente.style.display = "none";
-      const ativaComponente = setInterval(() => {
-        componente.style.display = "block";
-        clearInterval(ativaComponente);
-      }, 120);
-//      console.log("LOOP ==> AUMENTA SCORE ");
-      pontuar = true;
-      sortear = true;
-      aumentaScore(true);
+    if (componentePosition < -50 && tfacil == true) {
+      atualizaGeral();
+    } else if (componentePosition < -20 && tnormal == true) {
+      atualizaGeral();
+    } else if (componentePosition < 0 && tdificil == true) {
+      atualizaGeral();
     }
-/*
-    console.log("imgAtual "+imgAtual);
-    console.log("imgAnterior1 "+imgAnterior1);
-    console.log("imgAnterior2 "+imgAnterior2);
-    console.log("imgAnterior3 "+imgAnterior3);
-    console.log("imgAnterior4 "+imgAnterior4);
-    console.log("imgAnterior5 "+imgAnterior5);
-    console.log("imgAnterior6 "+imgAnterior6);
-    console.log("imgAnterior7 "+imgAnterior7);
-    console.log("imgAnterior8 "+imgAnterior8);
-    console.log("imgAnterior9 "+imgAnterior9);
-    console.log("imgAnterior0 "+imgAnterior0);
-    console.log("component "+component);
-    console.log("teste "+teste);
-    console.log("sortear "+sortear);
-    console.log("componentePosition "+componentePosition);
-    console.log("atualizaScore "+atualizaScore);
-    console.log("aumentaDificuldade "+aumentaDificuldade);
-    console.log("timer "+timer);
-    console.log("velocidade "+velocidade);
-    console.log("classMario "+classMario);
-    console.log("classComponente "+classComponente);
-*/    
-  }, 49);
 
+    if (componentePosition > 300) {
+      componente.style.visibility = "visible";
+    }
+
+    if (sortear == true) {
+      sortear = false;
+      sortearComponente()
+    }
+
+    if (imgAtual < 99 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
+      // SE ERROU EXECUTA PARA FIM DE JOGO
+      musictrilha.pause();
+      musicgameover.play();
+
+      const ativaMusicTrilha = setInterval(() => {
+        musictrilha.play();
+        musictrilha.loop = true;
+        clearInterval(ativaMusicTrilha);
+      }, 3020);
+
+      componente.style.animation = "none";
+      componente.style.left = `${componentePosition}px`;
+
+      mario.style.animation = "none";
+//      mario.style.bottom = `${marioPosition}px`;
+      mario.style.bottom = "30px";
+
+      mario.src = "./Images/mariogameover.gif";
+      mario.style.width = "75px";
+      mario.style.marginLeft = "45px";
+
+      //        atualizaScore = false;
+      clearInterval(loopGame);
+      clearInterval(ativaTimer);
+      clearInterval(ativaDificuldadeTimer);
+      recomeca.classList.remove("botaoOff");
+      recomeca.classList.add("botaoOn");
+
+// Comandos para função gerar o arquivo de auxílio de depuração
+//      position += position3;
+//      downloadFiles(position, "position", "text/plain");
+
+    } else if (imgAtual > 98 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
+      if (componente.style.visibility == "visible") {
+        pontuar = true;
+      }
+      componente.style.visibility = "hidden";
+      sortear = true;
+    }
+  }, 49);
   document.addEventListener("keydown", jump);
 }

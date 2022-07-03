@@ -11,40 +11,49 @@
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+/*    border-bottom: 100px solid rgb(24,174,24);  */
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
+#grama {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    opacity: 0.9;
+}
+
+
 nav{
-    margin-top: -100px;
+    margin-top: -200px;
 }
 
 .componente-game {
     position: absolute;
-    bottom: 0;
+    bottom: 30px; 
     width: 80px;
 }
 
 .componente-game-normal {
     position: absolute;
-    bottom: 0;
+    bottom: 30px; 
     width: 80px;
     animation: componente-animation 1.5s infinite linear;
 }
 
 .componente-game-slow {
     position: absolute;
-    bottom: 0;
+    bottom: 30px; 
     width: 80px;
     animation: componente-animation 2.5s infinite linear;
 }
 
 .componente-game-fast {
     position: absolute;
-    bottom: 0;
+    bottom: 30px; 
     width: 80px;
     animation: componente-animation 1s infinite linear;
 }
@@ -52,7 +61,7 @@ nav{
 .super-mario{
     width:150px;
     position: absolute;
-    bottom: 0;
+    bottom: 30px; 
 }
 
 .jump-mario {
@@ -60,17 +69,22 @@ nav{
 }
 
 .jump-mario-slow {
-    animation: mario-animation 800ms ease-out;
+    animation: mario-animation 1000ms ease-out;
 }
 
 .jump-mario-fast {
     animation: mario-animation 300ms ease-out;
 }
 
+.sol-game{
+    width: 150px;
+}
+
 .cloud-game{
     position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    width: 1750px;
+    height: 200px;
+    animation: clouds-animation 35s infinite linear;
 }
 
 .inform{
@@ -218,16 +232,16 @@ input, label {
 
 @keyframes clouds-animation {
     from{
-        right: -550px;
+        right: -1750px; 
     }
     to{
-        right:  100%;
+        right:  100%; 
     }
 }
 
 @keyframes mario-animation{
     0% {
-        bottom:0;
+        bottom:30px;
     }
     40% {
         bottom: 180px;
@@ -242,7 +256,7 @@ input, label {
         bottom: 180px;
     }
     100%{
-        bottom: 0%
+        bottom: 30px;
     }
 
 }
