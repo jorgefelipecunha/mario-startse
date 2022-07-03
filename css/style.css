@@ -1,43 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Erica+One&family=Jockey+One&family=Kdam+Thmor+Pro&display=swap');
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
+    font-size: 1em;
 }
 
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+/*    border-bottom: 100px solid rgb(24,174,24);  */
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
+#grama {
     position: absolute;
     bottom: 0;
+    width: 100%;
+    height: 30px;
+    opacity: 0.9;
+}
+
+
+nav{
+    margin-top: -200px;
+}
+
+.componente-game {
+    position: absolute;
+    bottom: 30px; 
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+}
+
+.componente-game-normal {
+    position: absolute;
+    bottom: 30px; 
+    width: 80px;
+    animation: componente-animation 1.5s infinite linear;
+}
+
+.componente-game-slow {
+    position: absolute;
+    bottom: 30px; 
+    width: 80px;
+    animation: componente-animation 2.5s infinite linear;
+}
+
+.componente-game-fast {
+    position: absolute;
+    bottom: 30px; 
+    width: 80px;
+    animation: componente-animation 1s infinite linear;
 }
 
 .super-mario{
     width:150px;
     position: absolute;
-    bottom: 0;
+    bottom: 30px; 
 }
 
 .jump-mario {
     animation: mario-animation 500ms ease-out;
 }
 
-.cloud-game{
-    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+.jump-mario-slow {
+    animation: mario-animation 1000ms ease-out;
 }
 
-@keyframes pipe-animation {
+.jump-mario-fast {
+    animation: mario-animation 300ms ease-out;
+}
+
+.sol-game{
+    width: 150px;
+}
+
+.cloud-game{
+    position: absolute;
+    width: 1750px;
+    height: 200px;
+    animation: clouds-animation 35s infinite linear;
+}
+
+.inform{
+    color: #E6E6E6;
+    font-size: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#score {
+    margin-left: 50px;
+/*    display: flex;
+    justify-content: flex-end;*/
+}
+
+#timer {
+    margin-right: 50px;
+/*    display: flex;
+    justify-content: flex-end;
+
+    justify-content: right;
+    align-items: flex-end; */
+}
+/*
+.coracao {
+    width: 1.5em;
+}
+
+#vida{
+    display: flex;
+    align-items: center;
+}
+
+#vidas{
+    vertical-align: text-top;
+}
+*/
+.menu{
+    color:black;
+    font-size: 2em;
+    position: relative;
+    top: 4em;
+    z-index: 3;
+}
+
+.menuNone{
+    display: none;
+}
+
+#menuItems{
+    width: 150px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#titulomenu, #botao, #botao2, #botao3{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+#msg1, #msg2{
+    display: flex;
+    justify-content: center;
+    font-size: .8em;
+}
+
+input, label {
+    cursor: pointer;
+}
+
+#botao{
+    border-radius: 15%;
+    font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
+    font-size: .8em;
+    width: 165px;
+    height: 50px;
+    background-color: #0066b8;
+    padding: 9px 50px;
+    border: none;
+    color: #D8D8D8;
+    text-align: center;
+    cursor: pointer;
+}
+
+#botao2{
+	margin-top: 1em;
+    border-radius: 15%;
+    font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
+    font-size: 1.5em;
+    width: 165px;
+    height: 50px;
+    background-color: #0066b8;
+    padding: 9px 50px;
+    border: none;
+    color: #D8D8D8;
+    text-align: center;
+    cursor: pointer;
+}
+
+#botao3{
+    display: flex;
+    justify-content: center;
+    border-radius: 15%;
+    font-family: Erica One, Jockey One, Kdam Thmor Pro, sans-serif;
+    font-size: .8em;
+    width: 165px;
+    height: 100px;
+    background-color: #0066b8;
+    padding: 9px 50px;
+    border: none;
+    color: #8A0808;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+#recomeca{
+	margin-top: 10em;
+}
+
+.perdeu{
+	display: flex;
+	margin: auto;
+	justify-content: center;
+}
+
+.botaoOn{
+	display: block;
+}
+
+.botaoOff{
+	display: none;
+}
+
+@keyframes componente-animation {
     from {
         right: -80px;
     }
@@ -48,16 +232,16 @@
 
 @keyframes clouds-animation {
     from{
-        right: -550px;
+        right: -1750px; 
     }
     to{
-        right:  100%;
+        right:  100%; 
     }
 }
 
 @keyframes mario-animation{
     0% {
-        bottom:0;
+        bottom:30px;
     }
     40% {
         bottom: 180px;
@@ -72,7 +256,7 @@
         bottom: 180px;
     }
     100%{
-        bottom: 0%
+        bottom: 30px;
     }
 
 }

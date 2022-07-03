@@ -7,12 +7,53 @@
         <link rel="stylesheet" href="./css/style.css" /> 
         <title>Super Mario StartSe</title>
     </head>
-    <body>
-        <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
-        </div>
+    <body onload="preCarregamento()">
+        <main class="game">
+            <section class="inform">
+                <div id="score">
+                    <span class="left">MARIO</span><br>
+                    <span id="scores" class="left">0</span>
+                </div>
+                <div id="timer">
+                    <span class="right">TIME</span><br>
+                    <spam id="time" class="right">0</spam>
+                </div>
+            </section>
+            <figure>
+                <img src="./Images/sol.gif" class="sol-game" />
+                <img src="./Images/newclouds5.png" class="cloud-game" />
+            </figure>
+            <nav class="menu">
+                <h2 id="titulomenu">Nível</h2>
+                <div id="menuItems">
+                    <input type="radio" id="facil" name="nivel" value=1>
+                    <label for="facil">Fácil</label><br>
+                    <input type="radio" id="normal" name="nivel" value=2>
+                    <label for="normal">Normal</label><br>
+                    <input type="radio" id="dificil" name="nivel" value=3>
+                    <label for="dificil">Difícil</label><br>
+                </div>
+                <button id="botao" onclick="iniciar()">Iniciar</button>
+                <div id="msg">
+                    <p id="msg1">Selecione</p>
+                    <p id="msg2">para jogar</p><br>
+                </div>
+                <button id="botao3" onclick='window.open("./comojogar.html","_blank")'>COMO JOGAR</button>
+            </nav>
+			<div id="recomeca" class="botaoOff">
+                <figure>
+				    <img src="./Images/perdeu.jpg" class="perdeu"/>
+                </figure>
+                <button id="botao2" onclick="window.location.reload()">Reiniciar</button>
+			</div>
+            <figure>
+            </figure>
+            <figure id="personagem">
+                <img id="grama" src="./Images/grama1.jpg" class="componente-grama" />
+			    <img src="./Images/super-mario3.gif" class="super-mario" />
+                <img id="componente" src="./Images/pipe-game.png" class="componente-game" />
+            </figure>	
+        </main>
         <script src="./js/script.js"></script>
     </body>
 </html>
