@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" /> 
-        <title>Super Mario StartSe</title>
-    </head>
-    <body>
-        <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Super Mario StartSe</title>
+</head>
+
+<body>
+    <div class="container">
+    <div class="game">
+        <img src="./Images/clouds-gamer.png" class="cloud-game" />
+        <img src="./Images/nave.png" class="nave-game" />
+        <img src="./Images/super-mario.gif" class="super-mario" />
+        <img src="./Images/pipe-game.png" class="pipe-game" />
+
+        <div class="score">
+           <h2>Pontos:<span style="font-size: 25pt" id="count">0</span></h2>
         </div>
-        <script src="./js/script.js"></script>
-    </body>
+        
+            <img src="./Images/over.png" class="hidden" class="over">
+            <button id="button" class="hidden" class="over">Restart</button>
+
+        </div>
+    </div>
+</div>
+
+    <!-- Sons do jogo !-->
+    <audio src="./audio/Tema Mario.mp3" preload="auto" id="musica"></audio>
+    <audio src="./audio/Mario pulo.wav" preload="auto" id="pulo"></audio>
+    <audio src="./audio/Mario Morte.mp3" preload="auto" id="morte"></audio>
+    <audio src="./audio/Mario Game Over.mp3" preload="auto" id="somGameover"></audio>
+
+    <script src="./js/script.js"></script>
+</body>
+
 </html>
