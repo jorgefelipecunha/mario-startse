@@ -14,21 +14,51 @@
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+.game-over {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid red;
+    background-image: url(../Images/bolsonaro_fim.png);
+    background-color: #f35858;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.super-mario{
-    width:150px;
+.tebett {
     position: absolute;
     bottom: 0;
+    right: -80px;
+    animation: tebett-animation 3s linear;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.ciro {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    animation: ciro-animation 3s linear 2s;
+}
+
+.bolsonaro {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    animation: bolsonaro-animation 3s linear 4s;
+}
+
+.lula{
+    width:200px;
+    position: absolute;
+    bottom: -30px;
+}
+
+.jump-lula {
+    animation: lula-animation 800ms ease-out;
 }
 
 .cloud-game{
@@ -37,7 +67,25 @@
     animation: clouds-animation 20s infinite linear;
 }
 
-@keyframes pipe-animation {
+@keyframes tebett-animation {
+    from {
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes ciro-animation {
+    from {
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes bolsonaro-animation {
     from {
         right: -80px;
     }
@@ -55,21 +103,24 @@
     }
 }
 
-@keyframes mario-animation{
+@keyframes lula-animation{
     0% {
         bottom:0;
     }
-    40% {
-        bottom: 180px;
+    30% {
+        bottom: 160px;
     }
     50% {
-        bottom: 180px;
+        bottom: 170px;
     }
     60%{
-        bottom: 180px;
+        bottom: 170px;
     }
     70%{
-        bottom: 180px;
+        bottom: 170px;
+    }
+    85%{
+        bottom: 160px;
     }
     100%{
         bottom: 0%
