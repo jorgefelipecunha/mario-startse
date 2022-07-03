@@ -1,78 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 *{
     margin:0;
-    padding: 0;
+    padding:0;
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.game {
+/* START SCREEN */
+
+main{
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+    flex-direction: column;
+    
+}
+
+header{
+    display: flex;
+    margin: 0 auto;
+}
+
+header img{
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 72px;
+    
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 0px auto;
+}
+
+nav ul li{
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0px 0px 15px 0px;
+    background-color: #00dbff;
+    padding: 30px 50px;
+}
+
+nav ul li:hover{
+    background-color: lightblue;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px black;    
+    cursor: pointer;
+}
+
+nav ul a:hover{
+    color: #ffcb29;
+}
+
+.howto, .credits{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.howto p, .credits p{
+    width: 80%;
+    margin: 0px auto 10px auto;
+}
+
+
+/* GAME STYLE */
+
+.game{
+    width: 100%;
+    height: 100vh;
+    border-bottom: 100px solid #698202;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    background: linear-gradient(#87ceeb, #e0f6ff);
 }
 
-.pipe-game {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
-}
-
-.super-mario{
-    width:150px;
-    position: absolute;
-    bottom: 0;
-}
-
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
-}
-
-.cloud-game{
+.clouds{
     position: absolute;
     width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    top:70px;
+    animation: clouds-animation 15s infinite linear;
+    z-index:1;
 }
 
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-    to{
-        right: 100%;
-    }
-}
-
-@keyframes clouds-animation {
+@keyframes clouds-animation{
     from{
         right: -550px;
     }
     to{
-        right:  100%;
+        right:100%;
     }
 }
 
-@keyframes mario-animation{
-    0% {
+.score{
+    position: absolute;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    width: 300px;
+    top:50px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFF;
+    font-family: 'Press Start 2P', cursive;
+    border: 5px dotted white;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.start{
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    width: 200px;
+    cursor: pointer;
+    padding: 20px 20px;
+    text-align: center;
+    background-color: #00dbff;
+    color: white;
+    z-index: 30;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.restart{
+    position: absolute;
+    top:50%;
+    translate: (-50%,0);
+    left:0;
+    right:0;
+    margin: 0 auto;
+    width: 240px;
+    cursor: pointer;
+    padding: 20px 20px;
+    text-align: center;
+    background-color: lightcoral;
+    color: white;
+    z-index: 30;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: none;
+}
+
+.restart p{
+    margin: 0px 0px 0px 0px;
+}
+
+.restart p a{
+    text-decoration: none;
+    color: yellow;
+    font-size: 20px;
+}
+
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2000ms infinite linear;
+
+}
+
+@keyframes pipe-animation{
+    from{
+        right:-80px;
+    }
+    to{
+        right:100%;
+    }
+}
+
+.mario{
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    margin-left: 40px;
+}
+
+.jump{
+    animation: jump-animation 800ms ease-out;
+}
+
+@keyframes jump-animation{
+    0%{
         bottom:0;
     }
-    40% {
+    40%{
         bottom: 180px;
     }
-    50% {
+    50%{
         bottom: 180px;
     }
     60%{
         bottom: 180px;
     }
     70%{
-        bottom: 180px;
+        bottom:180px;
     }
     100%{
-        bottom: 0%
+        bottom:0;
     }
+}
+
+
+/* MEDIA QUERIES PARA MOBILE */
+
+@media (max-width: 768px){
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.game{
+    width: 100%;
+    height: 100vh;
+    border-bottom: 100px solid rgb(24,174,24);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.clouds{
+    position: absolute;
+    width: 350px;
+    top:100px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.start{
+    position: absolute;
+    width: 200px;
+    cursor: pointer;
+    padding: 30px 30px;
+    text-align: center;
+    background-color: lightcoral;
+    color: white;
+    z-index: 30;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 100px;
+    display: none;
+}
+
+.restart{
+    position: absolute;
+    width: 200px;
+    cursor: pointer;
+    padding: 30px 30px;
+    text-align: center;
+    background-color: lightseagreen;
+    color: white;
+    z-index: 30;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 100px;
+    display: none;
+}
+
+@keyframes clouds-animation{
+    from{
+        right: -350px;
+    }
+    to{
+        right:100%;
+    }
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    animation: pipe-animation 2000ms infinite linear;
+
+}
+
+@keyframes pipe-animation{
+    from{
+        right:-60px;
+    }
+    to{
+        right:100%;
+    }
+}
+
+.mario{
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    margin-left: 40px;
+}
+
+.jump{
+    animation: jump-animation 1000ms ease-out;
+}
+
+@keyframes jump-animation{
+    0%{
+        bottom:0;
+    }
+    40%{
+        bottom: 180px;
+    }
+    50%{
+        bottom: 180px;
+    }
+    60%{
+        bottom: 180px;
+    }
+    70%{
+        bottom:180px;
+    }
+    100%{
+        bottom:0;
+    }
+}
 
 }
