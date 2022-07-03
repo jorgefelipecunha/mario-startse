@@ -1,4 +1,6 @@
+'use strict';
 // Array de componentes
+
 let componentes = new Array("./Images/pipe-game.png",
 "./Images/Aliensbig.gif",
 "./Images/artneoseeker.png",
@@ -102,17 +104,11 @@ let componentes = new Array("./Images/pipe-game.png",
 "./Images/coin2.png",
 "./Images/coincolors.png",
 "./Images/coinmaster.webp",
+"./Images/coin.gif",
 "./Images/coracao3.gif")
 
 
-let position = [];
 let imgs = [];
-let imgAtual = 0;
-let imgAnterior1 = 0;
-let imgAnterior2 = 0;
-let imgAnterior3 = 0;
-let imgAnterior4 = 0;
-let imgAnterior5 = 0;
 //let component = document.getElementById("componente");
 let component = document.querySelector("#componente");
 const musictrilha = new Audio("./Sound/theme-overworld.mp3");
@@ -160,7 +156,18 @@ function iniciar() {
   let sortear = false;
   let pontuar = false;
   let velocidade = 0;
-  
+  let imgAtual = 0;
+  let imgAnterior1 = 0;
+  let imgAnterior2 = 0;
+  let imgAnterior3 = 0;
+  let imgAnterior4 = 0;
+  let imgAnterior5 = 0;
+  let imgAnterior6 = 0;
+  let imgAnterior7 = 0;
+  let imgAnterior8 = 0;
+  let imgAnterior9 = 0;
+  let imgAnterior0 = 0;
+
   nav.classList.remove("menu");
   nav.classList.add("menuNone");
 
@@ -202,20 +209,20 @@ function iniciar() {
 
   function aumentaScore(p) {
 //    console.log("SCORE ");
-    if (imgAtual < 92) {
+    if (imgAtual < 91) {
       score += 50;
 //      console.log("AUMENTOU SCORE 50 " + imgAtual);
-    } else if (imgAtual < 100 && pontuar== true) {
+    } else if (imgAtual < 99 && pontuar== true) {
       musicfriend.play();
       score += 70;
       pontuar= false;
 //      console.log("AUMENTOU SCORE 70 " + imgAtual);
-    } else if (imgAtual < 102 && pontuar== true) {
+    } else if (imgAtual < 103 && pontuar== true) {
       musiccoin.play();
       score += 100;
       pontuar= false;
 //      console.log("AUMENTOU SCORE 100 " + imgAtual);
-    } else if (imgAtual == 102 || imgAtual == 103 && pontuar== true) {
+    } else if (imgAtual == 103 || imgAtual == 104 && pontuar== true) {
       musicmega.play();
       score += 200;
       pontuar= false;
@@ -245,6 +252,11 @@ function iniciar() {
 
   function sortearComponente() {
 //    console.log("SORTEAR " + imgAtual);
+    imgAnterior0 = imgAnterior9;
+    imgAnterior9 = imgAnterior8;
+    imgAnterior8 = imgAnterior7;
+    imgAnterior7 = imgAnterior6;
+    imgAnterior6 = imgAnterior5;
     imgAnterior5 = imgAnterior4;
     imgAnterior4 = imgAnterior3;
     imgAnterior3 = imgAnterior2;
@@ -252,6 +264,18 @@ function iniciar() {
     imgAnterior1 = imgAtual;
     do {
       imgAtual = Math.round(Math.random() * (componentes.length - 1));
+      console.log("imgAtual "+imgAtual);
+      console.log("imgAnterior1 "+imgAnterior1);
+      console.log("imgAnterior2 "+imgAnterior2);
+      console.log("imgAnterior3 "+imgAnterior3);
+      console.log("imgAnterior4 "+imgAnterior4);
+      console.log("imgAnterior5 "+imgAnterior5);
+      console.log("imgAnterior6 "+imgAnterior6);
+      console.log("imgAnterior7 "+imgAnterior7);
+      console.log("imgAnterior8 "+imgAnterior8);
+      console.log("imgAnterior9 "+imgAnterior9);
+      console.log("imgAnterior0 "+imgAnterior0);
+  //      imgAnterior = imgAtual;
     } while (imgAnterior1 == imgAtual || imgAnterior2 == imgAtual || imgAnterior3 == imgAtual || imgAnterior4 == imgAtual || imgAnterior5 == imgAtual);
 //    console.log("SORTEOU " + imgAtual);
     trocacomponente(imgAtual);
@@ -294,7 +318,6 @@ function iniciar() {
 
     if (componentePosition <= -50 || sortear == true) {
       console.log("LOOP ==> SORTEAR ");
-//      position.push(componentePosition);
       sortear = false;
       sortearComponente()
     }
@@ -304,7 +327,7 @@ function iniciar() {
     const marioPosition = +window
       .getComputedStyle(mario)
       .bottom.replace("px", "");
-    if (imgAtual < 92 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
+    if (imgAtual < 91 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
 //        console.log("LOOP if FIM entrou ");
         musictrilha.pause();
         musicgameover.play();
@@ -332,7 +355,7 @@ function iniciar() {
         clearInterval(ativaDificuldadeTimer);
         recomeca.classList.remove("botaoOff");
         recomeca.classList.add("botaoOn");
-    } else if (imgAtual > 91 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
+    } else if (imgAtual > 90 && componentePosition <= 120 && componentePosition > 0 && marioPosition < 80) {
 //      console.log("LOOP else if FIM entrou ");
       componente.style.display = "none";
       const ativaComponente = setInterval(() => {
@@ -351,6 +374,11 @@ function iniciar() {
     console.log("imgAnterior3 "+imgAnterior3);
     console.log("imgAnterior4 "+imgAnterior4);
     console.log("imgAnterior5 "+imgAnterior5);
+    console.log("imgAnterior6 "+imgAnterior6);
+    console.log("imgAnterior7 "+imgAnterior7);
+    console.log("imgAnterior8 "+imgAnterior8);
+    console.log("imgAnterior9 "+imgAnterior9);
+    console.log("imgAnterior0 "+imgAnterior0);
     console.log("component "+component);
     console.log("teste "+teste);
     console.log("sortear "+sortear);
