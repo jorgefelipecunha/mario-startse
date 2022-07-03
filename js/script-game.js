@@ -139,15 +139,3 @@ function start() {
  
   };
  
-  //INIMIGOS RANDOM
-  const random = Math.floor(Math.random() *2);
-  const myInterval = window.setInterval(function(){
-    if (random === 0) {
-      document.getElementById('angry.dog').display = "none";
-      document.getElementById('sleep-dog').display = "block";
-    }else{
-      document.getElementById('angry.dog').display = "block";
-      document.getElementById('sleep-dog').display = "none";
-    }
-    
-  }, 2000); 
