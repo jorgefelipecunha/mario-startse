@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style-game.css" /> 
+        <title>Jogo do catinhu</title>
+    </head>
+    <body>
+        <!--LOADING IMAGES DO JOGO-->
+        <div class="game">
+            <img src="./Images/solgif.gif" class="sol">
+            <img src="./Images/singleCloud.png" class="cloud-game">
+            <img src="./Images/singleCloud.png" class="cloud-game2">
+            <img src="./Images/singleCloud.png" class="cloud-game3">
+            <img src="./Images/cat.gif" class="cat" />
+            <img src="./Images/angryDog.gif" class="angry-dog" id="angry-dog"/>
+            <img src="./Images/sleepDog.gif" class="sleep-dog" id="sleep-dog"/>
+            <div class="score-card">
+                <br>
+                <h1>Game Over</h1><br>
+                <h2>Melhor tempo</h2><br>
+                <p class="classificao" id="score-first">--</p>
+                <p class="classificao" id="score-second">--</p>
+                <p class="classificao" id="score-third">--</p><br>
+                <button class="button-score-list" id="button-replay" onclick="window.open('game.html','_self')">Reiniciar</button>
+                <button class="button-score-list" id="button-home" onclick="window.open('index.html','_self')">Home</button>
+            </div>
+            <div class="timer">
+                <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
+            </div>
+        </div>
+        <script src="./js/script-game.js"></script>
+        
+    </body>
+</html>
