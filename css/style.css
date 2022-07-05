@@ -19,9 +19,8 @@
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    border: 1px solid red;
     background-image: url(../Images/bolsonaro_fim.png);
-    background-color: #f35858;
+    background-color: transparent;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -30,35 +29,130 @@
     
 }
 
+.play-again {
+    position: absolute;
+    display:none;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    color: #E0F6FF;
+}
+
+.box {
+    width: 350px;
+    display: inline-block;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: rgb(245, 26, 26);
+    padding: 25px;
+}
+
+.play-again h1 {
+    text-transform: uppercase;
+}
+
+.play-again img {
+    width: 200px;
+
+
+}
+
+#try-again {
+    position: relative;
+    padding: 0.8em 1.8em;
+    border-radius: 4em;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    transition-duration: 0.4s;
+    font-weight: 800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #E0F6FF;
+    border: 1px solid;
+}
+
+#try-again:hover {
+    
+    transition: all 0.5s;
+    box-shadow: 0 0 5px 5px rgb(241, 95, 95);
+}
+
+#try-again:after {
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px white;
+}
+  
+#try-again:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+  
+.play-again button:active {
+    top: 1px;
+}
+
+
 .tebett {
     position: absolute;
     bottom: 0;
-    right: -80px;
-    animation: tebett-animation 3s linear;
+    
+    left: -80px;
+    animation: fig-animation 6s linear;
 }
 
 .ciro {
     position: absolute;
     bottom: 0;
-    right: -80px;
-    animation: ciro-animation 3s linear 2s;
+    
+    left: -80px;
+    animation: fig-animation 6s linear 2s;
 }
 
 .bolsonaro {
     position: absolute;
     bottom: 0;
-    right: -80px;
-    animation: bolsonaro-animation 3s linear 4s;
+    left: -80px;
+    animation: fig-animation 6s linear 4s;
 }
 
-.lula{
+.planalto {
+    position: absolute;
+    bottom: -14px;
+    right: -120px;
+    animation: planalto-animation 7s linear 7s;
+}
+
+.lula {
     width:200px;
     position: absolute;
     bottom: -30px;
+    
+}
+
+.win {
+    animation: lula-animation 3s linear;
 }
 
 .jump-lula {
-    animation: lula-animation 800ms ease-out;
+    animation: jump-animation 600ms ease-out;
 }
 
 .cloud-game{
@@ -67,30 +161,30 @@
     animation: clouds-animation 20s infinite linear;
 }
 
-@keyframes tebett-animation {
+@keyframes fig-animation {
     from {
         right: -80px;
     }
     to{
-        right: 100%;
+        right: 2000px;
     }
 }
 
-@keyframes ciro-animation {
+@keyframes lula-animation {
     from {
-        right: -80px;
+        left: 100px;
     }
     to{
-        right: 100%;
+        left: 100%;
     }
 }
 
-@keyframes bolsonaro-animation {
+@keyframes planalto-animation {
     from {
-        right: -80px;
+        right: -120px;
     }
     to{
-        right: 100%;
+        right: 2000px;
     }
 }
 
@@ -103,7 +197,7 @@
     }
 }
 
-@keyframes lula-animation{
+@keyframes jump-animation{
     0% {
         bottom:0;
     }
