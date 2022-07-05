@@ -2,29 +2,148 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+}
+
+.show, .hide, .game-over, .option {
+    display: none;
+}
+
+.container-info {
+    width: 100vw;
+}
+
+.container-main, .container-menu, .menu, .nav-menu, .options-list, li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container-main {
+    height: 100vh;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    background-size: cover;
+}
+
+.menu { 
+    justify-content: space-between;
+    height: 23rem;
+    margin: auto;
+    top: 3rem;
+    z-index: 10;
+    position: absolute;
+}
+
+.menu .menu-title {
+    text-align: center;
+    width: 80%;
+    word-wrap: break-word;
+    max-width: 600px;
+    font-size: 4rem;
+    border-radius: .2rem;
+    background-color: #D54B00;
+}
+
+.nav-menu .options-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 25rem;
+}
+
+.nav-menu .options-list li {
+    margin-top: .8rem;
+}
+
+
+.nav-menu .options-list li button {
+    padding: .5rem;
+    background-color: #FFC3B8;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+}
+
+.nav-menu .options-list li:hover button {
+    cursor: pointer;
+}
+
+.nav-menu .options-list li:hover .text-pergunta {
+    cursor: text;
 }
 
 .game {
     width: 100%;
-    height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    height: 40vh;
+    border-bottom: 70px solid rgb(24,174,24);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
+.container-info, .info-game {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 3rem;
+}
+
+.info-game {
+    width: 10rem;
+}
+
+.container-info .text {
+    font-size: 2rem;
+}
+
+.container-moeda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+
+.container-moeda :nth-child(2) {
+    font-size: 1rem;
+}
+
+.container-moeda :nth-child(3) {
+    font-size: 1.5rem;
+}
+
+.container-moeda img {
+    height: 1.5rem;
+    width: 1rem;
+}
+
+#moeda-img {
+    display: none;
+    position: absolute;
+    width: 6rem;
+    right: -6rem;
+    top: 40%;
+    z-index: 1;
+}
+
+.pipe-game-animation, .pipe-game {
+    display: none;
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    right: -80px;
 }
 
-.super-mario{
-    width:150px;
+.pipe-game {
+    left: 110px;
+}
+
+.super-mario {
+    width:120px;
+    left: 45px;
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
 }
 
 .jump-mario {
@@ -32,16 +151,99 @@
 }
 
 .cloud-game{
+    display: none;
     position: absolute;
     width: 550px;
-    animation: clouds-animation 20s infinite linear;
+    right: -550px;
 }
+
+.morte-mario {
+    position: absolute;
+    animation: morte-mario 2s forwards 1 linear,
+    desaparecer 0s ease;
+}
+
+.container-end {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.tela-final-game {
+    bottom: 50%;
+    position: absolute;
+    animation: end-game 5s linear;
+}
+
+.menu-animation {
+    animation: game-over 1s linear;
+}
+
+@keyframes end-game {
+
+    from {
+        bottom: 0;
+    }
+    
+}
+
+@keyframes game-over {
+    from {
+        margin-left: -200%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+
+@keyframes morte-mario {
+    0% {
+        bottom: 0;
+    }
+    
+    20%{
+        bottom: 90px;
+    }
+    
+    40%{
+        bottom: 90px;
+    }
+    
+    60%{
+        bottom: 0px;
+    }
+    80%{
+        bottom: -180px;
+    }
+    100%{
+        bottom: -180px;
+    }
+
+}
+
+@keyframes desaparecer {
+    to{
+        opacity: 0;
+    }
+}
+
 
 @keyframes pipe-animation {
     from {
         right: -80px;
     }
     to{
+        right: 100%;
+    }
+}
+
+@keyframes moeda-animation {
+    from {
+        right: -5rem;
+    }
+    to {
         right: 100%;
     }
 }

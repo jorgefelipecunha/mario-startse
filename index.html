@@ -8,11 +8,63 @@
         <title>Super Mario StartSe</title>
     </head>
     <body>
-        <div class="game">
-            <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/super-mario.gif" class="super-mario" />
-            <img src="./Images/pipe-game.png" class="pipe-game" />
-        </div>
+        <main class="container-main">
+            <section class="container-menu">
+                <header class="container-info end-game">
+                    <div class="info-game">
+                        <span class="text">Score:</span>
+                        <span class="text score-valor" id="t">0</span>
+                    </div>
+                    <div class="container-moeda">
+                        <img src="./Images/moeda_1.png" alt="moeda">
+                        <span>x</span>
+                        <span class="moeda-score">0</span>
+                    </div>
+                    <div class="info-game">
+                        <span class="text">Fase:</span>
+                        <span class="text fase">1</span>
+                    </div>
+                    <div class="container-creditos">
+                        <span class="text">Crédito:</span>
+                        <span class="text creditos">5</span>
+                    </div>
+                </header>
+
+                <section class="menu menu-animation">
+                    <div class="menu-title end-game finalizar-hide">
+                        <h1 class="menu-title-h1" >SUPER MARIO</h1>
+                    </div>
+                    <nav class="nav-menu">
+                        <ul class="options-list">
+                            <li><button class="button-game-play finalizar-hide mudar-cor">Jogar</button></li>
+                            <li><button class="hide finalizar-hide start-game restart mudar-cor">Restart</button></li>
+                            <li><button class="game-ranking finalizar-hide start-game mudar-cor">Ranking</button></li>
+                            <li><button class="game-over finalizar-hide restart-game-over mudar-cor">Recarregar Jogo</button></li>
+                            <li><button class="finalizar finalizar-hide mudar-cor">Finalizar</button></li>
+                            <li><button class="option text-pergunta mudar-cor">Deseja Realmente Finalizar?</button></li>
+                            <li><button class="option option-no mudar-cor">Cancelar</button></li>
+                            <li><button class="option option-yes mudar-cor">Confirmar</button></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+
+            <section class="game end-game">
+                <audio src="./audio/1-super-mario-bros.mp3" id="teste1" class="audio-fase"></audio>
+                <audio src="./audio/mario_pulando_efeito_sonoro_toquesengracadosmp3.com.mp3" class="audio-pulo"></audio>
+                <audio src="./audio/mario_moeda_efeito_sonoro_toquesengracadosmp3.com.mp3" class="audio-moeda"></audio>
+                <img src="./Images/moeda_1.png" alt="moeda mario" class="show" id="moeda-img"/>
+                <img src="./Images/clouds-gamer.png" class="cloud-game show" />
+                <img src="./Images/super-mario.png" class="super-mario" />
+                <img src="./Images/pipe-game.png" class="pipe-game-animation show"/>
+                <img src="./Images/pipe-game.png" class="pipe-game hide" />
+            </section>
+
+            <section class="container-end">
+                <div class="tela-final-game"><h1>Obrigado Pelo Tempo Que Você Jogou. Até A Próxima!</h1></div>
+                <audio src="./audio/end_mario_rap_remix_toquesengracadosmp3.com.mp3" class="audio-fim"></audio>
+            </section>
+        </main>
         <script src="./js/script.js"></script>
     </body>
 </html>
