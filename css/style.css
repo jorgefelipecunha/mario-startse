@@ -1,3 +1,4 @@
+
 *{
     margin:0;
     padding: 0;
@@ -29,7 +30,19 @@
     
 }
 
-.play-again {
+.start  {
+    position: absolute;
+    display:flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    color: #E0F6FF;
+}
+
+.play-again  {
     position: absolute;
     display:none;
     width: 100%;
@@ -41,12 +54,22 @@
     color: #E0F6FF;
 }
 
+.fim {
+    position: absolute;
+    display: none;
+    width: 100%;
+    color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
 .box {
     width: 350px;
     display: inline-block;
-    border: 1px solid red;
     border-radius: 10px;
     background-color: rgb(245, 26, 26);
+    background-image: linear-gradient(red,rgb(85, 7, 7));
     padding: 25px;
 }
 
@@ -54,13 +77,13 @@
     text-transform: uppercase;
 }
 
-.play-again img {
+.play-again img, .start img {
     width: 200px;
 
 
 }
 
-#try-again {
+.botao {
     position: relative;
     padding: 0.8em 1.8em;
     border-radius: 4em;
@@ -76,13 +99,13 @@
     border: 1px solid;
 }
 
-#try-again:hover {
+.botao:hover {
     
     transition: all 0.5s;
     box-shadow: 0 0 5px 5px rgb(241, 95, 95);
 }
 
-#try-again:after {
+.botao:after {
     display: block;
     position: absolute;
     border-radius: 4em;
@@ -95,7 +118,7 @@
     box-shadow: 0 0 10px 40px white;
 }
   
-#try-again:active:after {
+.botao:active:after {
     box-shadow: 0 0 0 0 white;
     position: absolute;
     border-radius: 4em;
@@ -109,46 +132,56 @@
     top: 1px;
 }
 
+.bandeira {
+    position: absolute;
+    width: 300px;
+    padding: 40px;
+    animation: none;
+}
 
 .tebett {
     position: absolute;
     bottom: 0;
-    
-    left: -80px;
-    animation: fig-animation 6s linear;
+    right: -80px;
+    animation: none;
 }
 
 .ciro {
     position: absolute;
+    right: -80px;
     bottom: 0;
-    
-    left: -80px;
-    animation: fig-animation 6s linear 2s;
+    animation: none;
 }
 
 .bolsonaro {
     position: absolute;
     bottom: 0;
-    left: -80px;
-    animation: fig-animation 6s linear 4s;
+    right: -80px;
+    animation: none;
 }
 
 .planalto {
     position: absolute;
     bottom: -14px;
     right: -120px;
-    animation: planalto-animation 7s linear 7s;
+    animation: none;
 }
 
 .lula {
     width:200px;
     position: absolute;
     bottom: -30px;
+    z-index: 90;
     
 }
 
 .win {
-    animation: lula-animation 3s linear;
+    animation: lula-animation 4s linear;
+}
+
+.gran-finale {
+    animation: gran-finale 5s;
+    left: 40%;
 }
 
 .jump-lula {
@@ -157,7 +190,7 @@
 
 .cloud-game{
     position: absolute;
-    width: 550px;
+    width: 400px;
     animation: clouds-animation 20s infinite linear;
 }
 
@@ -175,7 +208,7 @@
         left: 100px;
     }
     to{
-        left: 100%;
+        left: 40%;
     }
 }
 
@@ -184,7 +217,7 @@
         right: -120px;
     }
     to{
-        right: 2000px;
+        right: 30%;
     }
 }
 
@@ -220,4 +253,24 @@
         bottom: 0%
     }
 
+}
+
+@keyframes gran-finale {
+    from {
+        width: 200px;
+    }
+    to {
+        width: 350px;
+    }
+    
+}
+
+@keyframes bandeira {
+    from {
+        width: 200px;
+    }
+    to {
+        width: 450px;
+    }
+    
 }

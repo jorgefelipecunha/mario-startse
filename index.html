@@ -10,21 +10,40 @@
     <body>
         <div class="game">
             <img src="./Images/clouds-gamer.png" class="cloud-game" />
-            <img src="./Images/lula.gif" class="lula" />
+            <img src=" " class="lula" />
             <img src="./Images/tebett.png" class="tebett" />
             <img src="./Images/ciro.png" class="ciro" />
             <img src="./Images/bolsonaro.png" class="bolsonaro" />
             <img src="./Images/planalto.png" class="planalto" />
+            <img src="./Images/bandeira.gif" class="bandeira"/>
            
-            <div class="play-again">
+            <div class="start">
                 <div class="box">
-                    <h1>Game Over</h1>
-                    <img src="./Images/lula.gif" class="final"/>
-                    <button type="button" id="try-again" value="Restart" onClick="document.location.reload(true)">Tente Novamente</button>
+                    <h1>Ajude o Lulinha a Salvar o Brasil</h1>
+                    <img src="./Images/lula.gif"/>
+                    <button type="button" class="botao" id="start-game" onClick="start()">Começar</button>
                 </div>
             </div>
+
+            <div class="play-again">
+                <div class="box">
+                    <h1>Não Desista!</h1>
+                    <img src="./Images/lula.gif"/>
+                    <button type="button" class="botao" id="restart-game" onClick="start()">Recomeçar</button>
+                </div>
+            </div>
+
             <div class="game-over" hidden>
                 <img src="" />
+            </div>
+
+            <div class="fim">
+                <div class="box">
+                    <h1>O Brasil está a salvo!</h1>
+                    <h2>Jogue novamente daqui 4 anos</h2>
+
+                </div>
+
             </div>
             
         </div>
