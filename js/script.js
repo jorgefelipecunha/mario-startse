@@ -28,7 +28,7 @@ function openFullscreen() {
 function alertaOrientacaoDispositivo() {
   const w = window.innerWidth;
   if(w < 768) {
-    alert("Você precisa virar seu celular na posição horizontal para jogar esse jogo!");
+    alert("Você precisa virar seu celular na horizontal para jogar esse jogo!");
   }
 }
 
