@@ -281,20 +281,3 @@
     }
     
 }
-
-/* @media only screen and (min-width: 768px) {
-
-    .lula {width: 100px;}
-    .game {
-        max-width: fit-content;
-        border-bottom: 100px solid rgb(24,174,24);
-    }
-    
-    .planalto {
-        position: absolute;
-        bottom: -14px;
-        right: -120px;
-        animation: none;
-        
-    }
-} */

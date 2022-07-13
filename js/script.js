@@ -25,6 +25,13 @@ function openFullscreen() {
   }
 }
 
+function alertaOrientacaoDispositivo() {
+  const w = window.innerWidth;
+  if(w < 768) {
+    alert("Você precisa virar seu celular na posição horizontal para jogar esse jogo!");
+  }
+}
+
 const jump = () => {
   lula.classList.add("jump-lula");
 
@@ -32,6 +39,8 @@ const jump = () => {
     lula.classList.remove("jump-lula");
   }, 600);
 };
+
+alertaOrientacaoDispositivo();
 
 const start = () => {
 
@@ -128,5 +137,7 @@ const start = () => {
 
 openFullscreen();
 screen.lockOrientation('landscape');
+
+
 
 
