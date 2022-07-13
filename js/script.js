@@ -12,6 +12,7 @@ const granFinale = document.querySelector('.gran-finale');
 const bandeira = document.querySelector('.bandeira');
 const startContainer = document.querySelector('.start');
 const fimContainer = document.querySelector(".fim");
+const gameContainer = document.getElementById('#game');
 
 const jump = () => {
   lula.classList.add("jump-lula");
@@ -22,6 +23,9 @@ const jump = () => {
 };
 
 const start = () => {
+
+  document.addEventListener('touchstart', jump);
+
   lula.src = "./Images/lula.gif";
   tebett.style.animation = "fig-animation 6s linear";
   ciro.style.animation = "fig-animation 6s linear 2s";
@@ -41,6 +45,8 @@ const start = () => {
   
     if ((tebettPosition <= 100 && tebettPosition > 0 && lulaBottomPosition < 80) || (ciroPosition <= 120 && ciroPosition > 0 && lulaBottomPosition < 80)) {
       
+      document.removeEventListener('touchstart', jump);
+
       tebett.style.animation = "none";  
       ciro.style.animation = "none";
       bolsonaro.style.animation = "none";
@@ -55,10 +61,13 @@ const start = () => {
   
     } else if (bolsonaroPosition <= 120 && bolsonaroPosition > 0 && lulaBottomPosition < 80) {
       
+      document.removeEventListener('touchstart', jump);
+
       tebett.style.animation = "none";  
       ciro.style.animation = "none";
       bolsonaro.style.animation = "none";
       lula.src = "./Images/the-end.gif";
+      
 
       gameOver.style.display = "flex";
   
@@ -69,6 +78,8 @@ const start = () => {
       clearInterval(loopGame);
   
       } else if (ciroPosition < 0 && bolsonaroPosition < 0){
+
+        document.removeEventListener('touchstart', jump);
         
         lula.classList.add("win");
         planalto.style.animation = "planalto-animation 4s linear";
@@ -76,7 +87,7 @@ const start = () => {
   
         setTimeout(() => {
           lula.classList.replace("win","gran-finale");
-          lula.style.left = '40%';
+          lula.style.left = '30%';
           lula.style.width ='350px';
           planalto.style.right = '30%';
           nuvens.style.animation = 'none';
@@ -89,7 +100,8 @@ const start = () => {
   
         setTimeout(() => {
           fimContainer.style.display = "flex";
-        },5000);
+          
+        },7000);
         
         setTimeout(() => {
           location.reload();
@@ -103,5 +115,6 @@ const start = () => {
   document.addEventListener("keydown", jump);
 };
 
+screen.lockOrientation('landscape');
 
 

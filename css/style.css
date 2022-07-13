@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    border-bottom: 40px solid rgb(24,174,24);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -34,12 +37,13 @@
     position: absolute;
     display:flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     justify-content: center;
     align-content: center;
     text-align: center;
     align-items: center;
-    color: #E0F6FF;
+    color: #e7f7fd;
+    background-color: rgba(0, 0, 0, 0.692);
 }
 
 .play-again  {
@@ -60,17 +64,21 @@
     width: 100%;
     color: whitesmoke;
     justify-content: center;
+    align-items: center;
     text-align: center;
     margin-top: 70px;
 }
 
 .box {
-    width: 350px;
-    display: inline-block;
+    width: 400px;
+    display: box;
     border-radius: 10px;
     background-color: rgb(245, 26, 26);
+    opacity: 1;
     background-image: linear-gradient(red,rgb(85, 7, 7));
     padding: 25px;
+    align-content: center;
+    
 }
 
 .play-again h1 {
@@ -78,13 +86,14 @@
 }
 
 .play-again img, .start img {
-    width: 200px;
-
+    width: 180px;
+    margin: -18px;
 
 }
 
 .botao {
     position: relative;
+    margin: auto 80px 12px;
     padding: 0.8em 1.8em;
     border-radius: 4em;
     text-transform: uppercase;
@@ -93,8 +102,8 @@
     user-select: none;
     transition-duration: 0.4s;
     font-weight: 800;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
     color: #E0F6FF;
     border: 1px solid;
 }
@@ -165,13 +174,13 @@
     bottom: -14px;
     right: -120px;
     animation: none;
+    
 }
 
 .lula {
     width:200px;
     position: absolute;
     bottom: -30px;
-    z-index: 90;
     
 }
 
@@ -180,7 +189,7 @@
 }
 
 .gran-finale {
-    animation: gran-finale 5s;
+    animation: gran-finale 6s;
     left: 40%;
 }
 
@@ -208,7 +217,7 @@
         left: 100px;
     }
     to{
-        left: 40%;
+        left: 30%;
     }
 }
 
@@ -274,3 +283,20 @@
     }
     
 }
+
+/* @media only screen and (min-width: 768px) {
+
+    .lula {width: 100px;}
+    .game {
+        max-width: fit-content;
+        border-bottom: 100px solid rgb(24,174,24);
+    }
+    
+    .planalto {
+        position: absolute;
+        bottom: -14px;
+        right: -120px;
+        animation: none;
+        
+    }
+} */
