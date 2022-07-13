@@ -13,6 +13,17 @@ const bandeira = document.querySelector('.bandeira');
 const startContainer = document.querySelector('.start');
 const fimContainer = document.querySelector(".fim");
 const gameContainer = document.getElementById('#game');
+const elem = document.documentElement;
+
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
 
 const jump = () => {
   lula.classList.add("jump-lula");
@@ -115,6 +126,7 @@ const start = () => {
   document.addEventListener("keydown", jump);
 };
 
+openFullscreen();
 screen.lockOrientation('landscape');
 
 
