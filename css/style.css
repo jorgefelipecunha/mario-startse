@@ -1,48 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 .game {
     width: 100%;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
+    border-bottom: 40px solid rgb(24,174,24);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.pipe-game {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+.game-over {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(../Images/bolsonaro_fim.png);
+    background-color: transparent;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.super-mario{
-    width:150px;
+.start  {
     position: absolute;
-    bottom: 0;
+    display:flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    color: #e7f7fd;
+    background-color: rgba(0, 0, 0, 0.692);
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+.play-again  {
+    position: absolute;
+    display:none;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    color: #E0F6FF;
+    background-color: rgba(0, 0, 0, 0.692);
+
+}
+
+.fim {
+    position: absolute;
+    display: none;
+    width: 100%;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.box {
+    width: 400px;
+    display: box;
+    border-radius: 10px;
+    background-color: rgb(245, 26, 26);
+    opacity: 1;
+    background-image: linear-gradient(red,rgb(85, 7, 7));
+    padding: 25px;
+    align-content: center;
+    
+}
+
+.play-again img, .start img {
+    width: 180px;
+    margin: -18px;
+
+}
+
+.botao {
+    position: relative;
+    margin: auto 80px 12px;
+    padding: 0.3em 1.8em;
+    border-radius: 4em;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    transition-duration: 0.4s;
+    font-weight: 800;
+    font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #E0F6FF;
+    border: 1px solid;
+}
+
+.botao:hover {
+    
+    transition: all 0.5s;
+    box-shadow: 0 0 5px 5px rgb(241, 95, 95);
+}
+
+.botao:after {
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px white;
+}
+  
+.botao:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+  
+.play-again button:active {
+    top: 1px;
+}
+
+.bandeira {
+    position: absolute;
+    width: 300px;
+    padding: 40px;
+    animation: none;
+}
+
+.tebett {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    animation: none;
+}
+
+.ciro {
+    position: absolute;
+    right: -80px;
+    bottom: 0;
+    animation: none;
+}
+
+.bolsonaro {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    animation: none;
+}
+
+.planalto {
+    position: absolute;
+    bottom: -14px;
+    right: -120px;
+    animation: none;
+    
+}
+
+.lula {
+    width:200px;
+    position: absolute;
+    bottom: -30px;
+    
+}
+
+.win {
+    animation: lula-animation 4s linear;
+}
+
+.gran-finale {
+    animation: gran-finale 6s;
+    left: 40%;
+}
+
+.jump-lula {
+    animation: jump-animation 600ms ease-out;
 }
 
 .cloud-game{
     position: absolute;
-    width: 550px;
+    width: 400px;
     animation: clouds-animation 20s infinite linear;
 }
 
-@keyframes pipe-animation {
+@keyframes fig-animation {
     from {
         right: -80px;
     }
     to{
-        right: 100%;
+        right: 2000px;
+    }
+}
+
+@keyframes lula-animation {
+    from {
+        left: 100px;
+    }
+    to{
+        left: 30%;
+    }
+}
+
+@keyframes planalto-animation {
+    from {
+        right: -120px;
+    }
+    to{
+        right: 30%;
     }
 }
 
@@ -55,24 +237,47 @@
     }
 }
 
-@keyframes mario-animation{
+@keyframes jump-animation{
     0% {
         bottom:0;
     }
-    40% {
-        bottom: 180px;
+    30% {
+        bottom: 160px;
     }
     50% {
-        bottom: 180px;
+        bottom: 170px;
     }
     60%{
-        bottom: 180px;
+        bottom: 170px;
     }
     70%{
-        bottom: 180px;
+        bottom: 170px;
+    }
+    85%{
+        bottom: 160px;
     }
     100%{
         bottom: 0%
     }
 
+}
+
+@keyframes gran-finale {
+    from {
+        width: 200px;
+    }
+    to {
+        width: 350px;
+    }
+    
+}
+
+@keyframes bandeira {
+    from {
+        width: 200px;
+    }
+    to {
+        width: 450px;
+    }
+    
 }
