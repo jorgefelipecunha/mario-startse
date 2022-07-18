@@ -14,8 +14,7 @@ a {
 }
 
 body{
-    /*background-image: url(../images/start-page.jpg); não quer dar certo */
-    background-image: url(https://github.com/Mauro-Domingues/mario-startse/blob/mario-updates/Images/start-page.jpg?raw=true);
+    background-image: url(../Images/start-page.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
