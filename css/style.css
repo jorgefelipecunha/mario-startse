@@ -14,7 +14,7 @@ a {
 }
 
 body{
-    background-image: url(./images/start-page.jpg);
+    background-image: url(../images/start-page.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
