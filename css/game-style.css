@@ -1,0 +1,389 @@
+/* General */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(24, 174, 34);
+}
+
+/* Background */
+
+.game {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 100px solid rgb(24, 174, 34);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+/* Text-Elements */
+
+div.restart {
+    display: none;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    max-width: 980px;
+    padding: 0;
+    top: 10%;
+    animation: come-in 500ms ease;
+}
+
+p {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 2px 3px 1px #000000;
+    z-index: 4;
+}
+
+p.score{
+    font-size: 35px;
+}
+
+p.ingame {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 10px;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #ffffff;
+    color: #000000;
+}
+
+h1.level {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow: 2px 3px 1px #000000;
+    z-index: 4;
+    animation: come-in 500ms ease;
+}
+
+/* Buttons */
+
+input {
+    display: block;
+    position: relative;
+    margin-top: 40px;
+    width: 30%;
+    left: 35%;
+    right: 35%;
+    height: 40px;
+    z-index: 4;
+
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+
+    background-color: gold;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+}
+
+input#back-to-main {
+    margin-top: 10px;
+}
+
+input:hover {
+    transform: scale(1.05);
+}
+
+input:active {
+    transform: scale(0.9);
+    border: none;
+}
+
+/* Clouds */
+
+.cloud-game {
+    margin-top: 20px;
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+    z-index: 1;
+}
+
+/* Mario */
+
+.super-mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    z-index: 3;
+}
+
+.jump-mario {
+    animation: mario-animation 1500ms ease-out;
+}
+
+.die-mario {
+    position: absolute;
+    animation: mario-death 2000ms forwards 1 linear,
+        dissapear 0s ease;
+}
+
+/* Pipe */
+
+.pipe-form {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-width 1s ease;
+    z-index: 2;
+}
+
+.pipe-moving {
+    animation: pipe-animation 3s infinite linear;
+}
+
+/* Difficult */
+
+.pipe-moving-1 {
+    animation: pipe-animation 2.5s infinite linear;
+}
+
+.jump-mario-1 {
+    animation: mario-animation 1250ms ease-out;
+}
+
+.pipe-moving-2 {
+    animation: pipe-animation 2s infinite linear;
+}
+
+.jump-mario-2 {
+    animation: mario-animation 1000ms ease-out;
+}
+
+.pipe-moving-3 {
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.jump-mario-3 {
+    animation: mario-animation 750ms ease-out;
+}
+
+.pipe-moving-4 {
+    animation: pipe-animation 1s infinite linear;
+}
+
+.jump-mario-4 {
+    animation: mario-animation 500ms ease-out;
+}
+
+.pipe-moving-5 {
+    animation: pipe-animation 0.5s infinite linear;
+}
+
+.jump-mario-5 {
+    animation: mario-animation 250ms ease-out;
+}
+
+/* Keyframes */
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes mario-animation {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    70% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes mario-death {
+    0% {
+        bottom: 0;
+    }
+
+    10% {
+        bottom: 90px;
+    }
+
+    20% {
+        bottom: 90px;
+    }
+
+    30% {
+        bottom: 90px;
+    }
+
+    40% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -180px;
+    }
+
+    60% {
+        bottom: -180px;
+    }
+
+    70% {
+        bottom: -180px;
+    }
+
+    100% {
+        bottom: -180px;
+    }
+
+}
+
+@keyframes dissapear {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes come-in {
+    from {
+        transform: scale(0.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Media-Query */
+
+@media (max-width: 820px),
+(max-height: 380px) {
+
+    .game {
+        border-bottom: 30px solid rgb(24, 174, 34);
+    }
+
+    div.restart {
+        top: 10px;
+    }
+
+    p.ingame {
+        font-size: 15px;
+    }
+
+    h1.level {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 820px) {
+
+    .game {
+        height: 93vh;
+    }
+
+    div.restart {
+        width: 70%;
+        left: 15%;
+        right: 15%;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    p.score {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    h1.level {
+        padding-top: 40px;
+    }
+
+    input {
+        width: 50%;
+        left: 25%;
+        right: 25%;
+    }
+
+}
+
+@media screen and (max-height: 380px) {
+
+    .game {
+        height: 84.5vh;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    p.score {
+        font-size: 20px;
+    }
+
+    input {
+        width: 20%;
+        left: 40%;
+        right: 40%;
+    }
+
+    .cloud-game {
+        top: 0;
+        transform: scale(0.5);
+    }
+
+}
