@@ -88,7 +88,7 @@ const loopGame = setInterval(() => {
         pipe.style.animation = "none";
         pipe.style.left = `${pipePosition}px`;
 
-        mario.src = "../images/mario-game-over.png";
+        mario.src = "../Images/mario-game-over.png";
         mario.classList.add("die-mario");
         mario.style.width = "75px";
         mario.style.marginLeft = "45px";
