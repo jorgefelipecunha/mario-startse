@@ -1,8 +1,11 @@
 # 🌠🚀 Startse Wars Run 🌠🚀
-Ajude Yoda a escapar da invasão de stormtroopers. O objetivo do jogador é alcançar uma pontuação alta sobrevivendo o maior tempo possível.
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"> <img src="https://img.shields.io/badge/HTML5-323330?style=for-the-badge&logo=html5&logoColor=orange"> <img src="https://img.shields.io/badge/CSS3-323330?style=for-the-badge&logo=css3&logoColor=blue">
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/100864562/175834636-19d68133-7b52-4614-9cd7-57177aa13664.gif" />
+
+> Ajude Yoda a escapar da invasão de stormtroopers. O objetivo do jogador é alcançar uma pontuação alta sobrevivendo o maior tempo possível.
+
 </div>
  
 ---
