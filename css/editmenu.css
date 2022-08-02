@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+body
+{
+  height: 100vh;
+  background-color: #171616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menuBoard{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #171625;
+  width: 100%;
+}
+#menuBoard h2
+{
+  font-family: 'PressStart2P';
+  margin-bottom: 20px;
+}
+
+.container
+{
+  display: flex;
+  position: relative;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, transparent, #0044);
+  width: 100%;
+  justify-content: center;
+}
+.container .box
+{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: #444;
+  margin: 0 20px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #0F950F 25%, #444 25%, #444 50%, #0F950F 50%, #0F950F 75%, #444 75%, #444 100%);
+  background-size:  40px 40px;
+  filter: grayscale(1);
+  animation: animateBg 2s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1s;
+  display: flex;
+  justify-content: center;
+}
+.container .box:nth-child(2)
+{
+  background: linear-gradient(136deg, rgba(200, 6, 6, 0.904) 25%, #444 25%, #444 50%, rgba(200, 6, 6, 0.904) 50%, rgba(200, 6, 6, 0.904) 75%, #444 75%, #444 100%);
+  background-size:  40px 40px;  
+}
+.container .box:hover
+{
+  animation-play-state: running;
+  filter: grayscale(0);
+}
+
+
+@keyframes animateBg
+{
+  0%{
+  background-position: 0;
+  }
+  0%{
+  background-position: 40px;
+  }
+}
+
+#backAboutToMenu{
+  position: absolute;
+  bottom: 30px;
+  left: 47%;
+  width: 80px;
+  transition: 0s;
+  font-size: 18px;
+  background-color: yellow;
+  color: yellow;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  transition: 0.5s;
+  padding: 5px;
+}
+a{
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  font-weight: 800;
+}
+
+#backAboutToMenu a:hover{
+  color: yellow;
+  font-weight: 900;
+}
+#backAboutToMenu:hover 
+{
+  background-color: black;
+}
