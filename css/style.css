@@ -1,78 +1,94 @@
-*{
-    margin:0;
+/* General */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-weight: 700;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
-.game {
-    width: 100%;
+a {
+    text-decoration: none;
+}
+
+body{
+    background-image: url(../Images/start-page.jpg);
+    background-size: cover;
+    background-position: center;
     height: 100vh;
-    border-bottom: 100px solid rgb(24,174,24);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    padding-top: 20%;
 }
 
-.pipe-game {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+/* Text-Elements */
+
+div {
+    text-align: center;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-.super-mario{
-    width:150px;
-    position: absolute;
-    bottom: 0;
+p{
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 80px;
+    text-shadow: 2px 3px 1px #000000;
 }
 
-.jump-mario {
-    animation: mario-animation 500ms ease-out;
+/* Button */
+
+input {
+    margin-top: 50px;
+    width: 30%;
+    max-width: 150px;
+    height: 35px;
+    text-align: center;
+    background-color: gold;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
 }
 
-.cloud-game{
-    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
+input#back-to-main {
+    top: 68%;
 }
 
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-    to{
-        right: 100%;
-    }
+input:hover{
+    transform: scale(1.05);
 }
 
-@keyframes clouds-animation {
-    from{
-        right: -550px;
-    }
-    to{
-        right:  100%;
-    }
+input:active{
+    transform: scale(0.9);
+    border: none;
 }
 
-@keyframes mario-animation{
-    0% {
-        bottom:0;
+/* Media-Query */
+
+@media screen and (max-width: 820px) {
+    body{
+        height: 83vh;
     }
-    40% {
-        bottom: 180px;
+    p{
+        font-size: 60px;
     }
-    50% {
-        bottom: 180px;
+    input{
+        width: 70%;
+        left: 15%;
+        right: 15%;
     }
-    60%{
-        bottom: 180px;
+
+}
+
+@media screen and (max-height: 380px){
+    
+    body{
+        height: 81.5vh;
+        padding-top: 10px;
     }
-    70%{
-        bottom: 180px;
-    }
-    100%{
-        bottom: 0%
+
+    p{
+        font-size: 60px;
     }
 
 }
